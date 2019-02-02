@@ -30,3 +30,5 @@
 	header = white bold
 [mergetool "nvim"]
 	cmd = nvim -d
+[push]
+	default = simple
