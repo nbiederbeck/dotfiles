@@ -124,7 +124,9 @@ fi
 # fi
 # source $CONDA_PATH/etc/profile.d/conda.sh  # commented out by conda initialize
 
-cat ~/.cache/wal/sequences
+if [[ -f ~/.cache/wal/sequences ]]; then
+    cat ~/.cache/wal/sequences
+fi
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
