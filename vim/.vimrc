@@ -1,4 +1,5 @@
 " load plugins from separate file
+set runtimepath+=~/.config/nvim
 source ~/.config/nvim/plugin/plugins.vim
 
 set lazyredraw
