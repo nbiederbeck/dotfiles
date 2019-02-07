@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+for gr in $(find $HOME -maxdepth 5 -name '.git' 2> /dev/null); do
+	wd=$(dirname $gr)
+    if [[ $wd =~ '.' ]]; then
+        continue
+    fi
+	pushd $wd &> /dev/null
+	status=$(git status)
+	if [[ $status =~ "ntracked files" ]]; then
+		echo "Git repo   '$wd'   has untracked files"
+	elif [[ $status =~ "branch is ahead" ]]; then
+		echo "Git repo   '$wd'   has current branch not pushed"
+	elif [[ $status =~ "nothing to commit" ]]; then
+		true
+	else
+		echo "Git repo   '$wd'   needs attention"
+	fi
+	popd &> /dev/null
+done

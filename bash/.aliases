@@ -8,6 +8,7 @@ alias 'aoc'='cd ~/Programming/AoC/2018'
 alias 'msc'='conda activate; cd ~/Uni/MSc/thesis/code'
 alias 'smd'='cd ~/Uni/SMD/smd_uebungen'
 alias 'prak'='cd ~/Uni/MSc/praktikum && conda activate'
+alias 'thesis'='cd ~/Uni/MSc/thesis; source .env/bin/activate.bash'
 
 # Arch, Pacman
 alias 'mirrorupdate'='echo "reflector -n 20 -p https -l 10 -c Germany --sort rate --score 5 | sudo tee /etc/pacman.d/mirrorlist" && reflector -n 20 -p https -l 10 -c Germany --sort rate --score 5 | sudo -k tee /etc/pacman.d/mirrorlist'
@@ -57,20 +58,11 @@ alias 'black'='black -l 79'
 # alias 'conda3'='source ~/miniconda3/etc/profile.d/conda.sh'
 
 # # Work with servers (particularly Vollmond)
+alias 'vollmondtunnel'='ssh -N -f -L 2702:localhost:2702 vollmond'
+alias 'vollmondtunnelproxy'='ssh -N -f -L 2702:localhost:2702 proxy'
 # alias 'copyplots'='rsync -avzuh --progress -e ssh nbiederbeck@vollmond:bachelorArbeit/*  /media/noah/23c4ddbc-85fa-4cea-b96b-edae0bb138c9/bachelorArbeit_fromVollmond/'
 # alias 'vollmondnotebook'='ssh -f -N vollmondtunnel'
 # alias 'scp'='scp -i $HOME/.ssh/id_rsa.phido'
-
-# # Change into gits and pull
-# alias 'hqm'='cd /Users/nbiederbeck/Uni/hqm && git pull'
-# alias 'fp'='cd /Users/nbiederbeck/Uni/fp && git pull'
-# alias 'bot'='cd /Users/nbiederbeck/Git/HPkU4hwcvr_bot && git pull'
-
-# # Led brightness scripts
-# alias 'low'='$HOME/shellScripts/low.sh'
-# alias 'high'='$HOME/shellScripts/high.sh'
-# alias 'lowest'='$HOME/shellScripts/lowest.sh'
-# alias 'normal'='$HOME/shellScripts/normal.sh'
 
 # Correct wrong typed commands on the fly
 # alias 'vim'='echo "using nvim..." && nvim'

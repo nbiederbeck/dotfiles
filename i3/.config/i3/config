@@ -38,10 +38,11 @@ font pango:SourceCodePro $fontsize
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 floating_minimum_size 700x400
-floating_maximum_size 700x400
+floating_maximum_size -1x-1
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -shading 100
 
 # start a webbrowser
 bindsym $mod+shift+w mode "web"
@@ -281,6 +282,7 @@ assign [class="Midori"] $ws4
 assign [class="qutebrowser"] $ws4
 # Social Workspace 9
 assign [class="Telegram"] $ws9
+assign [class="TelegramDesktop"] $ws9
 assign [class="Thunderbird"] $ws9
 assign [class="Franz"] $ws9
 assign [class="Whatsie"] $ws9
@@ -309,8 +311,8 @@ mode "gaps" {
 
 bindsym $mod+Shift+s mode "screen"
 mode "screen" {
-    bindsym d exec ~/*conda3/bin/wal -f base16-gruvbox-hard & sed -i 's/background=light/background=dark/' ~/.vimrc & source ~/.vim/plugged/gruvbox/gruvbox_256palette.sh, mode "default"
-    bindsym l exec ~/*conda3/bin/wal -f base16-gruvbox-hard -l & sed -i 's/background=dark/background=light/' ~/.vimrc & source ~/.vim/plugged/gruvbox/gruvbox_256palette.sh, mode "default"
+    bindsym d exec ~/*conda3/bin/wal -f ~/.nord.json -o ~/.config/i3/change_vim_colors.sh, mode "default"
+    bindsym l exec ~/*conda3/bin/wal -f base16-gruvbox-hard -l -o ~/.config/i3/change_vim_colors.sh, mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }

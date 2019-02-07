@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -119,8 +119,14 @@ fi
 
 . ~/.bash_profile
 
-. ~/anaconda3/etc/profile.d/conda.sh
-cat ~/.cache/wal/sequences
+# if ! [[ $CONDA_PATH ]]; then
+#     export CONDA_PATH=$(find ~ -maxdepth 3 -type d -iname *conda3*)
+# fi
+# source $CONDA_PATH/etc/profile.d/conda.sh  # commented out by conda initialize
+
+if [[ -f ~/.cache/wal/sequences ]]; then
+    cat ~/.cache/wal/sequences
+fi
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
@@ -130,7 +136,7 @@ export CPPFLAGS="-I/home/linuxbrew/.linuxbrew/opt/isl@0.18/include"
 export PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
 
 # Path to the bash it configuration
-export BASH_IT="/home/noah/Git/bash-it"
+export BASH_IT="$HOME/.bash-it"
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
@@ -181,19 +187,19 @@ export SCM_CHECK=true
 # Uncomment this to make Bash-it create alias reload.
 # export BASH_IT_RELOAD_LEGACY=1
 
-# source /home/noah/MAGIC/root-6.14.04/obj/bin/thisroot.sh
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
 
-# MAGIC Software
-export PATH=$PATH:$HOME/.local/anaconda3/bin
-export ROOTSYS=$HOME/.local/root-5-34-anaconda3
-export MARSSYS=$HOME/.local/Mars_V2-19-2
-export LD_LIBRARY_PATH=$ROOTSYS/lib:$MARSSYS:$LD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=$LD_LIBRARY_PATH
-export PATH=$ROOTSYS/bin:$MARSSYS:$PATH
-export OSTYPE=$OSTYPE
+# # MAGIC Software
+# # export PATH=$PATH:$HOME/.local/anaconda3/bin
+# export ROOTSYS=$HOME/.local/root-5-34-anaconda3
+# export MARSSYS=$HOME/.local/Mars_V2-19-2
+# export LD_LIBRARY_PATH=$ROOTSYS/lib:$MARSSYS:$LD_LIBRARY_PATH
+# export DYLD_LIBRARY_PATH=$LD_LIBRARY_PATH
+# export PATH=$ROOTSYS/bin:$MARSSYS:$PATH
+# export OSTYPE=$OSTYPE
+# source /home/noah/MAGIC/root-6.14.04/obj/bin/thisroot.sh
 
 # SSH Agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
@@ -204,19 +210,19 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 fi
 
 
-export PATH=$HOME/go/bin:$PATH
-export GOPATH=$HOME/go
+export GOPATH=$HOME/.go
+export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
 function _conda_auto_activate() {
-    case $(pwd) in
-        *praktikum*) ENV="base" ;;
-        *thesis*)    ENV="cta"  ;;
-        *cta*)       ENV="cta"  ;;
-        *)           ENV="none" ;;
+    case ${PWD##*/}  in
+        praktikum) ENV="base" ;;
+        thesis)    ENV="base" ;;
+        cta*)      ENV="cta"  ;;
+        *)         ENV="none" ;;
     esac
-    if [[ $ENV != "none" ]]; then
-        if ! [[ $(which python) =~ ".*conda.*" ]]; then
+    if ! [[ $ENV == "none" ]]; then
+        if ! [[ $CONDA_PREFIX == ${CONDA_PREFIX##*/} ]]; then
             conda activate $ENV
         fi
     fi
@@ -225,4 +231,25 @@ function chpwd() {
     _conda_auto_activate
 }
 
+function cd()
+{
+    builtin cd $@
+    chpwd
+}
+
 source ~/.bash_functions
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/noah/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/noah/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/noah/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/noah/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

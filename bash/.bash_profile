@@ -47,3 +47,7 @@ export PS1='\[\033[0;31m\]$(parse_git_branch) \[\033[0;34m\]\w\n\[\033[1;32m\]\[
 # xmodmap ~/.Xmodmap
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+    exec startx
+fi

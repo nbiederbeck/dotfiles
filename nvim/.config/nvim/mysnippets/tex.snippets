@@ -1,0 +1,145 @@
+# vim:ft=snippets:
+
+global !p
+
+texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS']]
+texIgnoreMathZones = ['texMathText']
+texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+def isMath():
+    synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+    if not set(texIgnoreMathZoneIds).isdisjoint(synstackids):
+        return False
+    return not set(texMathZoneIds).isdisjoint(synstackids)
+
+texMathZonesAlign = ['texMathZone'+x for x in ['E', 'ES']]
+texIgnoreMathZonesAlign = ['texMathText']
+texMathZoneIdsAlign = vim.eval('map('+str(texMathZonesAlign)+", 'hlID(v:val)')")
+texIgnoreMathZoneIdsAlign = vim.eval('map('+str(texIgnoreMathZonesAlign)+", 'hlID(v:val)')")
+
+def isAlign():
+    synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+    if not set(texIgnoreMathZoneIds).isdisjoint(synstackids):
+        return False
+    return not set(texMathZoneIds).isdisjoint(synstackids)
+
+endglobal
+
+snippet "beg(in)?" "begin{} / end{}" brA
+\begin{${1:something}}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
+snippet eqn "equation no number" bA
+\begin{equation*}%
+	\label{eq:${1:${VISUAL}}}
+	${2:${VISUAL}}
+\end{equation*}
+$0
+endsnippet
+
+snippet aln "align no number" bA
+\begin{align*}%
+	${1:${VISUAL}}
+\end{align*}
+$0
+endsnippet
+
+snippet equ "equation" bA
+\begin{equation}%
+	\label{eq:${1:${VISUAL}}}
+	${2:${VISUAL}}
+\end{equation}
+$0
+endsnippet
+
+snippet ali "align" biA
+\begin{align}%
+	${1:${VISUAL}}
+\end{align}
+$0
+endsnippet
+
+context isMath()
+snippet * "cdot" A
+\cdot
+endsnippet
+
+snippet ... "ldots" A
+\ldots
+endsnippet
+
+snippet SI "SI" A
+\SI{$1}{$2} $0
+endsnippet
+
+context isMath()
+snippet frac "frac" A
+\frac{$1}{$2}$0
+endsnippet
+
+context isMath()
+snippet sfrac "sfrac" A
+\sfrac{$1}{$2}$0
+endsnippet
+
+context isMath()
+snippet () "parentheses" A
+\left($1\right)$0
+endsnippet
+
+snippet "" "enquote" A
+\enquote{$1}$0
+endsnippet
+
+snippet => "Rightarrow" A
+\Rightarrow
+endsnippet
+
+snippet -> "rightarrow" A
+\rightarrow
+endsnippet
+
+context isMath()
+snippet text "math text" i
+\text{$1}$0
+endsnippet
+
+context isMath()
+snippet sum "sum" A
+\sum\limits_{$1}^{$2}$0
+endsnippet
+
+context isMath()
+snippet int "int" iAe
+\int\limits_{$1}^{$2}$0
+endsnippet
+
+snippet $$ "$ $" iA
+$ $1 $$0
+endsnippet
+
+context isMath()
+snippet ^ "^{ }" iA
+^{$1}$0
+endsnippet
+
+context isMath()
+snippet _ "_{ }" iA
+_{$1}$0
+endsnippet
+
+snippet _ "\_" iA
+\_
+endsnippet
+
+context isAlign()
+snippet = "&=" iA
+&=
+endsnippet
+
+context isMath()
+snippet alpha "\alpha" eiA
+\alpha
+endsnippet

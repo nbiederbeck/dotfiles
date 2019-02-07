@@ -20,6 +20,8 @@
     ol = log --oneline
     last = log -1 HEAD
     c = commit
+    d = diff
+    cm = commit -m
     co = checkout
     br = branch
     s = status

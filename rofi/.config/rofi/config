@@ -1,7 +1,7 @@
 ! vim: ft=xdefaults commentstring=!%s
 rofi.modi:                           run,ssh,window
 ! rofi.width:                          42
-rofi.lines:                          5
+rofi.lines:                          9
 rofi.columns:                        1
 rofi.font:                           SourceCodePro 12
 
@@ -18,9 +18,9 @@ rofi.color-urgent: #232629, #c0392b, #232629, #c0392b, #232629
 ! rofi.yoffset:                        0
 ! rofi.xoffset:                        0
 ! rofi.fixed-num-lines:                true
-rofi.terminal:                       alacritty
+rofi.terminal:                       urxvt
 ! rofi.ssh-client:                     ssh
-rofi.ssh-command:                    alacritty -e {ssh-client} {host}
+rofi.ssh-command:                    urxvt -e {ssh-client} {host}
 ! rofi.run-command:                    {cmd}
 ! rofi.run-list-command:
 ! rofi.run-shell-command:              {terminal} -e {cmd}

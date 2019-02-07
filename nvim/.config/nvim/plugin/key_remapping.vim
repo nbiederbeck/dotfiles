@@ -1,11 +1,9 @@
-nnoremap <LEADER>m :call ReMake()<CR>
+nnoremap <LEADER>m :Make<CR>
 
 inoremap jk <ESC>
 inoremap jjk <ESC>:w<CR>
 
 nnoremap ;w :w<CR>
-nnoremap F :%s/
-nnoremap f /
 
 vnoremap n <ESC>
 
@@ -38,3 +36,15 @@ nnoremap <C-p> "+p
 
 " verbose undo
 nnoremap U <C-r>
+
+" Typos
+command! -bang E e<bang>
+command! -bang Q q<bang>
+command! -bang W w<bang>
+command! -bang QA qa<bang>
+command! -bang Qa qa<bang>
+command! -bang Wa wa<bang>
+command! -bang WA wa<bang>
+command! -bang Wq wq<bang>
+command! -bang WQ wq<bang>
+command! -bang Wqa wqa<bang>

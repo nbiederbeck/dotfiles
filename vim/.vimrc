@@ -27,13 +27,13 @@ set incsearch
 
 set backspace=indent,eol,start
 set list
-set listchars=tab:>-,trail:⌴ ",eol:¬
+set listchars=tab:>-,trail:_ ",eol:¬
 set wrap
 set linebreak
 if has('nvim')
     set breakindent
 endif
-let &showbreak="↪"
+let &showbreak="\\"
 
 set autoindent
 set tabstop=4
@@ -49,6 +49,8 @@ set mouse=  " no mouse use
 
 set conceallevel=0
 set cursorline
+
+set completeopt="menu,menuone,longest,preview"
 
 " empty records
 let @q=''
