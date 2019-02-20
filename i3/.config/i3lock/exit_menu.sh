@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 LOCKSCRIPT="slock"
-GITSCRIPT="~/.local/bin/checkgit"
+GITSCRIPT="~/.local/bin/git_tmux"
 
 ROFI_TEXT="?"
 ROFI_OPTIONS=(-width 10 -location 0 -hide-scrollbar -bw 1 -fullscreen -font "SourceCodePro 52" -padding 100)

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+let exit_code=0
+tmux kill-session -t "gitcheck"
+tmux -S /tmp/gitmux new-session -s "gitcheck" -n "base" -d
+
+for gr in $(find $HOME -maxdepth 5 -name '.git' 2> /dev/null); do
+	wd=$(dirname $gr)
+    if [[
+        $wd =~ '.cache' ||
+        $wd =~ '.vim' ||
+        $wd =~ '.cargo'
+    ]]; then
+        continue
+    fi
+	pushd $wd &> /dev/null
+	status=$(git status)
+	if [[ $status =~ "ntracked files" ]]; then
+		echo "Git repo   '$wd'   has untracked files"
+        tmux -S /tmp/gitmux new-window -t "gitcheck" -n "$(basename $(git rev-parse --show-toplevel))"
+        tmux -S /tmp/gitmux send -t "gitcheck" "git status" ENTER
+        let exit_code=1
+	elif [[ $status =~ "branch is ahead" ]]; then
+		echo "Git repo   '$wd'   has current branch not pushed"
+        tmux -S /tmp/gitmux new-window -t "gitcheck" -n "$(basename $(git rev-parse --show-toplevel))"
+        tmux -S /tmp/gitmux send -t "gitcheck" "git status" ENTER
+        let exit_code=1
+	elif [[ $status =~ "nothing to commit" ]]; then
+		true
+	else
+		echo "Git repo   '$wd'   needs attention"
+        tmux -S /tmp/gitmux new-window -t "gitcheck" -n "$(basename $(git rev-parse --show-toplevel))"
+        tmux -S /tmp/gitmux send -t "gitcheck" "git status" ENTER
+        let exit_code=1
+	fi
+	popd &> /dev/null
+done
+
+if [[ $exit_code == 1 ]]; then
+    tmux -S /tmp/gitmux kill-window -t "gitcheck:base"
+    urxvt +hold -e bash -i -c 'tmux -S /tmp/gitmux attach-session' -s &
+    exit 1
+else
+    tmux kill-session -t "gitcheck"
+    exit 0
+fi

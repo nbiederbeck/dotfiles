@@ -298,8 +298,8 @@ assign [class="Whatsie"] $ws9
 # -- gaps -- #
 # gaps inner|outer current|all set|plus|minus <px>
 # workspace <ws> gaps inner|outer <px>
-gaps inner $gapsize
-smart_gaps on
+# gaps inner $gapsize
+# smart_gaps on
 
 bindsym $mod+g mode "gaps"
 mode "gaps" {
@@ -332,3 +332,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id gnome-flashback
+exec_always xrandr --output DP-1 --mode 1920x1200 --primary --rotate left --output HDMI-2 --mode 1920x1200 --right-of DP-1
