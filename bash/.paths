@@ -12,3 +12,5 @@ export PATH=$HOME/.local/bin:$PATH
 export MANPATH=/home/nbiederbeck/texlive/2018/texmf-dist/doc/man:$PATH
 export INFOPATH=/home/nbiederbeck/texlive/2018/texmf-dist/doc/info:$PATH
 export PATH=/home/nbiederbeck/texlive/2018/bin/x86_64-linux:$PATH
+
+export PATH=/home/nbiederbeck/anaconda3/bin:$PATH

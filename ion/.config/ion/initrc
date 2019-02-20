@@ -9,3 +9,4 @@ end
 
 source ~/.aliases
 source ~/.paths
+source ~/.variables
