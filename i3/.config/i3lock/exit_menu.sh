@@ -17,7 +17,7 @@ menu=(
   [Reboot]="systemctl reboot"
   [Lock]="${LOCKSCRIPT}"
   [Sleep]="${GITSCRIPT} && ${LOCKSCRIPT} & systemctl suspend"
-  [Logout]="i3-msg exit"
+  [Logout]="${GITSCRIPT} && i3-msg exit"
 )
 menu_nrows=${#menu[@]}
 

@@ -248,4 +248,4 @@ source ~/.paths
 source ~/.variables
 
 alias 'rannor'='xrandr --output DP-1 --mode 1920x1200 --primary --output HDMI-2 --mode 1920x1200 --right-of DP-1'
-alias 'ranrot'='xrandr --output DP-1 --mode 1920x1200 --primary --rotate left --output HDMI-2 --mode 1920x1200 --right-of DP-1'
+alias 'ranrot'='xrandr --output DP-1 --mode 1920x1200 --primary --rotate normal --output HDMI-2 --mode 1920x1200 --left-of DP-1 --rotate left'

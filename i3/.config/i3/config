@@ -26,7 +26,6 @@ focus_follows_mouse false # true|false
 set $mod Mod4
 
 set $alt Mod1
-set $mod Mod1
 # set $win Mod4
 
 set $fontsize 7
@@ -332,4 +331,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id gnome-flashback
-exec_always xrandr --output DP-1 --mode 1920x1200 --primary --rotate left --output HDMI-2 --mode 1920x1200 --right-of DP-1
+exec_always xrandr --output DP-1 --mode 1920x1200 --primary --rotate normal --output HDMI-2 --mode 1920x1200 --left-of DP-1 --rotate left
