@@ -1,3 +1,6 @@
+" unfuck screen
+nnoremap <LEADER>r :redraw!<CR>
+
 nnoremap <LEADER>m :Make<CR>
 
 inoremap jk <ESC>
