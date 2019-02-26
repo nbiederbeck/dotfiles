@@ -41,7 +41,7 @@ floating_minimum_size 700x400
 floating_maximum_size -1x-1
 
 # start a terminal
-bindsym $mod+Return exec urxvt -e ion
+bindsym $mod+Return exec alacritty -e ion
 bindsym $mod+Shift+Return exec urxvt -shading 100 -transparent -e ion
 
 # start a webbrowser
