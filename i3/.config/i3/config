@@ -264,16 +264,16 @@ mode "borders" {
 }
 
 # -- odd workspaces on laptop screen -- #
-workspace $ws1 output DP-1
-workspace $ws3 output DP-1
-workspace $ws5 output DP-1
-workspace $ws7 output DP-1
-workspace $ws9 output DP-1
-workspace $ws2 output HDMI-2
-workspace $ws4 output HDMI-2
-workspace $ws6 output HDMI-2
-workspace $ws8 output HDMI-2
-workspace $ws10 output HDMI-2
+workspace $ws1 output DP1
+workspace $ws3 output DP1
+workspace $ws5 output DP1
+workspace $ws7 output DP1
+workspace $ws9 output DP1
+workspace $ws2 output HDMI2
+workspace $ws4 output HDMI2
+workspace $ws6 output HDMI2
+workspace $ws8 output HDMI2
+workspace $ws10 output HDMI2
 
 #  -- bind programs to workspaces --  #
 # 1) run `xprop`
@@ -331,4 +331,4 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id gnome-flashback
-exec_always xrandr --output DP-1 --mode 1920x1200 --primary --rotate normal --output HDMI-2 --mode 1920x1200 --left-of DP-1 --rotate left
+exec_always xrandr --output DP1 --mode 1920x1200 --primary --rotate normal --output HDMI2 --mode 1920x1200 --left-of DP1 --rotate left
