@@ -133,4 +133,5 @@ call plug#begin('~/.vim/plugged')
         let g:show_spaces_that_precede_tabs = 1
         let g:better_whitespace_verbosity = 0
         let g:strip_whitespace_confirm = 0
+    Plug 'goerz/jupytext.vim'
 call plug#end()
