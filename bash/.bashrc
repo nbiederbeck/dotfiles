@@ -208,7 +208,7 @@ function _conda_auto_activate() {
     case ${PWD##*/}  in
         praktikum) ENV="base" ;;
         thesis)    ENV="base" ;;
-        cta*)      ENV="cta"  ;;
+        cta*)      ENV="cta-dev"  ;;
         *)         ENV="none" ;;
     esac
     if ! [[ $ENV == "none" ]]; then

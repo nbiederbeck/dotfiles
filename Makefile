@@ -15,4 +15,5 @@ all:
 		tmux/ \
 		vim/ \
 		wal/ \
-		X/
+		X/ \
+		zsh/

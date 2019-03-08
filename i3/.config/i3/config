@@ -41,8 +41,8 @@ floating_minimum_size 700x400
 floating_maximum_size -1x-1
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e ion
-bindsym $mod+Shift+Return exec urxvt -shading 100 -transparent -e ion
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec urxvt -shading 100 -transparent
 
 # start a webbrowser
 bindsym $mod+shift+w mode "web"
@@ -64,10 +64,12 @@ mode "web" {
 bindsym $mod+Shift+q kill
 
 # start .desktop applications
-bindsym $mod+d exec --no-startup-id dmenu_run -nb "$black" -nf "$white" -sb "$black" -sf "$green"
+# bindsym $mod+d exec --no-startup-id dmenu_run -nb "$black" -nf "$white" -sb "$black" -sf "$green"
+bindsym $mod+d exec rofi -show run
 
 # start rofi
-bindsym $mod+space exec rofi -show run
+# bindsym $mod+space exec rofi -show run
+bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+Tab exec rofi -show window
 
 # change focus
