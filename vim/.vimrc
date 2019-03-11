@@ -62,3 +62,5 @@ if empty(glob("~/.config/nvim/undo/"))
     silent execute '!mkdir -p ~/.config/nvim/undo/'
 endif
 set undofile
+
+let g:python3_host_prog = '/home/nbiederbeck/anaconda3/bin/python'

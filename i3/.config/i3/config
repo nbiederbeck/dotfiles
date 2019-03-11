@@ -217,7 +217,7 @@ client.urgent           $red       $red        $black     $cyan
 bar {
     status_command i3blocks
     # output eDP1
-    tray_output HDMI-2
+    tray_output HDMI2
     tray_padding 0
     font                pango:SourceCodeVariable, Awesome $fontsize
     colors {
