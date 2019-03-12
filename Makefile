@@ -8,6 +8,7 @@ all:
 		ion/ \
 		local_bin/ \
 		nvim/ \
+		matplotlib/ \
 		polybar/ \
 		rofi/ \
 		ranger/ \
