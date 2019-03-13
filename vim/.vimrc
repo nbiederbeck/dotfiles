@@ -28,7 +28,7 @@ set incsearch
 
 set backspace=indent,eol,start
 set list
-set listchars=tab:>-,trail:_ ",eol:¬
+set listchars=tab:>-,trail:_, "eol:¬
 set wrap
 set linebreak
 if has('nvim')

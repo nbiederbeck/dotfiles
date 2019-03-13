@@ -112,9 +112,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'
     Plug 'arcticicestudio/nord-vim'
         let g:nord_comment_brightness=20
-        let g:nord_italic=1
+        let g:nord_italic=0
         let g:nord_italic_comments=1
-        let g:nord_cursor_line_number_background=0
+        let g:nord_cursor_line_number_background=1
         let g:nord_uniform_diff_background=1
     Plug 'morhetz/gruvbox'
         let g:gruvbox_contrast_light = 'hard'
@@ -133,4 +133,5 @@ call plug#begin('~/.vim/plugged')
         let g:show_spaces_that_precede_tabs = 1
         let g:better_whitespace_verbosity = 0
         let g:strip_whitespace_confirm = 0
+    " Plug 'goerz/jupytext.vim'
 call plug#end()
