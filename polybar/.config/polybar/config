@@ -30,13 +30,13 @@ offset-x = 0
 offset-y = 0
 underline-size = 2
 fixed-center = true
-monitor = eDP1
 background = ${colors.background}
 line-color = ${colors.background}
 foreground = ${colors.foreground}
 font-0 = "FiraCodeLight:size=8;1"
 font-1 = "FontAwesome:size=8;1"
 font-2 = "DejaVuSerifCondensed:size=6;1"
+font-3 = "NotoEmoji:scale=13"
 module-margin = 1
 
 [bar/combined]
