@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 import os.path
+from sys import exit
 
 path_ac = "/sys/class/power_supply/AC"
+if not os.path.exists(path_ac):
+    print()
+    exit()
 path_battery_0 = "/sys/class/power_supply/BAT0"
 path_battery_1 = "/sys/class/power_supply/BAT1"
 
