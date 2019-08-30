@@ -9,6 +9,7 @@ all: $(BUILD)
 		local_bin/ \
 		matplotlib/ \
 		nvim/ \
+		papis/ \
 		polybar/ \
 		rofi/ \
 		ranger/ \

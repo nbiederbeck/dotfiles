@@ -1,0 +1,11 @@
+[papers]
+dir = ~/Documents/papers
+
+[settings]
+default-library = papers
+file-browser = ranger
+editor = nvim
+add-interactive = True
+add-edit = True
+add-name = {doc[author]}{doc[year]}
+file-name = {doc[author]}-{doc[title]}
