@@ -1,16 +1,12 @@
 #!/bin/bash
 
-source ~/.cache/wal/colors.sh
-
 shell="bash"
-bar="lemonbar -F ${background} -B ${color1} -g 1366x20 -p"
-trm="urxvt -e ${shell}"
 let exit_code=0
 
 find_cmd=$(command -v fd || command -v find)
 find_cmd=$(echo ${find_cmd} | rev | cut -d/ -f1 | rev)
 
-pkill lemonbar
+echo "searching ..."
 
 if [[ ${find_cmd} == "find" ]]; then
     dirs=$( \
@@ -48,18 +44,27 @@ for gr in ${dirs}; do
     pushd $wd &> /dev/null
     status=$(git status)
     if [[ $status =~ "ntracked files" ]]; then
-        # echo "%{A:urxvt:}$wd   has untracked files" | ${bar} &
-        notify-send -u critical "$wd   has untracked files"
+        if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
+            echo "$wd   has untracked files"
+        else
+            notify-send -u critical "$wd   has untracked files"
+        fi
         let exit_code=1
     elif [[ $status =~ "branch is ahead" ]]; then
-        # echo "%{A:urxvt:}$wd   has current branch not pushed" | ${bar} &
-        notify-send -u critical "$wd   has current branch not pushed"
+        if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
+            echo "$wd   has current branch not pushed"
+        else
+            notify-send -u critical "$wd   has current branch not pushed"
+        fi
         let exit_code=1
     elif [[ $status =~ "nothing to commit" ]]; then
         true
     else
-        # (echo "%{A:urxvt:}$wd   needs attention%{A}" | ${bar}) | bash &
-        notify-send -u critical "$wd   needs attention"
+        if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
+            echo "$wd   needs attention"
+        else
+            notify-send -u critical "$wd   needs attention"
+        fi
         let exit_code=1
     fi
     popd &> /dev/null
