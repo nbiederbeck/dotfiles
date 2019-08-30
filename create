@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# i3
-cat i3/.config/i3/main.config i3/.config/i3/$HOSTNAME.config > i3/.config/i3/config
-
-# bash
-cat bash/.main.bashrc bash/.$HOSTNAME.bashrc > bash/.bashrc
-cat bash/.main.bash_profile bash/.$HOSTNAME.bash_profile > bash/.bash_profile

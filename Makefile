@@ -1,8 +1,3 @@
-BUILD = \
-	bash/.bashrc \
-	bash/.bash_profile \
-	i3/.config/i3/config
-
 all: $(BUILD)
 	stow -t ~ \
 		alacritty/ \
@@ -22,8 +17,3 @@ all: $(BUILD)
 		vim/ \
 		wal/ \
 		X/
-
-$(BUILD): FORCE
-	./create
-
-FORCE:
