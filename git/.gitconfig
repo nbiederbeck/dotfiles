@@ -3,7 +3,7 @@
 	editor = nvim
 [user]
 	name = Noah Biederbeck
-	email = noah.biederbeck@udo.edu
+	email = nbiederbeck@tutanota.com
 [pull]
 	rebase = true
 [merge]
