@@ -71,7 +71,7 @@ for gr in ${dirs}; do
 done
 
 if [[ $exit_code == 0 ]]; then
-    echo "everything is fine"
+    echo " everything is fine :)"
 fi
 
 exit $exit_code
