@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 
-if [[ $HOSTNAME == "NoahsThinkpadX240" ]]; then
-    LOCKSCRIPT="~/.local/bin/betterlockscreen -l blur -t $HOSTNAME"
-    GITSCRIPT="~/.local/bin/checkgit"
-elif [[ $HOSTNAME == "MacMini-E5b026" ]]; then
-    LOCKSCRIPT="slock"
-    GITSCRIPT="~/.local/bin/checkgit"
-fi
+LOCKSCRIPT="~/.local/bin/betterlockscreen -l blur -t '$USER@$HOSTNAME'"
+GITSCRIPT="~/.local/bin/checkgit"
 
 ROFI_TEXT="Exit"
 ROFI_OPTIONS=(-width 100 -location 1 -hide-scrollbar -bw 1 -font "SourceCodeVariable 10")
