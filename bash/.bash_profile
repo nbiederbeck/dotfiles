@@ -16,7 +16,3 @@ fi
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 PATH=$PATH:$HOME/.linuxbrew/bin
-
-# export PATH
-# export PATH="/net/nfshome/home/nbiederbeck/.linuxbrew/bin:$PATH"
-# export PATH="/net/nfshome/home/nbiederbeck/.linuxbrew/sbin:$PATH"
