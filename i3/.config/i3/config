@@ -118,8 +118,8 @@ bindsym $mod+Shift+space floating toggle
 
 set $ws1  "1:"
 set $ws2  "2:II"
-set $ws3  "3:III"
-set $ws4  "4:"
+set $ws3  "3:🌕"
+set $ws4  "4:🦊"
 set $ws5  "5:V"
 set $ws6  "6:VI"
 set $ws7  "7:VII"
