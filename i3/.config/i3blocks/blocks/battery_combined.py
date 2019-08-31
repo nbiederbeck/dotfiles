@@ -65,9 +65,12 @@ battery_time = battery_time_0 + battery_time_1
 ramp = {0: "▁", 1: "▂", 2: "▃", 3: "▄", 4: "▅", 5: "▆", 6: "▇", 7: "█"}
 ramp = {0: "", 1: "", 2: "", 3: "", 4: ""}
 
-for v, icon in ramp.items():
-    if battery_percent / 100 < v / len(ramp):
-        break
+if ac == 1:
+    icon = ""
+else:
+    for v, icon in ramp.items():
+        if battery_percent / 100 < v / len(ramp):
+            break
 
 
 print(f"{icon} {int(battery_percent)}% {int(battery_time)}m")
