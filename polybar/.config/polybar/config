@@ -67,8 +67,8 @@ modules-right = traffic battery
 
 [module/weather]
 type = custom/script
-exec = curl wttr.in/Dortmund?format=1 -s
-onclick = curl wttr.in/Dortmund?format=3 -s
+exec = curl -s wttr.in/Dortmund?format=3 wttr.in/LST-1?format=3 | tr '\n' ' '
+click-left = curl wttr.in/Dortmund?format=3 -s
 tail = true
 interval = 120
 
