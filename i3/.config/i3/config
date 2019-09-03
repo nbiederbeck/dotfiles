@@ -19,7 +19,7 @@ set_from_resource $boldcyan .color14
 set_from_resource $white .color7
 set_from_resource $boldwhite .color15
 
-workspace_layout default  # default|stacking|tabbed
+workspace_layout tabbed  # default|stacking|tabbed
 focus_follows_mouse false # true|false
 
 # -- variables -- #
@@ -199,7 +199,7 @@ bindsym $mod+shift+t exec franz, workspace $ws9
 bindsym $mod+Shift+p exec ~/.config/i3/bin/pdfs
 
 # hide borders when fullscreen
-hide_edge_borders none # none|vertical|horizontal|both|smart
+hide_edge_borders smart # none|vertical|horizontal|both|smart
 
 bindsym $mod+Tab workspace back_and_forth
 
@@ -261,7 +261,6 @@ for_window [class="firefox" instance="Dialog"] move workspace current, focus
 assign [class="Firefox"] $ws4
 for_window [class="Firefox" instance="Dialog"] move workspace current, focus
 assign [class="Midori"] $ws4
-assign [class="qutebrowser"] $ws4
 # Social Workspace 9
 assign [class="Telegram"] $ws_telegram
 assign [class="Slack"] $ws_slack
