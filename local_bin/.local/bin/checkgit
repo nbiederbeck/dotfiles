@@ -6,7 +6,7 @@ let exit_code=0
 find_cmd=$(command -v fd || command -v find)
 find_cmd=$(echo ${find_cmd} | rev | cut -d/ -f1 | rev)
 
-echo "searching ..."
+echo "${find_cmd}ing ..."
 
 if [[ ${find_cmd} == "find" ]]; then
     dirs=$( \
@@ -44,14 +44,14 @@ for gr in ${dirs}; do
     pushd $wd &> /dev/null
     status=$(git status)
     if [[ $status =~ "ntracked files" ]]; then
-        if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
+        if [[ -t 1 ]]; then
             echo "$wd   has untracked files"
         else
             notify-send -u critical "$wd   has untracked files"
         fi
         let exit_code=1
     elif [[ $status =~ "branch is ahead" ]]; then
-        if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
+        if [[ -t 1 ]]; then
             echo "$wd   has current branch not pushed"
         else
             notify-send -u critical "$wd   has current branch not pushed"
@@ -60,7 +60,7 @@ for gr in ${dirs}; do
     elif [[ $status =~ "nothing to commit" ]]; then
         true
     else
-        if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
+        if [[ -t 1 ]]; then
             echo "$wd   needs attention"
         else
             notify-send -u critical "$wd   needs attention"
