@@ -1,6 +1,5 @@
 #!/bin/bash
 
-shell="bash"
 let exit_code=0
 
 find_cmd=$(command -v fd || command -v find)
