@@ -275,7 +275,7 @@ c.colors.statusbar.command.fg = 'white'
 
 ## Foreground color of the statusbar.
 ## Type: QssColor
-# c.colors.statusbar.normal.fg = 'white'
+c.colors.statusbar.normal.fg = 'gray'
 
 ## Background color of the statusbar in passthrough mode.
 ## Type: QssColor
