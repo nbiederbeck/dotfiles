@@ -1,4 +1,4 @@
-all: $(BUILD)
+all:
 	stow -t ~ \
 		alacritty/ \
 		bash/ \
@@ -11,6 +11,7 @@ all: $(BUILD)
 		nvim/ \
 		papis/ \
 		polybar/ \
+		qutebrowser/ \
 		rofi/ \
 		ranger/ \
 		redshift/ \
