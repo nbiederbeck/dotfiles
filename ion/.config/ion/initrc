@@ -1,6 +1,2 @@
-export GOPATH="$HOME/.go"
-export PATH="$GOPATH/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
-source ~/.aliases
+source ~/.config/ion/alias.ion
 source ~/.paths
