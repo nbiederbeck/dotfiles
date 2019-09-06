@@ -42,7 +42,7 @@ floating_minimum_size 20x20
 floating_maximum_size 1300x700
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty -e ~/.cargo/bin/ion
 bindsym $mod+Shift+Return exec urxvt -shading 100 -transparent -e ion
 
 # passmenu
