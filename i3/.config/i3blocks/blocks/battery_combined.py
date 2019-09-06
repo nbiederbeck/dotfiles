@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 import os.path
 from sys import exit
 
@@ -50,17 +50,18 @@ battery_max = battery_max_0 + battery_max_1
 
 battery_percent = round(battery_level / battery_max * 100, 1)
 
-try:
-    battery_time_0 = round(60 * battery_level_0 / battery_power_0, 1)
-except ZeroDivisionError:
-    battery_time_0 = round(60 * battery_level_0 / battery_power_1, 1)
+if ac == 0:
+    try:
+        battery_time_0 = round(60 * battery_level_0 / battery_power_0, 1)
+    except ZeroDivisionError:
+        battery_time_0 = round(60 * battery_level_0 / battery_power_1, 1)
 
-try:
-    battery_time_1 = round(60 * battery_level_1 / battery_power_1, 1)
-except ZeroDivisionError:
-    battery_time_1 = round(60 * battery_level_1 / battery_power_0, 1)
+    try:
+        battery_time_1 = round(60 * battery_level_1 / battery_power_1, 1)
+    except ZeroDivisionError:
+        battery_time_1 = round(60 * battery_level_1 / battery_power_0, 1)
 
-battery_time = battery_time_0 + battery_time_1
+    battery_time = battery_time_0 + battery_time_1
 
 ramp = {0: "▁", 1: "▂", 2: "▃", 3: "▄", 4: "▅", 5: "▆", 6: "▇", 7: "█"}
 ramp = {0: "", 1: "", 2: "", 3: "", 4: ""}
@@ -73,4 +74,5 @@ else:
             break
 
 
-print(f"{icon} {int(battery_percent)}% {int(battery_time)}m")
+# print(f"{icon} {int(battery_percent)}% {int(battery_time)}m")
+print(f"{icon} {int(battery_percent)}%")
