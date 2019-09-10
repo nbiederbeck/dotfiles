@@ -1,5 +1,8 @@
 # vim: ft=sh
 
-# function reminder () {
-#     sleep $(echo $1 | bc); notify-send $2
-# }
+function agent () {
+    pkill -u $USER ssh-agent -e
+    ssh-agent > ~/.ssh-agent-thing
+    eval "$(<~/.ssh-agent-thing)"
+    ssh-add ~/.ssh/id_rsa.gitlab
+}
