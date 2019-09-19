@@ -52,7 +52,7 @@ tray-position = right
 inherit = bar
 line-size = 16
 label-active-font = 0
-modules-left = temperature cpu ram backlight performance
+modules-left = temperature cpu ram backlight performance fan
 modules-center = date weather
 modules-right = pulseaudio
 tray-position = right
@@ -77,6 +77,12 @@ type = custom/script
 exec = ~/.config/i3blocks/blocks/performance
 format = <label>
 interval = 10
+
+[module/fan]
+type = custom/script
+exec = cat /proc/acpi/ibm/fan  | awk '/speed/ {print $2}'
+format = fan: <label>
+interval = 1
 
 [module/uptime]
 type = custom/script
