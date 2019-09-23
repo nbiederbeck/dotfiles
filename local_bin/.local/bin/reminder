@@ -11,9 +11,10 @@ def main():
 
     unit_to_time = {"h": 60 * 60, "m": 60, "s": 1}
 
-    duration *= unit_to_time[unit]
+    duration_sec = duration * unit_to_time[unit]
 
-    sleep(duration)
+    print("Sleeping for {}{} == {} seconds".format(duration, unit, duration_sec))
+    sleep(duration_sec)
     Popen(["notify-send", message])
 
 
