@@ -40,6 +40,7 @@ font pango:SourceCodeVariable $fontsize
 floating_modifier $mod
 floating_minimum_size 20x20
 floating_maximum_size 1300x700
+bindsym $mod+space focus mode_toggle
 
 # start a terminal
 bindsym $mod+Return exec alacritty
