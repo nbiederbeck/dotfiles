@@ -80,7 +80,7 @@ interval = 10
 
 [module/fan]
 type = custom/script
-exec = cat /proc/acpi/ibm/fan  | awk '/speed/ {print $2}'
+exec = cat /proc/acpi/ibm/fan 2> /dev/null | awk '/speed/ {print $2}'
 format = fan: <label>
 interval = 1
 
