@@ -21,6 +21,7 @@ if [[ ${find_cmd} == "find" ]]; then
             -not -path '*/texlive/*' \
             -not -path '*/.texmf/*' \
             -not -path '*/.bash-it/*' \
+            -not -path '*/.zplug/*' \
     )
 elif [[ ${find_cmd} == "fd" ]]; then
     dirs=$( \
@@ -34,6 +35,7 @@ elif [[ ${find_cmd} == "fd" ]]; then
             --exclude .fzf \
             --exclude anaconda3 \
             --exclude texlive \
+            --exclude .zplug \
             ~ \
     )
 fi
