@@ -7,6 +7,7 @@ if ! [[ $(pgrep redshift) ]]; then
 fi
 xrdb $HOME/.Xresources &
 nm-applet &
+blueman-applet &
 
 
 # Start Window Manager
