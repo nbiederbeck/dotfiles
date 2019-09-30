@@ -153,5 +153,15 @@
 
 #DEFAULT_USER="noah"
 #source /home/noah/MAGIC/root-6.14.04/obj/bin/thisroot.sh
+#
+source ~/.aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zplug
+source ~/.zplug/init.zsh
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+if ! zplug check; then
+    zplug install
+fi
+zplug load
