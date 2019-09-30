@@ -1,5 +1,7 @@
 # vim: ft=sh
 
+alias 'ta'='tmux attach'
+
 alias 'nb'='ssh -N -f -L 2702:localhost:2702'
 
 # games
