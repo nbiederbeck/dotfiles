@@ -1,4 +1,4 @@
-setlocal spelllang=de
+setlocal spelllang=en
 setlocal spell
 setlocal spellfile=~/.config/nvim/spell/de.utf-8.add
 setlocal spellfile+=~/.config/nvim/spell/physics.add
