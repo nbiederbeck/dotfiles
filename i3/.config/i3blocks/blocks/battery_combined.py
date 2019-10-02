@@ -74,5 +74,5 @@ else:
             break
 
 
-# print(f"{icon} {int(battery_percent)}% {int(battery_time)}m")
-print(f"{icon} {int(battery_percent)}%")
+print(f"{icon} {int(battery_percent)}% {int(battery_time)}m")
+# print(f"{icon} {int(battery_percent)}%")
