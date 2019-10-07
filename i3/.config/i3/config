@@ -88,11 +88,17 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# change parent focus
-bindsym $mod+ctrl+h focus parent, focus left
-bindsym $mod+ctrl+j focus parent, focus down
-bindsym $mod+ctrl+k focus parent, focus up
-bindsym $mod+ctrl+l focus parent, focus right
+# switch fullscreen windows
+bindsym $mod+ctrl+h fullscreen toggle, focus left, fullscreen toggle
+bindsym $mod+ctrl+l fullscreen toggle, focus right, fullscreen toggle
+bindsym $mod+ctrl+j workspace next
+bindsym $mod+ctrl+k workspace prev
+
+# # change parent focus
+# bindsym $mod+ctrl+h focus parent, focus left
+# bindsym $mod+ctrl+j focus parent, focus down
+# bindsym $mod+ctrl+k focus parent, focus up
+# bindsym $mod+ctrl+l focus parent, focus right
 
 # split toggle
 bindsym $mod+v split toggle
