@@ -21,6 +21,7 @@ menu=(
   [Ocean Light]="${wal} -f ~/.colorschemes_wal/.ocean.light.json"
   [Solarized Light]="${wal} -f ~/.colorschemes_wal/.solarized_light.json"
   [Solarized Dark]="${wal} -f ~/.colorschemes_wal/.solarized_dark.json"
+  [Nova]="${wal} -f ~/.colorschemes_wal/nova.json"
 )
 menu_nrows=${#menu[@]}
 
