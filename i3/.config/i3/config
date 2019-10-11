@@ -208,7 +208,8 @@ bindsym $mod+Shift+p exec ~/.config/i3/bin/pdfs
 # hide borders when fullscreen
 hide_edge_borders smart # none|vertical|horizontal|both|smart
 
-bindsym $mod+Tab workspace back_and_forth
+# bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Tab exec rofi -show window
 
 # MultiMediaKeys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
