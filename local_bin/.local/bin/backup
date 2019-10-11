@@ -1,0 +1,17 @@
+#!/bin/bash
+REPO="/run/media/noah/SD/backup_arch_thinkpadx240"
+
+GIT_EXCLUDE="/tmp/exclude_from_backup"
+GLOBAL_EXCLUDE="${HOME}/.exclude_from_backup"
+
+# fill git exclude
+find ~ -name '.git' 2>/dev/null \
+    | xargs dirname {} \
+    | tail -n +2 \
+    > ${GIT_EXCLUDE}
+
+restic backup ${HOME} \
+    --verbose \
+    --repo ${REPO}\
+    --exclude-file ${GIT_EXCLUDE} \
+    --exclude-file ${GLOBAL_EXCLUDE} \
