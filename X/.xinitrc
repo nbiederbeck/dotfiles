@@ -13,3 +13,4 @@ blueman-applet &
 # Start Window Manager
 # gnome-session
 exec i3
+# exec alacritty --dimensions 151 42

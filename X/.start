@@ -6,7 +6,7 @@ if ! [[ $(pgrep redshift) ]]; then
     redshift &
 fi
 dunst &
-~/*conda3/bin/wal -f ~/.nord.json -q &
 i3-battery-popup -L 20 -n &
 feh --bg-tile ~/Pictures/background &
 autorandr --change &
+ncdu ~ -o ~/ncdu.file &
