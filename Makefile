@@ -15,6 +15,7 @@ all:
 		rofi/ \
 		ranger/ \
 		redshift/ \
+		restic/ \
 		tmux/ \
 		vim/ \
 		wal/ \

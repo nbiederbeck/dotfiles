@@ -1,0 +1,20 @@
+# ft=sh
+
+# large git objects
+**/.git/objects/
+
+# build files, rebuild them
+**/build/
+
+# caches
+.cache/
+.ccache/
+
+# large files
+*.iso
+
+# other
+.rustup/
+.thunderbird/
+.local/share/
+.cargo/
