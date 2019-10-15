@@ -63,7 +63,15 @@ bottom = true
 line-size = 16
 modules-left = i3
 modules-center =
-modules-right = traffic battery
+modules-right = wired-network wireless-network traffic battery
+
+[module/wired-network]
+type = internal/network
+interface = enp0s25
+
+[module/wireless-network]
+type = internal/network
+interface = wlp3s0
 
 [module/weather]
 type = custom/script
