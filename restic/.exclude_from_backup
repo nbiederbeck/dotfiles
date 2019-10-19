@@ -10,6 +10,7 @@
 # caches
 **/.cache
 **/.ccache
+**/*Cache*
 
 # large files
 *.iso
@@ -19,3 +20,6 @@
 .thunderbird
 .local/share
 .cargo
+.go
+.npm
+.mozilla

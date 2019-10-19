@@ -1,5 +1,9 @@
 #!/bin/bash
 REPO="/run/media/noah/SD/backup_arch_thinkpadx240"
+if [ ! -d ${REPO} ]; then
+    echo "Mount SD Card"
+    exit 1
+fi
 
 GIT_EXCLUDE="/tmp/exclude_from_backup"
 GLOBAL_EXCLUDE="${HOME}/.exclude_from_backup"
@@ -9,6 +13,9 @@ find ~ -name '.git' 2>/dev/null \
     | xargs dirname {} \
     | tail -n +2 \
     > ${GIT_EXCLUDE}
+
+# add currently installed packages
+pacman -Q | ${HOME}/packages.txt
 
 restic backup ${HOME} \
     --verbose \
