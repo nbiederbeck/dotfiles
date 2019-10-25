@@ -10,7 +10,6 @@ alias 'anno'='wine /home/noah/.wine/drive_c/Program\ Files\ \(x86\)/ANNO\ 1602\ 
 # cding
 alias 'aoc'='cd ~/Programming/AoC/2018'
 alias 'msc'='conda activate; cd ~/Uni/MSc/master-thesis/code'
-alias 'smd'='cd ~/Uni/SMD/smd_uebungen'
 alias 'prak'='cd ~/Uni/MSc/praktikum && conda activate'
 alias 'thesis'='cd ~/Uni/MSc/master-thesis; source .env/bin/activate.bash'
 
