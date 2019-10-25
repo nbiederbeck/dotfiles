@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ls *.ipynb || exit 1
+
+for notebook in *.ipynb; do
+    echo "Converting ${notebook}"
+    jupyter-nbconvert --to pdf ${notebook}
+done

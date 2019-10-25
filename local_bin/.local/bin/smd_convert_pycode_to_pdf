@@ -1,0 +1,11 @@
+#!/bin/bash
+for pyfile in $1; do
+    echo "Converting ${pyfile}"
+    mdfile="${pyfile}.md"
+
+    echo "\`\`\`python" > ${mdfile}
+    cat ${pyfile} >> ${mdfile}
+    echo "\`\`\`" >> ${mdfile}
+
+    pandoc -V "geometry: margin=2cm" -i ${mdfile} -o ${pyfile}.pdf
+done
