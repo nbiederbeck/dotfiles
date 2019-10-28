@@ -7,6 +7,6 @@ if ! [[ $(pgrep redshift) ]]; then
 fi
 dunst &
 i3-battery-popup -L 20 -n &
-feh --bg-tile ~/Pictures/background &
+feh --bg-fill ~/Pictures/background &
 autorandr --change &
 ncdu ~ -o ~/ncdu.file &
