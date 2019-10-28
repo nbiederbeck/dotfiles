@@ -136,6 +136,7 @@ set $ws10 "10:X"
 set $ws_slack "11:"
 set $ws_telegram "12:"
 set $ws_thunderbird "13:"
+set $ws_mattermost "14:"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -271,9 +272,10 @@ for_window [class="Firefox" instance="Dialog"] move workspace current, focus
 assign [class="Midori"] $ws4
 # Social Workspace 9
 assign [class="Telegram"] $ws_telegram
-assign [class="Slack"] $ws_slack
 assign [class="TelegramDesktop"] $ws_telegram
+assign [class="Slack"] $ws_slack
 assign [class="Thunderbird"] $ws_thunderbird
+assign [class="Mattermost"] $ws_mattermost
 assign [class="Franz"] $ws9
 assign [class="Whatsie"] $ws9
 
