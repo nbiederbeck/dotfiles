@@ -4,4 +4,5 @@ xmodmap ~/.Xmodmap &
 xrdb $HOME/.Xresources &
 
 # Start Window Manager
-exec i3
+# exec i3
+exec alacritty --dimensions 151 42
