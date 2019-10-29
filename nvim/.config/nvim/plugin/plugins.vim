@@ -16,6 +16,8 @@ else
 endif
     " Plugins Only For Fast Computers == Not For Raspberry PIs
     if matchstr(hostname(), 'berry') != 'berry'
+        Plug 'itchyny/calendar.vim'
+            let g:calendar_google_calendar = 1
         Plug 'maximbaz/lightline-ale'
             set laststatus=2
             set noshowmode
