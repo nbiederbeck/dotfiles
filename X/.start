@@ -6,6 +6,8 @@ if ! [[ $(pgrep redshift) ]]; then
     redshift &
 fi
 dunst &
+nm-applet &
+blueman-applet &
 i3-battery-popup -L 20 -n &
 feh --bg-fill ~/Pictures/background &
 autorandr --change &
