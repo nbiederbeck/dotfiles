@@ -1,0 +1,11 @@
+#!/bin/bash
+
+i3-msg -t get_workspaces \
+    | tr ',' '\n' \
+    | grep "name" \
+    | sed 's/"name":"\(.*\)"/\1/g' \
+    | python3 -c "from sys import stdin; print(stdin.read().lower(), end='')" \
+    | sort -n \
+    | rofi -dmenu -auto-select -p "Select Workspace:"\
+    | python3 -c "from sys import stdin; print(stdin.read().title())" \
+    | xargs i3-msg workspace

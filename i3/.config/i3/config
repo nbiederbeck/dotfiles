@@ -82,6 +82,9 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+bindsym $mod+u workspace prev
+bindsym $mod+i workspace next
+
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -123,20 +126,20 @@ for_window [class="feh"] floating enable
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-set $ws1  "1:"
+set $ws1  "1:Terminal"
 set $ws2  "2:II"
-set $ws3  "3:🌕"
-set $ws4  "4:🦊"
+set $ws3  "3:Vollmond"
+set $ws4  "4:Firefox"
 set $ws5  "5:V"
 set $ws6  "6:VI"
 set $ws7  "7:VII"
 set $ws8  "8:VIII"
 set $ws9  "9:IX"
 set $ws10 "10:X"
-set $ws_slack "11:"
-set $ws_telegram "12:"
-set $ws_thunderbird "13:"
-set $ws_mattermost "14:"
+set $ws_slack "11:Slack"
+set $ws_telegram "12:Telegram"
+set $ws_thunderbird "13:Thunderbird"
+set $ws_mattermost "14:Mattermost"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -210,7 +213,7 @@ bindsym $mod+Shift+p exec ~/.config/i3/bin/pdfs
 hide_edge_borders smart # none|vertical|horizontal|both|smart
 
 # bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+Tab exec ~/.config/i3/bin/switch_workspace
 
 # MultiMediaKeys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
