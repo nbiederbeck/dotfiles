@@ -63,7 +63,7 @@ bottom = true
 line-size = 16
 modules-left = i3
 modules-center =
-modules-right = wired-network wireless-network traffic battery
+modules-right = wired-network wireless-network traffic battery_internal battery_external
 
 [module/wired-network]
 type = internal/network
