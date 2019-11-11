@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-LOCKSCRIPT="~/.local/bin/betterlockscreen -l blur -t '$USER@$HOSTNAME'"
+LOCKSCRIPT="~/.local/bin/betterlockscreen -l dim"
 GITSCRIPT="~/.local/bin/checkgit"
 
 ROFI_TEXT="Exit"
@@ -16,7 +16,7 @@ menu=(
   [Shutdown]="${GITSCRIPT} && systemctl poweroff"
   [Reboot]="systemctl reboot"
   [Lock]="${LOCKSCRIPT}"
-  [Sleep]="${GITSCRIPT} && ${LOCKSCRIPT} & sleep 1 & systemctl suspend"
+  [Sleep]="${GITSCRIPT} && systemctl suspend"
   [Logout]="i3-msg exit"
 )
 menu_nrows=${#menu[@]}
