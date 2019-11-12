@@ -1,6 +1,6 @@
 ; vim: ft=dosini
 [colors]
-background = ${xrdb:background:#2E3440}
+background = "#000000"
 foreground = ${xrdb:foreground:#D8DEE9}
 black = ${xrdb:color0:#BF616A}
 red = ${xrdb:color1:#BF616A}
