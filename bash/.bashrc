@@ -391,3 +391,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 source ~/.git-completion.bash
+
+echo $(expr '(' $(date -d 2020/01/01 +%s) - $(date +%s) + 86399 ')' / 86400) "days until Python 2 end-of-life"
