@@ -17,9 +17,9 @@ endif
     " Plugins Only For Fast Computers == Not For Raspberry PIs
     if matchstr(hostname(), 'berry') != 'berry'
         Plug 'justinmk/vim-sneak'
-        Plug 'blueyed/vim-diminactive'
-            let g:diminactive_use_colorcolumn = 0
-            let g:diminactive_use_syntax = 1
+        " Plug 'blueyed/vim-diminactive'
+        "     let g:diminactive_use_colorcolumn = 0
+        "     let g:diminactive_use_syntax = 1
         Plug 'itchyny/calendar.vim'
             let g:calendar_google_calendar = 1
         Plug 'maximbaz/lightline-ale'
