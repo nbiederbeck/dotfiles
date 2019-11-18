@@ -1,5 +1,5 @@
 [papers]
-dir = ~/Documents/papers
+dir = /run/user/1000/gvfs/google-drive:host=gmail.com,user=noah.biederbeck/11HiSb9xKcKtns8cuydxhUtHNhtYehZkS/1hV9NWKigYSTNJ1bAmPN-8xZaNOl64K3T/11WBV_cH9pGEqqfWzCye0S227fJxZaA26
 
 [settings]
 default-library = papers
@@ -8,4 +8,4 @@ editor = nvim
 add-interactive = True
 add-edit = True
 add-name = {doc[author]}{doc[year]}
-file-name = {doc[author]}-{doc[title]}
+file-name = {doc[title]}
