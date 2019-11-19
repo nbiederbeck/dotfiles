@@ -9,6 +9,6 @@ dunst &
 nm-applet &
 blueman-applet &
 i3-battery-popup -L 20 -n &
-feh --bg-fill ~/Pictures/background &
+feh --bg-fill ~/Pictures/background_right ~/Pictures/background_left &
 autorandr --change &
 ncdu ~ -o ~/ncdu.file &
