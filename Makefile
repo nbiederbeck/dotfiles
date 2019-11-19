@@ -3,6 +3,7 @@ all:
 		alacritty/ \
 		bash/ \
 		colorschemes/ \
+		dunst/ \
 		git/ \
 		i3/ \
 		ion/ \
