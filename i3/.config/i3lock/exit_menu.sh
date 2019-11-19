@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-LOCKSCRIPT="~/.local/bin/betterlockscreen -l dim"
-GITSCRIPT="~/.local/bin/checkgit"
+LOCK="i3lock --blur=0.1"
+SLEEP="i3lock --color=555555 && echo mem > /sys/power/state"
+GIT="~/.local/bin/checkgit"
 
 ROFI_TEXT="Exit"
 ROFI_OPTIONS=(-width 100 -location 1 -hide-scrollbar -bw 1 -font "SourceCodeVariable 10")
@@ -13,10 +14,10 @@ typeset -A menu
 
 # Menu with keys/commands
 menu=(
-  [Shutdown]="${GITSCRIPT} && systemctl poweroff"
+  [Shutdown]="${GIT} && systemctl poweroff"
   [Reboot]="systemctl reboot"
-  [Lock]="${LOCKSCRIPT}"
-  [Sleep]="${GITSCRIPT} && systemctl suspend"
+  [Lock]="${LOCK}"
+  [Sleep]="${GIT} && ${SLEEP}"
   [Logout]="i3-msg exit"
 )
 menu_nrows=${#menu[@]}
