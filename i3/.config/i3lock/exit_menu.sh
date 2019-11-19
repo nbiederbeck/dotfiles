@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 LOCK="i3lock --blur=0.1"
-SLEEP="i3lock --color=555555 && echo mem > /sys/power/state"
+SLEEP="i3lock --color=555555 && systemctl suspend"
 GIT="~/.local/bin/checkgit"
 
 ROFI_TEXT="Exit"
