@@ -1,3 +1,4 @@
 # ft=sh
 export FZF_TMUX=1
 export FZF_TMUX_HEIGHT=10
+export EDITOR=nvim
