@@ -14,3 +14,5 @@ highlight SpellBad   cterm=bold      ctermbg=none ctermfg=red
 highlight SpellCap   cterm=bold      ctermbg=yellow ctermfg=none
 highlight Visual     cterm=bold
 highlight Conceal    cterm=NONE      ctermbg=NONE ctermfg=NONE guifg=NONE guibg=NONE gui=NONE
+
+highlight pythonSelf ctermfg=4
