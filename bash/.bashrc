@@ -343,7 +343,7 @@ print_git_info() {
 export PS1="$(clr_green '\w') $(print_git_info)\n$ "
 
 if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
-    conda activate python
+    conda activate /scratch/nbiederbeck/conda/envs/cta-dev
     export PS1="$(clr_red '[vollmond']) $PS1"
     export BIGTANK="/net/big-tank/POOL/users/nbiederbeck/"
     alias bigtank='cd $BIGTANK'
