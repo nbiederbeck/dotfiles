@@ -261,8 +261,6 @@ alias 'ranrot'='xrandr --output HDMI2 --mode 1920x1200 --primary --rotate left -
 
 # [[ -z $TMUX ]] || conda deactivate; conda activate
 
-export TERM=xterm-256color
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 source ~/.aliases
