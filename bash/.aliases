@@ -39,13 +39,13 @@ alias 'now'='cal -m;date'
 # alias 'mv'='mv -v'
 # alias 'cp'='cp -v'
 # alias 'mkdir'='mkdir -p'
-alias 'ls'='ls --color="always"'
+# alias 'ls'='ls --color="always"'
 alias 'll'='ls -al'
 alias 'la'='ls -a'
 # if [[ $(command -v exa) ]]; then
 #     alias 'ls'='exa'
 # fi
-alias ls=$(command -v exa || command -v ls)
+# alias ls=$(command -v exa || command -v ls)
 # alias 'make'='time make'
 # alias 'python'='time python'
 
