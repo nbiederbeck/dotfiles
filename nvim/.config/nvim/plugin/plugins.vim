@@ -17,6 +17,10 @@ endif
     " Plugins Only For Fast Computers == Not For Raspberry PIs
     if matchstr(hostname(), 'berry') != 'berry'
         Plug 'python-mode/python-mode'
+            let g:pymode_lint = 0
+            let g:pymode_rope = 0
+            let g:pymode_folding = 0
+            let g:pymode_options_max_line_length = 88
         Plug 'justinmk/vim-sneak'
         " Plug 'blueyed/vim-diminactive'
         "     let g:diminactive_use_colorcolumn = 0

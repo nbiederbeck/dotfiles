@@ -15,4 +15,6 @@ highlight SpellCap   cterm=bold      ctermbg=yellow ctermfg=none
 highlight Visual     cterm=bold
 highlight Conceal    cterm=NONE      ctermbg=NONE ctermfg=NONE guifg=NONE guibg=NONE gui=NONE
 
+" python
 highlight pythonSelf ctermfg=4
+highlight Exception ctermfg=3
