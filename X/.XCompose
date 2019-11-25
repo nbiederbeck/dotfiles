@@ -7,6 +7,8 @@
 <Multi_key> <o> <o> : "ö"
 <Multi_key> <u> <u> : "ü"
 <Multi_key> <s> <s> : "ß"
+<Multi_key> <e> <e> : "€"
+<Multi_key> <e> <u> <r> <o> : "€"
 
 <Multi_key> <d> <e> <l> <t> <a> : "∆" U2206
 <Multi_key> <u> <n> <i> <m> <a> <i> <l> : "noah.biederbeck@tu-dortmund.de"
