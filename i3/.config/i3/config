@@ -23,8 +23,6 @@ workspace_layout tabbed  # default|stacking|tabbed
 focus_follows_mouse true # true|false
 
 # -- variables -- #
-set $mod Mod4
-
 set $alt Mod1
 set $mod Mod1
 # set $win Mod4
