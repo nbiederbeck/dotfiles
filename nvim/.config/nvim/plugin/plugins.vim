@@ -16,7 +16,7 @@ else
 endif
     " Plugins Only For Fast Computers == Not For Raspberry PIs
     if matchstr(hostname(), 'berry') != 'berry'
-        Plug 'python-mode/python-mode'
+        Plug 'python-mode/python-mode', {'for': 'python'}
             let g:pymode_lint = 0
             let g:pymode_rope = 0
             let g:pymode_folding = 0
