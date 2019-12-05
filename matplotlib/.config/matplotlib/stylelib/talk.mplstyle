@@ -190,10 +190,10 @@
 # The font.size property is the default font size for text, given in pts.
 # 10 pt is the standard value.
 #
-font.family         : sans-serif
+# font.family         : monospace
 #font.style          : normal
 #font.variant        : normal
-# font.weight         : light
+font.weight         : light
 #font.stretch        : normal
 # note that font.size controls default text sizes.  To configure
 # special text sizes tick labels, axes, labels, title, etc, see the rc
@@ -201,12 +201,13 @@ font.family         : sans-serif
 # relative to font.size, using the following values: xx-small, x-small,
 # small, medium, large, x-large, xx-large, larger, or smaller
 font.size           : 15.0
-font.sans-serif : Akkurat Light Office
+font.sans-serif : "Fira Sans"
+font.serif : "Fira Sans"
 #font.serif          : DejaVu Serif, Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 #font.sans-serif     : DejaVu Sans, Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
 #font.cursive        : Apple Chancery, Textile, Zapf Chancery, Sand, Script MT, Felipa, cursive
 #font.fantasy        : Comic Sans MS, Chicago, Charcoal, Impact, Western, Humor Sans, xkcd, fantasy
-#font.monospace      : DejaVu Sans Mono, Bitstream Vera Sans Mono, Andale Mono, Nimbus Mono L, Courier New, Courier, Fixed, Terminal, monospace
+font.monospace      : "Fira Code" #DejaVu Sans Mono, Bitstream Vera Sans Mono, Andale Mono, Nimbus Mono L, Courier New, Courier, Fixed, Terminal, monospace
 
 ### TEXT
 # text properties used by text.Text.  See
@@ -289,11 +290,12 @@ mathtext.fontset : custom # Should be 'dejavusans' (default),
 #axes.edgecolor      : black   # axes edge color
 #axes.linewidth      : 0.8     # edge linewidth
 #axes.grid           : False   # display grid or not
-#axes.titlesize      : large   # fontsize of the axes title
+axes.titlesize      : large   # fontsize of the axes title
+axes.titleweight : light
 #axes.titlepad       : 6.0     # pad between axes and title in points
-#axes.labelsize      : medium  # fontsize of the x any y labels
+axes.labelsize      : medium  # fontsize of the x any y labels
 #axes.labelpad       : 4.0     # space between label and axis
-#axes.labelweight    : normal  # weight of the x and y labels
+axes.labelweight    : light  # weight of the x and y labels
 #axes.labelcolor     : black
 #axes.axisbelow      : 'line'  # draw axis gridlines and ticks below
                                # patches (True); above patches but below
@@ -425,7 +427,7 @@ ytick.labelsize      : 12 # fontsize of the tick labels
 ### FIGURE
 # See http://matplotlib.org/api/figure_api.html#matplotlib.figure.Figure
 #figure.titlesize : large      # size of the figure title (Figure.suptitle())
-#figure.titleweight : normal   # weight of the figure title
+figure.titleweight : light   # weight of the figure title
 figure.figsize   : 7.05, 4.41   # figure size in inches
 figure.dpi       : 200      # figure dots per inch
 #figure.facecolor : white   # figure facecolor; 0.75 is scalar gray
