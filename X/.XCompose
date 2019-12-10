@@ -1,4 +1,11 @@
 # vim: ft=config
+<Multi_key> <C> <equal> 		: "€"	U21D2		# RIGHTWARDS DOUBLE ARROW
+<Multi_key> <quotedbl> <A> : "Ä"
+<Multi_key> <quotedbl> <O> : "Ö"
+<Multi_key> <quotedbl> <U> : "Ü"
+<Multi_key> <quotedbl> <a> : "ä"
+<Multi_key> <quotedbl> <o> : "ö"
+<Multi_key> <quotedbl> <u> : "ü"
 <Multi_key> <A> <A> : "Ä"
 <Multi_key> <O> <O> : "Ö"
 <Multi_key> <U> <U> : "Ü"
