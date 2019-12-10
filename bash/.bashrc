@@ -390,4 +390,4 @@ unset __conda_setup
 
 source ~/.git-completion.bash
 
-echo $(expr '(' $(date -d 2019/12/06 +%s) - $(date +%s) + 86399 ')' / 86400) "Tage bis Halbzeitvortrag"
+echo $(expr '(' $(date -d 2019/12/24 +%s) - $(date +%s) + 86399 ')' / 86400) "Tage bis Heiligabend"
