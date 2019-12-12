@@ -1,8 +1,11 @@
 #!/bin/bash
 
+n_papers=$(pubs statistics | awk '/Total papers/ {print $4}')
+
 # list publications
 # show rofi selection
 # open using pubs
-pubs list -k \
-    | rofi -dmenu -i -auto-select -lines 1 -p "Paper:"\
+pubs list \
+    | rofi -dmenu -i -columns 1 -lines ${n_papers} -p "Paper:" -location 0 -width 80%\
+    | sed -e 's/\[//' -e s'/\].*//' \
     | xargs pubs doc open

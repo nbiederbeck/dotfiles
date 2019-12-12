@@ -1,9 +1,9 @@
 ! vim: ft=xdefaults commentstring=!%s
 rofi.modi:                           run,ssh,window
-rofi.width:                          100
-rofi.lines:                          2
-rofi.columns:                        9
-rofi.font:                           SourceCodeVariable 10
+rofi.width:                          20
+rofi.lines:                          5
+rofi.columns:                        1
+rofi.font:                           Fira Code 8
 
 rofi.theme: theme.rasi
 
@@ -16,7 +16,7 @@ rofi.color-active: #232629, #218058, #232629, #218058, #232629
 rofi.color-urgent: #232629, #c0392b, #232629, #c0392b, #232629
 
 rofi.bw:                             1
-rofi.location:                       1
+rofi.location:                       0
 ! rofi.padding:                        5
 ! rofi.yoffset:                        0
 ! rofi.xoffset:                        0
