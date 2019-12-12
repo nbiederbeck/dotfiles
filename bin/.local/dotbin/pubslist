@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# list publications
+# show rofi selection
+# open using pubs
+pubs list -k \
+    | rofi -dmenu -i -auto-select -lines 1 -p "Paper:"\
+    | xargs pubs doc open
