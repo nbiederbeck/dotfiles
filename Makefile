@@ -2,12 +2,12 @@ all:
 	stow -t ~ \
 		alacritty/ \
 		bash/ \
+		bin/ \
 		colorschemes/ \
 		dunst/ \
 		git/ \
 		i3/ \
 		ion/ \
-		local_bin/ \
 		matplotlib/ \
 		nvim/ \
 		papis/ \
