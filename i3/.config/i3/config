@@ -45,7 +45,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec urxvt -shading 100 -transparent -e ion
 
 # passmenu
-bindsym $mod+p exec ~/.local/bin/passmenu
+bindsym $mod+p exec ~/.local/dotbin/passmenu
 
 # start a webbrowser
 bindsym $mod+shift+w exec ~/.config/i3/bin/web
