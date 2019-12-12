@@ -90,8 +90,8 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # switch fullscreen windows
-bindsym $mod+ctrl+h fullscreen toggle, focus left, fullscreen toggle
-bindsym $mod+ctrl+l fullscreen toggle, focus right, fullscreen toggle
+bindsym $mod+ctrl+h workspace prev
+bindsym $mod+ctrl+l workspace next
 bindsym $mod+ctrl+j workspace next
 bindsym $mod+ctrl+k workspace prev
 
