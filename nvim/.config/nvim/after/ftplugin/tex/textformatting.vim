@@ -6,4 +6,4 @@ setlocal expandtab
 setlocal formatoptions=nt1
 
 setlocal conceallevel=2
-let g:tex_conceal="amgb"
+let g:tex_conceal="amgbd"
