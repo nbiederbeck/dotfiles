@@ -39,13 +39,6 @@ snippet eqn "equation no number" bA
 $0
 endsnippet
 
-snippet aln "align no number" bA
-\begin{align*}%
-	${1:${VISUAL}}
-\end{align*}
-$0
-endsnippet
-
 snippet equ "equation" bA
 \begin{equation}%
 	\label{eq:${1:${VISUAL}}}
@@ -56,10 +49,16 @@ endsnippet
 
 snippet ali "align" biA
 \begin{align}%
-	${1:${VISUAL}}
-\end{align}
-$0
+  ${1}
+\end{align}${0}
 endsnippet
+
+snippet aln "align no number" bA
+\begin{align*}%
+  ${1}
+\end{align*}${0}
+endsnippet
+
 
 context isMath()
 snippet * "cdot" A
@@ -123,7 +122,7 @@ snippet int "int" iAe
 endsnippet
 
 snippet $$ "$ $" iA
-\( $1 \)$0
+\($1\)$0
 endsnippet
 
 context isMath()
@@ -132,25 +131,31 @@ snippet ^ "^{ }" iA
 endsnippet
 
 context isMath()
-snippet _ "_{ }" iA
+snippet __ "_{ }" iA
 _{$1}$0
 endsnippet
+
+context isMath()
+snippet _t "_{ }" iA
+_{\text{$1}}$0
+endsnippet
+
 
 # snippet _ "\_" iA
 # \_
 # endsnippet
 
-context isAlign()
-snippet = "&=" iA
-&=
-endsnippet
+# context isAlign()
+# snippet = "&=" iA
+# &=
+# endsnippet
 
 context isMath()
 snippet alpha "\alpha" eiA
 \alpha
 endsnippet
 
-snippet incl "graphic" iA
-\centering
-\includegraphics[${1:width=${2:0.9${VISUAL}}\textwidth}]{$3}$0
-endsnippet
+# snippet incl "graphic" iA
+# \centering
+# \includegraphics[${1:width=${2:0.9${VISUAL}}\textwidth}]{$3}$0
+# endsnippet
