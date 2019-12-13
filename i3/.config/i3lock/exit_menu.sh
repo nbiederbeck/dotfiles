@@ -2,7 +2,7 @@
 
 LOCK="i3lock --blur=0.1"
 SLEEP="i3lock --color=555555 && systemctl suspend"
-GIT="~/.local/bin/checkgit"
+GIT="~/.local/dotbin/checkgit"
 
 ROFI_TEXT="Exit"
 ROFI_OPTIONS=(-width 100 -location 1 -hide-scrollbar -bw 1 -font "SourceCodeVariable 10")
