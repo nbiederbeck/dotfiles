@@ -57,8 +57,8 @@ set completeopt="menu,menuone,longest,preview"
 let @q=''
 
 " undofiles
-let &undodir = expand("~/.config/nvim/undo/")
-if empty(glob("~/.config/nvim/undo/"))
-    silent execute '!mkdir -p ~/.config/nvim/undo/'
+let &undodir = expand("~/.cache/nvim/undo/")
+if empty(glob("~/.cache/nvim/undo/"))
+    silent execute '!mkdir -p ~/.cache/nvim/undo/'
 endif
 set undofile
