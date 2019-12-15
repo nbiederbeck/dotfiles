@@ -4,6 +4,6 @@ xmodmap ~/.Xmodmap &
 xrdb $HOME/.Xresources &
 
 # Start Window Manager
-# exec mate-session
+# exec gnome-session
 exec i3
 # exec alacritty --dimensions 151 42
