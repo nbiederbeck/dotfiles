@@ -8,6 +8,8 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 
 call plug#begin('/scratch/nbiederbeck/vim/plugged')
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'juliaeditorsupport/julia-vim'
 " Plug 'python-mode/python-mode', {'for': 'python'}
@@ -49,6 +51,7 @@ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     " if matchstr(hostname(), 'phobos') == 'phobos'
     "     let g:python3_host_prog = "/scratch/nbiederbeck/conda/envs/py37/bin/python"
     " endif
+    let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 " Plug 'neomake/neomake'
 Plug 'w0rp/ale'
@@ -140,3 +143,5 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'pest-parser/pest.vim'
 call plug#end()
+
+call deoplete#custom#option('sources', {'_': ['ale']})
