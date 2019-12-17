@@ -47,7 +47,7 @@ snippet equ "equation" bA
 $0
 endsnippet
 
-snippet ali "align" biA
+snippet ali "align" bA
 \begin{align}%
   ${1}
 \end{align}${0}
@@ -159,3 +159,18 @@ endsnippet
 # \centering
 # \includegraphics[${1:width=${2:0.9${VISUAL}}\textwidth}]{$3}$0
 # endsnippet
+
+snippet "^fig" "figure environment (includegraphics)" rbA
+\\begin{figure}[ht]
+	\\centering
+	% \\includegraphics{${1}}
+	\\caption{%${2}
+	}%
+	\\label{fig:${3}}
+\\end{figure}
+${0}
+endsnippet
+
+snippet "delta t" "delta t" w
+\(\Delta t\)
+endsnippet

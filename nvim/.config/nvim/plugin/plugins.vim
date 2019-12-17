@@ -39,7 +39,8 @@ Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger = "<tab>"
     let g:UltiSnipsJumpForwardTrigger = "<tab>"
     let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-    let g:UltiSnipsSnippetDirectories = ["UltiSnips", "mysnippets"]
+    let g:UltiSnipsSnippetDirectories = ["mysnippets"]
+    let g:UltiSnipsEditSplit = "vertical"
 Plug 'honza/vim-snippets'
 Plug 'rbonvall/snipmate-snippets-bib', {'for': 'bib'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
@@ -82,7 +83,7 @@ Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_view_method='zathura'
     let g:vimtex_viewer_general='zathura'
     let g:vimtex_compiler_latexmk = {'build_dir': 'build'}
-    let g:vimtex_fold_enabled = 0
+    let g:vimtex_fold_enabled = 1
     let g:vimtex_view_automatic = 0
     let g:tex_flavor = 'latex'
     let g:vimtex_quickfix_mode = 0
