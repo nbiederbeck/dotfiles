@@ -6,3 +6,5 @@ export FZF_ALT_C_COMMAND='fd --type d'
 export FZF_ALT_C_OPTS='--preview "ls --color=always {}"'
 export EDITOR=nvim
 export TERM=screen-256color
+
+export HISTIGNORE="fg:ls"
