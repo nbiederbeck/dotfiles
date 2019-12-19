@@ -8,8 +8,12 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 
 call plug#begin('/scratch/nbiederbeck/vim/plugged')
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
+Plug 'vim-airline/vim-airline'
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#ale#enabled = 1
+Plug 'altercation/vim-colors-solarized'
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'juliaeditorsupport/julia-vim'
 " Plug 'python-mode/python-mode', {'for': 'python'}
@@ -23,7 +27,7 @@ Plug 'justinmk/vim-sneak'
     "     let g:diminactive_use_syntax = 1
 Plug 'itchyny/calendar.vim'
     let g:calendar_google_calendar = 1
-Plug 'maximbaz/lightline-ale'
+" Plug 'maximbaz/lightline-ale'
     set laststatus=2
     set noshowmode
 Plug 'xolox/vim-reload'
@@ -55,28 +59,27 @@ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 " Plug 'neomake/neomake'
-Plug 'w0rp/ale'
-    let g:ale_sign_error = '>>'
-    let g:ale_sign_warning = '--'
-    let g:ale_sign_column_always = 1
-    let g:airline#extensions#ale#enabled = 1
-    let g:ale_lint_on_text_changed = 'normal' " 'normal'/'never'
-    let g:ale_lint_on_enter = 1
-    let g:ale_lint_on_save = 1
-    let g:ale_fix_on_save = 1
-    let g:ale_warn_about_trailing_blank_lines = 0
-    let g:ale_warn_about_trailing_whitespace = 0
-    nmap ]a <ESC>:ALENextWrap<CR>
-    nmap [a <ESC>:ALEPreviousWrap<CR>
-    xmap ]a <ESC>:ALENextWrap<CR>
-    xmap [a <ESC>:ALEPreviousWrap<CR>
-    let g:ale_linters_explicit = 1
-    let g:ale_set_loclist = 1
-    let g:ale_set_quickfix = 0
-    let g:ale_echo_msg_info_str = "I"
-    let g:ale_echo_msg_warning_str = "W"
-    let g:ale_echo_msg_error_str = "E"
-    let g:ale_echo_msg_format = '[%linter%, %severity%] %s'
+Plug 'dense-analysis/ale'
+    " let g:ale_sign_error = '>>'
+    " let g:ale_sign_warning = '--'
+    " let g:ale_sign_column_always = 1
+    " let g:ale_lint_on_text_changed = 'normal' " 'normal'/'never'
+    " let g:ale_lint_on_enter = 1
+    " let g:ale_lint_on_save = 1
+    " let g:ale_fix_on_save = 1
+    " let g:ale_warn_about_trailing_blank_lines = 0
+    " let g:ale_warn_about_trailing_whitespace = 0
+    " nmap ]a <ESC>:ALENextWrap<CR>
+    " nmap [a <ESC>:ALEPreviousWrap<CR>
+    " xmap ]a <ESC>:ALENextWrap<CR>
+    " xmap [a <ESC>:ALEPreviousWrap<CR>
+    " let g:ale_linters_explicit = 1
+    " let g:ale_set_loclist = 1
+    " let g:ale_set_quickfix = 0
+    " let g:ale_echo_msg_info_str = "I"
+    " let g:ale_echo_msg_warning_str = "W"
+    " let g:ale_echo_msg_error_str = "E"
+    " let g:ale_echo_msg_format = '[%linter%, %severity%] %s'
 Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_compiler_progname = 'nvr'
     let g:vimtex_view_mode='zathura'
@@ -118,7 +121,7 @@ Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
 " Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'for': 'typescript'}
 Plug 'rhysd/vim-grammarous'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
     let g:nord_italic=1
     let g:nord_italic_comments=1
