@@ -28,7 +28,7 @@ set $mod Mod1
 # set $win Mod4
 
 set $fontsize 7
-set $bordersize 2
+set $bordersize 1
 set $gapsize 0
 
 font pango:SourceCodeVariable $fontsize
@@ -231,9 +231,9 @@ bindsym XF86LaunchA exec xbacklight -set $(cat ~/.cache/xbacklight/xbacklight) &
 #  -- color windows --  #
 #                       #border    #background #text      #indicator
 client.focused          $yellow    $yellow     $black     $white
-client.unfocused        $black     $black      $boldwhite $green
-client.focused_inactive $black     $black      $boldwhite $green
-client.urgent           $red       $red        $black     $green
+client.unfocused        $black     $black      $white     $white
+client.focused_inactive $black     $black      $white     $white
+client.urgent           $red       $red        $black     $white
 
 
 # -- default borders -- #
