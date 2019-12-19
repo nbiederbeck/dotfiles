@@ -230,7 +230,7 @@ bindsym XF86LaunchA exec xbacklight -set $(cat ~/.cache/xbacklight/xbacklight) &
 
 #  -- color windows --  #
 #                       #border    #background #text      #indicator
-client.focused          $cyan      $cyan      $black     $green
+client.focused          $yellow    $yellow     $black     $white
 client.unfocused        $black     $black      $boldwhite $green
 client.focused_inactive $black     $black      $boldwhite $green
 client.urgent           $red       $red        $black     $green
