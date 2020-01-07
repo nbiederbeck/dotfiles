@@ -1,6 +1,6 @@
 ; vim: ft=dosini
 [colors]
-background = "#000000"
+background = ${xrdb:background:#000000}
 foreground = ${xrdb:foreground:#D8DEE9}
 black = ${xrdb:color0:#BF616A}
 red = ${xrdb:color1:#BF616A}
@@ -25,12 +25,12 @@ alert = ${colors.red}
 
 [bar]
 width = 100%
-height = 20
+height = 15
 offset-x = 0
 offset-y = 0
-underline-size = 2
+underline-size = 0
 fixed-center = true
-background = ${colors.background}
+background = ${colors.black}
 line-color = ${colors.background}
 foreground = ${colors.foreground}
 font-0 = "FiraCodeLight:size=8;1"
@@ -68,7 +68,7 @@ modules-right = battery_internal battery_external
 [bar/bottom_only]
 inherit = bar
 bottom = true
-line-size = 16
+line-size = 6
 label-active-font = 0
 modules-left = cpu ram i3
 modules-center = date backlight
