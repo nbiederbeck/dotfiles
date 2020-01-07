@@ -52,8 +52,8 @@ tray-position = right
 inherit = bar
 line-size = 16
 label-active-font = 0
-modules-left = temperature cpu ram backlight performance fan
-modules-center = date weather
+modules-left = temperature cpu ram backlight
+modules-center = date
 modules-right = pulseaudio
 tray-position = right
 
@@ -63,7 +63,17 @@ bottom = true
 line-size = 16
 modules-left = i3
 modules-center =
-modules-right = wired-network wireless-network traffic battery_internal battery_external
+modules-right = battery_internal battery_external
+
+[bar/bottom_only]
+inherit = bar
+bottom = true
+line-size = 16
+label-active-font = 0
+modules-left = cpu ram i3
+modules-center = date backlight
+modules-right = battery_internal battery_external
+tray-position = right
 
 [module/wired-network]
 type = internal/network
@@ -112,7 +122,7 @@ label-mounted = %mountpoint% %free%
 
 [module/backlight]
 type = internal/xbacklight
-interval = 1
+interval = 0
 format = <ramp>
 ramp-0 = ▁
 ramp-1 = ▂
@@ -216,8 +226,8 @@ interval = 10
 type = internal/date
 ; date = %%{F#99}%d.%m.%Y %H:%M%%{F-}
 ; date-alt = %%{F#fff}%A, %d %B %Y %H:%M:%S%%{F-}
-date = %d.%m.%Y %H:%M
-date-alt = %A, %d %B %Y %H:%M:%S
+date = %H:%M
+date-alt = %d %B %Y %H:%M:%S
 
 [module/swap]
 type = internal/memory
@@ -257,7 +267,7 @@ ramp-used-7-foreground = ${colors.alert}
 
 [module/temperature]
 type = internal/temperature
-interval = 0.5
+interval = 1
 warn-temperature = 60
 format = <label>
 label-warn-foreground = ${colors.alert}
