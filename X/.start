@@ -5,10 +5,12 @@ unclutter --timeout=5 --jitter=1 -b &
 if ! [[ $(pgrep redshift) ]]; then
     redshift &
 fi
-dunst &
-nm-applet &
-blueman-applet &
+if ! [[ $(pgrep dunst) ]]; then
+    dunst &
+fi
+nm-applet
+# blueman-applet &
 i3-battery-popup -L 20 -n &
 feh --bg-fill ~/Pictures/background_right ~/Pictures/background_left &
 autorandr --change &
-ncdu ~ -o ~/ncdu.file &
+ncdu ~ -o ~/ncdu.file -0 &
