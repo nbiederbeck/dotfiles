@@ -23,7 +23,7 @@ nnoremap <S-TAB> gT
 " navigating file buffers
 nnoremap gF <C-w>gf
 nnoremap <CR> gf
-nnoremap <BACKSPACE> :e#<CR>
+" nnoremap <BACKSPACE> :e#<CR>
 
 " record shortcuts
 nnoremap <SPACE> @q
