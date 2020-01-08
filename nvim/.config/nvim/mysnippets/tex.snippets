@@ -174,3 +174,20 @@ endsnippet
 snippet "delta t" "delta t" w
 \(\Delta t\)
 endsnippet
+
+snippet "^tab" "table environment" rbA
+\\begin{table}[ht]
+	\\centering
+	\\caption{%${1}
+	}%
+	\label{tab:${2}}
+	\\begin{tabular}{${3}}
+		\\toprule
+			${4}
+		\\midrule
+			${5}
+		\\bottomrule
+	\\end{tabular}
+\\end{table}
+${0}
+endsnippet
