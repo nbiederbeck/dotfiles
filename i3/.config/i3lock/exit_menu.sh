@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-LOCK="i3lock --blur=0.1"
-SLEEP="i3lock --color=555555 && systemctl suspend"
+LOCK="i3lock --blur=0.2"
+SLEEP="i3lock -i ${HOME}/Pictures/background && systemctl suspend"
 GIT="~/.local/dotbin/checkgit"
 
 ROFI_TEXT="Exit"
