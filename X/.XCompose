@@ -18,8 +18,7 @@
 <Multi_key> <e> <u> <r> <o> : "€"
 
 <Multi_key> <d> <e> <l> <t> <a> : "∆" U2206
-<Multi_key> <u> <n> <i> <m> <a> <i> <l> : "noah.biederbeck@tu-dortmund.de"
-<Multi_key> <m> <a> <i> <l> : "n.biederbeck@gmx.de"
+<Multi_key> <Multi_key> <m> <a> <i> <l> : "noah.biederbeck@tu-dortmund.de"
 # # for Emacs: -*- coding: utf-8 -*-
 # include "%L"
 
