@@ -14,3 +14,4 @@ i3-battery-popup -L 20 -n &
 feh --bg-fill ~/Pictures/background_right ~/Pictures/background_left &
 autorandr --change &
 ncdu ~ -o ~/ncdu.file -0 &
+~/.config/i3lock/lock_when_idle.sh &
