@@ -43,7 +43,7 @@ Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger = "<tab>"
     let g:UltiSnipsJumpForwardTrigger = "<tab>"
     let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-    let g:UltiSnipsSnippetDirectories = ["mysnippets"]
+    let g:UltiSnipsSnippetDirectories = ["mysnippets", "UltiSnips"]
     let g:UltiSnipsEditSplit = "vertical"
 Plug 'honza/vim-snippets'
 Plug 'rbonvall/snipmate-snippets-bib', {'for': 'bib'}
@@ -60,26 +60,26 @@ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 " Plug 'neomake/neomake'
 Plug 'dense-analysis/ale'
-    " let g:ale_sign_error = '>>'
-    " let g:ale_sign_warning = '--'
-    " let g:ale_sign_column_always = 1
-    " let g:ale_lint_on_text_changed = 'normal' " 'normal'/'never'
-    " let g:ale_lint_on_enter = 1
-    " let g:ale_lint_on_save = 1
-    " let g:ale_fix_on_save = 1
+    let g:ale_sign_error = '>>'
+    let g:ale_sign_warning = '--'
+    let g:ale_sign_column_always = 1
+    let g:ale_lint_on_text_changed = 'normal' " 'normal'/'never'
+    let g:ale_lint_on_enter = 1
+    let g:ale_lint_on_save = 1
+    let g:ale_fix_on_save = 1
     " let g:ale_warn_about_trailing_blank_lines = 0
     " let g:ale_warn_about_trailing_whitespace = 0
-    " nmap ]a <ESC>:ALENextWrap<CR>
-    " nmap [a <ESC>:ALEPreviousWrap<CR>
-    " xmap ]a <ESC>:ALENextWrap<CR>
-    " xmap [a <ESC>:ALEPreviousWrap<CR>
+    nmap ]a <ESC>:ALENextWrap<CR>
+    nmap [a <ESC>:ALEPreviousWrap<CR>
+    xmap ]a <ESC>:ALENextWrap<CR>
+    xmap [a <ESC>:ALEPreviousWrap<CR>
     " let g:ale_linters_explicit = 1
     " let g:ale_set_loclist = 1
     " let g:ale_set_quickfix = 0
-    " let g:ale_echo_msg_info_str = "I"
-    " let g:ale_echo_msg_warning_str = "W"
-    " let g:ale_echo_msg_error_str = "E"
-    " let g:ale_echo_msg_format = '[%linter%, %severity%] %s'
+    let g:ale_echo_msg_info_str = "I"
+    let g:ale_echo_msg_warning_str = "W"
+    let g:ale_echo_msg_error_str = "E"
+    let g:ale_echo_msg_format = '[%linter%, %severity%] %s'
 Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_compiler_progname = 'nvr'
     let g:vimtex_view_mode='zathura'
