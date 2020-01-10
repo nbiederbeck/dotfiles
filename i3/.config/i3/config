@@ -49,30 +49,12 @@ bindsym $mod+p exec ~/.local/dotbin/passmenu
 
 # start a webbrowser
 bindsym $mod+shift+w exec ~/.config/i3/bin/web
-# bindsym $mod+shift+w mode "web"
-# mode "web" {
-#     bindsym f exec firefox, mode default
-#     bindsym shift+f exec firefox, workspace $ws4, mode default
-#     bindsym q exec qutebrowser, mode default
-#     bindsym shift+q exec qutebrowser, workspace $ws4, mode default
-#     bindsym m exec midori, mode default
-#     bindsym shift+m exec midori, workspace $ws4, mode default
-#     bindsym t exec thunderbird, mode default
-#     bindsym shift+t exec thunderbird, workspace $ws9, mode default
-#     # back to normal: Enter or Escape
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-# }
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start .desktop applications
-# bindsym $mod+d exec --no-startup-id dmenu_run -nb "$black" -nf "$white" -sb "$black" -sf "$green"
-
 # start rofi
-bindsym $mod+d exec rofi -show drun -auto-select
-bindsym $mod+d exec kupfer #exec rofi -show drun -auto-select
+bindsym $mod+d exec kupfer
 bindsym $mod+Shift+d exec ~/.local/dotbin/dunst/choose
 
 # change focus
@@ -95,12 +77,6 @@ bindsym $mod+ctrl+h workspace prev
 bindsym $mod+ctrl+l workspace next
 bindsym $mod+ctrl+j workspace next
 bindsym $mod+ctrl+k workspace prev
-
-# # change parent focus
-# bindsym $mod+ctrl+h focus parent, focus left
-# bindsym $mod+ctrl+j focus parent, focus down
-# bindsym $mod+ctrl+k focus parent, focus up
-# bindsym $mod+ctrl+l focus parent, focus right
 
 # split toggle
 bindsym $mod+v split toggle
@@ -135,10 +111,8 @@ set $ws7  "7:VII"
 set $ws8  "8:VIII"
 set $ws9  "9:IX"
 set $ws10 "10:X"
-set $ws_slack "11:Slack"
-set $ws_telegram "12:Telegram"
-set $ws_thunderbird "13:Thunderbird"
-set $ws_mattermost "14:Mattermost"
+set $ws_messenger "11:Messenger"
+set $ws_mail "12:Mail"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -200,13 +174,6 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+shift+t exec franz, workspace $ws9
 
-# mode "pdf" {
-#         bindsym z exec zathura, mode default
-#         bindsym e exec evince, mode default
-#         bindsym Return mode "default"
-#         bindsym Escape mode "default"
-# }
-# bindsym $mod+p mode "pdf"
 bindsym $mod+Shift+p exec ~/.config/i3/bin/pdfs
 
 # hide borders when fullscreen
@@ -274,21 +241,14 @@ assign [class="Firefox"] $ws4
 for_window [class="Firefox" instance="Dialog"] move workspace current, focus
 assign [class="Midori"] $ws4
 # Social Workspace 9
-assign [class="Telegram"] $ws_telegram
-assign [class="TelegramDesktop"] $ws_telegram
-assign [class="Slack"] $ws_slack
-assign [class="Thunderbird"] $ws_thunderbird
-assign [class="Mattermost"] $ws_mattermost
-assign [class="Franz"] $ws9
-assign [class="Whatsie"] $ws9
+assign [class="Telegram"] $ws_messenger
+assign [class="TelegramDesktop"] $ws_messenger
+assign [class="Slack"] $ws_messenger
+assign [class="Mattermost"] $ws_messenger
+assign [class="Thunderbird"] $ws_mail
+assign [class="Mailspring"] $ws_mail
 
 bindsym $mod+Shift+s exec ~/.config/i3/bin/colors
-# mode "screen" {
-#     bindsym d exec ~/*conda3/bin/wal -f ~/.nord.json -o ~/.config/i3/change_vim_colors.sh, mode "default"
-#     bindsym l exec ~/*conda3/bin/wal -f base16-gruvbox-hard -l -o ~/.config/i3/change_vim_colors.sh, mode "default"
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-# }
 
 
 # -- odd workspaces on laptop screen -- #
@@ -297,9 +257,8 @@ workspace $ws3 output eDP1 DP1 DP2
 workspace $ws5 output eDP1 DP1 DP2
 workspace $ws7 output eDP1 DP1 DP2
 workspace $ws9 output eDP1 DP1 DP2
-workspace $ws_slack output eDP1 DP1 DP2
-workspace $ws_telegram output eDP1 DP1 DP2
-workspace $ws_thunderbird output eDP1 DP1 DP2
+workspace $ws_messenger output eDP1 DP1 DP2
+workspace $ws_mail output eDP1 DP1 DP2
 
 workspace $ws2 output DP2-3 HDMI1 HDMI2
 workspace $ws4 output DP2-3 HDMI1 HDMI2
