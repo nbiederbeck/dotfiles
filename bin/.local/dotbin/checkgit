@@ -23,10 +23,11 @@ if [[ ${find_cmd} == "find" ]]; then
             -not -path '*/.bash-it/*' \
             -not -path '*/.zplug/*' \
             -not -path '*/vollmond/*' \
+            -not -path '*/.go/*' \
     )
 elif [[ ${find_cmd} == "fd" ]]; then
     dirs=$( \
-        fd '.git$' \
+        fd '\.git$' \
             --maxdepth 5 \
             --type d \
             --hidden \
@@ -38,6 +39,7 @@ elif [[ ${find_cmd} == "fd" ]]; then
             --exclude texlive \
             --exclude .zplug \
             --exclude vollmond \
+            --exclude .go \
             ~ \
     )
 fi
