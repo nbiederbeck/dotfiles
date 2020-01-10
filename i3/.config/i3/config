@@ -72,6 +72,7 @@ bindsym $mod+Shift+q kill
 
 # start rofi
 bindsym $mod+d exec rofi -show drun -auto-select
+bindsym $mod+d exec kupfer #exec rofi -show drun -auto-select
 bindsym $mod+Shift+d exec ~/.local/dotbin/dunst/choose
 
 # change focus
