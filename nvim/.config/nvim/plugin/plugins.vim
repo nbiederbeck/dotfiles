@@ -14,7 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 " Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/vim-lsp'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'juliaeditorsupport/julia-vim'
 " Plug 'python-mode/python-mode', {'for': 'python'}
     " let g:pymode_lint = 0
