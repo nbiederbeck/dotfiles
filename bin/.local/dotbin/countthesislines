@@ -9,5 +9,6 @@ for githash in $(git log --pretty=format:"%h"); do
     printf $(git show --no-patch --no-notes --pretty='%ad' --date=short);
     printf ",";
     tokei ${dir} -t TeX --output json | jq '[.inner.Tex.code][0]';
+    # texcount -nosub -sum -merge -q -1 main.tex;
     git switch - -qq;
 done
