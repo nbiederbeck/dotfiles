@@ -102,6 +102,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/vim-easy-align'
     nmap ga <Plug>(EasyAlign)
     xmap ga <Plug>(EasyAlign)
+Plug 'junegunn/limelight.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kshenoy/vim-signature'
