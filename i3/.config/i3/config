@@ -54,7 +54,7 @@ bindsym $mod+shift+w exec ~/.config/i3/bin/web
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d exec kupfer
+bindsym $mod+d exec i3-dmenu-desktop #kupfer
 bindsym $mod+Shift+d exec ~/.local/dotbin/dunst/choose
 
 # change focus
