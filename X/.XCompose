@@ -356,6 +356,34 @@
 <Multi_key> <underscore> <minus>       : "₋"   U208B	  # SUBSCRIPT MINUS
 <Multi_key> <underscore> <plus>	       : "₊"   U208A	  # SUBSCRIPT PLUS
 
+# mathcal symbols
+<Multi_key> <Multi_key> <a> : "𝒜"
+<Multi_key> <Multi_key> <b> : "ℬ"
+<Multi_key> <Multi_key> <c> : "𝒞"
+<Multi_key> <Multi_key> <d> : "𝒟"
+<Multi_key> <Multi_key> <e> : "ℰ"
+<Multi_key> <Multi_key> <f> : "ℱ"
+<Multi_key> <Multi_key> <g> : "𝒢"
+<Multi_key> <Multi_key> <h> : "ℋ"
+<Multi_key> <Multi_key> <i> : "ℐ"
+<Multi_key> <Multi_key> <j> : "𝒥"
+<Multi_key> <Multi_key> <k> : "𝒦"
+<Multi_key> <Multi_key> <l> : "ℒ"
+<Multi_key> <Multi_key> <m> : "ℳ"
+<Multi_key> <Multi_key> <n> : "𝒩"
+<Multi_key> <Multi_key> <o> : "𝒪"
+<Multi_key> <Multi_key> <p> : "𝒫"
+<Multi_key> <Multi_key> <q> : "𝒬"
+<Multi_key> <Multi_key> <r> : "ℛ"
+<Multi_key> <Multi_key> <s> : "𝒮"
+<Multi_key> <Multi_key> <t> : "𝒯"
+<Multi_key> <Multi_key> <u> : "𝒰"
+<Multi_key> <Multi_key> <v> : "𝒱"
+<Multi_key> <Multi_key> <w> : "𝒲"
+<Multi_key> <Multi_key> <x> : "𝒳"
+<Multi_key> <Multi_key> <y> : "𝒴"
+<Multi_key> <Multi_key> <z> : "𝒵"
+
 
 # Custom additions: Greek letters.  Mapping corresponds to Emacs Greek
 # input method.  Aristotle Pagaltzis informs me that this is the
