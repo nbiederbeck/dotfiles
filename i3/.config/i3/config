@@ -31,7 +31,7 @@ set $fontsize 7
 set $bordersize 1
 set $gapsize 0
 
-font pango:SourceCodeVariable $fontsize
+font pango:FiraCode $fontsize
 # font pango:DejaVu Sans Mono 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -171,8 +171,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-bindsym $mod+shift+t exec franz, workspace $ws9
 
 bindsym $mod+Shift+p exec ~/.config/i3/bin/pdfs
 
