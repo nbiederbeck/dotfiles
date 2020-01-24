@@ -14,7 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 " Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/vim-lsp'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'juliaeditorsupport/julia-vim'
 " Plug 'python-mode/python-mode', {'for': 'python'}
     " let g:pymode_lint = 0
@@ -60,8 +60,8 @@ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 " Plug 'neomake/neomake'
 Plug 'dense-analysis/ale'
-    let g:ale_sign_error = '>>'
-    let g:ale_sign_warning = '--'
+    let g:ale_sign_error = 'E'
+    let g:ale_sign_warning = 'W'
     let g:ale_sign_column_always = 1
     let g:ale_lint_on_text_changed = 'normal' " 'normal'/'never'
     let g:ale_lint_on_enter = 1
@@ -79,7 +79,7 @@ Plug 'dense-analysis/ale'
     let g:ale_echo_msg_info_str = "I"
     let g:ale_echo_msg_warning_str = "W"
     let g:ale_echo_msg_error_str = "E"
-    let g:ale_echo_msg_format = '[%linter%, %severity%] %s'
+    let g:ale_echo_msg_format = '[%linter%] %s'
 Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_compiler_progname = 'nvr'
     let g:vimtex_view_mode='zathura'
