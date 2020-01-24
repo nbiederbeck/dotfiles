@@ -8,3 +8,6 @@ export EDITOR=nvim
 export TERM=screen-256color
 
 export HISTIGNORE="fg:ls"
+
+export FONTCONFIG_FILE=$CONDA_PREFIX/etc/fonts/fonts.conf
+export FONTCONFIG_PATH=$CONDA_PREFIX/etc/fonts/
