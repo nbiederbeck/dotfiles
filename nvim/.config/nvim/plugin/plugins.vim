@@ -50,9 +50,9 @@ Plug 'rbonvall/snipmate-snippets-bib', {'for': 'bib'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     let g:python_host_prog = "/usr/bin/python2"
     let g:python3_host_prog = "/opt/anaconda/bin/python"
-    " if matchstr(hostname(), 'vollmond') == 'vollmond'
-    "     let g:python3_host_prog = "/scratch/nbiederbeck/conda/envs/py37/bin/python"
-    " endif
+    if matchstr(hostname(), 'vollmond') == 'vollmond'
+        let g:python3_host_prog = "/scratch/nbiederbeck/conda/envs/py37/bin/python"
+    endif
     " if matchstr(hostname(), 'phobos') == 'phobos'
     "     let g:python3_host_prog = "/scratch/nbiederbeck/conda/envs/py37/bin/python"
     " endif
