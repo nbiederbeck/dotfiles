@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-LOCK="i3lock --blur=0.2"
+LOCK="~/.config/i3lock/lock.sh"
 SLEEP="i3lock -i ${HOME}/Pictures/background && systemctl suspend"
 GIT="~/.local/dotbin/checkgit"
 

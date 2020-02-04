@@ -158,7 +158,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # lock i3
 bindsym $mod+e exec ~/.config/i3lock/exit_menu.sh
-bindsym $mod+x exec i3lock --blur 0.1
+bindsym $mod+x exec ~/.config/i3lock/lock.sh
 
 # resize windows
 mode "resize" {
