@@ -56,7 +56,7 @@ alias 'jlab'='jupyter lab --port 2002 --no-browser'
 # alias 'conda2'='source ~/miniconda2/etc/profile.d/conda.sh'
 # alias 'conda3'='source ~/miniconda3/etc/profile.d/conda.sh'
 alias 'jn'='jupyter-notebook --port=2702 --no-browser'
-alias 'jl'='jupyter-lab --port=2702 --no-browser'
+alias 'jl'='jupyter-lab --port=2702 --no-browser --ip=0.0.0.0'
 
 # # Work with servers (particularly Vollmond)
 alias 'vollmondtunnel'='ssh -N -f -L 2702:localhost:2702 vollmond'
