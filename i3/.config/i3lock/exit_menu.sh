@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 LOCK="~/.config/i3lock/lock.sh"
-SLEEP="i3lock -i ${HOME}/Pictures/background && systemctl suspend"
+SLEEP="i3lock -i ${HOME}/Pictures/background $(cat ~/.config/i3lock/options)&& systemctl suspend"
 GIT="~/.local/dotbin/checkgit"
 
 # menu defined as an associative array
