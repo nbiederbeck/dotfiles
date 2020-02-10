@@ -10,7 +10,14 @@
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
 ## Type: Dict
-c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save', 'x': 'quit --save'}
+c.aliases = {
+    "w": "session-save",
+    "q": "close",
+    "qa": "quit",
+    "wq": "quit --save",
+    "wqa": "quit --save",
+    "x": "quit --save",
+}
 
 ## Time interval (in milliseconds) between auto-saves of
 ## config/cookies/etc.
@@ -155,15 +162,15 @@ c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save
 ## for transparency.
 ## Type: QssColor
 # c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))'
-c.colors.hints.bg = 'yellow'
+c.colors.hints.bg = "yellow"
 
 ## Font color for hints.
 ## Type: QssColor
-c.colors.hints.fg = 'black'
+c.colors.hints.fg = "black"
 
 ## Font color for the matched part of hints.
 ## Type: QtColor
-c.colors.hints.match.fg = 'yellow'
+c.colors.hints.match.fg = "yellow"
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -247,11 +254,11 @@ c.colors.hints.match.fg = 'yellow'
 
 ## Background color of the statusbar in command mode.
 ## Type: QssColor
-c.colors.statusbar.command.bg = 'black'
+c.colors.statusbar.command.bg = "black"
 
 ## Foreground color of the statusbar in command mode.
 ## Type: QssColor
-c.colors.statusbar.command.fg = 'white'
+c.colors.statusbar.command.fg = "white"
 
 ## Background color of the statusbar in private browsing + command mode.
 ## Type: QssColor
@@ -275,15 +282,15 @@ c.colors.statusbar.command.fg = 'white'
 
 ## Foreground color of the statusbar.
 ## Type: QssColor
-c.colors.statusbar.normal.fg = 'gray'
+c.colors.statusbar.normal.fg = "gray"
 
 ## Background color of the statusbar in passthrough mode.
 ## Type: QssColor
-c.colors.statusbar.passthrough.bg = 'black'
+c.colors.statusbar.passthrough.bg = "black"
 
 ## Foreground color of the statusbar in passthrough mode.
 ## Type: QssColor
-c.colors.statusbar.passthrough.fg = 'gray'
+c.colors.statusbar.passthrough.fg = "gray"
 
 ## Background color of the statusbar in private browsing mode.
 ## Type: QssColor
@@ -303,7 +310,7 @@ c.colors.statusbar.passthrough.fg = 'gray'
 
 ## Default foreground color of the URL in the statusbar.
 ## Type: QssColor
-c.colors.statusbar.url.fg = 'gray'
+c.colors.statusbar.url.fg = "gray"
 
 ## Foreground color of the URL in the statusbar for hovered links.
 ## Type: QssColor
@@ -312,12 +319,12 @@ c.colors.statusbar.url.fg = 'gray'
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
 ## Type: QssColor
-c.colors.statusbar.url.success.http.fg = 'orange'
+c.colors.statusbar.url.success.http.fg = "orange"
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (https).
 ## Type: QssColor
-c.colors.statusbar.url.success.https.fg = 'gray'
+c.colors.statusbar.url.success.https.fg = "gray"
 
 ## Foreground color of the URL in the statusbar when there's a warning.
 ## Type: QssColor
@@ -975,7 +982,7 @@ c.colors.statusbar.url.success.https.fg = 'gray'
 
 ## CSS border value for hints.
 ## Type: String
-c.hints.border = '1px solid black'
+c.hints.border = "1px solid black"
 
 ## Characters used for hint strings.
 ## Type: UniqueCharString
@@ -1456,7 +1463,7 @@ c.statusbar.hide = False
 ##   - never: Always hide the tab bar.
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'multiple'
+c.tabs.show = "multiple"
 
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
@@ -1519,7 +1526,7 @@ c.tabs.show = 'multiple'
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-c.url.default_page = 'https://start.duckduckgo.com/lite'
+c.url.default_page = "https://start.duckduckgo.com/lite"
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -1546,7 +1553,7 @@ c.url.default_page = 'https://start.duckduckgo.com/lite'
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/lite/?q={}'}
+c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/lite/?q={}"}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
