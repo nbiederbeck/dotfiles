@@ -1,4 +1,4 @@
-backend:                         pgf
+backend:                         pdf
 pgf.texsystem:                   lualatex
 pgf.preamble:                    \input{header-matplotlib-thesis.tex}
 text.usetex:                     True
@@ -15,7 +15,7 @@ legend.fontsize:                 medium
 figure.figsize:                  4.91, 3.03
 figure.dpi:                      200
 figure.constrained_layout.use:   True
-figure.constrained_layout.h_pad: 0.01
-figure.constrained_layout.w_pad: 0.01
+figure.constrained_layout.h_pad: .00
+figure.constrained_layout.w_pad: .00
 savefig.bbox:                    tight
-savefig.pad_inches:              0.0
+savefig.pad_inches:              .02
