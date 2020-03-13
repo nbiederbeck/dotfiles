@@ -391,3 +391,5 @@ unset __conda_setup
 source ~/.git-completion.bash
 
 # echo $(expr '(' $(date -d 2020/12/24 +%s) - $(date +%s) + 86399 ')' / 86400) "Tage bis Heiligabend"
+
+eval "$(zoxide init bash)"
