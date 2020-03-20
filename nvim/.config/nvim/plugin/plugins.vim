@@ -90,8 +90,8 @@ Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_compiler_latexmk = {'build_dir': 'build'}
     let g:vimtex_fold_enabled = 1
     let g:vimtex_view_automatic = 0
-    let g:tex_flavor = 'latex'
-    let g:vimtex_quickfix_mode = 0
+    let g:tex_flavor = 'lualatex'
+    let g:vimtex_quickfix_mode = 1
     let g:vimtex_complete_close_braces = 1
     let g:vimtex_complete_recursive_bib = 1
     autocmd BufReadPre *.tex let b:vimtex_main = 'main.tex'
