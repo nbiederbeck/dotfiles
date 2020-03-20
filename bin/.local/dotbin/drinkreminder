@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ ${1} == "" ]]; then echo "how long (minutes)?"; exit 1; fi
+
+while true; do
+    notify-send "DRINK" -u critical
+    echo "${1} * 60" | bc | xargs sleep
+done
