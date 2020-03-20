@@ -132,6 +132,7 @@ Plug 'arcticicestudio/nord-vim'
     let g:nord_uniform_diff_background=1
 Plug 'morhetz/gruvbox'
     let g:gruvbox_contrast_light = 'hard'
+    let g:gruvbox_termcolors=16
 Plug '907th/vim-auto-save'
     let g:auto_save_events = ['InsertLeave', 'TextChanged']
     let g:auto_save = 1
