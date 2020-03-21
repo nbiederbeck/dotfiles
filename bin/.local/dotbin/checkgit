@@ -75,8 +75,13 @@ for gr in ${dirs}; do
     popd &> /dev/null
 done
 
+msg=" everything is fine :)"
 if [[ $exit_code == 0 ]]; then
-    echo " everything is fine :)"
+    if [[ -t 1 ]]; then
+        echo ${msg}
+    else
+        notify-send ${msg}
+    fi
 fi
 
 exit $exit_code
