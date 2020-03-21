@@ -5,8 +5,6 @@ let exit_code=0
 find_cmd=$(command -v fd || command -v find)
 find_cmd=$(echo ${find_cmd} | rev | cut -d/ -f1 | rev)
 
-echo "${find_cmd}ing ..."
-
 if [[ ${find_cmd} == "find" ]]; then
     dirs=$( \
         find ~ \
@@ -47,35 +45,19 @@ fi
 for gr in ${dirs}; do
     wd=$(dirname $gr)
     pushd $wd &> /dev/null
-    status=$(git status)
-    if [[ $status =~ "ntracked files" ]]; then
+    status=$(git status --short)
+    if [[ ${status} != "" ]]; then
         if [[ -t 1 ]]; then
-            echo "$wd   has untracked files"
+            echo "${wd}"
         else
-            notify-send -u critical "$wd   has untracked files"
-        fi
-        let exit_code=1
-    elif [[ $status =~ "branch is ahead" ]]; then
-        if [[ -t 1 ]]; then
-            echo "$wd   has current branch not pushed"
-        else
-            notify-send -u critical "$wd   has current branch not pushed"
-        fi
-        let exit_code=1
-    elif [[ $status =~ "nothing to commit" ]]; then
-        true
-    else
-        if [[ -t 1 ]]; then
-            echo "$wd   needs attention"
-        else
-            notify-send -u critical "$wd   needs attention"
+            notify-send -u critical "${wd}" "${status}"
         fi
         let exit_code=1
     fi
     popd &> /dev/null
 done
 
-msg=" everything is fine :)"
+msg="everything is fine :)"
 if [[ $exit_code == 0 ]]; then
     if [[ -t 1 ]]; then
         echo ${msg}
