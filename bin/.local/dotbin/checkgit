@@ -46,13 +46,11 @@ for gr in ${dirs}; do
     wd=$(dirname $gr)
     pushd $wd &> /dev/null
     status=$(git status)
-    if [[ ! ${status} =~ "nothing to commit, working tree clean" ]]; then
-        if [[ ! ${status} =~ "up to date" ]]; then
-            if [[ -t 1 ]]; then
-                echo "${wd}"
-            else
-                notify-send -u critical "${wd}" "$(git status --short)"
-            fi
+    if [[ ${status} =~ "branch is ahead of" ]]; then
+        if [[ -t 1 ]]; then
+            echo "${wd}"
+        else
+            notify-send -u critical "${wd}" "$(git status --short)"
         fi
         let exit_code=1
     fi
