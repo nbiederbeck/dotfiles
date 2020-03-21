@@ -80,7 +80,7 @@ if [[ $exit_code == 0 ]]; then
     if [[ -t 1 ]]; then
         echo ${msg}
     else
-        notify-send ${msg}
+        notify-send "${msg}"
     fi
 fi
 
