@@ -397,5 +397,5 @@ eval "$(zoxide init bash)"
 if [[ $DISPLAY ]]; then
     # If not running interactively, do not do anything
     [[ $- != *i* ]] && return
-    [[ -z "$TMUX" ]] && exec tmux
+    [[ -z "$TMUX" ]] && (tmux attach || tmux new-session)
 fi
