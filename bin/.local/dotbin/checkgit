@@ -46,7 +46,7 @@ for gr in ${dirs}; do
     wd=$(dirname $gr)
     pushd $wd &> /dev/null
     status=$(git status)
-    if [[ ${status} =~ "Changes" ]]; then
+    if [[ ${status} =~ "git" ]]; then
         if [[ -t 1 ]]; then
             echo "${wd}"
         else
