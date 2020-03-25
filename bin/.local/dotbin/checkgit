@@ -50,7 +50,7 @@ for gr in ${dirs}; do
         if [[ -t 1 ]]; then
             echo "${wd}"
         else
-            notify-send -u critical "${wd} is ahead" "$(git status --short)"
+            notify-send -u critical "${wd}" "$(git status --short)"
         fi
         let exit_code=1
     fi
@@ -62,7 +62,7 @@ if [[ $exit_code == 0 ]]; then
     if [[ -t 1 ]]; then
         echo ${msg}
     else
-        notify-send "${msg}"
+        notify-send -u low "${msg}"
     fi
 fi
 
