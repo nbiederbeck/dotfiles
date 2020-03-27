@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function finally() {
+    dunst &!
+    notify-send --urgency critical "Pomodoro" "Time to take a break!"
+}
+
+trap finally SIGINT SIGTERM SIGKILL
+
+pkill -e dunst
+sleep $(bc <<< '1 * 60')
