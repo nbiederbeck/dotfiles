@@ -62,3 +62,5 @@ if empty(glob("~/.cache/nvim/undo/"))
     silent execute '!mkdir -p ~/.cache/nvim/undo/'
 endif
 set undofile
+
+set exrc

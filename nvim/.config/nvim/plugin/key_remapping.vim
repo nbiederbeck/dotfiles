@@ -26,8 +26,8 @@ nnoremap <CR> gf
 " nnoremap <BACKSPACE> :e#<CR>
 
 " record shortcuts
-nnoremap <SPACE> @q
-nnoremap <C-SPACE> @k
+nnoremap <SPACE> @z
+nnoremap <C-SPACE> @q
 
 " copying to clipboard
 vnoremap <C-y> "+y
