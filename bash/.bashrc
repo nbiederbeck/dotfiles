@@ -394,6 +394,8 @@ source ~/.git-completion.bash
 
 eval "$(zoxide init bash)"
 
+export TERM=xterm-256color
+
 if [[ $DISPLAY ]]; then
     # If not running interactively, do not do anything
     [[ $- != *i* ]] && return
