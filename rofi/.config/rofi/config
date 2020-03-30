@@ -3,7 +3,7 @@ rofi.modi:                           run,ssh,window
 rofi.width:                          20
 rofi.lines:                          5
 rofi.columns:                        1
-rofi.font:                           Fira Code 8
+rofi.font:                           Source Code Pro 8
 
 rofi.theme: theme.rasi
 

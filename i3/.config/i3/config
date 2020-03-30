@@ -31,7 +31,7 @@ set $fontsize 7
 set $bordersize 1
 set $gapsize 0
 
-font pango:FiraCode $fontsize
+font pango:Source Code Pro $fontsize
 # font pango:DejaVu Sans Mono 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
