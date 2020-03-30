@@ -19,3 +19,6 @@ highlight Visual     cterm=bold
 " python
 highlight pythonSelf ctermfg=4
 highlight Exception ctermfg=3
+
+let g:lengthmatters_highlight_one_column = 0
+call lengthmatters#highlight('ctermfg=yellow cterm=underline')
