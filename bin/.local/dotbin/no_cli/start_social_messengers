@@ -1,0 +1,6 @@
+#!/bin/bash
+
+telegram-desktop &!
+thunderbird &!
+mattermost-desktop &!
+slack &!

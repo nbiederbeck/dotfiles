@@ -1,0 +1,12 @@
+#!/bin/bash
+
+function kill_msg() {
+    notify-send "$(pkill -e $1)"
+}
+
+kill_msg "telegram"
+kill_msg "thunderbird"
+kill_msg "slack"
+kill_msg "mattermost"
+
+notify-send "stopped social messengers"
