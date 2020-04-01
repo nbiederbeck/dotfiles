@@ -20,6 +20,7 @@ alias 'mirrorupdate'='echo "reflector -n 20 -p https -l 10 -c Germany --sort rat
 # Useful abbreviations
 alias 'up'='uptime --pretty'
 alias 'gits'='git status -s'
+alias 'gdiff'='git diff'
 alias 'open'='gio open'
 alias 'xclip'='xclip -selection c'
 alias 'htop'='htop -u $USER'
