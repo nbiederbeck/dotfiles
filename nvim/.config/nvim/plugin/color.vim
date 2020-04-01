@@ -8,13 +8,13 @@ syntax on
 
 let g:limelight_conceal_ctermfg = '8'
 
-highlight Pmenu      cterm=none      ctermbg=none ctermfg=none
+highlight Pmenu      cterm=none      ctermbg=none  ctermfg=none
 set       nocursorline
-highlight CursorLine cterm=none      ctermbg=none ctermfg=none
-highlight SpellBad   cterm=none      ctermbg=none ctermfg=red
-highlight SpellCap   cterm=underline ctermbg=none ctermfg=yellow
-highlight Conceal    cterm=bold      ctermbg=none ctermfg=green
-highlight Visual     cterm=bold
+highlight CursorLine cterm=none      ctermbg=none  ctermfg=none
+highlight SpellBad   cterm=underline ctermbg=none  ctermfg=red
+highlight SpellCap   cterm=underline ctermbg=none  ctermfg=yellow
+highlight Conceal    cterm=none      ctermbg=none  ctermfg=none
+highlight Visual     cterm=none      ctermbg=white ctermfg=black
 
 " python
 highlight pythonSelf ctermfg=4
