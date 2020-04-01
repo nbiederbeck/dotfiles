@@ -6,6 +6,8 @@ alias 'ta'='tmux attach'
 
 alias 'nb'='ssh -N -f -L 2702:localhost:2702'
 
+alias 'sshfs-e5b'='sshfs -o reconnect,dir_cache=yes,no_readahead,compression=yes'
+
 # games
 alias 'anno'='wine /home/noah/.wine/drive_c/Program\ Files\ \(x86\)/ANNO\ 1602\ Königs-Edition/1602.exe'
 
