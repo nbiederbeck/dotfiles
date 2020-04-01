@@ -22,3 +22,9 @@ highlight Exception ctermfg=3
 
 let g:lengthmatters_highlight_one_column = 0
 call lengthmatters#highlight('ctermfg=gray cterm=underline')
+
+
+match Todo /[Tt][Oo][Dd][Oo]/
+
+highlight MyGroup ctermbg=green ctermfg=black cterm=bold
+match MyGroup /MyGroup/
