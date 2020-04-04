@@ -392,9 +392,11 @@ source ~/.git-completion.bash
 
 # echo $(expr '(' $(date -d 2020/12/24 +%s) - $(date +%s) + 86399 ')' / 86400) "Tage bis Heiligabend"
 
-eval "$(zoxide init bash)"
-
 export TERM=xterm-256color
+
+if [[ -f ~/.local/bin/z.sh ]]; then
+    source ~/.local/bin/z.sh
+fi
 
 if [[ $DISPLAY ]]; then
     # If not running interactively, do not do anything
