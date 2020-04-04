@@ -1,11 +1,11 @@
 ! vim: ft=xdefaults commentstring=!%s
 rofi.modi:                           run,ssh,window
-rofi.width:                          20
-rofi.lines:                          5
+rofi.width:                          30
+rofi.lines:                          1
 rofi.columns:                        1
-rofi.font:                           Source Code Pro 8
+rofi.font:                           Source Code Variable 8
 
-rofi.theme: theme.rasi
+! rofi.theme: theme.rasi
 
 rofi.color-enabled: true
 !                  bg       fg       border
@@ -15,15 +15,15 @@ rofi.color-normal: #232629, #cfcfc2, #232629, #cfcfc2, #232629
 rofi.color-active: #232629, #218058, #232629, #218058, #232629
 rofi.color-urgent: #232629, #c0392b, #232629, #c0392b, #232629
 
-rofi.bw:                             1
-rofi.location:                       0
+rofi.bw:                             0
+rofi.location:                       2
 ! rofi.padding:                        5
 ! rofi.yoffset:                        0
 ! rofi.xoffset:                        0
 ! rofi.fixed-num-lines:                true
-rofi.terminal:                       alacritty
+! rofi.terminal:                       alacritty
 ! rofi.ssh-client:                     ssh
-rofi.ssh-command:                    alacritty -e {ssh-client} {host}
+! rofi.ssh-command:                    alacritty -e {ssh-client} {host}
 ! rofi.run-command:                    {cmd}
 ! rofi.run-list-command:
 ! rofi.run-shell-command:              {terminal} -e {cmd}
@@ -70,7 +70,7 @@ rofi.fake-transparency:              false
 ! "Threads to use for string matching" Set from: Default
 ! rofi.threads:                        0
 ! "Scrollbar width" Set from: Default
-rofi.scrollbar-width:                8
+rofi.scrollbar-width:                0
 ! "Scrolling method. (0: Page, 1: Centered)" Set from: Default
 ! rofi.scroll-method:                  0
 ! "Background to use for fake transparency. (background or screenshot)" Set from: Default
@@ -194,7 +194,7 @@ rofi.kb-row-down:                    Down,Control+n,J
 ! "The display name of this browser" Set from: Default
 ! rofi.display-ssh:
 ! "The display name of this browser" Set from: Default
-! rofi.display-run:
+rofi.display-run: Start
 ! "The display name of this browser" Set from: Default
 ! rofi.display-drun:
 ! "The display name of this browser" Set from: Default
