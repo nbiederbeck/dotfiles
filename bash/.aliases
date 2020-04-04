@@ -2,6 +2,8 @@
 
 alias 'lg'='lazygit'
 
+alias 'fd'='fdfind'
+
 alias 'ta'='tmux attach'
 
 alias 'nb'='ssh -N -f -L 2702:localhost:2702'
