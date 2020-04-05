@@ -16,3 +16,5 @@ fi
 
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 PATH=$PATH:$HOME/.linuxbrew/bin
+
+export PATH="$HOME/.cargo/bin:$PATH"
