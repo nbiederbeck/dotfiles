@@ -398,8 +398,8 @@ if [[ -f ~/.local/bin/z.sh ]]; then
     source ~/.local/bin/z.sh
 fi
 
-if [[ $DISPLAY ]]; then
-    # If not running interactively, do not do anything
-    [[ $- != *i* ]] && return
-    [[ -z "$TMUX" ]] && (tmux attach || tmux new-session)
-fi
+# if [[ $DISPLAY ]]; then
+#     # If not running interactively, do not do anything
+#     [[ $- != *i* ]] && return
+#     [[ -z "$TMUX" ]] && (tmux attach || tmux new-session)
+# fi
