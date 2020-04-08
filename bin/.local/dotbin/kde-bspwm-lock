@@ -1,0 +1,26 @@
+#!/bin/bash
+
+LOCK="qdbus org.kde.screensaver /ScreenSaver Lock"
+# SLEEP="i3lock -i ${HOME}/Pictures/background $(cat ~/.config/i3lock/options) && systemctl suspend"
+GIT="~/.local/dotbin/checkgit"
+
+typeset -A menu
+
+# Menu with keys/commands
+menu=(
+  [Shutdown]="${GIT} && systemctl poweroff"
+  [Reboot]="systemctl reboot"
+  [Lock]="${LOCK}"
+  # [Sleep]="${GIT} && ${SLEEP}"
+  [Logout]="bspc quit"
+)
+menu_nrows=${#menu[@]}
+
+launcher_exe="dmenu -i -p Exit"
+launcher=(${launcher_exe})
+
+selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
+
+if [[ $? -eq 0 && ! -z ${selection} ]]; then
+    exec ${menu[${selection}]}
+fi
