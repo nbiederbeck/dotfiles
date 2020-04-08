@@ -333,12 +333,18 @@ parse_git_repo() {
     sed -E 's#^origin.*(git@|https?://)##;s/(.git)? .*$//;s/gitlab.com/lab/;s/github.com/hub/'
 }
 
-print_git_info() {
-    echo "$(clr_brown '$(parse_git_branch)') $(clr_blue '$(parse_git_repo)')"
+parse_git_state() {
+    git status --short 2> /dev/null |\
+        rg '^( M| A|\?\?)' --count
 }
 
+print_git_info() {
+    echo "$(clr_reverse clr_brown '$(parse_git_branch)')" #$(clr_blue '$(parse_git_repo)')"
+}
+
+
 # export PS1='\[\033[0;31m\]$(parse_git_branch) \[\033[0;34m\]\w\n\[\033[1;32m\]\[\033[0m\]$ '
-export PS1="$(clr_green '\w') $(print_git_info)\n$ "
+export PS1="$(clr_reverse clr_green '\w') $(print_git_info)\n"
 
 if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
     conda activate /scratch/nbiederbeck/conda/envs/cta-dev
