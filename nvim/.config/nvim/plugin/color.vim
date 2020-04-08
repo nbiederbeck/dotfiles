@@ -14,7 +14,7 @@ highlight CursorLine cterm=none      ctermbg=none  ctermfg=none
 highlight SpellBad   cterm=underline ctermbg=none  ctermfg=red
 highlight SpellCap   cterm=underline ctermbg=none  ctermfg=yellow
 highlight Conceal    cterm=none      ctermbg=none  ctermfg=none
-highlight Visual     cterm=none      ctermbg=white ctermfg=black
+highlight Visual     cterm=none      ctermbg=7 ctermfg=0
 
 " python
 highlight pythonSelf ctermfg=4
