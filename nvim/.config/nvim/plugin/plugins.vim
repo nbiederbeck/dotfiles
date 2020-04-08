@@ -114,7 +114,8 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
     let g:vim_markdown_folding_disabled=1
-Plug 'vimwiki/vimwiki', {'for': 'vimwiki'}
+Plug 'vimwiki/vimwiki', {'for': ['vimwiki', 'markdown']}
+    let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 Plug 'vim-scripts/vim-on-write'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
