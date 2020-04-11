@@ -12,7 +12,7 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  TERM: xterm-256color
+  TERM: alacritty #xterm-256color
 
 window:
   # Window dimensions in character columns and lines
@@ -34,7 +34,7 @@ window:
   decorations: none
 
 # When true, bold text is drawn using the bright variant of colors.
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # Font configuration (changes require restart)
 #
@@ -58,24 +58,24 @@ draw_bold_text_with_bright_colors: false
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Source Code Pro # should be "Menlo" or something on macOS.
+    family: Source Code Variable # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: Source Code Pro # should be "Menlo" or something on macOS.
+    family: Source Code Variable # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Black
 
   # The italic font face
   italic:
-    family: Source Code Pro # should be "Menlo" or something on macOS.
+    family: Source Code Variable # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Italic
 
   # Point size of the font
-  size: 7.0
+  size: 8.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -210,7 +210,10 @@ mouse:
   # scrolling for applications like `man`.
   #
   # To disable this completely, set `faux_scrollback_lines` to 0.
-  faux_scrolling_lines: 1
+  faux_scrolling_lines: 0
+
+scrolling:
+    multiplier: 1
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
