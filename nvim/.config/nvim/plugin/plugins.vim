@@ -18,6 +18,7 @@ Plug 'altercation/vim-colors-solarized'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
     let g:LanguageClient_serverCommands = {'python': ['pyls'], 'latex': ['texlab']}
+    " let g:LanguageClient_useVirtualText = "No"
 Plug 'juliaeditorsupport/julia-vim'
 " Plug 'python-mode/python-mode', {'for': 'python'}
     " let g:pymode_lint = 0
