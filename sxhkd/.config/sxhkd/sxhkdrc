@@ -57,4 +57,4 @@ super + XF86MonBrightnessDown
 #     bspc node --state \~fullscreen
 
 super + shift + p
-    passmenu
+    ~/.local/dotbin/passmenu
