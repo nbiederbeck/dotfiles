@@ -8,6 +8,7 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 
 call plug#begin('/scratch/nbiederbeck/vim/plugged')
+Plug 'dracula/vim', {'name': 'dracula'}
 Plug 'whatyouhide/vim-lengthmatters'
 Plug 'vim-airline/vim-airline'
     let g:airline#extensions#tabline#enabled = 1
