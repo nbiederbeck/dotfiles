@@ -131,9 +131,9 @@ fi
 # fi
 # source $CONDA_PATH/etc/profile.d/conda.sh  # commented out by conda initialize
 
-if [[ -f ~/.cache/wal/sequences ]]; then
-    cat ~/.cache/wal/sequences
-fi
+# if [[ -f ~/.cache/wal/sequences ]]; then
+#     cat ~/.cache/wal/sequences
+# fi
 
 
 # Path to the bash it configuration
@@ -339,12 +339,12 @@ parse_git_state() {
 }
 
 print_git_info() {
-    echo "$(clr_reverse clr_brown '$(parse_git_branch)')" #$(clr_blue '$(parse_git_repo)')"
+    echo "$(clr_brown '$(parse_git_branch)')" #$(clr_blue '$(parse_git_repo)')"
 }
 
 
 # export PS1='\[\033[0;31m\]$(parse_git_branch) \[\033[0;34m\]\w\n\[\033[1;32m\]\[\033[0m\]$ '
-export PS1="$(clr_reverse clr_green '\w') $(print_git_info)\n"
+export PS1="$(clr_green '# \w') $(print_git_info)\n"
 
 if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
     conda activate /scratch/nbiederbeck/conda/envs/cta-dev
