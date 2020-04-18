@@ -58,3 +58,6 @@ super + XF86MonBrightnessDown
 
 super + shift + p
     ~/.local/dotbin/passmenu
+
+super + @space
+    rofi -show run
