@@ -1,7 +1,7 @@
 syntax enable
 
 set background=dark
-colorscheme dracula
+colorscheme nord
 
 set termguicolors
 syntax on
