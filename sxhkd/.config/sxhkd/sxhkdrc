@@ -57,7 +57,7 @@ super + XF86MonBrightnessDown
 #     bspc node --state \~fullscreen
 
 super + shift + p
-    ~/.local/dotbin/passmenu
+    ~/.local/dotbin/bwmenu
 
 super + @space
     rofi -show run
