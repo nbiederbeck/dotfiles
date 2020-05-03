@@ -1527,6 +1527,7 @@ c.tabs.show = "multiple"
 ## for a blank page.
 ## Type: FuzzyUrl
 c.url.default_page = "https://start.duckduckgo.com/lite"
+# c.url.default_page = "localhost:8888"
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
