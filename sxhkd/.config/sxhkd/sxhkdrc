@@ -1,6 +1,6 @@
 # vim: commentstring=#%s
 super + Return
-    kitty
+    konsole
 
 super + XF86MonBrightnessUp
     qdbus org.kde.Solid.PowerManagement /org/kde/Solid/PowerManagement/Actions/BrightnessControl setBrightness 851
