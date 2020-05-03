@@ -1,6 +1,9 @@
 # vim: ft=gitconfig commentstring=#%s
 [core]
 	editor = nvim
+    pager = delta --theme base16 --plus-color=2 --minus-color=1 --plus-emph-color=3 --minus-emph-color=3 --color-only
+[interactive]
+    diffFilter = delta --theme base16 --plus-color=2 --minus-color=1 --plus-emph-color=3 --minus-emph-color=3 --color-only
 [user]
 	name = Noah Biederbeck
 	email = nbiederbeck@tutanota.com
@@ -9,6 +12,9 @@
 [merge]
 	conflictstyle = diff3
 	tool = nvim
+[mergetool "nvim"]
+	cmd = nvim -d "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    trustExitCode = false
 [credential]
 	helper = cache --timeout=10800
 [alias]
@@ -31,5 +37,3 @@
     date = iso
 [color "status"]
 	header = white bold
-[mergetool "nvim"]
-	cmd = nvim -d
