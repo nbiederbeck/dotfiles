@@ -1,9 +1,9 @@
 # vim: ft=gitconfig commentstring=#%s
 [core]
 	editor = nvim
-    pager = delta --theme base16 --plus-color=2 --minus-color=1 --plus-emph-color=3 --minus-emph-color=3 --color-only
-[interactive]
-    diffFilter = delta --theme base16 --plus-color=2 --minus-color=1 --plus-emph-color=3 --minus-emph-color=3 --color-only
+    # pager = delta --theme base16 --plus-color=2 --minus-color=1 --plus-emph-color=3 --minus-emph-color=3 --color-only
+# [interactive]
+    # diffFilter = delta --theme base16 --plus-color=2 --minus-color=1 --plus-emph-color=3 --minus-emph-color=3 --color-only
 [user]
 	name = Noah Biederbeck
 	email = nbiederbeck@tutanota.com
