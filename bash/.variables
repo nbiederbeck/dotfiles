@@ -18,3 +18,5 @@ export FONTCONFIG_PATH=$CONDA_PREFIX/etc/fonts/
 # see github.com/ipython/ipython/issues/10627
 # and github.com/ContinuumIO/anaconda-issues/issues/1806
 export QT_QPA_PLATFORM=offscreen
+
+export IPYTHONDIR=~/.ipython/
