@@ -4,3 +4,6 @@ nvim/.config/nvim/.netrwhist
 
 ranger/.config/ranger/bookmarks
 ranger/.config/ranger/history
+
+tmux/.tmux/plugins/
+*.log
