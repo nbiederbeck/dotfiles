@@ -20,8 +20,8 @@ highlight Visual     cterm=none      ctermbg=7 ctermfg=0
 highlight pythonSelf ctermfg=4
 highlight Exception ctermfg=3
 
-let g:lengthmatters_highlight_one_column = 0
-call lengthmatters#highlight('ctermfg=gray cterm=underline')
+let g:lengthmatters_highlight_one_column = 1
+call lengthmatters#highlight('ctermfg=1')
 
 
 match Todo /[Tt][Oo][Dd][Oo]/

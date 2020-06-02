@@ -7,7 +7,7 @@ if empty(glob("~/.vim/autoload/plug.vim"))
     execute '!curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
-call plug#begin('/scratch/nbiederbeck/vim/plugged')
+call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', {'name': 'dracula'}
 Plug 'whatyouhide/vim-lengthmatters'
 Plug 'vim-airline/vim-airline'
@@ -54,7 +54,7 @@ Plug 'honza/vim-snippets'
 Plug 'rbonvall/snipmate-snippets-bib', {'for': 'bib'}
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     let g:python_host_prog = "/usr/bin/python2"
-    let g:python3_host_prog = "/opt/anaconda/bin/python"
+    let g:python3_host_prog = "/usr/bin/python3"
     if matchstr(hostname(), 'vollmond') == 'vollmond'
         let g:python3_host_prog = "/scratch/nbiederbeck/conda/envs/py37/bin/python"
     endif
@@ -71,7 +71,7 @@ Plug 'dense-analysis/ale'
     let g:ale_lint_on_text_changed = 'normal' " 'normal'/'never'
     let g:ale_lint_on_enter = 1
     let g:ale_lint_on_save = 1
-    let g:ale_fix_on_save = 1
+    let g:ale_fix_on_save = 0
     " let g:ale_warn_about_trailing_blank_lines = 0
     " let g:ale_warn_about_trailing_whitespace = 0
     nmap ]a <ESC>:ALENextWrap<CR>
