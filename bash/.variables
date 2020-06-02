@@ -6,7 +6,13 @@ export FZF_CTRL_T_COMMAND=fd
 export FZF_ALT_C_COMMAND='fd --type d'
 export FZF_ALT_C_OPTS='--preview "ls --color=always {}"'
 
-export EDITOR=nvim
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
 # export TERM=screen-256color
 
 export HISTIGNORE="fg:ls"
