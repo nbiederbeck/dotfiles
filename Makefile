@@ -22,4 +22,6 @@ all:
 		vim/ \
 		wal/ \
 		X/ \
-		zathura/
+		yay/ \
+		zathura/ \
+		zsh/
