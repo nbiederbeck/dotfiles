@@ -1,7 +1,7 @@
 syntax enable
 
-set background=dark
-colorscheme nord
+colorscheme solarized
+set background=light
 
 " set termguicolors
 syntax on
