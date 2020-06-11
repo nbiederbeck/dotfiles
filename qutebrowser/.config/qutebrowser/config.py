@@ -9,7 +9,14 @@
 # Aliases for commands. The keys of the given dictionary are the
 # aliases, while the values are the commands they map to.
 # Type: Dict
-c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save', 'x': 'quit --save'}
+c.aliases = {
+    "w": "session-save",
+    "q": "close",
+    "qa": "quit",
+    "wq": "quit --save",
+    "wqa": "quit --save",
+    "x": "quit --save",
+}
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -23,7 +30,11 @@ c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save
 # unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
 # read from JavaScript is always the global value.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}",
+    "https://web.whatsapp.com/",
+)
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -37,7 +48,11 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{w
 # unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
 # read from JavaScript is always the global value.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://accounts.google.com/*')
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0",
+    "https://accounts.google.com/*",
+)
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -51,7 +66,11 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko
 # unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
 # read from JavaScript is always the global value.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36",
+    "https://*.slack.com/*",
+)
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -65,35 +84,39 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/53
 # unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
 # read from JavaScript is always the global value.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://docs.google.com/*')
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0",
+    "https://docs.google.com/*",
+)
 
 # Load images automatically in web pages.
 # Type: Bool
-config.set('content.images', True, 'chrome-devtools://*')
+config.set("content.images", True, "chrome-devtools://*")
 
 # Load images automatically in web pages.
 # Type: Bool
-config.set('content.images', True, 'devtools://*')
+config.set("content.images", True, "devtools://*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'chrome-devtools://*')
+config.set("content.javascript.enabled", True, "chrome-devtools://*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'devtools://*')
+config.set("content.javascript.enabled", True, "devtools://*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'chrome://*/*')
+config.set("content.javascript.enabled", True, "chrome://*/*")
 
 # Enable JavaScript.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'qute://*/*')
+config.set("content.javascript.enabled", True, "qute://*/*")
 
 # CSS border value for hints.
 # Type: String
-c.hints.border = '1px solid black'
+c.hints.border = "1px solid black"
 
 # Hide the statusbar unless a message is shown.
 # Type: Bool
@@ -106,12 +129,13 @@ c.statusbar.hide = False
 #   - never: Always hide the tab bar.
 #   - multiple: Hide the tab bar if only one tab is open.
 #   - switching: Show the tab bar when switching tabs.
-c.tabs.show = 'multiple'
+c.tabs.show = "multiple"
 
 # Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 # for a blank page.
 # Type: FuzzyUrl
-c.url.default_page = 'https://start.duckduckgo.com/html'
+c.url.default_page = "about:blank"
+c.url.start_pages = ["about:blank"]
 
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -132,54 +156,56 @@ c.url.default_page = 'https://start.duckduckgo.com/html'
 # qutebrowser`.
 # Type: Dict
 c.url.searchengines = {
-    'DEFAULT': 'https://duckduckgo.com/lite/?q={}',
-    'ddg': 'https://duckduckgo.com/html/?q={}',
-    'g': 'https://www.google.com/search?hl=en&q={}',
+    "DEFAULT": "https://duckduckgo.com/lite/?q={}",
+    "ddg": "https://duckduckgo.com/html/?q={}",
+    "g": "https://www.google.com/search?hl=en&q={}",
 }
 
 # Font color for hints.
 # Type: QssColor
-c.colors.hints.fg = 'black'
+c.colors.hints.fg = "black"
 
 # Background color for hints. Note that you can use a `rgba(...)` value
 # for transparency.
 # Type: QssColor
-c.colors.hints.bg = 'yellow'
+c.colors.hints.bg = "yellow"
 
 # Font color for the matched part of hints.
 # Type: QtColor
-c.colors.hints.match.fg = 'yellow'
+c.colors.hints.match.fg = c.colors.hints.bg
 
 # Foreground color of the statusbar.
 # Type: QssColor
-c.colors.statusbar.normal.fg = 'gray'
+c.colors.statusbar.normal.fg = "gray"
 
 # Foreground color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.fg = 'gray'
+c.colors.statusbar.passthrough.fg = "white"
 
 # Background color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.bg = 'black'
+c.colors.statusbar.passthrough.bg = "lightgray"
 
 # Foreground color of the statusbar in command mode.
 # Type: QssColor
-c.colors.statusbar.command.fg = 'white'
+c.colors.statusbar.command.fg = "white"
 
 # Background color of the statusbar in command mode.
 # Type: QssColor
-c.colors.statusbar.command.bg = 'black'
+c.colors.statusbar.command.bg = "black"
 
 # Default foreground color of the URL in the statusbar.
 # Type: QssColor
-c.colors.statusbar.url.fg = 'gray'
+c.colors.statusbar.url.fg = "gray"
 
 # Foreground color of the URL in the statusbar on successful load
 # (http).
 # Type: QssColor
-c.colors.statusbar.url.success.http.fg = 'orange'
+c.colors.statusbar.url.success.http.fg = "orange"
 
 # Foreground color of the URL in the statusbar on successful load
 # (https).
 # Type: QssColor
-c.colors.statusbar.url.success.https.fg = 'gray'
+c.colors.statusbar.url.success.https.fg = "green"
+
+c.fonts.hints = "Source Code Pro"
