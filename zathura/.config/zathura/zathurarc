@@ -5,9 +5,11 @@ set window-title-basename true
 set window-title-home-tilde true
 set statusbar-home-tilde true
 
-set recolor-keephue true
-set recolor-reverse-video true
-set recolor-lightcolor \#121212
-set recolor-darkcolor \#eeeeee
-set default-bg \#000000  # black corners
+# set recolor-keephue true
+# set recolor-reverse-video true
+set recolor-lightcolor \#fdf6e3
+set recolor-darkcolor \#657b83
+# set default-bg \#121212  # dark corners
 set recolor
+
+map c set recolor-keephue true
