@@ -373,7 +373,7 @@ show_copy_notification() {
   local body=""
   local extra_options=()
 
-  title="<b>$(echo "$1" | jq -r '.name')</b> copied"
+  title="$(echo "$1" | jq -r '.name')"
 
   if [[ $SHOW_PASSWORD == "yes" ]]; then
     pass=$(echo "$1" | jq -r '.login.password')
@@ -381,12 +381,12 @@ show_copy_notification() {
   fi
 
   if [[ $CLEAR -gt 0 ]]; then
-    body="$body<br>Will be cleared in ${CLEAR} seconds."
+    body="$body will be cleared in ${CLEAR} seconds."
     # Keep notification visible while the clipboard contents are active.
     extra_options+=("-t" "$((CLEAR * 1000))")
   fi
   # not sure if icon will be present everywhere, /usr/share/icons is default icon location
-  notify-send "$title" "$body" "${extra_options[@]}" -i /usr/share/icons/hicolor/64x64/apps/bitwarden.png
+  notify-send "$title" "$body" "${extra_options[@]}" -i ~/Pictures/bitwarden.jpg
 }
 
 parse_cli_arguments() {

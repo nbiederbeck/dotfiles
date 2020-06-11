@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pdf=$(fd . -e pdf ~ | sort | rofi -dmenu -p Document -l 15 -i -no-custom -width 60)
+if [[ -f ${pdf} ]]; then
+    zathura ${pdf} &
+fi
