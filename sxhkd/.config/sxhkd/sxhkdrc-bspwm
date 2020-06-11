@@ -1,0 +1,76 @@
+# vim: commentstring=#%s
+super + Return
+    urxvt
+
+
+# Switch Window Down=Meta+Alt+Down; Meta+J
+# Switch Window Left=Meta+Alt+Left; Meta+H
+# Switch Window Right=Meta+Alt+Right; Meta+L
+# Switch Window Up=Meta+Alt+Up; Meta+K
+super + {h,j,k,l}
+    bspc node --focus {west,south,north,east}
+# Window Fullscreen=Meta+F
+super + f
+    bspc node --state \~fullscreen
+# Window Maximize=Meta+PgUp; Meta+Shift+M
+super + shift + m
+    bspc desktop --layout next
+# Window Minimize=Meta+PgDown; Meta+M
+# Window No Border=Meta+B
+super + b
+    bspc config border_width \~0
+# Window Quick Tile Bottom=Meta+Down; Meta+Shift+J
+# Window Quick Tile Left=Meta+Left; Meta+Shift+H
+# Window Quick Tile Right=Meta+Right; Meta+Shift+L
+# Window Quick Tile Top=Meta+Up; Meta+Shift+K
+super + shift + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+# Window Quick Tile Bottom Left=Meta+Alt+J
+# Window Quick Tile Bottom Right=Meta+Alt+K
+# Window Quick Tile Top Left=Meta+Alt+U
+# Window Quick Tile Top Right=Meta+Alt+I
+
+# super + d
+#     rofi -show run
+
+# super + shift + d
+#     rofi -show window -lines 5
+
+# super + @space
+#     bspc node --state \~floating
+
+# super + e
+#     kde-bspwm-lock
+
+# super + shift + r
+#     bspc wm --restart & notify-send "Restart" "Window manager restarted."
+
+# super + shift + c
+#     sxhkd --restart
+
+# super + shift + q
+#     bspc node --kill
+
+# # 'monocle' mode a.k.a. fullscreen
+# super + m
+#     bspc desktop --layout next
+
+# super + shift + {h,j,k,l}
+#     bspc node -s {west,south,north,east}
+
+# # focus or send to the given desktop
+# super + {_,shift + }{1-9,0}
+#     bspc {desktop -f,node -d} '^{1-9,10}'
+
+# # focus the last node/desktop
+# super + {grave,Tab}
+#     bspc {node,desktop} --focus last
+
+# super + {Left,Right}
+#     bspc desktop --focus {prev,next}
+
+# super + {t,shift + t,s}
+#     bspc node --state {tiled,pseudo_tiled,floating}
+
+# super + f
+#     bspc node --state \~fullscreen

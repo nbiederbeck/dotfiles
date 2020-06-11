@@ -1,0 +1,6 @@
+# vim: commentstring=#%s
+super + Return
+    konsole
+
+super + e
+    kde-bspwm-lock
