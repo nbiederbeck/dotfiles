@@ -24,7 +24,7 @@ focus_follows_mouse true # true|false
 
 # -- variables -- #
 set $alt Mod1
-set $mod Mod1
+set $mod Mod4
 # set $win Mod4
 
 set $fontsize 7
@@ -40,22 +40,15 @@ floating_minimum_size 20x20
 floating_maximum_size 1300x700
 bindsym $mod+space focus mode_toggle
 
-# start a terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+Return exec urxvt -shading 100 -transparent -e ion
-
-# passmenu
-bindsym $mod+p exec ~/.local/dotbin/passmenu
-
 # start a webbrowser
-bindsym $mod+shift+w exec ~/.config/i3/bin/web
+bindsym $mod+shift+w exec ~/.config/i3/bin/wteb
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start rofi
-bindsym $mod+d exec i3-dmenu-desktop #kupfer
-bindsym $mod+Shift+d exec ~/.config/i3/bin/choose
+# # start rofi
+# bindsym $mod+d exec i3-dmenu-desktop #kupfer
+# bindsym $mod+Shift+d exec ~/.config/i3/bin/choose
 
 # change focus
 bindsym $mod+h focus left
@@ -172,24 +165,22 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym $mod+Shift+p exec ~/.config/i3/bin/pdfs
-
 # hide borders when fullscreen
 hide_edge_borders smart # none|vertical|horizontal|both|smart
 
 bindsym $mod+Tab workspace back_and_forth
 # bindsym $mod+Tab exec ~/.config/i3/bin/switch_workspace
 
-# MultiMediaKeys
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+# # MultiMediaKeys
+# # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-# Screen Brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-bindsym Ctrl+XF86MonBrightnessUp exec xbacklight -set 100
-bindsym Ctrl+XF86MonBrightnessDown exec xbacklight -set 1
+# # Screen Brightness
+# # bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+# bindsym Ctrl+XF86MonBrightnessUp exec xbacklight -set 100
+# bindsym Ctrl+XF86MonBrightnessDown exec xbacklight -set 1
 
 # Display / Beamer Settings
 bindsym XF86LaunchA exec xbacklight -set $(cat ~/.cache/xbacklight/xbacklight) & autorandr --change && feh --bg-fill ~/Pictures/background
@@ -246,8 +237,6 @@ assign [class="Mattermost"] $ws_messenger
 assign [class="Thunderbird"] $ws_mail
 assign [class="Mailspring"] $ws_mail
 
-bindsym $mod+Shift+s exec ~/.config/i3/bin/colors
-
 
 # -- odd workspaces on laptop screen -- #
 workspace $ws1 output eDP1 DP1 DP2
@@ -264,27 +253,6 @@ workspace $ws6 output DP2-3 HDMI1 HDMI2
 workspace $ws8 output DP2-3 HDMI1 HDMI2
 workspace $ws10 output DP2-3 HDMI1 HDMI2
 
-# -- gaps -- #
-# gaps inner|outer current|all set|plus|minus <px>
-# workspace <ws> gaps inner|outer <px>
-gaps inner $gapsize
-smart_gaps on
-
-bindsym $mod+g mode "gaps"
-mode "gaps" {
-    # use default gaps
-    bindsym y gaps inner all set $gapsize, gaps outer all set 0, mode "default"
-    # no gaps at all
-    bindsym n gaps inner all set 0, gaps outer all set 0, mode "default"
-    # change size of gaps
-    bindsym p gaps inner all plus 2
-    bindsym m gaps inner all minus 2
-    bindsym o gaps outer all plus 2
-    bindsym i gaps outer all minus 2
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 exec_always --no-startup-id ~/.start
-# exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always sxhkd -c ~/.config/sxhkd/sxhkdrc-i3
+exec_always --no-startup-id ~/.config/polybar/launch.sh
