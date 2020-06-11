@@ -94,18 +94,18 @@ for_window [class="feh"] floating enable
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-set $ws1  "1:Terminal"
+set $ws1  "1:I"
 set $ws2  "2:II"
-set $ws3  "3:Vollmond"
-set $ws4  "4:Firefox"
+set $ws3  "3:III"
+set $ws4  "4:IV"
 set $ws5  "5:V"
 set $ws6  "6:VI"
 set $ws7  "7:VII"
 set $ws8  "8:VIII"
 set $ws9  "9:IX"
 set $ws10 "10:X"
-set $ws_messenger "11:Messenger"
-set $ws_mail "12:Mail"
+set $ws_messenger $ws9
+set $ws_mail $ws9
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -223,19 +223,22 @@ mode "borders" {
 # 4) use second value to assign
 
 # Browser Workspace 4
+assign [class="qutebrowser"] $ws4
 assign [class="firefox-esr"] $ws4
 assign [class="firefox"] $ws4
 for_window [class="firefox" instance="Dialog"] move workspace current, focus
 assign [class="Firefox"] $ws4
 for_window [class="Firefox" instance="Dialog"] move workspace current, focus
 assign [class="Midori"] $ws4
+
 # Social Workspace 9
-assign [class="Telegram"] $ws_messenger
-assign [class="TelegramDesktop"] $ws_messenger
-assign [class="Slack"] $ws_messenger
-assign [class="Mattermost"] $ws_messenger
-assign [class="Thunderbird"] $ws_mail
-assign [class="Mailspring"] $ws_mail
+assign [class="Telegram"] $ws9
+assign [class="TelegramDesktop"] $ws9
+assign [class="Slack"] $ws9
+assign [class="Mattermost"] $ws9
+assign [class="Thunderbird"] $ws9
+assign [class="Mailspring"] $ws9
+assign [class="Zoom"] $ws9
 
 
 # -- odd workspaces on laptop screen -- #
@@ -244,8 +247,6 @@ workspace $ws3 output eDP1 DP1 DP2
 workspace $ws5 output eDP1 DP1 DP2
 workspace $ws7 output eDP1 DP1 DP2
 workspace $ws9 output eDP1 DP1 DP2
-workspace $ws_messenger output eDP1 DP1 DP2
-workspace $ws_mail output eDP1 DP1 DP2
 
 workspace $ws2 output DP2-3 HDMI1 HDMI2
 workspace $ws4 output DP2-3 HDMI1 HDMI2
