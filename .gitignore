@@ -7,3 +7,5 @@ ranger/.config/ranger/history
 
 tmux/.tmux/plugins/
 *.log
+
+qutebrowser/.config/qutebrowser/qsettings
