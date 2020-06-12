@@ -36,6 +36,13 @@ config.set(
     "https://web.whatsapp.com/",
 )
 
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0",
+    "https://sap-p01.sap.tu-dortmund.de",
+)
+
+
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
 # The underlying WebKit version (set to a fixed value   with
@@ -137,6 +144,8 @@ c.tabs.show = "multiple"
 c.url.default_page = "about:blank"
 c.url.start_pages = ["about:blank"]
 
+config.bind("cs", "config-source")
+
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
 # placeholder. The placeholder will be replaced by the search term, use
@@ -158,7 +167,11 @@ c.url.start_pages = ["about:blank"]
 c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/lite/?q={}",
     "ddg": "https://duckduckgo.com/html/?q={}",
+    "git": "https://github.com/search?q={}",
     "g": "https://www.google.com/search?hl=en&q={}",
+    "bang": "https://duckduckgo.com/bang?q={}",  # look for duckduckgo bangs
+    "w": "https://de.wikipedia.org/w/index.php?search={}",
+    "maps": "https://www.google.com/maps?q={}",
 }
 
 # Font color for hints.
