@@ -238,7 +238,7 @@ assign [class="Slack"] $ws9
 assign [class="Mattermost"] $ws9
 assign [class="Thunderbird"] $ws9
 assign [class="Mailspring"] $ws9
-assign [class="Zoom"] $ws9
+assign [class="zoom"] $ws9
 
 
 # -- odd workspaces on laptop screen -- #
