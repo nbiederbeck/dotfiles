@@ -208,4 +208,5 @@ c.colors.statusbar.url.success.http.fg = "orange"
 # Type: QssColor
 c.colors.statusbar.url.success.https.fg = "green"
 
-c.fonts.hints = "Source Code Pro"
+c.fonts.default_family = "Source Code Pro"
+c.fonts.default_size = "10pt"
