@@ -14,6 +14,8 @@ XF86AudioLowerVolume
     pactl set-sink-volume 0 -5%
 XF86AudioMute
     pactl set-sink-mute 0 toggle
+XF86AudioMicMute
+    pactl set-sink-mute 0 toggle
 
 XF86MonBrightnessUp
     xbacklight -inc 10
@@ -23,6 +25,20 @@ super + XF86MonBrightnessUp
     xbacklight -set 100
 super + XF86MonBrightnessDown
     xbacklight -set 1
+
+# F7
+super + XF86Display
+    arandr
+# F8
+# XF86WLAN (mapped)
+# F9
+# XF86Tools
+# F10
+# XF86Search
+
+# Print
+#     scrot -s
+
 
 
 
@@ -71,6 +87,3 @@ super + XF86MonBrightnessDown
 
 # super + f
 #     bspc node --state \~fullscreen
-
-super + @space
-    rofi -show run
