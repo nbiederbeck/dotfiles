@@ -24,7 +24,6 @@ let g:lengthmatters_highlight_one_column = 1
 call lengthmatters#highlight('ctermfg=1')
 
 
-match Todo /[Tt][Oo][Dd][Oo]/
 
-highlight MyGroup ctermbg=green ctermfg=black cterm=bold
-match MyGroup /MyGroup/
+highlight todo ctermbg=none ctermfg=yellow cterm=bold,underline
+match todo /[Tt][Oo][Dd][Oo]/
