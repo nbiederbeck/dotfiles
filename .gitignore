@@ -9,3 +9,4 @@ tmux/.tmux/plugins/
 *.log
 
 qutebrowser/.config/qutebrowser/qsettings
+qutebrowser/.config/qutebrowser/autoconfig.yml
