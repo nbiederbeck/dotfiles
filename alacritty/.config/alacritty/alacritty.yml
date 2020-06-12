@@ -60,13 +60,13 @@ font:
   normal:
     family: Source Code Pro # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
-    style: Light
+    style: Regular
 
   # The bold font face
   bold:
     family: Source Code Pro # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
-    style: Black
+    style: Bold
 
   # The italic font face
   italic:
@@ -75,7 +75,7 @@ font:
     style: Italic
 
   # Point size of the font
-  size: 8.0
+  size: 10.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -101,6 +101,36 @@ debug:
 
 # Colors (Tomorrow Night Bright)
 schemes:
+    gruvbox_light: &gruvbox
+          # Default colors
+      primary:
+        # hard contrast: background = '#f9f5d7'
+        background: '#fbf1c7'
+        # soft contrast: background = '#f2e5bc'
+        foreground: '#3c3836'
+
+      # Normal colors
+      normal:
+        black:   '#fbf1c7'
+        red:     '#cc241d'
+        green:   '#98971a'
+        yellow:  '#d79921'
+        blue:    '#458588'
+        magenta: '#b16286'
+        cyan:    '#689d6a'
+        white:   '#7c6f64'
+
+      # Bright colors
+      bright:
+        black:   '#928374'
+        red:     '#9d0006'
+        green:   '#79740e'
+        yellow:  '#b57614'
+        blue:    '#076678'
+        magenta: '#8f3f71'
+        cyan:    '#427b58'
+        white:   '#3c3836'
+
     solarized_light: &solarized
           # Default colors
           primary:
@@ -178,7 +208,7 @@ schemes:
         cyan:    '0x66cccc'
         white:   '0xdddddd'
 
-colors: *solarized
+colors: *nord
 
 # Visual Bell
 #
