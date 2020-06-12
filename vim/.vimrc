@@ -34,7 +34,7 @@ set linebreak
 if has('nvim')
     set breakindent
 endif
-let &showbreak="\\"
+let &showbreak="→"
 
 set autoindent
 set tabstop=4
