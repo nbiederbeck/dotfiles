@@ -1,16 +1,16 @@
 #!/bin/bash
-xset r rate 300 80 &
-xmodmap ~/.Xmodmap &
-unclutter --timeout=5 --jitter=1 -b &
+xset r rate 300 80 &!
+xmodmap ~/.Xmodmap &!
+unclutter --timeout=5 --jitter=1 -b &!
 if ! [[ $(pgrep redshift) ]]; then
-    redshift &
+    redshift &!
 fi
 if ! [[ $(pgrep dunst) ]]; then
-    dunst &
+    dunst &!
 fi
-nm-applet &
-# blueman-applet &
-i3-battery-popup -L 20 -n &
-feh --bg-fill ~/Pictures/background
-ncdu ~ -o ~/ncdu.file -0 &
-~/.config/i3lock/lock_when_idle.sh &
+nm-applet &!
+i3-battery-popup -L 20 -n &!
+feh --bg-fill ~/Pictures/background &!
+ncdu ~ -o ~/ncdu.file -0 &!
+~/.config/i3lock/lock_when_idle.sh &!
+redshift -O 5500 &!
