@@ -222,6 +222,8 @@ mode "borders" {
 # 3) find `WM_CLASS(STRING)`
 # 4) use second value to assign
 
+assign [class="vlc"] $ws2
+
 # Browser Workspace 4
 assign [class="qutebrowser"] $ws4
 assign [class="firefox-esr"] $ws4
