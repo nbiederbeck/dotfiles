@@ -10,7 +10,7 @@ BW_HASH=
 # Options
 CLEAR=$DEFAULT_CLEAR # Clear password after N seconds (0 to disable)
 SHOW_PASSWORD=no # Show part of the password in the notification
-AUTO_LOCK=900 # 15 minutes, default for bitwarden apps
+AUTO_LOCK=7200 # 15 minutes, default for bitwarden apps
 
 # Holds the available items in memory
 ITEMS=
