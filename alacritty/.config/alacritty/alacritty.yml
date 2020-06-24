@@ -12,7 +12,7 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  TERM: alacritty #xterm-256color
+  TERM: xterm-256color
 
 window:
   # Window dimensions in character columns and lines
@@ -80,20 +80,20 @@ font:
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
-    x: 0
-    y: 1
+    x: -1
+    y: -2
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
     x: 0
-    y: 1
+    y: 0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # Should display the render timer
 debug:
@@ -101,68 +101,6 @@ debug:
 
 # Colors (Tomorrow Night Bright)
 schemes:
-    gruvbox_light: &gruvbox
-          # Default colors
-      primary:
-        # hard contrast: background = '#f9f5d7'
-        background: '#fbf1c7'
-        # soft contrast: background = '#f2e5bc'
-        foreground: '#3c3836'
-
-      # Normal colors
-      normal:
-        black:   '#fbf1c7'
-        red:     '#cc241d'
-        green:   '#98971a'
-        yellow:  '#d79921'
-        blue:    '#458588'
-        magenta: '#b16286'
-        cyan:    '#689d6a'
-        white:   '#7c6f64'
-
-      # Bright colors
-      bright:
-        black:   '#928374'
-        red:     '#9d0006'
-        green:   '#79740e'
-        yellow:  '#b57614'
-        blue:    '#076678'
-        magenta: '#8f3f71'
-        cyan:    '#427b58'
-        white:   '#3c3836'
-
-    solarized_light: &solarized
-          # Default colors
-          primary:
-            background: '#fdf6e3' # base3
-            foreground: '#657b83' # base00
-
-          # Cursor colors
-          cursor:
-            text:   '#fdf6e3' # base3
-            cursor: '#657b83' # base00
-
-          # Normal colors
-          normal:
-            black:   '#073642' # base02
-            red:     '#dc322f' # red
-            green:   '#859900' # green
-            yellow:  '#b58900' # yellow
-            blue:    '#268bd2' # blue
-            magenta: '#d33682' # magenta
-            cyan:    '#2aa198' # cyan
-            white:   '#eee8d5' # base2
-
-          # Bright colors
-          bright:
-            black:   '#002b36' # base03
-            red:     '#cb4b16' # orange
-            green:   '#586e75' # base01
-            yellow:  '#657b83' # base00
-            blue:    '#839496' # base0
-            magenta: '#6c71c4' # violet
-            cyan:    '#93a1a1' # base1
-            white:   '#fdf6e3' # base3
     nord: &nord
       # Default colors
       primary:
