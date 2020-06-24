@@ -90,6 +90,7 @@ config.set(
 # running qutebrowser version.  The default value is equal to the
 # unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
 # read from JavaScript is always the global value.
+
 # Type: FormatString
 config.set(
     "content.headers.user_agent",
@@ -97,6 +98,11 @@ config.set(
     "https://docs.google.com/*",
 )
 
+config.set(
+    "content.headers.user_agent",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36",
+    "https://jitsi.e5.physik.tu-dortmund.de/*",
+)
 # Load images automatically in web pages.
 # Type: Bool
 config.set("content.images", True, "chrome-devtools://*")
@@ -223,3 +229,12 @@ c.colors.statusbar.url.success.https.fg = "green"
 
 c.fonts.default_family = "Source Code Pro"
 c.fonts.default_size = "10pt"
+
+# c.colors.webpage.bg = "#eeeeee"
+# c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
+# c.colors.webpage.darkmode.enabled = True
+# c.colors.webpage.darkmode.policy.images = 'smart'
+# c.colors.webpage.darkmode.policy.page = 'always'
+# c.colors.webpage.darkmode.threshold.text = 150
+# c.colors.webpage.darkmode.threshold.background = 205
+# c.colors.webpage.prefers_color_scheme_dark = True

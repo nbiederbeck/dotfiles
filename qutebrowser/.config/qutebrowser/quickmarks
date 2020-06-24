@@ -1,4 +1,4 @@
-lab vollmond.app.tu-dortmund.de:2702
+lab http://localhost:2002/lab?
 locallab localhost:2702
 ddg https://start.duckduckgo.com/
 github https://github.com
@@ -15,3 +15,4 @@ bash-hackers https://wiki.bash-hackers.org/doku.php
 gmx https://www.gmx.net/
 tu-boss https://www.boss.tu-dortmund.de/qisserver/rds?state=user&type=0
 tu-urlaub https://sap-p01.sap.tu-dortmund.de:55401/irj/portal
+tu-moodle https://moodle.tu-dortmund.de/
