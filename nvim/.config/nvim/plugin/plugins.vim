@@ -8,14 +8,12 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'dracula/vim', {'name': 'dracula'}
 Plug 'whatyouhide/vim-lengthmatters'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
     let g:airline_theme='nord'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#ale#enabled = 1
-Plug 'altercation/vim-colors-solarized'
 " Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/vim-lsp'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -32,18 +30,18 @@ Plug 'justinmk/vim-sneak'
 " Plug 'blueyed/vim-diminactive'
     "     let g:diminactive_use_colorcolumn = 0
     "     let g:diminactive_use_syntax = 1
-Plug 'itchyny/calendar.vim'
-    let g:calendar_google_calendar = 1
+" Plug 'itchyny/calendar.vim'
+"     let g:calendar_google_calendar = 1
 " Plug 'maximbaz/lightline-ale'
-    set laststatus=2
-    set noshowmode
+    " set laststatus=2
+    " set noshowmode
 Plug 'xolox/vim-reload'
 Plug 'xolox/vim-misc'
-Plug 'kien/rainbow_parentheses.vim'
-    au VimEnter * RainbowParenthesesToggle
-    au Syntax * RainbowParenthesesLoadRound
-    au Syntax * RainbowParenthesesLoadSquare
-    au Syntax * RainbowParenthesesLoadBraces
+" Plug 'kien/rainbow_parentheses.vim'
+"     au VimEnter * RainbowParenthesesToggle
+"     au Syntax * RainbowParenthesesLoadRound
+"     au Syntax * RainbowParenthesesLoadSquare
+"     au Syntax * RainbowParenthesesLoadBraces
 Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = '<C-n>'
 Plug 'sirver/ultisnips'
