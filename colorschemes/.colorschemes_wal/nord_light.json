@@ -7,8 +7,8 @@
         "cursor": "#D8DEE9"
     },
     "colors": {
-        "color0": "#3B4252",
-        "color8": "#4c566a",
+        "color15": "#4B5262",
+        "color7": "#5c667a",
         "color1": "#BF616A",
         "color9": "#BF616A",
         "color2": "#A3BE8C",
@@ -21,7 +21,7 @@
         "color13": "#B48EAD",
         "color6": "#88C0D0",
         "color14": "#8FBCBB",
-        "color7": "#E5E9F0",
-        "color15": "#ECEFF4"
+        "color8": "#D5D9E0",
+        "color0": "#DCDFE4"
     }
 }
