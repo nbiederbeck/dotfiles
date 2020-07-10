@@ -28,13 +28,14 @@ set incsearch
 
 set backspace=indent,eol,start
 set list
-set listchars=tab:>-,trail:_, "eol:¬,space:.
+set listchars=tab:>-,trail:_, "eol:↵,space:␣,
 set wrap
 set linebreak
 if has('nvim')
     set breakindent
 endif
 let &showbreak="→"
+hi NonText ctermfg=7 cterm=none
 
 set autoindent
 set tabstop=4
