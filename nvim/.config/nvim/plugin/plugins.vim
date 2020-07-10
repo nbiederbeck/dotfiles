@@ -11,37 +11,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'whatyouhide/vim-lengthmatters'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-    let g:airline_theme='nord'
+    let g:airline_theme='solarized'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#ale#enabled = 1
-" Plug 'prabirshrestha/async.vim'
-" Plug 'prabirshrestha/vim-lsp'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
-    let g:LanguageClient_serverCommands = {'python': ['pyls'], 'latex': ['texlab']}
-    " let g:LanguageClient_useVirtualText = "No"
+Plug 'altercation/vim-colors-solarized'
 Plug 'juliaeditorsupport/julia-vim'
-" Plug 'python-mode/python-mode', {'for': 'python'}
-    " let g:pymode_lint = 0
-    " let g:pymode_rope = 0
-    " let g:pymode_folding = 0
-    " let g:pymode_options_max_line_length = 88
 Plug 'justinmk/vim-sneak'
-" Plug 'blueyed/vim-diminactive'
-    "     let g:diminactive_use_colorcolumn = 0
-    "     let g:diminactive_use_syntax = 1
-" Plug 'itchyny/calendar.vim'
-"     let g:calendar_google_calendar = 1
-" Plug 'maximbaz/lightline-ale'
-    " set laststatus=2
-    " set noshowmode
 Plug 'xolox/vim-reload'
 Plug 'xolox/vim-misc'
-" Plug 'kien/rainbow_parentheses.vim'
-"     au VimEnter * RainbowParenthesesToggle
-"     au Syntax * RainbowParenthesesLoadRound
-"     au Syntax * RainbowParenthesesLoadSquare
-"     au Syntax * RainbowParenthesesLoadBraces
 Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = '<C-n>'
 Plug 'sirver/ultisnips'
@@ -58,12 +35,8 @@ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     if matchstr(hostname(), 'vollmond') == 'vollmond'
         let g:python3_host_prog = "/scratch/nbiederbeck/conda/envs/py37/bin/python"
     endif
-    " if matchstr(hostname(), 'phobos') == 'phobos'
-    "     let g:python3_host_prog = "/scratch/nbiederbeck/conda/envs/py37/bin/python"
-    " endif
     let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
-" Plug 'neomake/neomake'
 Plug 'dense-analysis/ale'
     let g:ale_sign_error = 'E'
     let g:ale_sign_warning = 'W'
@@ -72,8 +45,8 @@ Plug 'dense-analysis/ale'
     let g:ale_lint_on_enter = 1
     let g:ale_lint_on_save = 1
     let g:ale_fix_on_save = 0
-    " let g:ale_warn_about_trailing_blank_lines = 0
-    " let g:ale_warn_about_trailing_whitespace = 0
+    let g:ale_warn_about_trailing_blank_lines = 1
+    let g:ale_warn_about_trailing_whitespace = 1
     nmap ]a <ESC>:ALENextWrap<CR>
     nmap [a <ESC>:ALEPreviousWrap<CR>
     xmap ]a <ESC>:ALENextWrap<CR>
@@ -103,40 +76,27 @@ Plug 'noahhdf/siunitx-conceal.vim', {'for': 'tex'}
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
     map <Leader>\ <plug>NERDTreeTabsToggle<CR>
-Plug 'tpope/vim-fugitive'
 Plug 'junegunn/vim-easy-align'
     nmap ga <Plug>(EasyAlign)
     xmap ga <Plug>(EasyAlign)
-Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/limelight.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'kshenoy/vim-signature'
+" Plug 'terryma/vim-multiple-cursors'
+" Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-    let g:vim_markdown_folding_disabled=1
-Plug 'vimwiki/vimwiki', {'for': ['vimwiki', 'markdown']}
-    let g:vimwiki_list = [{'path': '~/wiki/', 'syntax': 'markdown', 'ext': '.md'}]
-Plug 'vim-scripts/vim-on-write'
+" Plug 'vim-scripts/vim-on-write'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'noahhdf/vim-agriculture'
     vmap <Leader>/ <Plug>RgRawVisualSelection
     nmap <Leader>/ <Plug>RgRawWordUnderCursor
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
-Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
-" Plug 'mhartington/nvim-typescript', {'do': './install.sh', 'for': 'typescript'}
-Plug 'rhysd/vim-grammarous'
-" Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
     let g:nord_italic=1
     let g:nord_italic_comments=1
     let g:nord_cursor_line_number_background=0
     let g:nord_uniform_diff_background=1
-Plug 'morhetz/gruvbox'
-    let g:gruvbox_contrast_light = 'hard'
-    let g:gruvbox_termcolors=16
 Plug '907th/vim-auto-save'
     let g:auto_save_events = ['InsertLeave', 'TextChanged']
     let g:auto_save = 1
@@ -144,16 +104,16 @@ Plug '907th/vim-auto-save'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'ntpeters/vim-better-whitespace'
-    let g:strip_whitespace_on_save = 1
-    let g:better_whitespace_enabled = 1
-    let g:strip_whitelines_at_eof = 1
-    let g:show_spaces_that_precede_tabs = 1
-    let g:better_whitespace_verbosity = 0
-    let g:strip_whitespace_confirm = 0
+Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-dispatch'
+" Plug 'ntpeters/vim-better-whitespace'
+"     let g:strip_whitespace_on_save = 1
+"     let g:better_whitespace_enabled = 1
+"     let g:strip_whitelines_at_eof = 1
+"     let g:show_spaces_that_precede_tabs = 1
+"     let g:better_whitespace_verbosity = 0
+"     let g:strip_whitespace_confirm = 0
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'pest-parser/pest.vim'
 call plug#end()
 
 call deoplete#custom#option('sources', {'_': ['ale']})

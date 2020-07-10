@@ -1,7 +1,7 @@
 syntax enable
 
-colorscheme nord
-set background=dark
+colorscheme solarized
+set background=light
 
 " set termguicolors
 syntax on
@@ -22,8 +22,6 @@ highlight Exception ctermfg=3
 
 let g:lengthmatters_highlight_one_column = 1
 call lengthmatters#highlight('ctermfg=1')
-
-
 
 highlight todo ctermbg=none ctermfg=yellow cterm=bold,underline
 match todo /[Tt][Oo][Dd][Oo]/
