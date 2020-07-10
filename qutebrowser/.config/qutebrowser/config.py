@@ -133,7 +133,7 @@ c.hints.border = "1px solid black"
 
 # Hide the statusbar unless a message is shown.
 # Type: Bool
-c.statusbar.hide = False
+# c.statusbar.hide = False
 
 # When to show the tab bar.
 # Type: String
@@ -199,11 +199,11 @@ c.colors.statusbar.normal.fg = "gray"
 
 # Foreground color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.fg = "white"
+c.colors.statusbar.passthrough.fg = "gray"
 
 # Background color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.bg = "lightgray"
+c.colors.statusbar.passthrough.bg = "black"
 
 # Foreground color of the statusbar in command mode.
 # Type: QssColor
@@ -220,7 +220,7 @@ c.colors.statusbar.url.fg = "gray"
 # Foreground color of the URL in the statusbar on successful load
 # (http).
 # Type: QssColor
-c.colors.statusbar.url.success.http.fg = "orange"
+c.colors.statusbar.url.success.http.fg = "lightgray"
 
 # Foreground color of the URL in the statusbar on successful load
 # (https).
@@ -230,7 +230,7 @@ c.colors.statusbar.url.success.https.fg = "green"
 c.fonts.default_family = "Source Code Pro"
 c.fonts.default_size = "10pt"
 
-# c.colors.webpage.bg = "#eeeeee"
+# c.colors.webpage.bg = "#121212"
 # c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 # c.colors.webpage.darkmode.enabled = True
 # c.colors.webpage.darkmode.policy.images = 'smart'
