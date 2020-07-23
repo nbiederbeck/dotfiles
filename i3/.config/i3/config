@@ -182,9 +182,6 @@ bindsym $mod+Tab workspace back_and_forth
 # bindsym Ctrl+XF86MonBrightnessUp exec xbacklight -set 100
 # bindsym Ctrl+XF86MonBrightnessDown exec xbacklight -set 1
 
-# Display / Beamer Settings
-bindsym XF86LaunchA exec xbacklight -set $(cat ~/.cache/xbacklight/xbacklight) & autorandr --change && feh --bg-fill ~/Pictures/background
-
 #  -- color windows --  #
 #                       #border    #background #text      #indicator
 client.focused          $yellow    $yellow     $black     $white
@@ -256,6 +253,4 @@ workspace $ws6 output DP2-3 HDMI1 HDMI2
 workspace $ws8 output DP2-3 HDMI1 HDMI2
 workspace $ws10 output DP2-3 HDMI1 HDMI2
 
-exec_always --no-startup-id ~/.start
-exec_always sxhkd -c ~/.config/sxhkd/sxhkdrc-i3
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.autostart-i3
