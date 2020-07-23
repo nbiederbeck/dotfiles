@@ -94,15 +94,15 @@ for_window [class="feh"] floating enable
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-set $ws1  "1:I"
+set $ws1  "1:i"
 set $ws2  "2:II"
-set $ws3  "3:III"
+set $ws3  "3:iii"
 set $ws4  "4:IV"
-set $ws5  "5:V"
+set $ws5  "5:v"
 set $ws6  "6:VI"
-set $ws7  "7:VII"
+set $ws7  "7:vii"
 set $ws8  "8:VIII"
-set $ws9  "9:IX"
+set $ws9  "9:ix"
 set $ws10 "10:X"
 set $ws_messenger $ws9
 set $ws_mail $ws9
