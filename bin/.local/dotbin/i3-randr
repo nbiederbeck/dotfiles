@@ -1,0 +1,6 @@
+#!/bin/bash
+# Change connected screens using autorandr.
+# If current config is the correct config,
+# change back to only laptop screen.
+
+[[ ! $(autorandr --change |& grep 'Config already loaded') ]] || autorandr laptop
