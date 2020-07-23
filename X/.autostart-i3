@@ -1,0 +1,22 @@
+#!/bin/bash
+
+xmodmap ~/.Xmodmap &!
+xset r rate 300 80 &!
+
+ncdu ~ -o ~/ncdu.file -0 &!
+
+unclutter --timeout=5 --jitter=1 -b &!
+
+[[ $(pgrep redshift) ]] || redshift &!
+[[ $(pgrep dunst) ]] || dunst &!
+[[ $(pgrep sxhkd) ]] || sxhkd -c ~/.config/sxhkd/sxhkdrc-i3 &!
+
+nm-applet &!
+
+i3-battery-popup -L 20 -n &!
+
+feh --bg-fill ~/Pictures/background &!
+
+~/.config/i3lock/lock_when_idle.sh &!
+
+~/.config/polybar/launch.sh
