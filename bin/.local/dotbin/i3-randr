@@ -4,3 +4,5 @@
 # change back to only laptop screen.
 
 [[ ! $(autorandr --change |& grep 'Config already loaded') ]] || autorandr laptop
+
+~/.fehbg
