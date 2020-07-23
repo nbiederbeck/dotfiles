@@ -1,8 +1,8 @@
 #!/bin/bash
 
-killall -q polybar
+pkill polybar
 
-while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
+while pgrep -u $UID -x polybar > /dev/null; do sleep 0.1; done
 
 # polybar top &!
 # polybar bottom &!
