@@ -1,0 +1,27 @@
+#!/bin/bash
+# ./brightness increase
+# ./brighntess set 80
+# Increase or decrease brightness by 10%.
+# Set brightness by given value.
+# Dunst notification.
+
+case $1 in
+    inc|increase)
+        opt="inc"
+        val=10
+        ;;
+    dec|decrease)
+        opt="dec"
+        val=10
+        ;;
+    set)
+        opt="set"
+        val=$2
+        ;;
+esac
+
+xbacklight -${opt} ${val}
+dunstify "Brightness" "$(xbacklight)" \
+    --urgency=low \
+    --replace 4737238 \
+    --timeout 1000

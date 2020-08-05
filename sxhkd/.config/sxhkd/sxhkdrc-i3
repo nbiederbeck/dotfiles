@@ -9,22 +9,22 @@ super + d
     i3-dmenu-desktop
 
 XF86AudioRaiseVolume
-    pactl set-sink-volume 1 +5%
+    ~/.local/dotbin/sound.sh increase speakers
 XF86AudioLowerVolume
-    pactl set-sink-volume 1 -5%
+    ~/.local/dotbin/sound.sh decrease speakers
 XF86AudioMute
-    pactl set-sink-mute 1 toggle
+    ~/.local/dotbin/sound.sh toggle-mute speakers
 XF86AudioMicMute
-    pactl set-source-mute 1 toggle
+    ~/.local/dotbin/sound.sh toggle-mute microphone
 
 XF86MonBrightnessUp
-    xbacklight -inc 10
+    ~/.local/dotbin/brightness increase
 XF86MonBrightnessDown
-    xbacklight -dec 10
+    ~/.local/dotbin/brightness decrease
 super + XF86MonBrightnessUp
-    xbacklight -set 100
+    ~/.local/dotbin/brightness set 100
 super + XF86MonBrightnessDown
-    xbacklight -set 1
+    ~/.local/dotbin/brightness set 1
 
 # F7
 XF86Display
@@ -41,51 +41,5 @@ super + XF86Display
 # Print
 #     scrot -s
 
-
-
-
-
 # super + shift + d
 #     rofi -show window -lines 5
-
-# super + @space
-#     bspc node --state \~floating
-
-# super + e
-#     kde-bspwm-lock
-
-# super + shift + r
-#     bspc wm --restart & notify-send "Restart" "Window manager restarted."
-
-# super + shift + c
-#     sxhkd --restart
-
-# super + shift + q
-#     bspc node --kill
-
-# # 'monocle' mode a.k.a. fullscreen
-# super + m
-#     bspc desktop --layout next
-
-# super + {h,j,k,l}
-#     bspc node --focus {west,south,north,east}
-
-# super + shift + {h,j,k,l}
-#     bspc node -s {west,south,north,east}
-
-# # focus or send to the given desktop
-# super + {_,shift + }{1-9,0}
-#     bspc {desktop -f,node -d} '^{1-9,10}'
-
-# # focus the last node/desktop
-# super + {grave,Tab}
-#     bspc {node,desktop} --focus last
-
-# super + {Left,Right}
-#     bspc desktop --focus {prev,next}
-
-# super + {t,shift + t,s}
-#     bspc node --state {tiled,pseudo_tiled,floating}
-
-# super + f
-#     bspc node --state \~fullscreen
