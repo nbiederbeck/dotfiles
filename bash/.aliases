@@ -1,6 +1,6 @@
 # vim: ft=sh
 
-alias 'vim'='$EDITOR'
+alias vim=nvim
 
 alias 'lg'='lazygit'
 
@@ -17,9 +17,6 @@ alias 'anno'='wine /home/noah/.wine/drive_c/Program\ Files\ \(x86\)/ANNO\ 1602\ 
 alias 'msc'='conda activate; cd ~/Uni/MSc/master-thesis/code'
 alias 'prak'='cd ~/Uni/MSc/praktikum && conda activate'
 alias 'thesis'='cd ~/Uni/MSc/master-thesis; source .env/bin/activate.bash'
-
-# Arch, Pacman
-alias 'mirrorupdate'='echo "reflector -n 20 -p https -l 10 -c Germany --sort rate --score 5 | sudo tee /etc/pacman.d/mirrorlist" && reflector -n 20 -p https -l 10 -c Germany --sort rate --score 5 | sudo -k tee /etc/pacman.d/mirrorlist'
 
 # Useful abbreviations
 alias 'up'='uptime --pretty'
@@ -56,7 +53,7 @@ alias 'la'='ls -a'
 alias 'pip-upgrade'='echo "pip install -U pip && pip install -U \$(pip list -o --format freeze | sed \"s/==.*//\")" && pip install -U pip && pip install -U $(pip list -o --format freeze | sed "s/==.*//")'
 alias 'pip-freeze'='pip freeze | sed "s/==.*//"'
 alias 'conda-freeze'='conda list | sed "s/\ .*//"'
-alias 'lab'='command -v jupyter && jlab || conda activate && jlab'
+alias 'lab'='command -v jupyterlab && jlab || conda activate && jlab'
 alias 'jlab'='jupyter lab --port 2002 --no-browser'
 # alias 'conda2'='source ~/miniconda2/etc/profile.d/conda.sh'
 # alias 'conda3'='source ~/miniconda3/etc/profile.d/conda.sh'
