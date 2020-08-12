@@ -15,6 +15,7 @@ env:
   TERM: xterm-256color
 
 window:
+  dynamic_title: true
   # Window dimensions in character columns and lines
   # Falls back to size specified by window manager if set to 0x0.
   # (changes require restart)
@@ -101,8 +102,61 @@ debug:
 
 # Colors (Tomorrow Night Bright)
 schemes:
+    selenized: &light
+          primary:
+            background: '0xefefef'
+            foreground: '0x474747'
+          normal:
+            black:   '0xebebeb'
+            red:     '0xd6000c'
+            green:   '0x1d9700'
+            yellow:  '0xc49700'
+            blue:    '0x0064e4'
+            magenta: '0xdd0f9d'
+            cyan:    '0x00ad9c'
+            white:   '0x878787'
+          bright:
+            black:   '0xcdcdcd'
+            red:     '0xbf0000'
+            green:   '0x008400'
+            yellow:  '0xaf8500'
+            blue:    '0x0054cf'
+            magenta: '0xc7008b'
+            cyan:    '0x009a8a'
+            white:   '0x282828'
+
+    colors: &one-light
+      # Default colors
+      primary:
+        foreground: '#282c34'
+        background: '#ffffff'
+
+      # Normal colors
+      normal:
+        # NOTE: Use '#131613' for the `black` color if you'd like to see
+        # black text on the background.
+        black:   '#282c34'
+        red:     '#e06c75'
+        green:   '#98c379'
+        yellow:  '#d19a66'
+        blue:    '#61afef'
+        magenta: '#c678dd'
+        cyan:    '#56b6c2'
+        white:   '#abb2bf'
+
+      # Bright colors
+      bright:
+        black:   '#5c6370'
+        red:     '#e06c75'
+        green:   '#98c379'
+        yellow:  '#d19a66'
+        blue:    '#61afef'
+        magenta: '#c678dd'
+        cyan:    '#56b6c2'
+        white:   '#ffffff'
+
     # Colors (Solarized Light)
-    solarized: &light
+    solarized: &sol-light
       # Default colors
       primary:
         background: '#fdf6e3' # base3
@@ -180,7 +234,7 @@ schemes:
         cyan:    '0x66cccc'
         white:   '0xdddddd'
 
-colors: *light
+colors: *one-light
 
 # Visual Bell
 #
@@ -204,7 +258,7 @@ colors: *light
 #
 # To completely disable the visual bell, set its duration to 0.
 #
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -255,7 +309,6 @@ scrolling:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
-dynamic_title: true
 
 # Live config reload (changes require restart)
 live_config_reload: true
