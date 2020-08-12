@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tmux display "reloading config" &!
+tmux source-file ~/.tmux.conf
