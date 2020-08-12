@@ -344,7 +344,7 @@ print_git_info() {
 
 
 # export PS1='\[\033[0;31m\]$(parse_git_branch) \[\033[0;34m\]\w\n\[\033[1;32m\]\[\033[0m\]$ '
-export PS1="$(clr_green '# \w') $(print_git_info)\n"
+# export PS1="$(clr_green '# \w') $(print_git_info)\n"
 
 if [[ $HOSTNAME == "vollmond.app.tu-dortmund.de" ]]; then
     conda activate /scratch/nbiederbeck/conda/envs/cta-dev
@@ -407,3 +407,5 @@ fi
 #     [[ $- != *i* ]] && return
 #     [[ -z "$TMUX" ]] && (tmux attach || tmux new-session)
 # fi
+
+eval "$(starship init bash)"
