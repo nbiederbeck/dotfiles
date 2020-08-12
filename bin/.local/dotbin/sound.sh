@@ -1,5 +1,4 @@
 #!/bin/bash
-
 case $1 in
 
     increase);;
@@ -34,3 +33,8 @@ case $2 in
 esac
 
 pamixer --${option} --$1 5
+volume=$(pamixer --get-volume-human)
+dunstify "Volume" "${volume}" \
+    --urgency=low \
+    --replace 239857 \
+    --timeout 1000
