@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 # ./brightness increase
 # ./brighntess set 80
 # Increase or decrease brightness by 10%.
@@ -21,7 +22,7 @@ case $1 in
 esac
 
 xbacklight -${opt} ${val}
-dunstify "Brightness" "$(xbacklight)" \
-    --urgency=low \
+brightness=$(~/.local/dotbin/progressbar 10 '#' '-' "$(xbacklight)")
+dunstify "Brightness" "${brightness}" \
     --replace 4737238 \
     --timeout 1000
