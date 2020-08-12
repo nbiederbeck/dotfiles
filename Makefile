@@ -9,6 +9,7 @@ all:
 		i3/ \
 		ion/ \
 		matplotlib/ \
+		mime/ \
 		nvim/ \
 		papis/ \
 		polybar/ \
