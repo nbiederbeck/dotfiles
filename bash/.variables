@@ -1,7 +1,7 @@
 # ft=sh
 export FZF_TMUX=0
 export FZF_TMUX_HEIGHT=10
-export FZF_DEFAULT_OPTS='--reverse --color="fg:5,fg+:1,hl:3"'
+export FZF_DEFAULT_OPTS='--reverse --color="fg+:0,bg+:7,info:2" --no-bold'
 export FZF_CTRL_T_COMMAND=fd
 export FZF_ALT_C_COMMAND='fd --type d'
 export FZF_ALT_C_OPTS='--preview "ls --color=always {}"'
