@@ -34,7 +34,8 @@ esac
 
 pamixer --${option} --$1 5
 volume=$(pamixer --get-volume-human)
-dunstify "Volume" "${volume}" \
-    --urgency=low \
+dunstify \
     --replace 239857 \
-    --timeout 1000
+    --timeout 1000 \
+    -- \
+    "Volume" "${volume}"

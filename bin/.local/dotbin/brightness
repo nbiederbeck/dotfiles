@@ -23,6 +23,8 @@ esac
 
 xbacklight -${opt} ${val}
 brightness=$(~/.local/dotbin/progressbar 10 '#' '-' "$(xbacklight)")
-dunstify "Brightness" "${brightness}" \
+dunstify \
     --replace 4737238 \
-    --timeout 1000
+    --timeout 1000 \
+    -- \
+    "Brightness" "${brightness}"
