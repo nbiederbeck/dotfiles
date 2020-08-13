@@ -68,7 +68,6 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    # geometry = "0x4-25+25"
     geometry = "x4"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
@@ -215,6 +214,11 @@
 # to "".
 # NOTE: It might be helpful to run dunst -print in a terminal in order
 # to find fitting options for rules.
+
+[telegram]
+    appname="Telegram Desktop"
+    foreground="#FFFFFF"
+    background="#0088cc"
 
 #[espeak]
 #    summary = "*"
