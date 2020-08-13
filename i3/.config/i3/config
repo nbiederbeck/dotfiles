@@ -185,12 +185,15 @@ bindsym $mod+Tab workspace back_and_forth
 #  -- color windows --  #
 #                       #border    #background #text      #indicator
 client.focused          $yellow    $yellow     $black     $white
-client.unfocused        $black     $black      $white     $white
+client.unfocused        $yellow     $black      $yellow     $white
 client.focused_inactive $black     $black      $white     $white
 client.urgent           $red       $red        $black     $white
 
+title_align center
 
 # -- default borders -- #
+default_border pixel
+default_floating_border normal
 for_window [class=".*"] border pixel $bordersize
 for_window [workspace=$ws7 class="MuPDF"] floating enable, border normal $bordersize
 for_window [class="Surf"] border normal $bordersize
