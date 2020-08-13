@@ -9,7 +9,7 @@ ncdu ~ -o ~/ncdu.file -0 &!
 [[ $(pgrep unclutte) ]] || unclutter --timeout=5 --jitter=1 -b &!
 [[ $(pgrep etesync) ]] || etesync-dav &!
 [[ $(pgrep redshift) ]] || redshift &!
-[[ $(pgrep dunst) ]] || dunst &!
+[[ $(pgrep dunst) ]] || dunst -print 2>&1 >> /tmp/dunst-notifications-log &!
 [[ $(pgrep dropbox) ]] || dropbox &!
 [[ $(pgrep sxhkd) ]] || sxhkd -c ~/.config/sxhkd/sxhkdrc-i3 &!
 
