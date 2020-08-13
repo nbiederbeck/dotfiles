@@ -185,7 +185,7 @@ bindsym $mod+Tab workspace back_and_forth
 #  -- color windows --  #
 #                       #border    #background #text      #indicator
 client.focused          $yellow    $yellow     $black     $white
-client.unfocused        $yellow     $black      $yellow     $white
+client.unfocused        $white     $black      $white     $white
 client.focused_inactive $black     $black      $white     $white
 client.urgent           $red       $red        $black     $white
 
