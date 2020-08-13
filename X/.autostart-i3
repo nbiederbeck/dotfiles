@@ -20,5 +20,6 @@ i3-battery-popup -L 20 -n &!
 feh --bg-fill ~/Pictures/background &!
 
 ~/.config/i3lock/lock_when_idle.sh &!
+xrdb -load ~/.Xresources
 ~/.config/polybar/launch.sh &!
 i3-msg reload
