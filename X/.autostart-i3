@@ -13,8 +13,6 @@ ncdu ~ -o ~/ncdu.file -0 &!
 [[ $(pgrep dropbox) ]] || dropbox &!
 [[ $(pgrep sxhkd) ]] || sxhkd -c ~/.config/sxhkd/sxhkdrc-i3 &!
 
-nm-applet &!
-
 i3-battery-popup -L 20 -n &!
 
 feh --bg-fill ~/Pictures/background &!
