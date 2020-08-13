@@ -73,7 +73,7 @@ bottom = true
 line-size = 6
 label-active-font = 0
 modules-left = cpu ram i3
-modules-center = date backlight
+modules-center = date
 modules-right = battery_internal battery_external
 tray-position = right
 
