@@ -1,11 +1,11 @@
 #!/bin/bash
+# ./pubslist
+# list publications, select with rofi, open in pdf reader
+set -e
 
 n_papers=$(pubs statistics | awk '/Total papers/ {print $4}')
 
-# list publications
-# show rofi selection
-# open using pubs
 pubs list \
-    | rofi -dmenu -i -columns 1 -lines ${n_papers} -p "Paper:" -location 0 -width 80%\
+    | rofi -dmenu -i -columns 1 -lines ${n_papers} -p "Paper" -location 1 -width 100%\
     | sed -e 's/\[//' -e s'/\].*//' \
-    | xargs pubs doc open
+    | xargs --no-run-if-empty pubs doc open
