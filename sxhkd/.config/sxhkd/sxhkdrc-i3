@@ -2,6 +2,9 @@
 super + Return
     alacritty
 
+super + p
+    ~/.local/dotbin/pubslist
+
 super + shift + p
     ~/.local/dotbin/bwmenu
 
@@ -38,8 +41,8 @@ super + XF86Display
 # F10
 # XF86Search
 
-# Print
-#     scrot -s
+super + Print
+    gnome-screenshot
 
 # super + shift + d
 #     rofi -show window -lines 5
