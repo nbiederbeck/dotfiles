@@ -12,8 +12,9 @@ if [ ${#options[*]} -eq 1 ]; then
     autorandr --change ${options}
     i3-msg reload
 else
-    echo ${options} \
-        | dmenu -p 'Display' \
+    echo "${options[*]}" \
+        | sed 's/ /\n/g' \
+        | dmenu -p 'Display' -i -b \
         | xargs --no-run-if-empty autorandr --change
 
     i3-msg restart
