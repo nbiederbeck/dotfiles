@@ -1,8 +1,22 @@
 #!/bin/bash
-# Change connected screens using autorandr.
-# If current config is the correct config,
-# change back to only laptop screen.
+# This script is intended to be run by XF86Screen.
+# Uses autorandr (install if neccessary).
+# If only one autorandr options exists, do nothing,
+# otherwise present the options and reload i3.
 
-[[ ! $(autorandr --change |& grep 'Config already loaded') ]] || autorandr laptop
+set -eo pipefail
+
+options=($(autorandr --detect))
+
+if [ ${#options[*]} -eq 1 ]; then
+    autorandr --change ${options}
+    i3-msg reload
+else
+    echo ${options} \
+        | dmenu -p 'Display' \
+        | xargs --no-run-if-empty autorandr --change
+
+    i3-msg restart
+fi
 
 ~/.fehbg
