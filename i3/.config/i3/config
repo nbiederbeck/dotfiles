@@ -27,11 +27,10 @@ set $alt Mod1
 set $mod Mod4
 # set $win Mod4
 
-set $fontsize 7
 set $bordersize 1
 set $gapsize 0
 
-font pango:Source Code Pro $fontsize
+font pango:Source Code Pro 8
 # font pango:DejaVu Sans Mono 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -260,4 +259,8 @@ exec_always --no-startup-id ~/.autostart-i3
 
 bar {
     i3bar_command /home/noah/.config/polybar/launch.sh
+    # tray_output primary
+    # status_command ~/.local/dotbin/i3-bar
+    # # separator_symbol ":"
+    # strip_workspace_numbers true
 }
