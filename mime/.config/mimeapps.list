@@ -9,3 +9,5 @@ text/plain=org.gnome.gedit.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 image/jpeg=feh.desktop;
 image/png=feh.desktop;
+text/x-csrc=org.gnome.gedit.desktop;
+application/x-cd-image=org.gnome.FileRoller.desktop;
