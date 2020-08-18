@@ -49,7 +49,7 @@ alias 'la'='ls -a'
 # Python commands
 # alias 'notebook'='jupyter notebook' # && nbconvert *.ipynb'
 # alias 'nbconvert'='time jupyter nbconvert --to python'
-# alias 'pip'='pip --no-cache-dir'
+alias 'ppip'='python -m pip'
 alias 'pip-upgrade'='echo "pip install -U pip && pip install -U \$(pip list -o --format freeze | sed \"s/==.*//\")" && pip install -U pip && pip install -U $(pip list -o --format freeze | sed "s/==.*//")'
 alias 'pip-freeze'='pip freeze | sed "s/==.*//"'
 alias 'conda-freeze'='conda list | sed "s/\ .*//"'
@@ -84,8 +84,6 @@ alias 'cdf'='cd $(fd --type d | fzf --preview "ls {} -a --color=always")'
 # alias 'pdfpandoc'='pandoc -r markdown -w latex -o'
 alias 'speedtest'='time seq -f "test %g"'
 alias 'rustbook'='surf ~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/second-edition/index.html &'
-
-alias 'base'='source ~/venv/base/bin/activate'
 
 alias "listgit"="fd '\.git$' -HI -t d -E .vim -E .cache -E .oh-my-zsh -E .cargo"
 
