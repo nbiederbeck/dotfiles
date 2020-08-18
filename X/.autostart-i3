@@ -9,6 +9,8 @@ add-keyboard &!
 
 ncdu ~ -o ~/ncdu.file -0 &!
 
+nm-applet &!
+
 [[ $(pgrep restic) ]] || restic-backup-interval &!
 [[ $(pgrep unclutte) ]] || unclutter --timeout=5 --jitter=1 -b &!
 [[ $(pgrep etesync) ]] || etesync-dav &!
