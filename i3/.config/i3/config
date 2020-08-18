@@ -257,3 +257,7 @@ workspace $ws8 output DP2-3 HDMI1 HDMI2
 workspace $ws10 output DP2-3 HDMI1 HDMI2
 
 exec_always --no-startup-id ~/.autostart-i3
+
+bar {
+    i3bar_command /home/noah/.config/polybar/launch.sh
+}
