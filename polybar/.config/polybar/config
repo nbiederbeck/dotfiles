@@ -39,7 +39,7 @@ font-2 = "DejaVuSerifCondensed:size=6;1"
 font-3 = "NotoEmoji:scale=13"
 module-margin = 1
 monitor = eDP1
-monitor-fallback = DP1
+monitor-fallback = DP2-3
 
 [bar/combined]
 inherit = bar
