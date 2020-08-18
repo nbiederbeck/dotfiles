@@ -9,7 +9,7 @@ super + shift + p
     ~/.local/dotbin/bwmenu
 
 super + d
-    i3-dmenu-desktop
+    i3-dmenu-desktop --dmenu='dmenu -i -b'
 
 XF86AudioRaiseVolume
     ~/.local/dotbin/sound.sh increase speakers
