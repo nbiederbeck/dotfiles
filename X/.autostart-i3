@@ -1,11 +1,15 @@
 #!/bin/bash
+# Start with i3 window manager
 
-xmodmap ~/.Xmodmap &!
-xset r rate 300 80 &!
+set -eo pipefail
+
+PATH=${PATH}:~/.local/dotbin/
+
+add-keyboard &!
 
 ncdu ~ -o ~/ncdu.file -0 &!
 
-[[ $(pgrep restic) ]] || ~/.local/dotbin/restic-backup-interval &!
+[[ $(pgrep restic) ]] || restic-backup-interval &!
 [[ $(pgrep unclutte) ]] || unclutter --timeout=5 --jitter=1 -b &!
 [[ $(pgrep etesync) ]] || etesync-dav &!
 [[ $(pgrep redshift) ]] || redshift &!
