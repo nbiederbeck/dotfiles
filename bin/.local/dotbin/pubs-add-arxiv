@@ -1,0 +1,10 @@
+#!/bin/bash
+
+arxiv_id=$1
+pdf_file="${arxiv_id}.pdf"
+
+cd /tmp
+
+curl -#O https://arxiv.org/pdf/${pdf_file}
+
+pubs add -X ${arxiv_id} -d ${pdf_file}
