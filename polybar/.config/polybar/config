@@ -2,7 +2,7 @@
 [colors]
 background = #000000
 foreground = #D8DEE9
-black      = #BF616A
+black      = #3B4252
 red        = #BF616A
 green      = #A3BE8C
 yellow     = #EBCB8B
@@ -18,11 +18,12 @@ alert      = ${colors.red}
 [bar]
 width            = 100%
 height           = 16
+line-size        = 16
 offset-x         = 0
 offset-y         = 0
 underline-size   = 0
 fixed-center     = true
-background       = ${colors.black}
+background       = ${colors.background}
 line-color       = ${colors.background}
 foreground       = ${colors.foreground}
 font-0           = "SourceCodePro:size=8;1"
@@ -35,7 +36,6 @@ monitor-fallback = DP2-3
 
 [bar/combined]
 inherit           = bar
-line-size         = 16
 label-active-font = 0
 modules-left      = battery temperature cpu ram backlight performance
 modules-center    = traffic i3
@@ -44,7 +44,6 @@ tray-position     = right
 
 [bar/top]
 inherit           = bar
-line-size         = 16
 label-active-font = 0
 modules-left      = temperature cpu ram backlight
 modules-center    = date
@@ -54,7 +53,6 @@ tray-position     = right
 [bar/bottom]
 inherit        = bar
 bottom         = true
-line-size      = 16
 modules-left   = i3
 modules-center =
 modules-right  = battery_internal battery_external
@@ -62,7 +60,6 @@ modules-right  = battery_internal battery_external
 [bar/bottom_only]
 inherit           = bar
 bottom            = true
-line-size         = 6
 label-active-font = 0
 modules-left      = cpu ram i3
 modules-center    = date
