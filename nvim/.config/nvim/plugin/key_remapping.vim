@@ -1,4 +1,4 @@
-nnoremap <LEADER>m :Make<CR>
+nnoremap <LEADER>m :Dispatch<CR>
 
 inoremap jk <ESC>
 inoremap jjk <ESC>:w<CR>

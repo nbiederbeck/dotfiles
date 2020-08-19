@@ -106,7 +106,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 " Plug 'ntpeters/vim-better-whitespace'
 "     let g:strip_whitespace_on_save = 1
 "     let g:better_whitespace_enabled = 1
