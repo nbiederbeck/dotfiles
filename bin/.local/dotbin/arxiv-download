@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /tmp
+
+curl -#O https://arxiv.org/pdf/$1.pdf
