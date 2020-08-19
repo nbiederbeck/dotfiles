@@ -1,27 +1,19 @@
 ; vim: ft=dosini
 [colors]
-background = ${xrdb:background:#000000}
-foreground = ${xrdb:foreground:#D8DEE9}
-black = ${xrdb:color0:#BF616A}
-red = ${xrdb:color1:#BF616A}
-green = ${xrdb:color2:#A3BE8C}
-yellow = ${xrdb:color3:#EBCB8B}
-blue = ${xrdb:color4:#81A1C1}
-purple = ${xrdb:color5:#B48EAD}
-cyan = ${xrdb:color6:#88C0D0}
-white = ${xrdb:color7:#E5E9F0}
-; black = ${xrdb:color8:#4C566A}
-; red = ${xrdb:color9:#BF616A}
-; green = ${xrdb:color10:#A3BE8C}
-; yellow = ${xrdb:color11:#EBCB8B}
-; blue = ${xrdb:color12:#81A1C1}
-; purple = ${xrdb:color13:#B48EAD}
-; cyan = ${xrdb:color14:#8FBCBB}
-; white = ${xrdb:color15:#ECEFF4}
-normal = ${colors.foreground}
-highlight = ${colors.green}
-warning = ${colors.yellow}
-alert = ${colors.red}
+background = #000000
+foreground = #D8DEE9
+black      = #BF616A
+red        = #BF616A
+green      = #A3BE8C
+yellow     = #EBCB8B
+blue       = #81A1C1
+purple     = #B48EAD
+cyan       = #88C0D0
+white      = #E5E9F0
+normal     = ${colors.foreground}
+highlight  = ${colors.green}
+warning    = ${colors.yellow}
+alert      = ${colors.red}
 
 [bar]
 width = 100%
