@@ -3,6 +3,8 @@
 # -- .Xresources colors -- #
 set $fullblack #000000
 set_from_resource $black .color0
+set $black #000000
+set $gray #999999
 set_from_resource $boldblack .color8
 set_from_resource $red .color1
 set_from_resource $boldred .color9
@@ -17,6 +19,7 @@ set_from_resource $boldmagenta .color13
 set_from_resource $cyan .color6
 set_from_resource $boldcyan .color14
 set_from_resource $white .color7
+set $white #efefef
 set_from_resource $boldwhite .color15
 
 workspace_layout tabbed  # default|stacking|tabbed
@@ -27,7 +30,7 @@ set $alt Mod1
 set $mod Mod4
 # set $win Mod4
 
-set $bordersize 1
+set $bordersize 2
 set $gapsize 0
 
 font pango:Source Code Pro 8
@@ -183,15 +186,15 @@ bindsym $mod+Tab workspace back_and_forth
 
 #  -- color windows --  #
 #                       #border    #background #text      #indicator
-client.focused          $yellow    $yellow     $black     $white
-client.unfocused        $black     $black      $white     $white
+client.focused          $black    $white     $black     $white
+client.unfocused        $black     $black      $gray     $white
 client.focused_inactive $black     $black      $white     $white
 client.urgent           $red       $red        $black     $white
 
 title_align center
 
 # -- default borders -- #
-default_border pixel
+default_border pixel $bordersize
 default_floating_border normal
 for_window [class=".*"] border pixel $bordersize
 for_window [workspace=$ws7 class="MuPDF"] floating enable, border normal $bordersize
