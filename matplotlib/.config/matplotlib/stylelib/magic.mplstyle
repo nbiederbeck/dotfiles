@@ -14,7 +14,6 @@ pgf.texsystem: lualatex
 
 text.usetex:         True
 text.latex.preamble: \usepackage[locale=DE]{siunitx}
-text.latex.preview:  False
 
 # Change Color Cycle from Magic Website
 axes.prop_cycle: cycler('color', ['2D327C', 'E1BB00', '9467BD', '8C564B', 'E377C2', '7F7F7F', 'BCBD22', '17BECF'])
