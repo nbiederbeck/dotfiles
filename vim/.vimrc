@@ -31,9 +31,9 @@ set list
 set listchars=tab:>-,trail:_, "eol:↵,space:␣,
 set wrap
 set linebreak
-if has('nvim')
-    set breakindent
-endif
+" if has('nvim')
+"     set breakindent
+" endif
 let &showbreak="→"
 hi NonText ctermfg=7 cterm=none
 
@@ -64,4 +64,4 @@ if empty(glob("~/.cache/nvim/undo/"))
 endif
 set undofile
 
-set exrc
+" set exrc
