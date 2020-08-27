@@ -206,13 +206,13 @@ for_window [class=" "] floating enable, border pixel $bordersize
 bindsym $mod+b mode "borders"
 mode "borders" {
     # use window title, but no border
-    bindsym t border normal 0
+    bindsym t border normal 0, mode "default"
     # use window title with $bordersize pixel border
-    bindsym a border normal $bordersize
+    bindsym a border normal $bordersize, mode "default"
     # use only border
-    bindsym b border pixel $bordersize
+    bindsym b border pixel $bordersize, mode "default"
     # use neither window title nor border
-    bindsym n border none
+    bindsym n border none, mode "default"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
