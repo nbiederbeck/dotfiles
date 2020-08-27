@@ -37,6 +37,7 @@ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
         let g:python3_host_prog = "/scratch/nbiederbeck/conda/envs/py37/bin/python"
     endif
     let g:deoplete#enable_at_startup = 1
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'dense-analysis/ale'
     let g:ale_sign_error = 'E'
@@ -96,7 +97,7 @@ Plug 'noahhdf/vim-agriculture'
 Plug 'arcticicestudio/nord-vim'
     let g:nord_italic=1
     let g:nord_italic_comments=1
-    let g:nord_cursor_line_number_background=0
+    let g:nord_cursor_line_number_background=1
     let g:nord_uniform_diff_background=1
 Plug '907th/vim-auto-save'
     let g:auto_save_events = ['InsertLeave', 'TextChanged']
