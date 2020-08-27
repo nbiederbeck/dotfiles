@@ -11,7 +11,7 @@ options=($(autorandr --detect))
 if [ ${#options[*]} -eq 0 ]; then
     arandr
 elif [ ${#options[*]} -eq 1 ]; then
-    autorandr --change ${options}
+    autorandr --change "${options[0]}"
 else
     echo "${options[*]}" \
         | sed 's/ /\n/g' \

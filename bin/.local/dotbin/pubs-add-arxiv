@@ -1,10 +1,12 @@
 #!/bin/bash
 
+set -eo pipefail
+
 arxiv_id=$1
 pdf_file="${arxiv_id}.pdf"
 
-cd /tmp
+cd /tmp || exit 1
 
-curl -#O https://arxiv.org/pdf/${pdf_file}
+curl -#O "https://arxiv.org/pdf/${pdf_file}"
 
-pubs add -X ${arxiv_id} -d ${pdf_file}
+pubs add -X "${arxiv_id}" -d "${pdf_file}"

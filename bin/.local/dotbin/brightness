@@ -21,7 +21,7 @@ case $1 in
         ;;
 esac
 
-xbacklight -${opt} ${val}
+xbacklight -${opt} "${val}"
 brightness=$(~/.local/dotbin/progressbar 10 '#' '-' "$(xbacklight)")
 dunstify \
     --replace 4737238 \
