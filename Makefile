@@ -10,7 +10,6 @@ all:
 		ion/ \
 		matplotlib/ \
 		mime/ \
-		nvim/ \
 		papis/ \
 		polybar/ \
 		qutebrowser/ \
@@ -20,7 +19,6 @@ all:
 		restic/ \
 		sxhkd/ \
 		tmux/ \
-		vim/ \
 		wal/ \
 		X/ \
 		yay/ \
