@@ -1,6 +1,5 @@
 # vim: ft=sh
 
-alias vim=nvim
 
 alias 'lg'='lazygit'
 
