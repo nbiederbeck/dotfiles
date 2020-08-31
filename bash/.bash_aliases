@@ -65,15 +65,6 @@ alias 'vollmondtunnelproxy'='ssh -N -f -L 2702:localhost:2702 proxy'
 # alias 'vollmondnotebook'='ssh -f -N vollmondtunnel'
 # alias 'scp'='scp -i $HOME/.ssh/id_rsa.phido'
 
-# Correct wrong typed commands on the fly
-# alias 'vim'='echo "using nvim..." && nvim'
-# alias vim=$(command -v nvim || command -v vim)
-# if [[ $(command -v nvim) ]]; then
-#     alias 'vim'='nvim'
-#     alias 'sim'='nvim -O'
-#     alias 'tim'='nvim -p'
-# fi
-
 alias 'fim'='vim $(fd --type f | fzf --preview "bat --color=always {} --theme OneHalfDark| head -100")'
 alias 'fcd'='cd $(fd --type d --hidden --exclude *conda* | fzf --preview "ls {} -a --color=always")'
 alias 'cdf'='cd $(fd --type d | fzf --preview "ls {} -a --color=always")'

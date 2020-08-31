@@ -143,23 +143,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
-
-parse_git_repo() {
-    git remote -v 2> /dev/null | grep 'origin.*fetch' | \
-    sed -E 's#^origin.*(git@|https?://)##;s/(.git)? .*$//;s/gitlab.com/lab/;s/github.com/hub/'
-}
-
-parse_git_state() {
-    git status --short 2> /dev/null |\
-        rg '^( M| A|\?\?)' --count
-}
-
-print_git_info() {
-    echo "$(clr_brown '$(parse_git_branch)')" #$(clr_blue '$(parse_git_repo)')"
-}
 
 
 # export PS1='\[\033[0;31m\]$(parse_git_branch) \[\033[0;34m\]\w\n\[\033[1;32m\]\[\033[0m\]$ '
@@ -191,3 +174,8 @@ fi
 # fi
 
 # eval "$(starship init bash)"
+
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
+fi
+

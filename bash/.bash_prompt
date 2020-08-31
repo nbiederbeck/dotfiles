@@ -1,0 +1,29 @@
+# vim: ft=sh
+. ~/.bash_colors
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+parse_git_repo() {
+    git remote -v 2> /dev/null | grep 'origin.*fetch' | \
+    sed -E 's#^origin.*(git@|https?://)##;s/(.git)? .*$//;s/gitlab.com/lab/;s/github.com/hub/'
+}
+
+parse_git_state() {
+    git status --short 2> /dev/null |\
+        rg '^( M| A|\?\?)' --count
+}
+
+print_git() {
+    echo "$(clr_brown '$(parse_git_branch)')"
+}
+
+print_err() {
+    local EXIT=$?
+    if ! [[ ${EXIT} -eq 0 ]]; then
+        echo "$(clr_red ${EXIT})"
+    fi
+}
+
+PS1="\$ $(print_git)\n${PS1}"
