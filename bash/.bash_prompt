@@ -25,19 +25,27 @@ print_git() {
     ga=$(parse_git_away)
     if [[ "${gb}" ]]; then  # is a git repository
         if [[ "${gs}" || "${ga}" ]]; then
-            printf "%s" "$(clr_brown clr_bold "${gb} ${gs} ${ga}")\n"
+            printf "%s " "$(clr_brown clr_bold "${gb} ${gs} ${ga}")"
         else
-            printf "%s" "$(clr_green "${gb}")\n"
+            printf "%s " "$(clr_green "${gb}")"
         fi
     else  # is NOT a git repo
         echo ""
     fi
 }
 
+print_conda() {
+    if [[ ${CONDA_DEFAULT_ENV} ]]; then
+        printf "(%s) " ${CONDA_DEFAULT_ENV}
+    fi
+}
+
 reset_prompt() {
     PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    prompt="$(print_git)"
-    PS1="${prompt}${PS1}"
+    prompt="$(print_conda)$(print_git)"
+    if [[ ${prompt} ]]; then
+        PS1="${prompt}\n${PS1}"
+    fi
 }
 
 PROMPT_DIRTRIM=0
