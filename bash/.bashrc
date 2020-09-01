@@ -164,3 +164,12 @@ if [ -f ~/.bash_prompt ]; then
     . ~/.bash_prompt
 fi
 
+
+
+for conda_dir in ~/.local/anaconda3 /opt/anaconda3
+do
+    condaprofile="${conda_dir}/etc/profile.d/conda.sh"
+    if [ -f ${condaprofile} ]; then
+        source ${condaprofile}
+    fi
+done
