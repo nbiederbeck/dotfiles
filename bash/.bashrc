@@ -166,7 +166,7 @@ fi
 
 
 
-for conda_dir in ~/.local/anaconda3 /opt/anaconda3
+for conda_dir in ~/.local/anaconda3 /opt/anaconda
 do
     condaprofile="${conda_dir}/etc/profile.d/conda.sh"
     if [ -f ${condaprofile} ]; then
