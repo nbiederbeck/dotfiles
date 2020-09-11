@@ -227,7 +227,6 @@ mode "borders" {
 assign [class="vlc"] $ws2
 
 # Browser Workspace 4
-assign [class="qutebrowser"] $ws4
 assign [class="firefox-esr"] $ws4
 assign [class="firefox"] $ws4
 for_window [class="firefox" instance="Dialog"] move workspace current, focus
@@ -240,6 +239,7 @@ assign [class="Telegram"] $ws9
 assign [class="TelegramDesktop"] $ws9
 assign [class="Slack"] $ws9
 assign [class="Mattermost"] $ws9
+assign [class="Evolution"] $ws9
 assign [class="Thunderbird"] $ws9
 assign [class="Mailspring"] $ws9
 assign [class="zoom"] $ws9
