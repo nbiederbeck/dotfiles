@@ -1,7 +1,8 @@
 # ft=sh
 export FZF_TMUX=0
 export FZF_TMUX_HEIGHT=10
-export FZF_DEFAULT_OPTS='--reverse --color="fg+:0,bg+:7,info:2" --no-bold'
+export FZF_DEFAULT_OPTS='--reverse'
+# export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --color='fg+:0,bg+:7,info:2' --no-bold"
 export FZF_CTRL_T_COMMAND=fd
 export FZF_ALT_C_COMMAND='fd --type d'
 export FZF_ALT_C_OPTS='--preview "ls --color=always {}"'
@@ -16,6 +17,6 @@ export FONTCONFIG_PATH=$CONDA_PREFIX/etc/fonts/
 # fix some pyplot issues,
 # see github.com/ipython/ipython/issues/10627
 # and github.com/ContinuumIO/anaconda-issues/issues/1806
-export QT_QPA_PLATFORM=offscreen
+# export QT_QPA_PLATFORM=offscreen
 
 export IPYTHONDIR=~/.ipython/
