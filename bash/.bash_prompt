@@ -2,7 +2,7 @@
 . ~/.bash_colors
 
 parse_git_branch() {
-    git branch 2> /dev/null | grep '*'
+    git branch 2> /dev/null | grep '\*'
 }
 
 parse_git_repo() {
