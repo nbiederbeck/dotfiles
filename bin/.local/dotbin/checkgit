@@ -11,7 +11,6 @@ if [[ ${find_cmd} == "find" ]]; then
             -maxdepth 5 \
             -name '.git' \
             -not -path '*/.cache/*' \
-            -not -path '*/.vim/*' \
             -not -path '*/.cargo/*' \
             -not -path '*/.fzf/*' \
             -not -path '*/.tmux/*' \
@@ -29,7 +28,6 @@ elif [[ ${find_cmd} == "fd" ]]; then
             --maxdepth 5 \
             --type d \
             --hidden \
-            --exclude .vim \
             --exclude .cache \
             --exclude .cargo \
             --exclude .fzf \
