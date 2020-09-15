@@ -8,7 +8,6 @@ all:
 		git/ \
 		i3/ \
 		ion/ \
-		matplotlib/ \
 		mime/ \
 		papis/ \
 		polybar/ \
