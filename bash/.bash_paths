@@ -5,6 +5,7 @@ export TEXMFHOME=$HOME/.texmf
 export MANPATH=$MANPATH:$HOME/.texlive/texmf-dist/doc/man
 export INFOPATH=$INFOPATH:$HOME/.texlive/texmf-dist/doc/info
 export PATH=$HOME/.texlive/bin/x86_64-linux:$PATH
+export PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH
 
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
