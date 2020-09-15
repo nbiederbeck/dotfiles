@@ -1,9 +1,6 @@
 # vim: ft=gitconfig commentstring=#%s
 [core]
 	editor = vim
-    # pager = delta --theme base16 --plus-color=2 --minus-color=1 --plus-emph-color=3 --minus-emph-color=3 --color-only
-# [interactive]
-    # diffFilter = delta --theme base16 --plus-color=2 --minus-color=1 --plus-emph-color=3 --minus-emph-color=3 --color-only
 [user]
 	name = Noah Biederbeck
 [pull]
@@ -18,11 +15,7 @@
 	helper = cache --timeout=10800
 [alias]
     l = log --oneline
-    # log
-    # l = log --color --graph --pretty=format:'%C(blue)%ad %C(cyan)(%ar) %C(green)%cn %C(yellow)%d %C(reset)%n %s %n  %b'
-    # long log
     ll = log --color --graph --date=short --pretty=format:\"%Cblue%ad %Cgreen%an %C(yellow)%h %Creset%s %Cred%d %n%Creset%b\"
-    # oneline log
     ol = log --oneline
     c = commit --verbose
     d = diff
@@ -31,7 +24,6 @@
     br = branch
     s = status
     a = add
-    puhs = push
 [log]
     date = iso
 [color "status"]
