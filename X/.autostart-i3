@@ -20,6 +20,7 @@ nm-applet &!
 [[ $(pgrep telegram-desktop) ]] || telegram-desktop &!
 [[ $(pgrep evolution) ]] || evolution &!
 [[ $(pgrep mattermost-desktop) ]] || mattermost-desktop &!
+[[ $(pgrep slack) ]] || slack &!
 
 i3-battery-popup -L 20 -n &!
 
