@@ -216,8 +216,8 @@ interval = 10
 type     = internal/date
 ; date = %%{F#99}%d.%m.%Y %H:%M%%{F-}
 ; date-alt = %%{F#fff}%A, %d %B %Y %H:%M:%S%%{F-}
-date     = %H:%M
-date-alt = %d %B %Y %H:%M:%S
+date     = %A, %d. %B %Y, %H:%M:%S (%Z %z)
+date-alt = %Y-%m-%d %H:%M:%S
 
 [module/swap]
 type                          = internal/memory
