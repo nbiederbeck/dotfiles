@@ -242,7 +242,7 @@ assign [class="Mattermost"] $ws9
 assign [class="Evolution"] $ws9
 assign [class="Thunderbird"] $ws9
 assign [class="Mailspring"] $ws9
-assign [class="zoom"] $ws9
+assign [class="zoom"] $ws10
 
 
 # -- odd workspaces on laptop screen -- #
