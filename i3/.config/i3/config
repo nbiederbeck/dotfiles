@@ -91,7 +91,7 @@ for_window [workspace=$ws9] layout tabbed
 for_window [class="VirtualBox"] floating enable
 for_window [class="Mars"] floating enable
 for_window [class="ROOT"] floating enable
-for_window [class="feh"] floating enable
+for_window [class="feh"] fullscreen toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
