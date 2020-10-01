@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -eo pipefail
+
+properties=/tmp/i3-xprop-properties
+xprop > ${properties}
+
+title=$(awk -F= '/_NET_WM_NAME/ {print $2}' ${properties})
+instance_class=$(awk -F= '/WM_CLASS/ {print $2}' ${properties})
+instance=$(echo "${instance_class}" | awk -F, '{print $1}')
+class=$(echo "${instance_class}" | awk -F, '{print $2}')
+window_role=$(awk -F= '/WM_WINDOW_ROLE/ {print $2}' ${properties})
+
+echo "\"class\": ${class}"
+echo "\"title\": ${title}"
+echo "\"instance\": ${instance}"
+echo "\"window_role\": ${window_role}"
