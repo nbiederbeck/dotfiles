@@ -1,5 +1,24 @@
 #!/bin/bash
 
 port=$1
+host=$2
 
-if [[
+if [[ -z $port ]]; then
+    printf "Port: "
+    read -r port
+fi
+
+if [[ -z $host ]]; then
+    printf "Host: "
+    read -r host
+fi
+
+running_app=$(ss -tulpn | grep "${port}")
+
+if [[ -z "${running_app}" ]]; then
+    start_forward=1
+fi
+
+if [[ "${start_forward}" ]]; then
+    ssh -N -f -l "${port}:localhost:${port} ${host}"
+fi
