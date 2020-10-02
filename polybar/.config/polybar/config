@@ -237,7 +237,7 @@ bar-used-empty-foreground     = ${colors.black}
 
 [module/ram]
 type                   = internal/memory
-format                 = <ramp-used>
+format                 = <ramp-used> <ramp-swap-used>
 ramp-used-0            = ▁
 ramp-used-1            = ▂
 ramp-used-2            = ▃
@@ -246,14 +246,22 @@ ramp-used-4            = ▅
 ramp-used-5            = ▆
 ramp-used-6            = ▇
 ramp-used-7            = █
-ramp-used-0-foreground = ${colors.highlight}
-ramp-used-1-foreground = ${colors.highlight}
-ramp-used-2-foreground = ${colors.highlight}
-ramp-used-3-foreground = ${colors.highlight}
-ramp-used-4-foreground = ${colors.warning}
-ramp-used-5-foreground = ${colors.warning}
-ramp-used-6-foreground = ${colors.alert}
-ramp-used-7-foreground = ${colors.alert}
+ramp-swap-used-0            = ▁
+ramp-swap-used-1            = ▂
+ramp-swap-used-2            = ▃
+ramp-swap-used-3            = ▄
+ramp-swap-used-4            = ▅
+ramp-swap-used-5            = ▆
+ramp-swap-used-6            = ▇
+ramp-swap-used-7            = █
+; ramp-used-0-foreground = ${colors.highlight}
+; ramp-used-1-foreground = ${colors.highlight}
+; ramp-used-2-foreground = ${colors.highlight}
+; ramp-used-3-foreground = ${colors.highlight}
+; ramp-used-4-foreground = ${colors.warning}
+; ramp-used-5-foreground = ${colors.warning}
+; ramp-used-6-foreground = ${colors.alert}
+; ramp-used-7-foreground = ${colors.alert}
 
 [module/temperature]
 type                  = internal/temperature
@@ -276,14 +284,14 @@ ramp-coreload-4            = ▅
 ramp-coreload-5            = ▆
 ramp-coreload-6            = ▇
 ramp-coreload-7            = █
-ramp-coreload-0-foreground = ${colors.highlight}
-ramp-coreload-1-foreground = ${colors.highlight}
-ramp-coreload-2-foreground = ${colors.highlight}
-ramp-coreload-3-foreground = ${colors.highlight}
-ramp-coreload-4-foreground = ${colors.warning}
-ramp-coreload-5-foreground = ${colors.warning}
-ramp-coreload-6-foreground = ${colors.alert}
-ramp-coreload-7-foreground = ${colors.alert}
+; ramp-coreload-0-foreground = ${colors.highlight}
+; ramp-coreload-1-foreground = ${colors.highlight}
+; ramp-coreload-2-foreground = ${colors.highlight}
+; ramp-coreload-3-foreground = ${colors.highlight}
+; ramp-coreload-4-foreground = ${colors.warning}
+; ramp-coreload-5-foreground = ${colors.warning}
+; ramp-coreload-6-foreground = ${colors.alert}
+; ramp-coreload-7-foreground = ${colors.alert}
 
 [module/pulseaudio]
 type          = internal/pulseaudio
