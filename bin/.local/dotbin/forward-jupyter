@@ -13,12 +13,12 @@ if [[ -z $host ]]; then
     read -r host
 fi
 
-running_app=$(ss -tulpn | grep "${port}")
+process_id_of_running_ssh_forward=$(
+    ss -tlpn | awk '/:2702 / {print $6}' | grep -E 'pid=[[:digit:]]*' -o | sed 's/pid=//'
+)
 
-if [[ -z "${running_app}" ]]; then
-    start_forward=1
+if [[ -n "${process_id_of_running_ssh_forward}" ]]; then
+    kill "${process_id_of_running_ssh_forward}"
 fi
 
-if [[ "${start_forward}" ]]; then
-    ssh -N -f -l "${port}:localhost:${port} ${host}"
-fi
+ssh -N -f -L "${port}:localhost:${port}" "${host}"
