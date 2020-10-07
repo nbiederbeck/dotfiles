@@ -1,11 +1,11 @@
 ! vim: ft=xdefaults commentstring=!%s
 rofi.modi:                           run,ssh,window
-rofi.width:                          30
+rofi.width:                          100
 rofi.lines:                          1
 rofi.columns:                        1
-rofi.font:                           Source Code Variable 8
+rofi.font:                           Source Code Variable 12
 
-! rofi.theme: theme.rasi
+rofi.theme: Paper
 
 rofi.color-enabled: true
 !                  bg       fg       border
