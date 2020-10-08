@@ -92,7 +92,9 @@ for_window [class="VirtualBox"] floating enable
 for_window [class="Mars"] floating enable
 for_window [class="ROOT"] floating enable
 for_window [class="feh"] fullscreen disable
-for_window [class="zoom"] fullscreen disable
+for_window [class="^zoom$" title="^Zoom Meeting$"] fullscreen disable
+for_window [class="^zoom$" title="^Chat$"] floating enable; border title
+for_window [class="^zoom$" title="^Participants"] floating enable; border title
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
