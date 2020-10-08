@@ -21,6 +21,7 @@ nm-applet &!
 
 i3-battery-popup -L 20 -n &!
 
+autorandr --change desk-extern-only
 feh --bg-fill ~/Pictures/background &!
 
 ~/.config/i3lock/lock_when_idle.sh &!
