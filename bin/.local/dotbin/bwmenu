@@ -385,7 +385,7 @@ show_copy_notification() {
     extra_options+=("-t" "$((CLEAR * 1000))")
   fi
   # not sure if icon will be present everywhere, /usr/share/icons is default icon location
-  notify-send "$title" "$body" "${extra_options[@]}" -i ~/Pictures/bitwarden.jpg
+  notify-send "$title" "$body" "${extra_options[@]}" -i /usr/share/icons/hicolor/32x32/apps/bitwarden.png
 }
 
 parse_cli_arguments() {
