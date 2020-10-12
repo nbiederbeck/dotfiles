@@ -238,3 +238,5 @@ c.fonts.default_size = "8pt"
 # c.colors.webpage.darkmode.threshold.text = 150
 # c.colors.webpage.darkmode.threshold.background = 205
 # c.colors.webpage.prefers_color_scheme_dark = True
+
+c.tabs.mode_on_change = 'persist'
