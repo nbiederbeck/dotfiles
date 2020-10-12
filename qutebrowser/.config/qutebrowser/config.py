@@ -199,11 +199,11 @@ c.colors.statusbar.normal.fg = "gray"
 
 # Foreground color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.fg = "gray"
+c.colors.statusbar.passthrough.fg = "black"
 
 # Background color of the statusbar in passthrough mode.
 # Type: QssColor
-c.colors.statusbar.passthrough.bg = "black"
+c.colors.statusbar.passthrough.bg = "gray"
 
 # Foreground color of the statusbar in command mode.
 # Type: QssColor
@@ -228,7 +228,7 @@ c.colors.statusbar.url.success.http.fg = "lightgray"
 c.colors.statusbar.url.success.https.fg = "green"
 
 c.fonts.default_family = "Source Code Pro"
-c.fonts.default_size = "10pt"
+c.fonts.default_size = "8pt"
 
 # c.colors.webpage.bg = "#121212"
 # c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
