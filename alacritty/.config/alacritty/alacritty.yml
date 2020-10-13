@@ -255,7 +255,7 @@ schemes:
         blue:    '0x81A1C1'
         magenta: '0xB48EAD'
         cyan:    '0x88C0D0'
-        white:   '0xffffff'
+        white:   '0xdedede'
 
       # Bright colors
       bright:
@@ -266,7 +266,7 @@ schemes:
         blue:    '0x81A1C1'
         magenta: '0xB48EAD'
         cyan:    '0x8FBCBB'
-        white:   '0xffffff'
+        white:   '0xdedede'
 
       # Dim colors (Optional)
       dim:
@@ -279,7 +279,7 @@ schemes:
         cyan:    '0x66cccc'
         white:   '0xdddddd'
 
-colors: *nord
+colors: *nord-light
 
 # Visual Bell
 #
