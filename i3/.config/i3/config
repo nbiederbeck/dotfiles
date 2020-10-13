@@ -2,8 +2,8 @@
 
 # -- .Xresources colors -- #
 set $fullblack #000000
-set_from_resource $black .color0
-set $black #000000
+set_from_resource $black #121212 .color0
+set $black #121212
 set $gray #999999
 set_from_resource $boldblack .color8
 set_from_resource $red .color1
@@ -188,11 +188,11 @@ bindsym $mod+Tab workspace back_and_forth
 # bindsym Ctrl+XF86MonBrightnessDown exec xbacklight -set 1
 
 #  -- color windows --  #
-#                       #border    #background #text      #indicator
-client.focused          $black    $white     $black     $white
-client.unfocused        $black     $black      $gray     $white
-client.focused_inactive $black     $black      $white     $white
-client.urgent           $red       $red        $black     $white
+#                       #border #background #text  #indicator
+client.focused          $yellow $yellow     $black $white
+client.unfocused        $gray   $gray       $black $white
+client.focused_inactive $gray   $gray       $black $white
+client.urgent           $red    $red        $black $white
 
 title_align center
 
