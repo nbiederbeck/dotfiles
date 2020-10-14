@@ -16,6 +16,7 @@ nm-applet &!
 [[ $(pgrep dunst) ]] || dunst -print 2>&1 >> /tmp/dunst-notifications-log &!
 [[ $(pgrep dropbox) ]] || dropbox &!
 [[ $(pgrep sxhkd) ]] || sxhkd -c ~/.config/sxhkd/sxhkdrc-i3 &!
+[[ $(pgrep cbatticon) ]] || (cbatticon 0 & cbatticon 1) &!
 
 ~/.local/dotbin/autostart-i3 &!
 

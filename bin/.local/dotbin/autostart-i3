@@ -2,9 +2,9 @@
 
 set -eo pipefail
 
-ask="Autostart?"
-ans=$(printf "%s\n%s" "yes" "no" | dmenu -b -p "${ask}")
-if [[ "${ans}" == "no" ]]; then exit 1; fi
+# ask="Autostart?"
+# ans=$(printf "%s\n%s" "yes" "no" | dmenu -b -p "${ask}")
+# if [[ "${ans}" == "no" ]]; then exit 1; fi
 
 if ! [[ $(pgrep telegram) ]]; then
     telegram-desktop &!
