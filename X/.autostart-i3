@@ -12,7 +12,7 @@ nm-applet &!
 [[ $(pgrep restic) ]] || restic-backup-interval &!
 [[ $(pgrep unclutte) ]] || unclutter --timeout=5 --jitter=1 -b &!
 [[ $(pgrep etesync) ]] || etesync-dav &!
-[[ $(pgrep redshift) ]] || redshift &!
+[[ $(pgrep redshift) ]] || redshift -t 5000:2500 &!
 [[ $(pgrep dunst) ]] || dunst -print 2>&1 >> /tmp/dunst-notifications-log &!
 [[ $(pgrep dropbox) ]] || dropbox &!
 [[ $(pgrep sxhkd) ]] || sxhkd -c ~/.config/sxhkd/sxhkdrc-i3 &!
