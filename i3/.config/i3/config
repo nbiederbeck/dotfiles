@@ -264,9 +264,7 @@ workspace $ws10 output DP2-3 HDMI1 HDMI2
 exec_always --no-startup-id ~/.autostart-i3
 
 bar {
-    i3bar_command /home/noah/.config/polybar/launch.sh
-    # tray_output primary
-    # status_command ~/.local/dotbin/i3-bar
-    # # separator_symbol ":"
-    # strip_workspace_numbers true
+    mode hide
+    modifier $mod
+    strip_workspace_numbers true
 }
