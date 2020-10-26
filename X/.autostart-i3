@@ -12,18 +12,18 @@ nm-applet &!
 [[ $(pgrep restic) ]] || restic-backup-interval &!
 [[ $(pgrep unclutte) ]] || unclutter --timeout=5 --jitter=1 -b &!
 [[ $(pgrep etesync) ]] || etesync-dav &!
-[[ $(pgrep redshift) ]] || redshift -t 5000:2500 &!
+[[ $(pgrep redshift) ]] || redshift &!
 [[ $(pgrep dunst) ]] || dunst -print 2>&1 >> /tmp/dunst-notifications-log &!
 [[ $(pgrep dropbox) ]] || dropbox &!
 [[ $(pgrep sxhkd) ]] || sxhkd -c ~/.config/sxhkd/sxhkdrc-i3 &!
 [[ $(pgrep cbatticon) ]] || (cbatticon 0 & cbatticon 1) &!
+[[ $(pgrep pasystray) ]] || pasystray &!
 
 ~/.local/dotbin/autostart-i3 &!
 
 i3-battery-popup -L 20 -n &!
 
 autorandr --change desk-extern-only
-feh --bg-fill ~/Pictures/background &!
 
 ~/.config/i3lock/lock_when_idle.sh &!
 
