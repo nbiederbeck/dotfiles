@@ -1,0 +1,8 @@
+#!/bin/bash
+event=$1
+old_period=$2
+new_period=$3
+case $1 in
+    period-changed)
+        notify-send "Redshift" "<s>$2</s> → <i>$3</i>"
+esac

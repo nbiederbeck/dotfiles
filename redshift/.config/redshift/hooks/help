@@ -1,0 +1,4 @@
+#!/bin/bash
+event=$1
+old_period=$2
+new_period=$3
