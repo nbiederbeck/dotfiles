@@ -279,7 +279,7 @@ schemes:
         cyan:    '0x66cccc'
         white:   '0xdddddd'
 
-colors: *nord-light
+colors: *nord
 
 # Visual Bell
 #
