@@ -45,11 +45,7 @@ for gr in ${dirs}; do
     pushd "${wd}" &> /dev/null || exit 1
     status=$(git status)
     if [[ ${status} =~ "git" ]]; then
-        if [[ -t 1 ]]; then
-            echo "${wd}"
-        else
-            notify-send -u critical "${wd}" "\n$(git status --short)"
-        fi
+        notify-send -u critical "${wd}" "\n$(git status --short)"
         (( exit_code = 1 ))
     fi
     popd &> /dev/null || exit 1
@@ -57,11 +53,7 @@ done
 
 msg="everything is fine :)"
 if [[ "${exit_code}" == 0 ]]; then
-    if [[ -t 1 ]]; then
-        echo "${msg}"
-    else
-        notify-send -u low "${msg}"
-    fi
+    notify-send -u low "${msg}"
 fi
 
 exit "${exit_code}"
