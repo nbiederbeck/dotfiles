@@ -1,5 +1,5 @@
 #!/bin/bash
 
 i3lock \
-    --blur 0.2 \
+    --blur 1 \
     $(cat ~/.config/i3lock/options)
