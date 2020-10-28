@@ -32,7 +32,7 @@ case $2 in
 
 esac
 
-pamixer --${option} --$1 5
+pamixer --${option} --$1 2
 volume=$(pamixer --get-volume-human)
 dunstify \
     --replace 239857 \
