@@ -1,6 +1,6 @@
 [global]
-    frame_width = 2
-    frame_color = "#A3BE8C"
+    frame_width = 1
+    frame_color = "#4c7899"
 
     font = Source Code Pro 8
 
@@ -40,7 +40,7 @@
     # window allows bounces back and forth.
     # This option conflicts with "word_wrap".
     # Set to 0 to disable.
-    bounce_freq = 5
+    bounce_freq = 0
 
 
     # Show age of message if message is older than show_age_threshold
@@ -50,7 +50,7 @@
 
     # Split notifications into multiple lines if they don't fit into
     # geometry.
-    word_wrap = no
+    word_wrap = yes
 
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
@@ -68,11 +68,11 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x4-25+25"
+    geometry = "300x4-25+25"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = yes
+    shrink = no
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
@@ -181,19 +181,19 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#3B4252"
-    foreground = "#D8DEE9"
-    timeout = 1
+    background = "#222222"
+    foreground = "#ffffff"
+    timeout = 2
 
 [urgency_normal]
-    foreground = "#4c566a"
-    background = "#eceff4"
-    timeout = 10
+    background = "#285577"
+    foreground = "#ffffff"
+    timeout = 5
 
 [urgency_critical]
-    background = "#BF616A"
-    foreground = "#2e3440"
-    timeout = 120
+    background = "#90000a"
+    foreground = "#ffffff"
+    timeout = 60
 
 
 # Every section that isn't one of the above is interpreted as a rules to
