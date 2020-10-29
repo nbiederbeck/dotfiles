@@ -44,5 +44,8 @@ super + XF86Display
 super + Print
     gnome-screenshot
 
+Print
+    ~/.local/dotbin/screenshot.sh
+
 # super + shift + d
 #     rofi -show window -lines 5
