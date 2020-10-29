@@ -53,7 +53,7 @@ done
 
 msg="everything is fine :)"
 if [[ "${exit_code}" == 0 ]]; then
-    notify-send -u low "${msg}"
+    notify-send -u low "Check Git" "${msg}"
 fi
 
 exit "${exit_code}"
