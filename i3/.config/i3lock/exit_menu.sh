@@ -20,7 +20,10 @@ menu_nrows=${#menu[@]}
 launcher_exe="dmenu -i -p Exit"
 launcher=(${launcher_exe})
 
-selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
+selection=$1
+if [[ -z "${selection}" ]]; then
+    selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
+fi
 
 if [[ $? -eq 0 && ! -z ${selection} ]]; then
     i3-msg -q "exec ${menu[${selection}]}"
