@@ -205,6 +205,7 @@ for_window [class="Surf"] border normal $bordersize
 for_window [class="Tk"] floating enable, border normal $bordersize
 for_window [class="matplotlib"] floating enable, border normal $bordersize
 for_window [class=" "] floating enable, border pixel $bordersize
+for_window [window_type=dialog] floating enable, border pixel $bordersize
 
 bindsym $mod+b mode "borders"
 mode "borders" {
