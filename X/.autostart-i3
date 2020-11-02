@@ -9,7 +9,7 @@ ncdu ~ -o ~/ncdu.file -0 &!
 
 nm-applet &!
 
-[[ $(pgrep restic) ]] || notify-send -u critical 'Backups' 'restic-backup-interval' &!
+[[ $(pgrep restic) ]] || notify-send -u critical 'Backups' '<i>restic-backup-interval</i>\nnot running' &!
 [[ $(pgrep unclutte) ]] || unclutter --timeout=5 --jitter=1 -b &!
 [[ $(pgrep etesync) ]] || etesync-dav &!
 [[ $(pgrep redshift) ]] || redshift &!
