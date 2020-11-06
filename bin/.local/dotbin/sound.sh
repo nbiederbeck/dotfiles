@@ -15,14 +15,16 @@ case $1 in
 
 esac
 
+output="RØDE NT-USB Mini Analog Stereo"
+
 case $2 in
 
     headphones | speakers)
-        option="sink 0"
+        option="sink"
         ;;
 
     microphone | mic)
-        option="source 0"
+        option="source"
         ;;
 
     *)
@@ -32,7 +34,10 @@ case $2 in
 
 esac
 
-pamixer --${option} --$1 2
+id=$(pamixer --list-"${option}s" | awk '/RØDE NT-USB Mini Analog Stere/ {print $1}')
+echo "id=$id"
+
+pamixer "--${option}=${id}" --$1 2
 volume=$(pamixer --get-volume-human)
 dunstify \
     --replace 239857 \
