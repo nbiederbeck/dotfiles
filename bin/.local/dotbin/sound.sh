@@ -15,8 +15,6 @@ case $1 in
 
 esac
 
-output="RØDE NT-USB Mini Analog Stereo"
-
 case $2 in
 
     headphones | speakers)
@@ -34,7 +32,7 @@ case $2 in
 
 esac
 
-id=$(pamixer --list-"${option}s" | awk '/RØDE NT-USB Mini Analog Stere/ {print $1}')
+id=$(pamixer --list-"${option}s" | awk '/RØDE NT-USB Mini Analog Stereo/ {print $1}')
 echo "id=$id"
 
 pamixer "--${option}=${id}" --$1 2
