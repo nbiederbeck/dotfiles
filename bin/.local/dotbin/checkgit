@@ -8,7 +8,7 @@ find_cmd=$(echo "${find_cmd}" | rev | cut -d/ -f1 | rev)
 if [[ ${find_cmd} == "find" ]]; then
     dirs=$( \
         find ~ \
-            -maxdepth 5 \
+            -maxdepth 4 \
             -name '.git' \
             -not -path '*/.cache/*' \
             -not -path '*/.cargo/*' \
@@ -25,7 +25,7 @@ if [[ ${find_cmd} == "find" ]]; then
 elif [[ ${find_cmd} == "fd" ]]; then
     dirs=$( \
         fd '\.git$' \
-            --maxdepth 5 \
+            --maxdepth 4 \
             --type d \
             --hidden \
             --exclude .cache \
