@@ -10,9 +10,11 @@ typeset -A menu
 # Menu with keys/commands
 menu=(
   [Shutdown]="${GIT} && systemctl poweroff"
+  [Shutdown-FORCE]="systemctl poweroff"
   [Reboot]="systemctl reboot"
   [Lock]="${LOCK}"
   [Sleep]="${GIT} && ${SLEEP}"
+  [Sleep-FORCE]="${SLEEP}"
   [Logout]="i3-msg exit"
 )
 menu_nrows=${#menu[@]}
