@@ -89,6 +89,7 @@ bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
 for_window [workspace=$ws9] layout tabbed
 for_window [class="VirtualBox"] floating enable
+for_window [class="VirtualBox Machine"] floating enable
 for_window [class="Mars"] floating enable
 for_window [class="ROOT"] floating enable
 for_window [class="feh"] fullscreen disable
@@ -206,6 +207,7 @@ for_window [class="Tk"] floating enable, border normal $bordersize
 for_window [class="matplotlib"] floating enable, border normal $bordersize
 for_window [class=" "] floating enable, border pixel $bordersize
 for_window [window_type=dialog] floating enable, border pixel $bordersize
+for_window [class="VirtualBox"] floating disable
 
 bindsym $mod+b mode "borders"
 mode "borders" {
