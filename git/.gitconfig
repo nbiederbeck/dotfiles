@@ -1,18 +1,24 @@
 # vim: ft=gitconfig commentstring=#%s
+
 [core]
-	editor = vim
+    editor = vim
+
 [user]
-	name = Noah Biederbeck
+    name = Noah Biederbeck
+
 [pull]
-	rebase = true
+    rebase = true
+
 [merge]
-	conflictstyle = diff3
-	tool = nvim
-[mergetool "nvim"]
-	cmd = nvim -d "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    # conflictstyle = diff3
+    tool = vimdiff
     trustExitCode = false
-[credential]
-	helper = cache --timeout=10800
+[mergetool]
+    keepBackup = false
+
+[log]
+    date = iso
+
 [alias]
     l = log --oneline
     ll = log --color --graph --date=short --pretty=format:\"%Cblue%ad %Cgreen%an %C(yellow)%h %Creset%s %Cred%d %n%Creset%b\"
@@ -24,7 +30,4 @@
     br = branch
     s = status
     a = add
-[log]
-    date = iso
-[color "status"]
-	header = white bold
+
