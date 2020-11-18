@@ -2,7 +2,7 @@
 export FZF_TMUX=0
 export FZF_TMUX_HEIGHT=10
 export FZF_DEFAULT_OPTS='--reverse'
-export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --color='fg+:7,bg+:0'"
+export FZF_DEFAULT_OPTS="${FZF_DEFAULT_OPTS} --color='hl:1,hl+:1,fg+:0,bg+:7' --no-bold"
 export FZF_CTRL_T_COMMAND=fd
 export FZF_ALT_C_COMMAND='fd --type d'
 export FZF_ALT_C_OPTS='--preview "ls --color=always {}"'
