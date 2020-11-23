@@ -33,8 +33,7 @@ set $mod Mod4
 set $bordersize 2
 set $gapsize 0
 
-font pango:Source Code Pro 8
-# font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -94,8 +93,7 @@ for_window [class="Mars"] floating enable
 for_window [class="ROOT"] floating enable
 for_window [class="feh"] fullscreen disable
 for_window [class="^zoom$" title="^Zoom Meeting$"] fullscreen disable
-for_window [class="^zoom$" title="^Chat$"] floating enable; border title
-for_window [class="^zoom$" title="^Participants"] floating enable; border title
+for_window [workspace=$ws10] floating enable
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -252,11 +250,11 @@ assign [class="zoom"] $ws10
 
 
 # -- odd workspaces on laptop screen -- #
-workspace $ws1 output eDP1 DP1 DP2
-workspace $ws3 output eDP1 DP1 DP2
-workspace $ws5 output eDP1 DP1 DP2
-workspace $ws7 output eDP1 DP1 DP2
-workspace $ws9 output eDP1 DP1 DP2
+workspace $ws1 output DP2-3 eDP1 DP1 DP2
+workspace $ws3 output DP2-3 eDP1 DP1 DP2
+workspace $ws5 output DP2-3 eDP1 DP1 DP2
+workspace $ws7 output DP2-3 eDP1 DP1 DP2
+workspace $ws9 output DP2-3 eDP1 DP1 DP2
 
 workspace $ws2 output DP2-3 HDMI1 HDMI2
 workspace $ws4 output DP2-3 HDMI1 HDMI2
