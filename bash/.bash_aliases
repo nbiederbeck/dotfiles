@@ -1,6 +1,6 @@
 # vim: ft=sh
 
-alias 'feh'='feh -dF'
+alias 'feh'="feh -dF -B'#fafafa'"
 
 alias 'lg'='lazygit'
 
