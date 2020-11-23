@@ -41,7 +41,7 @@ print_conda() {
 }
 
 reset_prompt() {
-    PS1='\[\033[1;34m\]\w\[\033[00m\]'
+    PS1='\[\033[1;36m\]\w\[\033[00m\]'
     prompt="$(print_conda)$(print_git)"
     if [[ ${prompt} ]]; then
         PS1="${prompt}${PS1} \$ "
