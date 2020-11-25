@@ -18,7 +18,7 @@ id=$(pamixer --list-sources | awk '/RØDE NT-USB Mini Mono/ {print $1}')
 
 case $1 in
 
-    talk|near) value=50 ;;
+    default|talk|near) value=55 ;;
     listen|far) value=80 ;;
 
     *)

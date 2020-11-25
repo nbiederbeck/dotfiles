@@ -25,6 +25,8 @@ i3-battery-popup -L 20 -n &!
 
 autorandr --change desk-extern-only
 
+mic.sh default &!
+
 ~/.config/i3lock/lock_when_idle.sh &!
 
 xrdb -load ~/.Xresources
