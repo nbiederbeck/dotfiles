@@ -87,13 +87,12 @@ bindsym $mod+shift+a focus child
 bindsym $mod+t layout tabbed
 bindsym $mod+s layout toggle split
 for_window [workspace=$ws9] layout tabbed
-for_window [class="VirtualBox"] floating enable
-for_window [class="VirtualBox Machine"] floating enable
 for_window [class="Mars"] floating enable
 for_window [class="ROOT"] floating enable
 for_window [class="feh"] fullscreen disable
 for_window [class="^zoom$" title="^Zoom Meeting$"] fullscreen disable
-for_window [workspace=$ws10] floating enable
+for_window [class="^zoom$" title="^Chat"] floating enable
+for_window [class="^zoom$" title="^Participants"] floating enable
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
