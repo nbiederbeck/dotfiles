@@ -2,7 +2,7 @@
 event=$1
 old_period=$2
 new_period=$3
-case $1 in
+case "${event}" in
     period-changed)
-        notify-send "Redshift" "<s>$2</s> → <i>$3</i>"
+        notify-send "Redshift" "<s>${old_period}</s> → <i>${new_period}</i>"
 esac
