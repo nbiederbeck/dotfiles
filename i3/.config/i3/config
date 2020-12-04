@@ -243,13 +243,14 @@ assign [class="TelegramDesktop"] $ws9
 assign [class="Slack"] $ws9
 assign [class="Mattermost"] $ws9
 assign [class="Evolution"] $ws9
+assign [class="Alacritty" title="Alpine"] $ws9
 assign [class="Thunderbird"] $ws9
 assign [class="Mailspring"] $ws9
 assign [class="zoom"] $ws10
 
 
 # -- odd workspaces on laptop screen -- #
-workspace $ws1 output DP2-3 eDP1 DP1 DP2
+workspace $ws1 output eDP1 DP2-3 DP1 DP2
 workspace $ws3 output DP2-3 eDP1 DP1 DP2
 workspace $ws5 output DP2-3 eDP1 DP1 DP2
 workspace $ws7 output DP2-3 eDP1 DP1 DP2
@@ -266,6 +267,7 @@ bar {
     strip_workspace_numbers true
     workspace_min_width 40
     tray_padding 0
+    tray_output DP2-3
     # colors {
     #     background #000000
     #     statusline #ffffff
