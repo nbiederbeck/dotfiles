@@ -9,8 +9,8 @@ set -eo pipefail
 if ! [[ $(pgrep telegram) ]]; then
     telegram-desktop &!
 fi
-if ! [[ $(pgrep evolution) ]]; then
-    evolution &!
+if ! [[ $(pgrep alpine) ]]; then
+    alacritty --title Alpine --command alpine &!
 fi
 if ! [[ $(pgrep mattermost) ]]; then
     mattermost-desktop &!
