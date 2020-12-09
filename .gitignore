@@ -10,3 +10,5 @@ tmux/.tmux/plugins/
 
 qutebrowser/.config/qutebrowser/qsettings
 qutebrowser/.config/qutebrowser/autoconfig.yml
+
+fish/.config/fish/fishd.*
