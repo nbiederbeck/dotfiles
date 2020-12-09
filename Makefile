@@ -5,13 +5,13 @@ all:
 		bin/ \
 		colorschemes/ \
 		dunst/ \
+		fish/ \
 		git/ \
 		i3/ \
 		ion/ \
 		mime/ \
 		papis/ \
 		polybar/ \
-		qutebrowser/ \
 		rofi/ \
 		ranger/ \
 		redshift/ \
