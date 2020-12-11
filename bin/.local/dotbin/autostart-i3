@@ -1,20 +1,7 @@
 #!/bin/bash
 
-set -eo pipefail
+confirm.sh 'Autostart?'
 
-# ask="Autostart?"
-# ans=$(printf "%s\n%s" "yes" "no" | dmenu -b -p "${ask}")
-# if [[ "${ans}" == "no" ]]; then exit 1; fi
-
-if ! [[ $(pgrep telegram) ]]; then
-    telegram-desktop &!
-fi
-if ! [[ $(pgrep alpine) ]]; then
-    alacritty --title Alpine --command alpine &!
-fi
-if ! [[ $(pgrep mattermost) ]]; then
-    mattermost-desktop &!
-fi
-if ! [[ $(pgrep slack) ]]; then
-    slack &!
-fi
+[[ $(pgrep telegram) ]] || telegram-desktop &!
+[[ $(pgrep mattermost) ]] || mattermost-desktop &!
+[[ $(pgrep slack) ]] || slack &!
