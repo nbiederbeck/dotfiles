@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 confirm.sh 'Autostart?'
 
 [[ $(pgrep telegram) ]] || telegram-desktop &!
