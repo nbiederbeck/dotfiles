@@ -5,6 +5,7 @@
 
 [user]
     name = Noah Biederbeck
+    useConfigOnly = true
 
 [pull]
     rebase = true
@@ -13,6 +14,7 @@
     # conflictstyle = diff3
     tool = vimdiff
     trustExitCode = false
+
 [mergetool]
     keepBackup = false
 
@@ -30,4 +32,3 @@
     br = branch
     s = status
     a = add
-
