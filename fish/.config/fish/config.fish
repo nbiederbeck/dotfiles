@@ -1,6 +1,5 @@
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /opt/anaconda/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
-
+for conda_exe in /opt/anaconda/bin/conda ~/.local/anaconda3/condabin/conda
+    if test -f $conda_exe
+        eval $conda_exe "shell.fish" "hook" $argv | source
+    end
+end
