@@ -13,3 +13,4 @@ qutebrowser/.config/qutebrowser/autoconfig.yml
 
 fish/.config/fish/fishd.*
 fish/.config/fish/functions/fisher.fish
+fish/.config/fish/fish_variables
