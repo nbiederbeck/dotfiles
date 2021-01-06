@@ -1,6 +1,6 @@
 # Start X at login
 if status is-login
-    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+    if test -z "$DISPLAY" -a "$XDG_VTNR"   1
         exec startx -- -keeptty
     end
 end
@@ -15,3 +15,15 @@ end
 # Paths
 set PATH $PATH ~/.local/bin
 set PATH $PATH ~/.local/dotbin
+
+# Variables
+set FZF_TMUX 0
+set FZF_TMUX_HEIGHT 10
+set FZF_DEFAULT_OPTS '--no-bold --reverse'
+set FZF_CTRL_T_COMMAND fd
+set FZF_ALT_C_COMMAND 'fd --type d'
+set FZF_ALT_C_OPTS '--preview "ls --color=always {}"'
+set HISTIGNORE 'fg:ls'
+set FONTCONFIG_FILE $CONDA_PREFIX/etc/fonts/fonts.conf
+set FONTCONFIG_PATH $CONDA_PREFIX/etc/fonts/
+set IPYTHONDIR ~/.ipython/
