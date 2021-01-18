@@ -1,0 +1,50 @@
+# names
+set $ws1  "1:i"
+set $ws2  "2:II"
+set $ws3  "3:iii"
+set $ws4  "4:IV"
+set $ws5  "5:v"
+set $ws6  "6:VI"
+set $ws7  "7:vii"
+set $ws8  "8:VIII"
+set $ws9  "9:ix"
+set $ws10 "10:X"
+
+assign [class="vlc"] $ws2
+
+# Browser Workspace 4
+assign [class="firefox-esr"] $ws4
+assign [class="firefox"] $ws4
+for_window [class="firefox" instance="Dialog"] move workspace current, focus
+assign [class="Firefox"] $ws4
+for_window [class="Firefox" instance="Dialog"] move workspace current, focus
+assign [class="Midori"] $ws4
+
+# Social Workspace 9
+assign [class="Telegram"] $ws9
+assign [class="TelegramDesktop"] $ws9
+assign [class="Slack"] $ws9
+assign [class="Mattermost"] $ws9
+assign [class="Evolution"] $ws9
+assign [class="Alacritty" title="Alpine"] $ws9
+assign [class="Thunderbird"] $ws9
+assign [class="Mailspring"] $ws9
+assign [class="zoom"] $ws10
+
+
+for_window [workspace=$ws9] layout tabbed
+for_window [class="Mars"] floating enable
+for_window [class="ROOT"] floating enable
+for_window [class="feh"] fullscreen disable
+for_window [class="^zoom$" title="^Zoom Meeting$"] fullscreen disable
+for_window [class="^zoom$" title="^Chat"] floating enable
+for_window [class="^zoom$" title="^Participants"] floating enable
+
+for_window [class=".*"] border pixel $bordersize
+for_window [workspace=$ws7 class="MuPDF"] floating enable, border normal $bordersize
+for_window [class="Surf"] border normal $bordersize
+for_window [class="Tk"] floating enable, border normal $bordersize
+for_window [class="matplotlib"] floating enable, border normal $bordersize
+for_window [class=" "] floating enable, border pixel $bordersize
+for_window [window_type=dialog] floating enable, border pixel $bordersize
+for_window [class="VirtualBox"] floating disable

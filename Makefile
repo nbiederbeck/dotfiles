@@ -16,6 +16,7 @@ all:
 		ranger/ \
 		redshift/ \
 		restic/ \
+		sway/ \
 		sxhkd/ \
 		tmux/ \
 		wal/ \
