@@ -8,4 +8,3 @@ confirm.sh 'Autostart?'
 [[ $(pgrep mattermost) ]] || mattermost-desktop &!
 [[ $(pgrep slack) ]] || slack &!
 [[ $(pgrep thunderbird) ]] || thunderbird &!
-[[ $(pgrep -f whatsapp) ]] || surf web.whatsapp.com &!

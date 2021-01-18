@@ -29,4 +29,4 @@ case $1 in
 esac
 
 pamixer "--source=${id}" --set-volume "${value}"
-dunstify --replace 2743912 --timeout 1000 -- "RØDE" "Set microphone to ${value}%"
+notify-send --expire-time 1000 -- "RØDE" "Set microphone to ${value}%"

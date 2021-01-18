@@ -1,0 +1,34 @@
+#!/bin/bash
+
+PDFFILE=/tmp/latexit.pdf
+PSFILE="${PDFFILE%pdf}ps"
+PNGFILE="${PDFFILE%pdf}png"
+
+EQUATION="$1"
+
+LATEX_DOCUMENT="\documentclass[border=1pt,preview]{standalone}
+% Packages
+\usepackage{amsmath}
+\begin{document}
+\begin{align*}
+${EQUATION}
+\end{align*}
+\end{document}"
+
+echo "${LATEX_DOCUMENT}" | lualatex --output-directory=/tmp --jobname=latexit > /dev/null
+
+pdfcrop $PDFFILE $PDFFILE > /dev/null
+
+pdf2ps $PDFFILE $PSFILE > /dev/null
+
+convert -alpha off -density 1000 $PSFILE -quality 100 $PNGFILE > /dev/null
+
+
+case "$XDG_SESSION_TYPE" in 
+
+    wayland)
+        wl-copy < $PNGFILE ;;
+
+    *)
+        echo "Find file here: ${PNGFILE}" ;;
+esac

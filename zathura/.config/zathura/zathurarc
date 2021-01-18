@@ -11,7 +11,7 @@ set window-title-basename   true
 set window-title-home-tilde true
 
 # easier contrast
-set default-bg            '#2e3440'
+set default-bg            '#121212'
 set recolor-keephue       true
 set recolor-reverse-video true
 set recolor-lightcolor    '#121212'
