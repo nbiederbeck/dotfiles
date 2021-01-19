@@ -1,7 +1,7 @@
 # vim: ft=gitconfig commentstring=#%s
 
 [core]
-    editor = vim
+    editor = vi
 
 [user]
     name = Noah Biederbeck
