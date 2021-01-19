@@ -1,0 +1,12 @@
+# "partial" indicates that this map doesn't cover a complete keyboard
+# "alphanumeric_keys" describes which section of the keyboard is being covered
+default partial alphanumeric_keys
+
+# "basic" declares symbol map name
+xkb_symbols "basic" {
+    # define a base layout to inherit
+    include "us"
+    # name of the layout
+    name[Group1] = "MyKeyboardName";
+    key <CAPS> { [ Mode_switch ] };
+};
