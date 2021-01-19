@@ -4,4 +4,4 @@ set runtimepath+=~/.config/nvim
 let &packpath = &runtimepath
 
 source ~/.config/nvim/plugin/plugins.vim
-source ~/.vimrc
+source ~/.vim/vimrc

@@ -19,8 +19,5 @@ highlight Visual     cterm=none      ctermbg=7 ctermfg=0
 highlight pythonSelf ctermfg=4
 highlight Exception ctermfg=3
 
-let g:lengthmatters_highlight_one_column = 1
-call lengthmatters#highlight('ctermfg=1')
-
 highlight todo ctermbg=none ctermfg=3
 match todo /[Tt][Oo][Dd][Oo]/
