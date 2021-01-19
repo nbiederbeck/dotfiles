@@ -11,4 +11,4 @@ bindsym $mod+XF86MonBrightnessDown exec ~/.local/dotbin/brightness set 1
 bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 
 bindsym $mod+Shift+p exec ~/.local/dotbin/bwmenu
-bindsym $mod+Shift+e exec ~/.config/i3lock/exit_menu.sh
+#bindsym $mod+Shift+e exec ~/.config/i3lock/exit_menu.sh
