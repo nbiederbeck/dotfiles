@@ -1,8 +1,8 @@
 syntax enable
 
-set background=dark
-colorscheme nord
-let g:airline_theme='nord'
+set background=light
+colorscheme base16-tomorrow
+let g:airline_theme='base16-tomorrow'
 syntax on
 
 let g:limelight_conceal_ctermfg = '8'
@@ -10,6 +10,7 @@ let g:limelight_conceal_ctermfg = '8'
 highlight Pmenu      cterm=none      ctermbg=none  ctermfg=none
 set       nocursorline
 highlight CursorLine cterm=none      ctermbg=0  ctermfg=none
+highlight CursorLineNr cterm=none      ctermbg=none  ctermfg=none
 highlight SpellBad   cterm=underline ctermbg=none  ctermfg=red
 highlight SpellCap   cterm=underline ctermbg=none  ctermfg=yellow
 highlight Conceal    cterm=none      ctermbg=none  ctermfg=none

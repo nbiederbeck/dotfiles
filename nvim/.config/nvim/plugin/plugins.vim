@@ -8,6 +8,7 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'chriskempson/base16-vim'
 Plug 'rakr/vim-one'
     let g:one_allow_italics = 1
 Plug 'whatyouhide/vim-lengthmatters'
@@ -92,7 +93,7 @@ Plug 'noahhdf/vim-agriculture'
 Plug 'arcticicestudio/nord-vim'
     let g:nord_italic=1
     let g:nord_italic_comments=1
-    let g:nord_cursor_line_number_background=1
+    let g:nord_cursor_line_number_background=0
     let g:nord_uniform_diff_background=1
 Plug '907th/vim-auto-save'
     let g:auto_save_events = ['InsertLeave', 'TextChanged']
