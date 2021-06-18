@@ -191,3 +191,47 @@ snippet "^tab" "table environment" rbA
 \\end{table}
 ${0}
 endsnippet
+
+snippet "col2" "two columns environment" rbA
+\\begin{columns}[onlytextwidth]
+	\\begin{column}{0.5\textwidth}
+	${1}
+	\\end{column}
+	\\begin{column}{0.5\textwidth}
+	${2}
+	\\end{column}
+\\end{columns}
+${0}
+endsnippet
+
+snippet "colblock" "two columns environment" rbA
+\\begin{columns}[onlytextwidth]
+	\\begin{column}{0.5\textwidth}
+	\\begin{block}{${1}}
+		${2}
+	\\end{block}
+	\\end{column}
+	\\begin{column}{0.5\textwidth}
+	\\begin{block}{${3}}
+		${4}
+	\\end{block}
+	\\end{column}
+\\end{columns}
+${0}
+endsnippet
+
+
+snippet "col3" "two columns environment" rbA
+\\begin{columns}[onlytextwidth]
+	\\begin{column}{0.33\textwidth}
+	${1}
+	\\end{column}
+	\\begin{column}{0.33\textwidth}
+	${2}
+	\\end{column}
+	\\begin{column}{0.33\textwidth}
+	${3}
+	\\end{column}
+\\end{columns}
+${0}
+endsnippet

@@ -1,4 +1,4 @@
 " LaTeX
-autocmd BufNewFile,BufRead *.tex setfiletype tex
-" R
-au BufNewFile,BufRead *.R setfiletype r
+augroup filetypedetect
+au BufNewFile,BufRead *.tex setfiletype tex
+augroup END
