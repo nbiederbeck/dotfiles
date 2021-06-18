@@ -1,11 +1,12 @@
 # vim: ft=gitconfig commentstring=#%s
 
 [core]
-    editor = nano
+    editor = nvim
 	excludesfile = /home/noah/.gitignore
 
 [user]
     name = Noah Biederbeck
+    email = noah.biederbeck@tu-dortmund.de
     useConfigOnly = true
 
 [pull]
@@ -41,3 +42,4 @@
 	showInformativeStatus = true
 	showUntrackedFiles = true
 	showDirtyState = true
+
