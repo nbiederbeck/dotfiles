@@ -1,6 +1,0 @@
-# ft=sh
-alias "vim"="nvim"
-alias "ls"="exa"
-alias "la"="exa -a"
-alias "ll"="exa -al"
-alias "lt"="exa -l -snew"
