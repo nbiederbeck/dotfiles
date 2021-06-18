@@ -1,5 +1,0 @@
-#!/bin/bash
-
-for _ in {1..10}; do
-    dunstify --replace 2349 "$(date)" -t 1003 & sleep 1
-done

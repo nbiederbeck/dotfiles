@@ -1,3 +1,0 @@
-#!/bin/bash
-
-notify-send "$(curl wttr.in/Dortmund/format=3)"
