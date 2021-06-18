@@ -9,5 +9,5 @@ if [[ -z $1 ]]; then
     echo "${help}"
     exit 1
 else
-    printf "no\nyes" | bemenu -p "$1" | grep yes
+    printf "no\nyes" | dmenu -p "$1" | grep yes
 fi

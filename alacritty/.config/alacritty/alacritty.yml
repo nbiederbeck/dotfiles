@@ -59,24 +59,24 @@ draw_bold_text_with_bright_colors: false
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Iosevka Fixed # should be "Menlo" or something on macOS.
+    family: Source Code Pro # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
-    family: Iosevka Fixed # should be "Menlo" or something on macOS.
+    family: Source Code Pro # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: Iosevka Fixed # should be "Menlo" or something on macOS.
+    family: Source Code Pro # should be "Menlo" or something on macOS.
     # Style can be specified to pick a specific face.
     style: Italic
 
   # Point size of the font
-  size: 20.0
+  size: 12.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -102,6 +102,41 @@ debug:
 
 # Colors (Tomorrow Night Bright)
 schemes:
+    # Base16 Tomorrow - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+tomorrow: &tomorrow
+  # Default colors
+  primary:
+    background: '0xffffff'
+    foreground: '0x4d4d4c'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xffffff'
+    cursor: '0x4d4d4c'
+
+  # Normal colors
+  normal:
+    black:   '0xffffff'
+    red:     '0xc82829'
+    green:   '0x718c00'
+    yellow:  '0xeab700'
+    blue:    '0x4271ae'
+    magenta: '0x8959a8'
+    cyan:    '0x3e999f'
+    white:   '0x4d4d4c'
+
+  # Bright colors
+  bright:
+    black:   '0x8e908c'
+    red:     '0xf5871f'
+    green:   '0xe0e0e0'
+    yellow:  '0xd6d6d6'
+    blue:    '0x969896'
+    magenta: '0x282a2e'
+    cyan:    '0xa3685a'
+    white:   '0x1d1f21'
+
     selenized: &light
           primary:
             background: '0xefefef'
@@ -125,35 +160,26 @@ schemes:
             cyan:    '0x009a8a'
             white:   '0x282828'
 
-    colors: &one-light
-      # Default colors
-      primary:
-        foreground: '#282c34'
-        background: '#ffffff'
-
-      # Normal colors
-      normal:
-        # NOTE: Use '#131613' for the `black` color if you'd like to see
-        # black text on the background.
-        black:   '#282c34'
-        red:     '#e06c75'
-        green:   '#98c379'
-        yellow:  '#d19a66'
-        blue:    '#61afef'
-        magenta: '#c678dd'
-        cyan:    '#56b6c2'
-        white:   '#abb2bf'
-
-      # Bright colors
-      bright:
-        black:   '#5c6370'
-        red:     '#e06c75'
-        green:   '#98c379'
-        yellow:  '#d19a66'
-        blue:    '#61afef'
-        magenta: '#c678dd'
-        cyan:    '#56b6c2'
-        white:   '#ffffff'
+# Colors (One Light)
+one-light: &one-light
+  primary:
+    background: '#fafafa'
+    foreground: '#383a42'
+  cursor:
+    text:       CellBackground
+    cursor:     '#526eff' # syntax-cursor-color
+  selection:
+    text:       CellForeground
+    background: '#e5e5e6' # syntax-selection-color
+  normal:
+    black:      '#696c77' # mono-2
+    red:        '#e45649' # red 1
+    green:      '#50a14f'
+    yellow:     '#c18401' # orange 2
+    blue:       '#4078f2'
+    magenta:    '#a626a4'
+    cyan:       '#0184bc'
+    white:      '#a0a1a7' # mono-3
 
     # Colors (Solarized Light)
     solarized: &sol-light
@@ -238,7 +264,7 @@ schemes:
       # Default colors
       primary:
         foreground: "0x2e3440"
-        background: "0xffffff"
+        background: "0xD8DEE9"
 
       # Colors the cursor will use if `custom_cursor_colors` is true
       cursor:

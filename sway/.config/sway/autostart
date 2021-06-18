@@ -1,14 +1,3 @@
 #!/bin/bash
 nm-applet &!
-
 mako &!
-
-# [[ $(pgrep restic) ]] || notify-send -u critical 'Backups' '<i>restic-backup-interval</i>\nnot running' &!
-# [[ $(pgrep unclutte) ]] || unclutter --timeout=5 --jitter=1 -b &!
-# [[ $(pgrep etesync) ]] || etesync-dav &!
-# [[ $(pgrep redshift) ]] || redshift &!
-# [[ $(pgrep dunst) ]] || dunst -print 2>&1 >> /tmp/dunst-notifications-log &!
-# [[ $(pgrep dropbox) ]] || dropbox &!
-# [[ $(pgrep sxhkd) ]] || sxhkd -c ~/.config/sxhkd/sxhkdrc-i3 &!
-# [[ $(pgrep cbatticon) ]] || (cbatticon 0 & cbatticon 1) &!
-# [[ $(pgrep pasystray) ]] || pasystray &!

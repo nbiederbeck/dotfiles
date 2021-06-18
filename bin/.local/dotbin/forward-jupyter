@@ -4,21 +4,23 @@ port=$1
 host=$2
 
 if [[ -z $port ]]; then
-    printf "Port: "
-    read -r port
+    read -p "Port: " -r port
 fi
 
 if [[ -z $host ]]; then
-    printf "Host: "
-    read -r host
+    read -p "Host: " -r host
 fi
 
 process_id_of_running_ssh_forward=$(
-    ss -tlpn | awk '/:2702 / {print $6}' | grep -E 'pid=[[:digit:]]*' -o | sed 's/pid=//'
+    ss -tlpn | awk '/127.0.0.1:2702 / {print $6}' | grep -E 'pid=[[:digit:]]*' -o | sed 's/pid=//'
 )
 
 if [[ -n "${process_id_of_running_ssh_forward}" ]]; then
     kill "${process_id_of_running_ssh_forward}"
 fi
 
-ssh -N -f -L "${port}:localhost:${port}" "${host}"
+
+read -rp "Connect? (yes) "
+if [ -z $REPLY ]; then
+    ssh -N -f -L "${port}:localhost:${port}" "${host}"
+fi

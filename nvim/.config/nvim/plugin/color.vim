@@ -1,8 +1,8 @@
 syntax enable
 
-set background=light
-colorscheme base16-tomorrow
-let g:airline_theme='base16-tomorrow'
+set background=dark
+colorscheme nord
+let g:airline_theme='nord'
 syntax on
 
 let g:limelight_conceal_ctermfg = '8'

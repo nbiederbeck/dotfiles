@@ -1,0 +1,19 @@
+#!/bin/bash
+
+function die () {
+    echo "$1" > /dev/stderr
+    exit 1
+}
+
+if [ -z "${1}" ]; then
+    die "Supply a name for the binary."
+fi
+
+binary="${HOME}/.local/bin/${1}"
+
+if ! [ -f "${binary}" ]; then
+    touch "${binary}"
+    chmod +x "${binary}"
+fi
+
+${EDITOR:-nvim} "${binary}"

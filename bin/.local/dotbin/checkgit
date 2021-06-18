@@ -2,58 +2,38 @@
 
 (( exit_code = 0 ))
 
-find_cmd=$(command -v fd || command -v find)
-find_cmd=$(echo "${find_cmd}" | rev | cut -d/ -f1 | rev)
+git_dirs=$( \
+    find "${HOME}" \
+        -maxdepth 4 \
+        -name ".git" \
+        -not -path "${HOME}/.cache/*" \
+        -not -path "${HOME}/.cargo/*" \
+        -not -path "${HOME}/.fzf/*" \
+        -not -path "${HOME}/.tmux/*" \
+        -not -path "${HOME}/.local/*conda*/*" \
+        -not -path "${HOME}/texlive/*" \
+        -not -path "${HOME}/.texmf/*" \
+        -not -path "${HOME}/.bash_it/*" \
+        -not -path "${HOME}/.oh-my-zsh/*" \
+        -not -path "${HOME}/.zplug/*" \
+        -not -path "${HOME}/vollmond/*" \
+        -not -path "${HOME}/.go/*" \
+        -not -path "${HOME}/.vim/*" \
+)
 
-if [[ ${find_cmd} == "find" ]]; then
-    dirs=$( \
-        find ~ \
-            -maxdepth 4 \
-            -name '.git' \
-            -not -path '*/.cache/*' \
-            -not -path '*/.cargo/*' \
-            -not -path '*/.fzf/*' \
-            -not -path '*/.tmux/*' \
-            -not -path '*/anaconda3/*' \
-            -not -path '*/texlive/*' \
-            -not -path '*/.texmf/*' \
-            -not -path '*/.bash-it/*' \
-            -not -path '*/.zplug/*' \
-            -not -path '*/vollmond/*' \
-            -not -path '*/.go/*' \
-    )
-elif [[ ${find_cmd} == "fd" ]]; then
-    dirs=$( \
-        fd '\.git$' \
-            --maxdepth 4 \
-            --type d \
-            --hidden \
-            --exclude .cache \
-            --exclude .cargo \
-            --exclude .fzf \
-            --exclude anaconda3 \
-            --exclude texlive \
-            --exclude .zplug \
-            --exclude vollmond \
-            --exclude .go \
-            ~ \
-    )
-fi
+for gd in ${git_dirs}; do
+    wd=$(dirname "${gd}")
+    stat=$(GIT_DIR="${gd}" GIT_WORK_TREE="${wd}" git status --short)
 
-for gr in ${dirs}; do
-    wd=$(dirname "${gr}")
-    pushd "${wd}" &> /dev/null || exit 1
-    status=$(git status)
-    if [[ ${status} =~ "git" ]]; then
-        notify-send -u critical "${wd}" "\n$(git status --short)"
+    if [[ -n "${stat}" ]]; then
+        notify-send -u critical "${wd}" "${stat}"
         (( exit_code = 1 ))
     fi
-    popd &> /dev/null || exit 1
+
 done
 
-msg="everything is fine :)"
 if [[ "${exit_code}" == 0 ]]; then
-    notify-send -u low "Check Git" "${msg}"
+    notify-send -u low "Check Git" "everything is fine :)"
 fi
 
 exit "${exit_code}"

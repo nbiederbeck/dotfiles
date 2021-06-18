@@ -1,7 +1,9 @@
 ; vim: ft=dosini
 [colors]
-background = #121212
-foreground = #efefef
+
+background = #000000
+foreground = #ffffff
+separator  = #666666
 black      = #3B4252
 red        = #BF616A
 green      = #A3BE8C
@@ -17,8 +19,8 @@ alert      = ${colors.red}
 
 [bar]
 width            = 100%
-height           = 16
-line-size        = 16
+height           = 1%
+line-size        = 1%
 offset-x         = 0
 offset-y         = 0
 underline-size   = 0
@@ -26,13 +28,11 @@ fixed-center     = true
 background       = ${colors.background}
 line-color       = ${colors.background}
 foreground       = ${colors.foreground}
-font-0           = "SourceCodePro:size=8;1"
-font-1           = "FontAwesome:size=8;1"
-font-2           = "DejaVuSerifCondensed:size=6;1"
-font-3           = "NotoEmoji:scale=13"
+font-0           = "JetBrainsMono:size=12;1"
+font-1           = "NotoColorEmoji:scale=16"
 module-margin    = 1
 monitor          = eDP1
-monitor-fallback = DP2-3
+monitor-fallback = HDMI-0
 
 [bar/combined]
 inherit           = bar
@@ -61,10 +61,16 @@ modules-right  = battery_internal battery_external
 inherit           = bar
 bottom            = true
 label-active-font = 0
-modules-left      = cpu ram i3
-modules-center    = date
-modules-right     = battery_internal battery_external
+modules-left      = i3 cpu ram
+modules-center    = 
+modules-right     = do-not-disturb date
 tray-position     = right
+
+[module/do-not-disturb]
+type = custom/script
+exec = ~/.local/dotbin/dunst-do-not-disturb
+click-left = ~/.local/dotbin/dunst-do-not-disturb toggle
+interval = 1
 
 [module/wired-network]
 type      = internal/network
@@ -214,10 +220,8 @@ interval = 10
 
 [module/date]
 type     = internal/date
-; date = %%{F#99}%d.%m.%Y %H:%M%%{F-}
-; date-alt = %%{F#fff}%A, %d %B %Y %H:%M:%S%%{F-}
-date     = %A, %d. %B %Y, %H:%M:%S (%Z %z)
-date-alt = %Y-%m-%d %H:%M:%S
+date-alt = %A, %d. %B %Y, %H:%M:%S (%Z %z)
+date     = %Y-%m-%d %H:%M:%S
 
 [module/swap]
 type                          = internal/memory
@@ -246,14 +250,14 @@ ramp-used-4            = ▅
 ramp-used-5            = ▆
 ramp-used-6            = ▇
 ramp-used-7            = █
-ramp-swap-used-0            = ▁
-ramp-swap-used-1            = ▂
-ramp-swap-used-2            = ▃
-ramp-swap-used-3            = ▄
-ramp-swap-used-4            = ▅
-ramp-swap-used-5            = ▆
-ramp-swap-used-6            = ▇
-ramp-swap-used-7            = █
+ramp-swap-used-0            = 
+ramp-swap-used-1            = ▁
+ramp-swap-used-2            = ▂
+ramp-swap-used-3            = ▃
+ramp-swap-used-4            = ▄
+ramp-swap-used-5            = ▅
+ramp-swap-used-6            = ▆
+ramp-swap-used-7            = ▇
 ; ramp-used-0-foreground = ${colors.highlight}
 ; ramp-used-1-foreground = ${colors.highlight}
 ; ramp-used-2-foreground = ${colors.highlight}
@@ -284,69 +288,71 @@ ramp-coreload-4            = ▅
 ramp-coreload-5            = ▆
 ramp-coreload-6            = ▇
 ramp-coreload-7            = █
-; ramp-coreload-0-foreground = ${colors.highlight}
-; ramp-coreload-1-foreground = ${colors.highlight}
-; ramp-coreload-2-foreground = ${colors.highlight}
-; ramp-coreload-3-foreground = ${colors.highlight}
-; ramp-coreload-4-foreground = ${colors.warning}
-; ramp-coreload-5-foreground = ${colors.warning}
-; ramp-coreload-6-foreground = ${colors.alert}
-; ramp-coreload-7-foreground = ${colors.alert}
+ramp-coreload-0-foreground = ${colors.highlight}
+ramp-coreload-1-foreground = ${colors.highlight}
+ramp-coreload-2-foreground = ${colors.highlight}
+ramp-coreload-3-foreground = ${colors.highlight}
+ramp-coreload-4-foreground = ${colors.highlight}
+ramp-coreload-5-foreground = ${colors.warning}
+ramp-coreload-6-foreground = ${colors.warning}
+ramp-coreload-7-foreground = ${colors.alert}
+;▁▂▃▄▅▆▇█
+
 
 [module/pulseaudio]
 type          = internal/pulseaudio
 sink          = alsa_output.pci-0000_00_1b.0.analog-stereo
 format-volume = <ramp-volume> <label-volume>
-label-muted   = 
+label-muted   = m
 ; Only applies if <ramp-volume> is used
-ramp-volume-0 = 
-ramp-volume-1 = 
+ramp-volume-0 = 0
+ramp-volume-1 = 1
 
 
 [module/i3]
 type                       = internal/i3
-pin-workspaces             = false
+pin-workspaces             = true
 strip-wsnumbers            = true
 index-sort                 = true
 format                     = <label-state> <label-mode>
-format-spacing             = 0
+format-spacing             = 1
 enable-click               = true
 ;
-label-separator            =
+label-separator            = 
 label-separator-padding    = 0
-label-separator-foreground = ${colors.foreground}
+label-separator-foreground = ${colors.separator}
 ;
 label-focused              = %name%
-label-focused-foreground   = ${colors.background}
-label-focused-background   = ${colors.foreground}
+label-focused-foreground   = #ffffff
+label-focused-background   = #285577
 ; label-focused-underline=${colors.foreground}
-label-focused-padding      = 1
+label-focused-padding      = 2
 label-focused-margin       = 0
 ;
 label-unfocused            = %name%
-label-unfocused-foreground = ${colors.yellow}
-label-unfocused-background = ${colors.background}
-label-unfocused-underline  = ${colors.background}
-label-unfocused-padding    = 1
+label-unfocused-foreground = #888888
+label-unfocused-background = #222222
+label-unfocused-padding    = 2
 label-unfocused-margin     = 0
 ;
 label-visible              = %name%
-label-visible-foreground   = ${colors.green}
-label-visible-background   = ${colors.background}
+label-visible-foreground   = #ffffff
+label-visible-background   = #5f676a
 ; label-visible-underline=${colors.background}
-label-visible-padding      = 1
+label-visible-padding      = 2
 label-visible-margin       = 0
 ;
 label-urgent               = %name%
-label-urgent-foreground    = ${colors.red}
-label-urgent-background    = ${colors.background}
+label-urgent-foreground    = #ffffff
+label-urgent-background    = #900000
 ; label-urgent-underline=${colors.background}
-label-urgent-padding       = 1
+label-urgent-padding       = 2
 label-urgent-margin        = 0
 ;
 ; label-mode = %name%
-label-mode-foreground      = ${colors.red}
-label-mode-background      = ${colors.background}
+label-mode-foreground      = #ffffff
+label-mode-background      = #900000
 ; label-mode-underline=${colors.background}
 label-mode-padding         = 1
 label-mode-margin          = 0
+

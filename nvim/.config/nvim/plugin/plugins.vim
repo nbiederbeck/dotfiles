@@ -8,6 +8,11 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug '~/Documents/make.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'rakr/vim-one'
     let g:one_allow_italics = 1
@@ -52,6 +57,8 @@ Plug 'dense-analysis/ale'
     " let g:ale_linters_explicit = 1
     " let g:ale_set_loclist = 1
     " let g:ale_set_quickfix = 0
+    let g:ale_fixers = {'python': ['black'], 'go': ['gofmt']}
+    let g:ale_linters = {'python': ['pyflakes'], 'go': ['gofmt']}
     let g:ale_echo_msg_info_str = "I"
     let g:ale_echo_msg_warning_str = "W"
     let g:ale_echo_msg_error_str = "E"
@@ -87,9 +94,6 @@ Plug 'cespare/vim-toml', {'for': 'toml'}
 " Plug 'vim-scripts/vim-on-write'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
-Plug 'noahhdf/vim-agriculture'
-    vmap <Leader>/ <Plug>RgRawVisualSelection
-    nmap <Leader>/ <Plug>RgRawWordUnderCursor
 Plug 'arcticicestudio/nord-vim'
     let g:nord_italic=1
     let g:nord_italic_comments=1

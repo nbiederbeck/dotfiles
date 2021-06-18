@@ -1,13 +1,9 @@
-# Anaconda
-for conda_exe in /opt/anaconda/bin/conda ~/.local/anaconda3/condabin/conda ~/anaconda3/condabin/conda
-    if test -f $conda_exe
-        eval $conda_exe "shell.fish" "hook" $argv | source
-    end
-end
-
 # Paths
-set PATH $PATH ~/.local/bin
-set PATH $PATH ~/.local/dotbin
+set -p PATH ~/.local/bin
+set -p PATH ~/.local/dotbin
+set -p PATH ~/.cargo/bin
+set -p PATH ~/go/bin
+set -p PATH ~/.local/texlive/2021/bin/x86_64-linux
 
 # Variables
 set FZF_TMUX 0
@@ -20,3 +16,13 @@ set HISTIGNORE 'fg:ls'
 set FONTCONFIG_FILE $CONDA_PREFIX/etc/fonts/fonts.conf
 set FONTCONFIG_PATH $CONDA_PREFIX/etc/fonts/
 set IPYTHONDIR ~/.ipython/
+
+# Completions
+kitty + complete setup fish | source
+
+set -U pisces_only_insert_at_eol 1
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/noah/.local/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<

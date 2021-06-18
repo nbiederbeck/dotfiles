@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git config user.name "Noah Biederbeck"
+git config user.email "noah.biederbeck@tu-dortmund.de"

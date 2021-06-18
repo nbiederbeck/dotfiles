@@ -1,0 +1,16 @@
+#!/bin/bash
+
+case $1 in
+    true|false|toggle)
+        dunstctl set-paused $1
+        ;;
+    -h|--help)
+        echo "./$(basename $0) true|false|toggle [-h]"
+        exit
+esac
+
+if [ "$(dunstctl is-paused)" == "true" ]; then
+    echo 'Do not disturb'
+else
+    echo '✓'
+fi

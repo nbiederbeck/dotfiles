@@ -1,0 +1,2 @@
+#!/bin/bash
+notify-send "Weather" "$(curl -s wttr.in/Dortmund\?format='%c+%t')"

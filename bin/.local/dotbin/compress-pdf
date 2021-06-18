@@ -1,0 +1,50 @@
+#!/bin/bash
+
+function usage () {
+    cat << EOF
+Usage: ./$(basename $0) <input-pdf> <output-pdf>
+
+Compress a PDF with ghostscript.
+EOF
+}
+
+case $1 in
+    (-h|--help)
+        usage
+        exit
+        ;;
+    *)
+        ;;
+esac
+
+function die () {  # prints message to stderr and exits with error code
+    echo $1 > /dev/stderr
+    exit 1
+}
+
+function msg () {  # prints message to stderr (to circumvent piping)
+    echo $1 > /dev/stderr
+}
+
+if [ -z $1 ] | [ -z $2 ]; then
+    usage
+    die
+fi
+
+if ! [ -f $1 ]; then
+    usage
+    die "<input-pdf> must exist!"
+fi
+
+# Compress
+gs \
+    -dBATCH \
+    -dNOPAUSE \
+    -q \
+    -sDEVICE=pdfwrite \
+    -dPDFSETTINGS=/default \
+    -sOutputFile=$2 \
+    $1
+
+# Statistics
+du -h $1 $2

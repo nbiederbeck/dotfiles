@@ -1,7 +1,8 @@
 # vim: ft=gitconfig commentstring=#%s
 
 [core]
-    editor = vi
+    editor = nano
+	excludesfile = /home/noah/.gitignore
 
 [user]
     name = Noah Biederbeck
@@ -11,7 +12,7 @@
     rebase = true
 
 [merge]
-    # conflictstyle = diff3
+    conflictstyle = diff3
     tool = vimdiff
     trustExitCode = false
 
@@ -32,3 +33,11 @@
     br = branch
     s = status
     a = add
+
+[init]
+	defaultBranch = main
+
+[bash]
+	showInformativeStatus = true
+	showUntrackedFiles = true
+	showDirtyState = true

@@ -6,4 +6,4 @@ reflector \
     --country Germany \
     --sort rate \
     --verbose \
-> /opt/common/mirrorlist
+> ~/mirrorlist

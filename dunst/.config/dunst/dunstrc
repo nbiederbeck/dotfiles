@@ -2,7 +2,7 @@
     frame_width = 1
     frame_color = "#4c7899"
 
-    font = DejaVu Sans Mono 10
+    font = Source Sans Pro 10
 
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -68,7 +68,7 @@
     # the top and down respectevly.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x4-25+25"
+    geometry = "600x4-25+25"
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.

@@ -14,60 +14,39 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show run -columns 5 -auto-select | xargs swaymsg exec --
-# laptop monitor
+set $menu rofi -show run -columns 1 -auto-select | xargs swaymsg exec --
+# Laptop Monitor
 set $laptop eDP-1
+# Font
+set $font pango:DejaVu Sans Mono
+font $font 12
 
+title_align center
+focus_follows_mouse yes
 workspace_layout tabbed
-hide_edge_borders --i3 smart
+hide_edge_borders --i3 smart # none|vertical|horizontal|both|smart
 default_border pixel 2
 default_floating_border pixel 2
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg ~/Pictures/Backgrounds/daytime fill
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-output HDMI-A-1 resolution 3840x2160 position 0,0
-# output $laptop resolution 1366x768 position 0,0
-# output DP-5 resolution 1920x1080 position 0,0
-# output DP-1 resolution 3840x2160 position 0,0 scale 1
-# exec swaymsg focus output DP-1
+set $monitor "Unknown ASUS VP28U 0x00008639"
+set $hdmi "HDMI-A-1"
+output * bg ~/Pictures/Wallpapers/background fill
+output $monitor     pos    0 0 res 3840x2160 scale 2
+output $hdmi pos 1920 0 res 1920x1080 scale 1
 
 ### Idle configuration
-#
-# Example configuration:
-#
 exec swayidle -w \
          timeout 60 'swaylock' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 121212' \
          idlehint 'swaymsg exec -- notify-send "swayidle"'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 input type:keyboard {
@@ -75,11 +54,7 @@ input type:keyboard {
     repeat_delay 300
     repeat_rate 80
 }
-# input "1:1:AT_Translated_Set_2_keyboard" {  # thinkpad keyboard
-# }
-# input "6058:20564:ThinkPad_Extra_Buttons" {  # media keys etc.
-# }
-seat * hide_cursor 8000
+seat * hide_cursor 3000
 
 ### Key bindings
 #
@@ -101,11 +76,12 @@ seat * hide_cursor 8000
     # mouse button for dragging.
     floating_modifier $mod normal
 
-    # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    # Restart sway inplace
+    bindsym $mod+Shift+c reload; exec notify-send "sway" "reloaded session"
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec ~/.local/dotbin/exit_menu.sh
 #
 # Moving around:
 #
@@ -133,17 +109,17 @@ seat * hide_cursor 8000
 #
 # Workspaces:
 #
-    # names
-    set $ws1  "1:i"
-    set $ws2  "2:II"
-    set $ws3  "3:iii"
-    set $ws4  "4:IV"
-    set $ws5  "5:v"
-    set $ws6  "6:VI"
-    set $ws7  "7:vii"
-    set $ws8  "8:VIII"
-    set $ws9  "9:ix"
-    set $ws10 "10:X"
+    # Names
+    set $ws1 "1:1"
+    set $ws2 "2:2"
+    set $ws3 "3:3"
+    set $ws4 "4:4"
+    set $ws5 "5:5"
+    set $ws6 "6:6"
+    set $ws7 "7:7"
+    set $ws8 "8:8"
+    set $ws9 "9:9"
+    set $ws10 "10:0"
 
     # Switch to workspace
     bindsym $mod+1 workspace $ws1
@@ -158,6 +134,8 @@ seat * hide_cursor 8000
     bindsym $mod+0 workspace $ws10
     # Smart switching
     bindsym $mod+Tab workspace back_and_forth
+    bindsym $mod+u workspace prev
+    bindsym $mod+i workspace next
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace $ws1
     bindsym $mod+Shift+2 move container to workspace $ws2
@@ -169,47 +147,18 @@ seat * hide_cursor 8000
     bindsym $mod+Shift+8 move container to workspace $ws8
     bindsym $mod+Shift+9 move container to workspace $ws9
     bindsym $mod+Shift+0 move container to workspace $ws10
-# 
-# Assign Programs to workspaces
-#
-    assign [class="vlc"] $ws2
 
-    # Browser Workspace 4
-    assign [class="firefox-esr"] $ws4
-    assign [class="firefox"] $ws4
-    for_window [class="firefox" instance="Dialog"] move workspace current, focus
-    assign [class="Firefox"] $ws4
-    for_window [class="Firefox" instance="Dialog"] move workspace current, focus
-    assign [class="Midori"] $ws4
-
-    # Social Workspace 9
-    assign [app_id="telegramdesktop"] $ws9
-    assign [class="Telegram"] $ws9
-    assign [class="(TelegramDesktop|telegram|telegram-desktop)"] $ws9
-    assign [class="Slack"] $ws9
-    assign [class="Mattermost"] $ws9
-    assign [class="Evolution"] $ws9
-    assign [class="Alacritty" title="Alpine"] $ws9
-    assign [class="Thunderbird"] $ws9
-    assign [class="Mailspring"] $ws9
-    assign [class="zoom"] $ws10
-
-    for_window [workspace=$ws9] layout tabbed
-    for_window [class="Mars"] floating enable
-    for_window [class="ROOT"] floating enable
-    for_window [class="feh"] fullscreen disable
-    for_window [class="^zoom$" title="^Zoom Meeting$"] fullscreen disable
-    for_window [class="^zoom$" title="^Chat"] floating enable
-    for_window [class="^zoom$" title="^Participants"] floating enable
-
-    for_window [class=".*"] border pixel $bordersize
-    for_window [workspace=$ws7 class="MuPDF"] floating enable, border normal $bordersize
-    for_window [class="Surf"] border normal $bordersize
-    for_window [class="Tk"] floating enable, border normal $bordersize
-    for_window [class="matplotlib"] floating enable, border normal $bordersize
-    for_window [class=" "] floating enable, border pixel $bordersize
-    for_window [window_type=dialog] floating enable, border pixel $bordersize
-    for_window [class="VirtualBox"] floating disable
+    # Configure Workspace Outputs
+    workspace $ws1 output $monitor
+    workspace $ws2 output $monitor
+    workspace $ws3 output $monitor
+    workspace $ws4 output $monitor
+    workspace $ws5 output $monitor
+    workspace $ws6 output $hdmi $monitor
+    workspace $ws7 output $monitor
+    workspace $ws8 output $monitor
+    workspace $ws9 output $monitor
+    workspace $ws10 output $monitor
 #
 # Layout stuff:
 #
@@ -233,8 +182,9 @@ seat * hide_cursor 8000
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
 
-    # Move focus to the parent container
+    # Move focus to the parent or child container
     bindsym $mod+a focus parent
+    bindsym $mod+shift+a focus child
 #
 # Scratchpad:
 #
@@ -247,6 +197,25 @@ seat * hide_cursor 8000
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
+#
+# More:
+#
+bindsym XF86AudioRaiseVolume exec ~/.local/dotbin/sound.sh increase speakers
+bindsym XF86AudioLowerVolume exec ~/.local/dotbin/sound.sh decrease speakers
+bindsym XF86AudioMute exec ~/.local/dotbin/sound.sh toggle-mute speakers
+bindsym XF86AudioMicMute exec ~/.local/dotbin/sound.sh toggle-mute microphone
+
+bindsym XF86MonBrightnessUp exec ~/.local/dotbin/brightness increase
+bindsym XF86MonBrightnessDown exec ~/.local/dotbin/brightness decrease
+bindsym $mod+XF86MonBrightnessUp exec ~/.local/dotbin/brightness set 100
+bindsym $mod+XF86MonBrightnessDown exec ~/.local/dotbin/brightness set 1
+
+bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
+
+#bindsym $mod+Shift+e exec ~/.config/dotbin/exit_menu.sh
+bindsym $mod+x exec ~/.local/dotbin/lock.sh
+bindsym $mod+Shift+p exec ~/.local/dotbin/bwmenu
+
 #
 # Resizing containers:
 #
@@ -266,11 +235,17 @@ mode "resize" {
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
+    # Nice floating sizes for special programs
+    # zathura, 1610 pdf for screenshares
+    bindsym z resize set 1600 1003; mode "default"
+
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+# bindsym $mod+z resize set 1618 1000
+bindsym $mod+z resize set 809 500
 
 #
 # Status Bar:
@@ -278,7 +253,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position bottom
-    font Iosevka Fixed 16
+    font $font 8
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
@@ -294,9 +269,77 @@ bar {
         inactive_workspace #000000 #000000 #5c5c5c
     }
 }
+exec --no-startup-id ~/.config/polybar/launch.sh
 
+#
+# Colors
+#
+# class                 border  backgr. text    indicator child_border
+client.focused          #ebcb8b #ebcb8b #2e3440 #b48ead   #ebcb8b
+
+mode "border" {
+    bindsym b border pixel 2; mode "default"
+    bindsym t border normal 0; mode "default"
+    bindsym n border none; mode "default"
+    bindsym a border normal 2; mode "default"
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+shift+b mode "border"
+
+#
+# Program/Window specific settings
+#
+assign [class="vlc"] $ws2
+
+# Browser Workspace 4
+assign [class="firefox-esr"] $ws4
+assign [class="firefox"] $ws4
+for_window [class="firefox" instance="Dialog"] move workspace current, focus
+assign [class="Firefox"] $ws4
+for_window [class="Firefox" instance="Dialog"] move workspace current, focus
+assign [class="Midori"] $ws4
+
+# Social Workspace 9
+assign [app_id="telegramdesktop"] $ws9
+assign [class="Telegram"] $ws9
+assign [class="(TelegramDesktop|telegram|telegram-desktop)"] $ws9
+assign [class="Slack"] $ws9
+assign [class="Mattermost"] $ws9
+assign [class="Evolution"] $ws9
+assign [class="Alacritty" title="Alpine"] $ws9
+assign [class="Thunderbird"] $ws9
+assign [class="Mailspring"] $ws9
+assign [class="zoom"] $ws10
+
+for_window [workspace=$ws9] layout tabbed
+for_window [class="Mars"] floating enable
+for_window [class="ROOT"] floating enable
+for_window [class="feh"] fullscreen disable
+for_window [class="Thunderbird" instance="Msgcompose" window_role="Msgcompose"] floating enable
+for_window [class="^zoom$" ] floating enable
+for_window [class="^zoom$" title="^Zoom Meeting$"] floating disable
+for_window [class="^zoom$" title="^Chat"] floating enable
+for_window [class="^zoom$" title="^Participants"] floating enable
+
+# for_window [class=".*"] border pixel $bordersize
+# for_window [workspace=$ws7 class="MuPDF"] floating enable, border normal $bordersize
+# for_window [class="Surf"] border normal $bordersize
+# for_window [class="Tk"] floating enable, border normal $bordersize
+# for_window [class="matplotlib"] floating enable, border normal $bordersize
+# for_window [class=" "] floating enable, border pixel $bordersize
+# for_window [window_type=dialog] floating enable, border pixel $bordersize
+# for_window [class="VirtualBox"] floating disable
+
+#
+# Autostart
+#
+exec --no-startup-id ~/.local/dotbin/sound.sh setup
+exec --no-startup-id ~/.autostart-sway
+
+#
+# Include default config
+#
 include /etc/sway/config.d/*
-include programs
-include keybindings
-
-exec ./.autostart-sway

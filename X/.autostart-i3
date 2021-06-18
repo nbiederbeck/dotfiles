@@ -29,7 +29,6 @@ mic.sh default &!
 
 ~/.config/i3lock/lock_when_idle.sh &!
 
-xrdb -load ~/.Xresources
 
 i3-msg reload
 ~/.fehbg
