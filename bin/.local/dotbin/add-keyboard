@@ -1,8 +1,0 @@
-#!/bin/bash
-# Run eveytime a (new) keyboard gets connected
-
-set -eo pipefail
-
-xset r rate 300 80
-setxkbmap us
-xmodmap ~/.Xmodmap

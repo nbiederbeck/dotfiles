@@ -1,9 +1,0 @@
-#!/bin/bash
-source $HOME/.cache/wal/colors.sh
-umlaute=$(xmodmap -pke | grep 'keycode  30' | grep '[a-zA-Z]*$' -o | sed 's/Udiaeresis/yes/' | sed 's/U/no/')
-
-echo "<span foreground='$color2'>$umlaute</span>"
-
-# if [[ "$umlaute" == "no" ]]; then
-#     xmodmap ~/.Xmodmap
-# fi

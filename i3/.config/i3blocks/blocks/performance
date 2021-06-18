@@ -1,8 +1,0 @@
-#!/usr/bin/env python3
-with open('/sys/devices/system/cpu/intel_pstate/max_perf_pct', 'r') as f:
-    d = int(f.readline())
-
-# if d < 100:
-#     print(f'BAT Power: {d}%')
-# else:
-print(f'perf: {d}%')

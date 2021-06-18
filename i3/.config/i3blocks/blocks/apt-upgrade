@@ -1,9 +1,0 @@
-#!/bin/bash
-# vim: ft=sh
-packages=$(apt-get upgrade -sq | grep '^[0-9]*\ upgraded' -o | grep '[0-9]*' -o)
-
-if [[ "$packages" > 20 ]]; then
-    echo "<span foreground='#BF616A'>$packages</span>"
-else
-    echo "<span foreground='#A3BE8Cff'>$packages</span>"
-fi
