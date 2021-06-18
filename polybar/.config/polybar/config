@@ -28,49 +28,19 @@ fixed-center     = true
 background       = ${colors.background}
 line-color       = ${colors.background}
 foreground       = ${colors.foreground}
-font-0           = "JetBrainsMono:size=12;1"
-font-1           = "NotoColorEmoji:scale=16"
+font-0           = "FiraCode:size=12;1"
 module-margin    = 1
 monitor          = eDP1
-monitor-fallback = HDMI-0
-
-[bar/combined]
-inherit           = bar
-label-active-font = 0
-modules-left      = battery temperature cpu ram backlight performance
-modules-center    = traffic i3
-modules-right     = date filesystem pulseaudio
-tray-position     = right
-
-[bar/top]
-inherit           = bar
-label-active-font = 0
-modules-left      = temperature cpu ram backlight
-modules-center    = date
-modules-right     = pulseaudio
-tray-position     = right
+monitor-fallback = DisplayPort-1
 
 [bar/bottom]
-inherit        = bar
-bottom         = true
-modules-left   = i3
-modules-center =
-modules-right  = battery_internal battery_external
-
-[bar/bottom_only]
 inherit           = bar
 bottom            = true
 label-active-font = 0
-modules-left      = i3 cpu ram
-modules-center    = 
-modules-right     = do-not-disturb date
+modules-left      = i3 cpu
+modules-center    =
+modules-right     = weather date
 tray-position     = right
-
-[module/do-not-disturb]
-type = custom/script
-exec = ~/.local/dotbin/dunst-do-not-disturb
-click-left = ~/.local/dotbin/dunst-do-not-disturb toggle
-interval = 1
 
 [module/wired-network]
 type      = internal/network
@@ -82,33 +52,9 @@ interface = wlp3s0
 
 [module/weather]
 type       = custom/script
-exec       = curl -s wttr.in/Dortmund?format=3 wttr.in/LST-1?format=3 | tr '\n' ' '
-click-left = curl wttr.in/Dortmund?format=3 -s
+exec       = curl -s wttr.in/Dortmund?format='%t'
 tail       = true
-interval   = 120
-
-[module/performance]
-type     = custom/script
-exec     = ~/.config/i3blocks/blocks/performance
-format   = <label>
-interval = 10
-
-[module/fan]
-type     = custom/script
-exec     = cat /proc/acpi/ibm/fan 2> /dev/null | awk '/speed/ {print $2}'
-format   = fan: <label>
-interval = 1
-
-[module/uptime]
-type     = custom/script
-exec     = uptime --pretty | sed 's/ days*/d/;s/ hours*/h/;s/ minutes*/m/;s/,//g'
-interval = 60
-
-[module/traffic]
-type     = custom/script
-exec     = ~/.config/i3blocks/blocks/traffic
-format   = Traffic <label>
-interval = 60
+interval   = 300
 
 [module/filesystem]
 type          = internal/fs
@@ -128,116 +74,11 @@ ramp-4   = ▅
 ramp-5   = ▆
 ramp-6   = ▇
 ramp-7   = █
-; bar-width = 5
-; bar-indicator = +
-; bar-indicator-font = 2
-; bar-indicator-foreground = ${colors.cyan}
-; bar-fill = -
-; bar-fill-font = 2
-; bar-fill-foreground = ${colors.cyan}
-; bar-empty = -
-; bar-empty-font = 2
-; bar-empty-foreground = ${colors.black}
-
-[module/wired]
-type                          = internal/network
-interface                     = enp0s25
-format-connected              =  <label-connected>
-format-disconnected           = <label-disconnected>
-label-connected               = %local_ip%
-label-disconnected            =
-; format-connected-underline=${colors.green}
-; format-disconnected-underline=${colors.alert}
-label-connected-foreground    = ${colors.green}
-label-disconnected-foreground = ${colors.alert}
-
-[module/wireless]
-type                          = internal/network
-interface                     = wlp3s0
-format-connected              =  <label-connected>
-format-disconnected           =  <label-disconnected>
-label-connected               = %essid%
-label-disconnected            = no wireless connection
-; format-connected-underline=${colors.green}
-; format-disconnected-underline=${colors.alert}
-label-connected-foreground    = ${colors.green}
-label-disconnected-foreground = ${colors.alert}
-
-[module/battery]
-type     = custom/script
-exec     = ~/.config/i3blocks/blocks/battery_combined.py
-format   = <label>
-interval = 5
-
-[module/battery_internal]
-inherit = battery
-battery = BAT0
-
-[module/battery_external]
-inherit = battery
-battery = BAT1
-
-[battery]
-type                       = internal/battery
-adapter                    = AC
-full-at                    = 98
-time-format                = %H:%M
-format-charging            = <ramp-capacity> <label-charging>
-label-charging             =  %percentage%%
-format-discharging         = <ramp-capacity> <label-discharging>
-label-discharging          = %time%
-format-full                = <ramp-capacity> <label-full>
-label-full                 = ""
-; ramp-capacity-0 = 
-ramp-capacity-0-foreground = ${colors.background}
-ramp-capacity-0-background = ${colors.alert}
-; ramp-capacity-1 = 
-ramp-capacity-1-foreground = ${colors.alert}
-; ramp-capacity-2 = 
-; ramp-capacity-3 = 
-; ramp-capacity-4 = 
-ramp-capacity-0            = ▁
-ramp-capacity-1            = ▂
-ramp-capacity-2            = ▃
-ramp-capacity-3            = ▄
-ramp-capacity-4            = ▅
-ramp-capacity-5            = ▆
-ramp-capacity-6            = ▇
-ramp-capacity-7            = █
-; bar-capacity-width = 10
-; bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-; bar-capacity-fill = 
-; bar-capacity-fill-foreground = #ddffffff
-; bar-capacity-fill-font = 1
-; bar-capacity-empty = 
-; bar-capacity-empty-font = 1
-; bar-capacity-empty-foreground = #44ffffff
-
-[module/utc]
-type     = custom/script
-exec     = echo "($(date +%R --utc) UTC)"
-interval = 10
 
 [module/date]
 type     = internal/date
 date-alt = %A, %d. %B %Y, %H:%M:%S (%Z %z)
 date     = %Y-%m-%d %H:%M:%S
-
-[module/swap]
-type                          = internal/memory
-format                        = <label> <bar-swap-used>
-label                         =
-bar-used-width                = 10
-bar-used-foreground-0         = ${colors.highlight}
-bar-used-foreground-1         = ${colors.highlight}
-bar-used-foreground-2         = ${colors.warning}
-bar-used-foreground-3         = ${colors.alert}
-bar-used-indicator            = |
-bar-used-indicator-foreground = ${colors.foreground}
-bar-used-fill                 = ─
-bar-used-empty                = ─
-bar-used-empty-foreground     = ${colors.black}
-
 
 [module/ram]
 type                   = internal/memory
@@ -258,21 +99,6 @@ ramp-swap-used-4            = ▄
 ramp-swap-used-5            = ▅
 ramp-swap-used-6            = ▆
 ramp-swap-used-7            = ▇
-; ramp-used-0-foreground = ${colors.highlight}
-; ramp-used-1-foreground = ${colors.highlight}
-; ramp-used-2-foreground = ${colors.highlight}
-; ramp-used-3-foreground = ${colors.highlight}
-; ramp-used-4-foreground = ${colors.warning}
-; ramp-used-5-foreground = ${colors.warning}
-; ramp-used-6-foreground = ${colors.alert}
-; ramp-used-7-foreground = ${colors.alert}
-
-[module/temperature]
-type                  = internal/temperature
-interval              = 1
-warn-temperature      = 60
-format                = <label>
-label-warn-foreground = ${colors.alert}
 
 [module/cpu]
 type                       = internal/cpu
@@ -299,16 +125,6 @@ ramp-coreload-7-foreground = ${colors.alert}
 ;▁▂▃▄▅▆▇█
 
 
-[module/pulseaudio]
-type          = internal/pulseaudio
-sink          = alsa_output.pci-0000_00_1b.0.analog-stereo
-format-volume = <ramp-volume> <label-volume>
-label-muted   = m
-; Only applies if <ramp-volume> is used
-ramp-volume-0 = 0
-ramp-volume-1 = 1
-
-
 [module/i3]
 type                       = internal/i3
 pin-workspaces             = true
@@ -318,14 +134,13 @@ format                     = <label-state> <label-mode>
 format-spacing             = 1
 enable-click               = true
 ;
-label-separator            = 
+label-separator            =
 label-separator-padding    = 0
 label-separator-foreground = ${colors.separator}
 ;
 label-focused              = %name%
 label-focused-foreground   = #ffffff
 label-focused-background   = #285577
-; label-focused-underline=${colors.foreground}
 label-focused-padding      = 2
 label-focused-margin       = 0
 ;
@@ -338,21 +153,16 @@ label-unfocused-margin     = 0
 label-visible              = %name%
 label-visible-foreground   = #ffffff
 label-visible-background   = #5f676a
-; label-visible-underline=${colors.background}
 label-visible-padding      = 2
 label-visible-margin       = 0
 ;
 label-urgent               = %name%
 label-urgent-foreground    = #ffffff
 label-urgent-background    = #900000
-; label-urgent-underline=${colors.background}
 label-urgent-padding       = 2
 label-urgent-margin        = 0
 ;
-; label-mode = %name%
 label-mode-foreground      = #ffffff
 label-mode-background      = #900000
-; label-mode-underline=${colors.background}
 label-mode-padding         = 1
 label-mode-margin          = 0
-
