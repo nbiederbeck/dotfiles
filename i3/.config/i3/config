@@ -256,30 +256,30 @@ bindsym $mod+z resize set 800 500
 # Status Bar:
 #
 # Read `man polybar` for more information about this section.
-bar {
-    position bottom
-    font $font 8
+# bar {
+#     position bottom
+#     font $font 8
 
-    # When the status_command prints a new line to stdout, i3bar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %k:%M:%S'; do sleep 1; done
+#     # When the status_command prints a new line to stdout, i3bar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d %k:%M:%S'; do sleep 1; done
 
-    strip_workspace_numbers true
+#     strip_workspace_numbers true
 
-    tray_padding 1
+#     tray_padding 1
 
-    colors {
-        statusline #d8dee9
-        background #2e3440
-        # colorclass       border  background text
-        focused_workspace  #2e3440 #2e3440    #d8dee9
-        active_workspace   #d8dee9 #2e3440    #d8dee9
-        inactive_workspace #2e3440 #2e3440    #4c566a
-        urgent_workspace   #bf616a #2e3440    #bf616a
-    }
+#     colors {
+#         statusline #d8dee9
+#         background #2e3440
+#         # colorclass       border  background text
+#         focused_workspace  #2e3440 #2e3440    #d8dee9
+#         active_workspace   #d8dee9 #2e3440    #d8dee9
+#         inactive_workspace #2e3440 #2e3440    #4c566a
+#         urgent_workspace   #bf616a #2e3440    #bf616a
+#     }
 
-}
-# exec --no-startup-id ~/.config/polybar/launch.sh
+# }
+exec --no-startup-id ~/.config/polybar/launch.sh
 
 ##
 ## Colors
