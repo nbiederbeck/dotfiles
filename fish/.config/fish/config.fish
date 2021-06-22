@@ -22,7 +22,4 @@ kitty + complete setup fish | source
 
 set -U pisces_only_insert_at_eol 1
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/nbiederbeck/.local/miniconda3/envs/cta-dl/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
+eval $HOME/.local/miniconda3/bin/conda "shell.fish" "hook" $argv | source
