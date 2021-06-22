@@ -2,10 +2,8 @@
 " -------
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = '<C-n>'
 Plug 'sirver/ultisnips'
