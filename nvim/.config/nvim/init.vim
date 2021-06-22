@@ -185,8 +185,8 @@ highlight Exception ctermfg=3
 
 highlight todo ctermbg=none ctermfg=3
 match todo /[Tt][Oo][Dd][Oo]/
-" python debugging
-match debugBreakpoint /breakpoint()/
+highlight Debug ctermfg=3 cterm=bold
+match Debug /breakpoint()/
 
 " key remap
 " ---------
