@@ -6,7 +6,7 @@ dotfiles=(
     fish
     git
     i3
-    mime
+    ipython
     nvim
     polybar
     redshift
