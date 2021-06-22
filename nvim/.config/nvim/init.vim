@@ -117,7 +117,7 @@ set hlsearch
 
 set backspace=indent,eol,start
 set list
-set listchars=tab:__,trail:␣, "eol:↵,space:␣,
+set listchars=tab:\|-,trail:␣, "eol:↵,space:␣,
 set wrap
 set linebreak
 let &showbreak="→"
