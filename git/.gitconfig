@@ -9,6 +9,16 @@
     email = noah.biederbeck@tu-dortmund.de
     useConfigOnly = true
 
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    line-numbers = true
+
+
 [pull]
     rebase = true
 
