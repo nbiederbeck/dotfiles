@@ -56,8 +56,8 @@ Plug 'dense-analysis/ale'
     let g:ale_echo_msg_warning_str = "W"
     let g:ale_echo_msg_error_str = "E"
     let g:ale_echo_msg_format = '[%severity% %linter%] %s'
-    let g:ale_fixers = {'python': ['black', 'isort']}
-    let g:ale_linters = {'python': ['flake8']}
+    let g:ale_fixers = {'python': ['black']}
+    let g:ale_linters = {'python': ['pyflakes']}
 Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_compiler_progname = 'nvr'
     let g:vimtex_view_mode='zathura'
