@@ -1,11 +1,12 @@
 ; vim: ft=dosini
 [colors]
 
-background = #000000
+background = #222222
 foreground = #ffffff
 separator  = #666666
 black      = #3B4252
-red        = #BF616A
+red-nord   = #BF616A
+red-i3     = #900000
 green      = #A3BE8C
 yellow     = #EBCB8B
 blue       = #81A1C1
@@ -15,7 +16,7 @@ white      = #E5E9F0
 normal     = ${colors.foreground}
 highlight  = ${colors.green}
 warning    = ${colors.yellow}
-alert      = ${colors.red}
+alert      = ${colors.red-i3}
 
 [bar]
 width            = 100%
@@ -158,11 +159,11 @@ label-visible-margin       = 0
 ;
 label-urgent               = %name%
 label-urgent-foreground    = #ffffff
-label-urgent-background    = #900000
+label-urgent-background    = ${colors.red-i3}
 label-urgent-padding       = 2
 label-urgent-margin        = 0
 ;
 label-mode-foreground      = #ffffff
-label-mode-background      = #900000
+label-mode-background      = ${colors.red-i3}
 label-mode-padding         = 1
 label-mode-margin          = 0
