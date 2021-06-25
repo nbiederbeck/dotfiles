@@ -7,6 +7,7 @@ dotfiles=(
     git
     i3
     ipython
+    kitty
     nvim
     polybar
     redshift
