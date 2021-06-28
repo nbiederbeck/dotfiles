@@ -31,7 +31,7 @@ default_border pixel $border
 default_floating_border pixel $border
 
 # floating_minimum_size 400 x 300
-floating_maximum_size 1280x720
+# floating_maximum_size 1280x720
 
 ### Output configuration
 exec ~/.fehbg
@@ -250,7 +250,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-bindsym $mod+z resize set 800 500
+bindsym $mod+z resize set 1600 1000
 
 #
 # Status Bar:
@@ -333,8 +333,6 @@ for_window [class="ROOT"] floating enable
 for_window [class="feh"] fullscreen disable
 for_window [class="Thunderbird" instance="Msgcompose" window_role="Msgcompose"] floating enable
 # Zoom
-for_window [class="zoom"] floating enable
-for_window [class="zoom" title="Zoom Meeting"] fullscreen disable; floating disable
 for_window [class="^zoom$" title="^Chat"] floating enable; resize set 660x620
 for_window [class="^zoom$" title="^Participants"] floating enable
 
