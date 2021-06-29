@@ -18,7 +18,7 @@
 
 [delta]
     line-numbers = true
-
+    syntax-theme = Nord
 
 [pull]
     rebase = true

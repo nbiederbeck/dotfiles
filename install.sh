@@ -1,6 +1,7 @@
 #!/bin/bash
 
 dotfiles=(
+    bat
     color
     dunst
     fish
