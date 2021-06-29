@@ -15,7 +15,7 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show run -columns 1 -auto-select | xargs i3-msg exec --
+set $menu dmenu_run
 # Laptop Monitor
 set $laptop eDP-1
 # Font
@@ -217,7 +217,6 @@ bindsym $mod+XF86MonBrightnessDown exec ~/.local/dotbin/brightness set 1
 
 bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 
-#bindsym $mod+Shift+e exec ~/.config/dotbin/exit_menu.sh
 bindsym $mod+x exec ~/.local/dotbin/lock.sh
 bindsym $mod+Shift+p exec ~/.local/dotbin/bwmenu
 bindsym $mod+Shift+t exec remind -k'notify-send "Remind" "%s"' -r ~/.config/remind/
