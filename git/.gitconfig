@@ -56,3 +56,6 @@
 
 [commit]
 	gpgsign = true
+
+[github]
+    user = nbiederbeck
