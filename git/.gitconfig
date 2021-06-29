@@ -8,6 +8,7 @@
     name = Noah Biederbeck
     email = noah.biederbeck@tu-dortmund.de
     useConfigOnly = true
+	signingkey = 5B2B794005C09CF8
 
 [pager]
     diff = delta
@@ -53,3 +54,5 @@
 	showUntrackedFiles = true
 	showDirtyState = true
 
+[commit]
+	gpgsign = true
