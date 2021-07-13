@@ -10,7 +10,7 @@
 	"pacmanconf": "/home/noah/.config/yay/pacman.conf",
 	"redownload": "no",
 	"rebuild": "no",
-	"batchinstall": false,
+	"batchinstall": true,
 	"answerclean": "",
 	"answerdiff": "",
 	"answeredit": "",
@@ -38,6 +38,6 @@
 	"cleanmenu": false,
 	"diffmenu": false,
 	"editmenu": false,
-	"combinedupgrade": false,
+	"combinedupgrade": true,
 	"useask": false
 }
