@@ -22,6 +22,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     let g:deoplete#enable_at_startup = 1
 Plug 'arcticicestudio/nord-vim'
+    let g:nord_uniform_status_lines = 1
     let g:nord_uniform_diff_background = 1
     let g:nord_cursor_line_number_background = 0
     let g:nord_bold_vertical_split_line = 0
@@ -163,25 +164,6 @@ let g:airline_theme='nord'
 syntax on
 
 let g:limelight_conceal_ctermfg = '8'
-
-highlight Pmenu      cterm=none ctermbg=none ctermfg=none
-set       nocursorline
-highlight CursorLine cterm=none ctermbg=none ctermfg=none
-highlight SpellBad   cterm=bold ctermfg=1 ctermbg=none
-highlight SpellCap   cterm=bold ctermfg=3 ctermbg=none
-highlight Conceal    cterm=none ctermbg=none ctermfg=none
-highlight Visual     cterm=none ctermbg=7    ctermfg=0
-
-" highlight ALEError       cterm=none ctermbg=1
-" highlight ALEErrorSign   cterm=none      ctermfg=none ctermbg=1
-" highlight ALEWarning     cterm=none ctermbg=3
-" highlight ALEWarningSign cterm=none      ctermfg=none ctermbg=3
-
-" highlight LineNr cterm=italic
-
-" python
-highlight pythonSelf ctermfg=4
-highlight Exception ctermfg=3
 
 highlight todo ctermbg=none ctermfg=3
 match todo /[Tt][Oo][Dd][Oo]/
