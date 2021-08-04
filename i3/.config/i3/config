@@ -11,11 +11,11 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_run
+set $menu rofi -show run
 # Laptop Monitor
 set $laptop eDP-1
 # Font
@@ -255,30 +255,33 @@ bindsym $mod+z resize set 1600 1000
 # Status Bar:
 #
 # Read `man polybar` for more information about this section.
-# bar {
-#     position bottom
-#     font $font 8
+bar {
+    position bottom
+    font $font 6
 
-#     # When the status_command prints a new line to stdout, i3bar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %k:%M:%S'; do sleep 1; done
+    # When the status_command prints a new line to stdout, i3bar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %k:%M'; do sleep 10; done
 
-#     strip_workspace_numbers true
+    strip_workspace_numbers true
 
-#     tray_padding 1
+    tray_padding 1
 
-#     colors {
-#         statusline #d8dee9
-#         background #2e3440
-#         # colorclass       border  background text
-#         focused_workspace  #2e3440 #2e3440    #d8dee9
-#         active_workspace   #d8dee9 #2e3440    #d8dee9
-#         inactive_workspace #2e3440 #2e3440    #4c566a
-#         urgent_workspace   #bf616a #2e3440    #bf616a
-#     }
+    mode hide
+    modifier $mod+Ctrl
 
-# }
-exec --no-startup-id ~/.config/polybar/launch.sh
+    colors {
+        statusline #ffffff
+        background #222222
+        # colorclass       border  background text
+        focused_workspace  #285577 #285577    #ffffff
+        active_workspace   #5f676a #5f676a    #ffffff
+        inactive_workspace #222222 #222222    #888888
+        urgent_workspace   #900000 #900000    #ffffff
+    }
+
+}
+# exec --no-startup-id ~/.config/polybar/launch.sh
 
 ##
 ## Colors
