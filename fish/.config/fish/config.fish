@@ -1,3 +1,7 @@
+if [ -e $TMUX ]
+    exec tmux
+end
+
 # Paths
 set -p PATH ~/.local/bin
 set -p PATH ~/.local/dotbin
