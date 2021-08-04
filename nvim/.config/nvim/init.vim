@@ -58,8 +58,8 @@ Plug 'dense-analysis/ale'
     let g:ale_echo_msg_warning_str = "W"
     let g:ale_echo_msg_error_str = "E"
     let g:ale_echo_msg_format = '[%severity% %linter%] %s'
-    let g:ale_fixers = {'python': ['black']}
-    let g:ale_linters = {'python': ['pyflakes']}
+    let g:ale_fixers = {'python': ['black'], 'rust': ['rustfmt']}
+    let g:ale_linters = {'python': ['pyflakes'], 'rust': ['cargo', 'rls', 'clippy']}
 Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_compiler_progname = 'nvr'
     let g:vimtex_view_mode='zathura'
@@ -81,7 +81,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+    nmap <leader>gs :G<CR>
+    nmap <leader>gl :diffget //3<CR>
+    nmap <leader>gh :diffget //2<CR>
 Plug 'tpope/vim-dispatch'
+    autocmd FileType rust set makeprg=cargo\ build
 Plug 'preservim/nerdtree'
     map <leader>t :NERDTreeToggle<CR>
 Plug 'Raimondi/delimitMate'
@@ -173,7 +177,7 @@ match Debug /breakpoint()/
 
 " key remap
 " ---------
-" map <Leader> \
+map <SPACE> <Leader>
 inoremap jk <ESC>
 
 " navigate windows
