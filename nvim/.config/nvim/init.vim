@@ -38,6 +38,7 @@ Plug 'junegunn/vim-easy-align'
     xmap ga <Plug>(EasyAlign)
 Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
 Plug 'dense-analysis/ale'
+    let g:python3_host_prog = '~/.local/miniconda3/envs/nvim/bin/python'
     nmap <F8> <Plug>(ale_fix)
     let g:ale_sign_error = '??'
     let g:ale_sign_warning = '!?'
