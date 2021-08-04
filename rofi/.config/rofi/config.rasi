@@ -1,23 +1,22 @@
 configuration {
 	modi: "run,ssh,window";
-	width: 100;
+	width: 50;
 	lines: 1;
-	columns: 1;
-	font: "Source Code Variable 12";
+	columns: 3;
+	font: "Source Code Variable 10";
 	bw: 0;
-	location: 2;
+	location: 0;
 	separator-style: "dash";
 	hide-scrollbar: true;
 	fullscreen: false;
 	fake-transparency: false;
 	scrollbar-width: 0;
 	fake-background: "background";
-	theme: "Paper";
 	color-normal: "#232629, #cfcfc2, #232629, #cfcfc2, #232629";
 	color-urgent: "#232629, #c0392b, #232629, #c0392b, #232629";
 	color-active: "#232629, #218058, #232629, #218058, #232629";
 	color-window: "#2a2e32, #cfcfc2, #232629";
-	display-run: "Start";
+	display-run: "🔍";
 	kb-mode-next: "Shift+Right,Control+Tab,L";
 	kb-mode-previous: "Shift+Left,Control+Shift+Tab,H";
 	kb-row-up: "Up,Control+p,Shift+Tab,Shift+ISO_Left_Tab,K";
