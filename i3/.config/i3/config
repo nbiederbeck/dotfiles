@@ -15,7 +15,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show run
+set $menu rofi -show drun -display-drun "🔍"
 # Laptop Monitor
 set $laptop eDP-1
 # Font
