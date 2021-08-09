@@ -86,10 +86,13 @@ Plug 'tpope/vim-fugitive'
     nmap <leader>gh :diffget //2<CR>
 Plug 'tpope/vim-dispatch'
     autocmd FileType rust set makeprg=cargo\ build
+    autocmd FileType python set makeprg=python\ %
 Plug 'preservim/nerdtree'
     map <leader>t :NERDTreeToggle<CR>
 Plug 'Raimondi/delimitMate'
 Plug 'cespare/vim-toml'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " general options
@@ -191,3 +194,12 @@ nnoremap <S-TAB> gT
 " completions
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+-- Modules and its options go here
+highlight = { enable = true },
+incremental_selection = { enable = true },
+textobjects = { enable = true },
+}
+EOF
