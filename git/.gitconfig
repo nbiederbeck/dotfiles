@@ -38,16 +38,12 @@
     date = iso
 
 [alias]
-    l = log --oneline
-    ll = log --color --graph --date=short --pretty=format:\"%Cblue%ad %Cgreen%an %C(yellow)%h %Creset%s %Cred%d %n%Creset%b\"
-    ol = log --oneline
+    l = log --oneline --graph
     c = commit --verbose
-    d = diff
-    cm = commit --verbose
-    co = checkout
-    br = branch
     s = status
     a = add
+    d = diff
+    ds = diff --staged
 
 [init]
 	defaultBranch = main
