@@ -38,28 +38,7 @@ Plug 'junegunn/vim-easy-align'
     xmap ga <Plug>(EasyAlign)
 Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
 Plug 'dense-analysis/ale'
-    let g:python3_host_prog = '~/.local/miniconda3/envs/nvim/bin/python'
-    nmap <F8> <Plug>(ale_fix)
-    let g:ale_sign_error = '??'
-    let g:ale_sign_warning = '!?'
-    let g:ale_sign_info = '--'
-    let g:ale_sign_column_always = 1
-    let g:ale_lint_on_text_changed = 'normal' " 'normal'/'never'
-    let g:ale_lint_on_enter = 1
-    let g:ale_lint_on_save = 1
-    let g:ale_fix_on_save = 0
-    let g:ale_warn_about_trailing_blank_lines = 1
-    let g:ale_warn_about_trailing_whitespace = 1
-    nmap ]a <ESC>:ALENextWrap<CR>
-    nmap [a <ESC>:ALEPreviousWrap<CR>
-    xmap ]a <ESC>:ALENextWrap<CR>
-    xmap [a <ESC>:ALEPreviousWrap<CR>
-    let g:ale_echo_msg_info_str = "I"
-    let g:ale_echo_msg_warning_str = "W"
-    let g:ale_echo_msg_error_str = "E"
-    let g:ale_echo_msg_format = '[%severity% %linter%] %s'
-    let g:ale_fixers = {'python': ['black'], 'rust': ['rustfmt']}
-    let g:ale_linters = {'python': ['pyflakes'], 'rust': ['cargo', 'rls', 'clippy']}
+    source $HOME/.config/nvim/ale.vim
 Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_compiler_progname = 'nvr'
     let g:vimtex_view_mode='zathura'
