@@ -81,6 +81,8 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
+set signcolumn=yes
+
 set splitright
 set splitbelow
 
