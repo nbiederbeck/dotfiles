@@ -217,7 +217,7 @@ bindsym $mod+XF86MonBrightnessDown exec ~/.local/dotbin/brightness set 1
 
 bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 
-bindsym $mod+x exec ~/.local/dotbin/lock.sh
+bindsym $mod+x exec ~/.local/dotbin/exit_menu.sh Lock
 bindsym $mod+Shift+p exec ~/.local/dotbin/bwmenu
 bindsym $mod+Shift+t exec remind -k'notify-send "Remind" "%s"' -r ~/.config/remind/
 
