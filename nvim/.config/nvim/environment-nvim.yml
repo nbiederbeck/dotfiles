@@ -1,0 +1,8 @@
+name: nvim
+channels:
+  - default
+dependencies:
+  - python=3.9
+  - conda-forge::pynvim
+  - black
+  - pyflakes
