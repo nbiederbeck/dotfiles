@@ -22,7 +22,11 @@ let g:ale_echo_msg_format = '[%severity% %linter%] %s'
 let g:ale_fixers = {'python': ['black'], 'rust': ['rustfmt'], 'sh': ['shfmt']}
 let g:ale_sh_shfmt_options = '-i 4'
 
-let g:ale_linters = {'python': ['pyflakes'], 'rust': ['cargo', 'rls', 'clippy']}
+let g:ale_linters = {'python': ['pyflakes'], 'rust': ['cargo', 'rls', 'clippy', 'analyzer']}
+
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_autoimport = 1
 
 nmap <F8> <Plug>(ale_fix)
 nmap ]a <ESC>:ALENextWrap<CR>

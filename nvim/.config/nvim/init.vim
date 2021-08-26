@@ -5,7 +5,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ervandew/supertab'
-    let g:SuperTabDefaultCompletionType = '<C-n>'
+    let g:SuperTabDefaultCompletionType = 'context'
 Plug 'sirver/ultisnips'
     let g:UltiSnipsExpandTrigger = "<tab>"
     let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -30,13 +30,14 @@ Plug 'arcticicestudio/nord-vim'
     let g:nord_bold = 1
     let g:nord_underline = 1
     let g:nord_italic_comments = 1
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'davidhalter/jedi-vim', {'for': 'python', 'do': 'git submodule update --init --recursive'}
     let g:jedi#popup_on_dot = 1
-    let g:jedi#use_splits_not_buffers = "right"
+    " let g:jedi#use_splits_not_buffers = 'right'
+    " let g:jedi#completions_command = '<C-N>'
 Plug 'junegunn/vim-easy-align'
     nmap ga <Plug>(EasyAlign)
     xmap ga <Plug>(EasyAlign)
-Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
+" Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
 Plug 'dense-analysis/ale'
     source $HOME/.config/nvim/ale.vim
 Plug 'lervag/vimtex', {'for': 'tex'}

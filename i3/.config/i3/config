@@ -59,7 +59,7 @@ bindsym $mod+shift+s sticky toggle
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec $term bash
+    bindsym $mod+Shift+Return exec $term -e bash
 
     # Kill focused window
     bindsym $mod+Shift+q kill
