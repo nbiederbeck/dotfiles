@@ -45,7 +45,7 @@ Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_view_mode='zathura'
     let g:vimtex_view_method='zathura'
     let g:vimtex_viewer_general='zathura'
-    let g:vimtex_compiler_latexmk = {'build_dir': 'build'}
+    let g:vimtex_compiler_latexmk = {'build_dir': 'build', 'continuous': 0}
     let g:vimtex_fold_enabled = 1
     let g:vimtex_view_automatic = 0
     let g:tex_flavor = 'lualatex'
