@@ -19,10 +19,10 @@ let g:ale_echo_msg_warning_str = "W"
 let g:ale_echo_msg_error_str = "E"
 let g:ale_echo_msg_format = '[%severity% %linter%] %s'
 
-let g:ale_fixers = {'python': ['black'], 'rust': ['rustfmt'], 'sh': ['shfmt']}
+let g:ale_fixers = {'python': ['black'], 'rust': ['rustfmt'], 'sh': ['shfmt'], '*': ['trim_whitespace', 'remove_trailing_lines']}
 let g:ale_sh_shfmt_options = '-i 4'
 
-let g:ale_linters = {'python': ['pyflakes'], 'rust': ['cargo', 'rls', 'clippy', 'analyzer']}
+let g:ale_linters = {'python': ['pyflakes'], 'rust': ['analyzer'], 'sh': ['shellcheck'], 'tex': ['checktex', 'lacheck']}
 
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
