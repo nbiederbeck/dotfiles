@@ -16,6 +16,5 @@ set recolor-keephue       true
 set recolor-reverse-video true
 set recolor-lightcolor    '#2e3440'
 set recolor-darkcolor     '#d8dee9'
-# set recolor
 
 map c set recolor
