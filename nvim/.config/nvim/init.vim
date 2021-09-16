@@ -47,7 +47,7 @@ Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_viewer_general='zathura'
     let g:vimtex_compiler_latexmk = {'build_dir': 'build', 'continuous': 0}
     let g:vimtex_fold_enabled = 1
-    let g:vimtex_view_automatic = 0
+    let g:vimtex_view_automatic = 1
     let g:tex_flavor = 'lualatex'
     let g:vimtex_quickfix_mode = 1
     let g:vimtex_complete_close_braces = 1
