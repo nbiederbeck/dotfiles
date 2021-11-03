@@ -4,6 +4,10 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+    nmap <LEADER>/ :Files<CR>
+    let $BAT_THEME = 'Nord'
+    let $FZF_DEFAULT_COMMAND = 'fd --type f'
+    nmap <LEADER><SPACE> :Rg<CR>
 Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = 'context'
 Plug 'sirver/ultisnips'
