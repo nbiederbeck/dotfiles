@@ -2,7 +2,8 @@ name: nvim
 channels:
   - default
 dependencies:
-  - python=3.9
+  - python
   - conda-forge::pynvim
   - black
   - pyflakes
+  - isort
