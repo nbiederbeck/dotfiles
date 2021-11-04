@@ -29,7 +29,7 @@ fixed-center     = true
 background       = ${colors.background}
 line-color       = ${colors.background}
 foreground       = ${colors.foreground}
-font-0           = "FiraCode:size=12;1"
+font-0           = "SourceCodePro:size=12;1"
 module-margin    = 1
 monitor          = eDP1
 monitor-fallback = DisplayPort-1
@@ -38,10 +38,42 @@ monitor-fallback = DisplayPort-1
 inherit           = bar
 bottom            = true
 label-active-font = 0
-modules-left      = i3 cpu
-modules-center    =
-modules-right     = weather date
+modules-left      = i3 cpu cputemp gputemp text
+modules-center    = emojis
+modules-right     = sound notification weather date
 tray-position     = right
+
+[module/cputemp]
+type=custom/script
+exec=sensors | grep coretemp -A3 | awk '/Package/ {print $4}'
+interval=1
+
+[module/gputemp]
+type=custom/script
+exec=sensors | grep radeon -A3 | awk '/temp1/ {print $2}'
+interval=1
+
+[module/emojis]
+type=custom/script
+exec=/home/noah/.local/bin/display-emojis
+interval=1
+
+[module/sound]
+type=custom/script
+exec=pamixer --get-volume
+interval=1
+label=Vol %output%
+scroll-up=sound.sh speaker increase
+
+[module/notification]
+type = custom/script
+exec = /home/noah/.local/dotbin/dunst-do-not-disturb
+click-left = dunst-do-not-disturb toggle
+
+[module/text]
+type = custom/text
+content = htop
+click-left = alacritty -e htop
 
 [module/wired-network]
 type      = internal/network
@@ -56,6 +88,7 @@ type       = custom/script
 exec       = curl -s wttr.in/Dortmund?format='%t'
 tail       = true
 interval   = 300
+click-left = xdg-open https://www.wetteronline.de/wetter/dortmund
 
 [module/filesystem]
 type          = internal/fs
@@ -128,7 +161,7 @@ ramp-coreload-7-foreground = ${colors.alert}
 
 [module/i3]
 type                       = internal/i3
-pin-workspaces             = true
+pin-workspaces             = false
 strip-wsnumbers            = true
 index-sort                 = true
 format                     = <label-state> <label-mode>
