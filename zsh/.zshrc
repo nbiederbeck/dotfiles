@@ -89,4 +89,9 @@ export PATH="${PATH}:${HOME}/.cargo/bin/"
 export PATH="${PATH}:${HOME}/.local/texlive/2021/bin/x86_64-linux"
 # ----------------------------------------------------------------
 
-test -r "${HOME}/.dir_colors" && eval "$(dircolors ${HOME}/.dir_colors)" || zshrcwarn "Download Dir Colors"
+dircolorsfile="${HOME}/.dir_colors"
+if ! [ -f "${dircolorsfile}" ]; then
+    zshrcmsg "Setup LS_COLORS"
+    curl -fsSL https://raw.githubusercontent.com/arcticicestudio/nord-dircolors/develop/src/dir_colors -o "${dircolorsfile}"
+fi
+eval "$(dircolors ${HOME}/.dir_colors)"
