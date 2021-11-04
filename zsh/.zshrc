@@ -28,6 +28,7 @@ if ! [ -d "${HOME}/.zplug" ]; then
 fi
 . "${HOME}/.zplug/init.zsh"
 zstyle ":zplug:tag" depth 1
+zplug "nbiederbeck/bin", as:command, use:"checkgit"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "dracula/zsh", as:theme
