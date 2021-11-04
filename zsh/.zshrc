@@ -1,7 +1,8 @@
 zshrcmsg () {
-    # bold yellow:
-    # [zshrc] messge
     echo -e "\033[1;33m[zshrc] ${1}\033[0m"
+}
+zshrcwarn () {
+    echo -e "\033[0;33m[zshrc] ${1}\033[0m"
 }
 
 # Lines configured by zsh-newuser-install
@@ -88,4 +89,4 @@ export PATH="${PATH}:${HOME}/.cargo/bin/"
 export PATH="${PATH}:${HOME}/.local/texlive/2021/bin/x86_64-linux"
 # ----------------------------------------------------------------
 
-test -r "${HOME}/.dir_colors" && eval "$(dircolors ${HOME}/.dir_colors)" || echo "# Download Dir Colors"
+test -r "${HOME}/.dir_colors" && eval "$(dircolors ${HOME}/.dir_colors)" || zshrcwarn "Download Dir Colors"
