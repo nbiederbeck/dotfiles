@@ -34,9 +34,11 @@ default_floating_border pixel $border
 # floating_maximum_size 1280x720
 
 ### Output configuration
-exec ~/.fehbg
 exec xrdb ~/.Xresources
-exec ~/.screenlayout/desktop-dual.sh
+exec ~/.setup-display
+exec ~/.fehbg
+exec xset s noblank
+exec xset s off
 
 ### Idle configuration
 # xidlehook or something similar
@@ -255,21 +257,18 @@ bindsym $mod+shift+z resize set 1600 1000
 #
 # Status Bar:
 #
-# Read `man polybar` for more information about this section.
 bar {
     position bottom
     font $font 6
 
-    # When the status_command prints a new line to stdout, i3bar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %k:%M'; do sleep 10; done
+    status_command i3blocks
 
     strip_workspace_numbers true
 
     tray_padding 1
 
-    mode hide
-    modifier $mod+Ctrl
+    # mode hide
+    # modifier $mod+Ctrl
 
     colors {
         statusline #ffffff
@@ -282,7 +281,6 @@ bar {
     }
 
 }
-# exec --no-startup-id ~/.config/polybar/launch.sh
 
 ##
 ## Colors

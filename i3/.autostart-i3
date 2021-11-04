@@ -5,7 +5,6 @@ dunst &
 add-keyboard &
 sound.sh setup &
 xrdb -load ~/.Xresources &
-xrandr --output DisplayPort-1 --mode 3840x2160 --rate 30.00 &
 xbindkeys -p &
 
 ~/.autostart

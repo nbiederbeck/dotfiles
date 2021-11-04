@@ -9,20 +9,6 @@ command=~/.config/i3blocks/blocks/$BLOCK_NAME
 separator_block_width="|"
 markup=pango
 
-# [backlight]
-# command=xbacklight
-# interval=1
-
-# [traffic]
-# interval=60
-
-# [updates]
-# interval=3600
-
-# [dropbox]
-# # command=dropbox-cli status
-# interval=10
-
 [free]
 interval=1
 
@@ -30,22 +16,6 @@ interval=1
 label=CPU
 interval=1
 
-[load_average]
-label=LOAD
-interval=1
-
-# [disk]
-# label=~
-# interval=60
-
-# [connection]
-# interval=10
-# full_text=No Connection
-
-# [battery]
-# interval=10
-
 [time]
-# command=date '+%A, %d. %B %Y, %H:%M:%S'
 command=date '+%a %d.%m.%Y, %H:%M:%S'
 interval=1
