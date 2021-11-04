@@ -54,7 +54,7 @@
 	showDirtyState = true
 
 [commit]
-	gpgsign = true
+	# gpgsign = true
 
 [github]
     user = nbiederbeck

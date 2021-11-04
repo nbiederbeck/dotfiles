@@ -15,11 +15,12 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -show drun -display-drun "🔍"
+# set $menu rofi -show drun -display-drun "🔍"
+set $menu i3-dmenu-desktop
 # Laptop Monitor
 set $laptop eDP-1
 # Font
-set $font pango:DejaVu Sans Mono
+set $font pango:Source Code Pro
 font $font 10
 
 title_align center
@@ -35,10 +36,10 @@ default_floating_border pixel $border
 
 ### Output configuration
 exec xrdb ~/.Xresources
-exec ~/.setup-display
 exec ~/.fehbg
 exec xset s noblank
 exec xset s off
+exec ~/.screenlayout.sh
 
 ### Idle configuration
 # xidlehook or something similar
@@ -83,8 +84,8 @@ bindsym $mod+shift+s sticky toggle
     bindsym $mod+Shift+r restart; exec notify-send "i3" "restarted i3"
 
     # Exit i3 (logs you out of your X session)
-    # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-    bindsym $mod+Shift+e exec ~/.local/dotbin/exit_menu.sh
+    bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+    # bindsym $mod+Shift+e exec ~/.local/dotbin/exit_menu.sh
 #
 # Moving around:
 #
@@ -219,7 +220,7 @@ bindsym $mod+XF86MonBrightnessDown exec ~/.local/dotbin/brightness set 1
 
 bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 
-bindsym $mod+x exec ~/.local/dotbin/exit_menu.sh Lock
+bindsym $mod+x exec i3lock -c '#121212' # ~/.local/dotbin/exit_menu.sh Lock
 bindsym $mod+Shift+p exec ~/.local/dotbin/bwmenu
 bindsym $mod+Shift+t exec remind -k'notify-send "Remind" "%s"' -r ~/.config/remind/
 
@@ -259,7 +260,7 @@ bindsym $mod+shift+z resize set 1600 1000
 #
 bar {
     position bottom
-    font $font 6
+    font $font 10
 
     status_command i3blocks
 

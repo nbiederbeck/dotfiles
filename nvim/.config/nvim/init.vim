@@ -76,7 +76,6 @@ Plug 'preservim/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'cespare/vim-toml'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " general options
@@ -181,11 +180,4 @@ nnoremap <S-TAB> gT
 inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
--- Modules and its options go here
-highlight = { enable = true },
-incremental_selection = { enable = true },
-textobjects = { enable = true },
-}
-EOF
+autocmd BufReadPre *.uml set makeprg=plantuml\ %
