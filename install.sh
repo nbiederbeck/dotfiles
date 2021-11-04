@@ -18,6 +18,7 @@ dotfiles=(
     X
     yay
     zathura
+    zsh
 )
 
 for files in "${dotfiles[@]}"; do
