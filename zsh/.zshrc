@@ -84,10 +84,10 @@ export FZF_ALT_C_OPTS='--preview "exa --color=always {}"'
 # -------------------------------------------------------
 
 # PATH -----------------------------------------------------------
-export PATH="${PATH}:${HOME}/.local/bin/"
-export PATH="${PATH}:${HOME}/.local/dotbin/"
-export PATH="${PATH}:${HOME}/.cargo/bin/"
-export PATH="${PATH}:${HOME}/.local/texlive/2021/bin/x86_64-linux"
+export PATH="${HOME}/.local/bin/:${PATH}"
+export PATH="${HOME}/.local/dotbin/:${PATH}"
+export PATH="${HOME}/.cargo/bin/:${PATH}"
+export PATH="${HOME}/.local/texlive/2021/bin/x86_64-linux:${PATH}"
 # ----------------------------------------------------------------
 
 dircolorsfile="${HOME}/.dir_colors"
