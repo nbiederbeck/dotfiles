@@ -96,3 +96,12 @@ if ! [ -f "${dircolorsfile}" ]; then
     curl -fsSL https://raw.githubusercontent.com/arcticicestudio/nord-dircolors/develop/src/dir_colors -o "${dircolorsfile}"
 fi
 eval "$(dircolors ${HOME}/.dir_colors)"
+
+# Variables -----------------------
+exportif () {
+    if command -v "${1}" > /dev/null; then
+        export "${2}"="${3}"
+    fi
+}
+exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# ---------------------------------
