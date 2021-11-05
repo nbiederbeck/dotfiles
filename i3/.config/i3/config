@@ -353,6 +353,7 @@ for_window [class="gnuplot_qt" title="^Gnuplot window"] floating enable; resize 
 # Autostart
 #
 exec --no-startup-id ~/.local/dotbin/sound.sh setup
+exec --no-startup-id remind -a ~/.config/remind/reminders.rem
 exec --no-startup-id ~/.autostart-i3
 
 #
