@@ -6,7 +6,6 @@
 
 # Global properties
 command=~/.config/i3blocks/blocks/$BLOCK_NAME
-separator_block_width="|"
 markup=pango
 
 [free]
