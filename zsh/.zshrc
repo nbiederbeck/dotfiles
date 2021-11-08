@@ -64,6 +64,7 @@ alias o="xdg-open"
 alias julianb="julia -q -i -e 'using IJulia; notebook()'"
 alias pluto="julia -q -i -e 'using Pluto; Pluto.run()'"
 alias cal="cal -mv3 | grep --color -E 'S[au].*|$'"
+[ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"  # Local Aliases
 #--------------------------------------------------------
 
 # FZF ---------------------------------------------------
