@@ -29,14 +29,17 @@ let g:ale_fixers.python = ['black', 'isort']
 let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers.sh = ['shfmt']
 
-let g:ale_sh_shfmt_options = '-i 4'
-let g:ale_python_isort_options = '--profile black'
-
 let g:ale_linters = {}
 let g:ale_linters.python = ['flake8']
 let g:ale_linters.rust = ['analyzer']
 let g:ale_linters.sh = ['shellcheck']
 let g:ale_linters.tex = ['checktex', 'lacheck']
+
+let g:ale_sh_shfmt_options = '-i 4'
+let g:ale_python_isort_options = '--profile black'
+let g:ale_python_flake8_options = '--extend-ignore=E402,E203 --max-line-length=88'
+" E203 whitespace before ':'
+" E402 module level import not at top of file
 
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
