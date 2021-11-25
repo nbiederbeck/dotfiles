@@ -66,6 +66,10 @@ alias pluto="julia -q -i -e 'using Pluto; Pluto.run()'"
 alias cal="cal -mv3 | grep --color -E 'S[au].*|$'"
 alias runzip="fd -e zip -x unzip -nq {} -d {//}"
 alias tree="exa -T"
+function openpdf () {
+    fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i | xargs -r xdg-open
+}
+alias nbconvert="jupyter nbconvert --to script --no-prompt"
 [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"  # Local Aliases
 #--------------------------------------------------------
 
