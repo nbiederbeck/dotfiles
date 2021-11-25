@@ -2,7 +2,7 @@
 
 [core]
     editor = nvim
-	excludesfile = /home/noah/.gitignore
+    hooksPath = ~/.config/git/hooks
 
 [user]
     name = Noah Biederbeck
