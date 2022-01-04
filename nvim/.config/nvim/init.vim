@@ -111,11 +111,12 @@ set hlsearch
 
 set backspace=indent,eol,start
 set list
-set listchars=tab:\|-,trail:␣, "eol:↵,space:␣,
+set listchars=tab:\|\ ,trail:␣,eol:\\x24, "space:␣,
 set wrap
 set linebreak
 let &showbreak="→"
-hi NonText ctermfg=7 cterm=none
+" hi NonText ctermfg=7 cterm=none
+hi Whitespace ctermfg=8
 
 set autoindent
 set tabstop=4
