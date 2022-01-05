@@ -4,7 +4,11 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-    nmap <LEADER>/ :Files<CR>
+    function! s:find_git_root_or_else()
+        return system('git rev-parse --show-toplevel 2>/dev/null')[:-2]
+    endfunction
+    command! ProjectFiles execute 'Files' s:find_git_root_or_else()
+    nmap <LEADER>/ :ProjectFiles <CR>
     let $BAT_THEME = 'Nord'
     let $FZF_DEFAULT_COMMAND = 'fd --type f'
     nmap <LEADER><SPACE> :Rg<CR>
@@ -49,11 +53,15 @@ Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_view_mode='zathura'
     let g:vimtex_view_method='zathura'
     let g:vimtex_viewer_general='zathura'
-    let g:vimtex_compiler_latexmk = {'build_dir': 'build', 'continuous': 0}
+    let g:vimtex_compiler_latexmk = {'build_dir': 'build', 'continuous': 1}
+    function! CompileContinuous ()
+        let g:vimtex_compiler_latexmk['continuous'] = 1
+    endfunction
+    command CompileContinuous execute 'call CompileContinuous()'
     let g:vimtex_fold_enabled = 1
     let g:vimtex_view_automatic = 1
     let g:tex_flavor = 'lualatex'
-    let g:vimtex_quickfix_mode = 1
+    let g:vimtex_quickfix_mode = 0
     let g:vimtex_complete_close_braces = 1
     let g:vimtex_complete_recursive_bib = 1
     autocmd BufReadPre *.tex let b:vimtex_main = 'main.tex'

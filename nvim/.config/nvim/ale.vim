@@ -31,7 +31,7 @@ let g:ale_fixers.sh = ['shfmt']
 
 let g:ale_linters = {}
 let g:ale_linters.python = ['flake8']
-let g:ale_linters.rust = ['analyzer']
+let g:ale_linters.rust = ['analyzer', 'clippy']
 let g:ale_linters.sh = ['shellcheck']
 let g:ale_linters.tex = ['checktex', 'lacheck']
 
