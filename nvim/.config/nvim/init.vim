@@ -119,7 +119,7 @@ set hlsearch
 
 set backspace=indent,eol,start
 set list
-set listchars=tab:\|\ ,trail:␣,eol:\\x24, "space:␣,
+set listchars=tab:\|\ ,trail:␣, "eol:\$, "space:␣,
 set wrap
 set linebreak
 let &showbreak="→"
@@ -176,6 +176,7 @@ match Debug /breakpoint()/
 " ---------
 map <SPACE> <Leader>
 inoremap jk <ESC>
+tnoremap <ESC> <C-\><C-N>
 
 " navigate windows
 nnoremap <C-J> <C-W>j
@@ -190,3 +191,4 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 autocmd BufReadPre *.uml set makeprg=plantuml\ %
+nnoremap <Leader>m :tabe term://make<CR>
