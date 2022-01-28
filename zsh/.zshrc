@@ -28,7 +28,7 @@ if ! [ -d "${HOME}/.zplug" ]; then
 fi
 . "${HOME}/.zplug/init.zsh"
 zstyle ":zplug:tag" depth 1
-zplug "nbiederbeck/bin", as:command, use:"checkgit"
+zplug "nbiederbeck/bin", as:command, use:"*"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "dracula/zsh", as:theme
@@ -57,7 +57,8 @@ unset __conda_setup
 bindkey "^[[3~" delete-char
 
 # Aliases -----------------------------------------------
-alias gits="git status"
+alias gits="git status --short"
+alias g="git"
 alias ls="exa"
 alias ll="ls -l"
 alias o="xdg-open"
