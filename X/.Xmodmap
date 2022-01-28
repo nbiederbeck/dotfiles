@@ -14,3 +14,4 @@ keycode  50 = Shift_L Caps_Lock Shift_L
 keycode  61 = slash question asciitilde question
 keycode  62 = Shift_R Caps_Lock Shift_R
 keycode  66 = Mode_switch Mode_switch NoSymbol NoSymbol
+keycode 108 = Multi_key
