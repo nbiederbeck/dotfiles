@@ -8,10 +8,11 @@ Plug 'junegunn/fzf.vim'
         return system('git rev-parse --show-toplevel 2>/dev/null')[:-2]
     endfunction
     command! ProjectFiles execute 'Files' s:find_git_root_or_else()
-    nmap <LEADER>/ :ProjectFiles <CR>
     let $BAT_THEME = 'Nord'
     let $FZF_DEFAULT_COMMAND = 'fd --type f'
+    nmap <LEADER>/ :ProjectFiles <CR>
     nmap <LEADER><SPACE> :Rg<CR>
+    nmap <LEADER>b :Buffers<CR>
 Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = 'context'
 Plug 'sirver/ultisnips'
@@ -61,10 +62,10 @@ Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_fold_enabled = 1
     let g:vimtex_view_automatic = 1
     let g:tex_flavor = 'lualatex'
-    let g:vimtex_quickfix_mode = 0
-    let g:vimtex_complete_close_braces = 1
+    let g:vimtex_quickfix_mode = 2
+    let g:vimtex_complete_close_braces = 0
     let g:vimtex_complete_recursive_bib = 1
-    autocmd BufReadPre *.tex let b:vimtex_main = 'main.tex'
+    " autocmd BufReadPre *.tex let b:vimtex_main = 'main.tex'
 Plug '907th/vim-auto-save'
     let g:auto_save_events = ['InsertLeave', 'TextChanged']
     let g:auto_save = 1
@@ -84,6 +85,8 @@ Plug 'preservim/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'cespare/vim-toml'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " general options
@@ -149,7 +152,7 @@ let @q=''
 if empty(glob("~/.cache/vim/undo/"))
     silent execute '!mkdir -p ~/.cache/vim/undo/'
 endif
-let &undodir = expand("~/.cache/vim/undo/")
+" let &undodir = expand("~/.cache/vim/undo/")
 set undofile
 
 " global swap dir
@@ -178,6 +181,9 @@ map <SPACE> <Leader>
 inoremap jk <ESC>
 tnoremap <ESC> <C-\><C-N>
 
+map gf :vs <cfile><CR>
+map gF :tabe <cfile><CR>
+
 " navigate windows
 nnoremap <C-J> <C-W>j
 nnoremap <C-H> <C-W>h
@@ -191,4 +197,19 @@ inoremap <C-J> <C-N>
 inoremap <C-K> <C-P>
 
 autocmd BufReadPre *.uml set makeprg=plantuml\ %
-nnoremap <Leader>m :tabe term://make<CR>
+nnoremap <Leader>m :Make<CR>
+" nnoremap <Leader>m :split +resize\|startinsert term://make<CR>
+" nnoremap <Leader>M :split +wincmd\ p term://make<CR>
+
+lua <<EOF
+require'lspconfig'.texlab.setup{}
+EOF
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"   indent = { enable = true },
+"   -- highlight = { enable = true },
+" }
+" require'lspconfig'.texlab.setup{}
+" EOF
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
