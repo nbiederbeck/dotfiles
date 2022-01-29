@@ -196,18 +196,18 @@ bindsym $mod+shift+s sticky toggle
 #
 # More:
 #
-bindsym XF86AudioRaiseVolume exec ~/.local/dotbin/sound.sh increase speakers
-bindsym XF86AudioLowerVolume exec ~/.local/dotbin/sound.sh decrease speakers
-bindsym XF86AudioMute exec ~/.local/dotbin/sound.sh toggle-mute speakers
-bindsym XF86AudioMicMute exec ~/.local/dotbin/sound.sh toggle-mute microphone
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym Shift+XF86AudioRaiseVolume exec ~/.local/dotbin/sound.sh increase microphone
 bindsym Shift+XF86AudioLowerVolume exec ~/.local/dotbin/sound.sh decrease microphone
 bindsym Shift+XF86AudioMute exec ~/.local/dotbin/sound.sh toggle-mute microphone
 
-bindsym XF86MonBrightnessUp exec ~/.local/dotbin/brightness increase
-bindsym XF86MonBrightnessDown exec ~/.local/dotbin/brightness decrease
-bindsym $mod+XF86MonBrightnessUp exec ~/.local/dotbin/brightness set 100
-bindsym $mod+XF86MonBrightnessDown exec ~/.local/dotbin/brightness set 1
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym $mod+XF86MonBrightnessUp exec light -S 100
+bindsym $mod+XF86MonBrightnessDown exec light -S 1
 
 bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 

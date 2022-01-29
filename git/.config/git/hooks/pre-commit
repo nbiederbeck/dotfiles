@@ -4,7 +4,6 @@ branch="$(git branch --show-current)"
 
 die () {
     echo -e "\033[1;31m${1}\033[0m"
-    exit 1
 }
 
 case "${branch}" in

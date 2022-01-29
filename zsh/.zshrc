@@ -1,3 +1,7 @@
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+
 zshrcmsg () {
     echo -e "\033[1;33m[zshrc] ${1}\033[0m"
 }
