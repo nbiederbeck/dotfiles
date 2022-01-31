@@ -2,7 +2,6 @@
 
 [core]
     editor = nvim
-    hooksPath = ~/.config/git/hooks
 
 [user]
     name = Noah Biederbeck
