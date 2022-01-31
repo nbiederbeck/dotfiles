@@ -1,6 +1,9 @@
 #!/bin/bash
 
+set -e
+
 dotfiles=(
+    alacritty
     bat
     color
     dunst
@@ -8,7 +11,6 @@ dotfiles=(
     git
     i3
     ipython
-    kitty
     nvim
     polybar
     redshift
