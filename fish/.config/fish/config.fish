@@ -19,7 +19,9 @@ if status is-interactive
     # ---
 
     # ssh-agent
-    eval (ssh-agent -c) > /dev/null
+    if ! pgrep ssh-agent > /dev/null
+        eval (ssh-agent -c) > /dev/null
+    end
     # ---
 end
 
