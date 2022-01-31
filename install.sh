@@ -23,6 +23,15 @@ dotfiles=(
     zsh
 )
 
+case $1 in
+--remove)
+    arg="--delete"
+    ;;
+*)
+    arg="--restow"
+    ;;
+esac
+
 for files in "${dotfiles[@]}"; do
-    stow --target "${HOME}" "${files}/"
+    stow "${arg}" --target "${HOME}" "${files}/"
 done
