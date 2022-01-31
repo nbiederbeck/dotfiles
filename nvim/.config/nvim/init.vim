@@ -1,6 +1,7 @@
 " plugins
 " -------
 call plug#begin(stdpath('data') . '/plugged')
+Plug 'dag/vim-fish'
 Plug 'neovim/nvim-lspconfig'
     " source $HOME/.config/nvim/lsp.vim
 Plug 'airblade/vim-gitgutter'
