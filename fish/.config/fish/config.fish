@@ -21,6 +21,7 @@ if status is-interactive
     # ssh-agent
     if ! pgrep ssh-agent > /dev/null
         eval (ssh-agent -c) > /dev/null
+        set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
     end
     # ---
 end
