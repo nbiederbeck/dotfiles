@@ -326,6 +326,9 @@ for_window [class="Mars"] floating enable
 for_window [class="ROOT"] floating enable
 for_window [class="feh"] fullscreen disable
 for_window [class="Thunderbird" instance="Msgcompose" window_role="Msgcompose"] floating enable
+
+for_window [class="Gedit" instance="gedit"] floating enable; resize set 800 600
+
 # Zoom
 for_window [class="^zoom$" title="^Chat"] floating enable; resize set 660x620
 for_window [class="^zoom$" title="^Participants"] floating enable
