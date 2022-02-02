@@ -29,6 +29,7 @@ let g:ale_fixers.python = ['black', 'isort']
 let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers.sh = ['shfmt']
 let g:ale_fixers.json = ['prettier']
+let g:ale_fixers.html = ['prettier']
 
 let g:ale_linters = {}
 let g:ale_linters.python = ['flake8']
