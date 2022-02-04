@@ -7,6 +7,10 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+    let g:fzf_layout = { 'down': '40%' }
+    autocmd! FileType fzf
+    autocmd  FileType fzf set laststatus=0 noshowmode noruler
+      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
     function! s:find_git_root_or_else()
         return system('git rev-parse --show-toplevel 2>/dev/null')[:-2]
     endfunction
