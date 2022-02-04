@@ -47,7 +47,6 @@ let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_autoimport = 1
 
-nmap <F8> <Plug>(ale_fix)
 nmap <LEADER>f <Plug>(ale_fix)
 nmap ]a <ESC>:ALENextWrap<CR>
 xmap ]a <ESC>:ALENextWrap<CR>
