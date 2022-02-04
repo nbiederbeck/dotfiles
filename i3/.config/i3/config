@@ -211,7 +211,7 @@ bindsym $mod+XF86MonBrightnessDown exec light -S 1
 
 bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 
-bindsym $mod+x exec i3lock -c '#121212' # ~/.local/dotbin/exit_menu.sh Lock
+bindsym $mod+x exec betterlockscreen --lock # ~/.local/dotbin/exit_menu.sh Lock
 bindsym $mod+Shift+p exec ~/.local/dotbin/bwmenu
 bindsym $mod+Shift+t exec remind -k'notify-send "Remind" "%s"' -r ~/.config/remind/
 
