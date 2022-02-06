@@ -29,13 +29,15 @@ let g:ale_fixers.python = ['black', 'isort']
 let g:ale_fixers.rust = ['rustfmt']
 let g:ale_fixers.sh = ['shfmt']
 let g:ale_fixers.json = ['prettier']
-let g:ale_fixers.html = ['prettier']
+let g:ale_fixers.html = ['tidy', 'prettier']
+let g:ale_fixers.css = ['prettier']
 
 let g:ale_linters = {}
 let g:ale_linters.python = ['flake8']
 let g:ale_linters.rust = ['analyzer', 'clippy']
 let g:ale_linters.sh = ['shellcheck']
 let g:ale_linters.tex = ['checktex', 'lacheck']
+let g:ale_linters.html = ['tidy']
 
 let g:ale_sh_shfmt_options = '-i 4'
 let g:ale_python_isort_options = '--profile black'
