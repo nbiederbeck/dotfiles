@@ -211,7 +211,7 @@ bindsym $mod+XF86MonBrightnessDown exec light -S 1
 
 bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 
-bindsym $mod+x exec betterlockscreen --lock # ~/.local/dotbin/exit_menu.sh Lock
+bindsym $mod+x exec betterlockscreen --lock --off 5 # ~/.local/dotbin/exit_menu.sh Lock
 bindsym $mod+Shift+p exec ~/.local/dotbin/bwmenu
 bindsym $mod+Shift+t exec remind -k'notify-send "Remind" "%s"' -r ~/.config/remind/
 
@@ -330,8 +330,10 @@ for_window [class="Thunderbird" instance="Msgcompose" window_role="Msgcompose"] 
 for_window [class="Gedit" instance="gedit"] floating enable; resize set 800 600
 
 # Zoom
+for_window [class="zoom" instance="zoom" title="Zoom Meeting"] floating enable
 for_window [class="^zoom$" title="^Chat"] floating enable; resize set 660x620
 for_window [class="^zoom$" title="^Participants"] floating enable
+for_window [class="^zoom$" title="^Breakout Rooms"] floating enable
 for_window [title="^Figure"] floating enable; resize set 800 600; resize shrink 1; resize grow 1
 for_window [class="gnuplot_qt" title="^Gnuplot window"] floating enable; resize set 800 600; resize shrink 1; resize grow 1
 
