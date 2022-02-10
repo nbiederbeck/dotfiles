@@ -11,7 +11,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term alacritty
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -101,15 +101,25 @@ bindsym $mod+shift+s sticky toggle
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
+    bindsym $mod+Shift+$left  move left
+    bindsym $mod+Shift+$down  move down
+    bindsym $mod+Shift+$up    move up
     bindsym $mod+Shift+$right move right
     # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Left  move left
+    bindsym $mod+Shift+Down  move down
+    bindsym $mod+Shift+Up    move up
     bindsym $mod+Shift+Right move right
+
+    bindsym $mod+Ctrl+$left  move workspace to output left
+    bindsym $mod+Ctrl+$down  move workspace to output down
+    bindsym $mod+Ctrl+$up    move workspace to output up
+    bindsym $mod+Ctrl+$right move workspace to output right
+    # Ditto, with arrow keys
+    bindsym $mod+Ctrl+Left  move workspace to output left
+    bindsym $mod+Ctrl+Down  move workspace to output down
+    bindsym $mod+Ctrl+Up    move workspace to output up
+    bindsym $mod+Ctrl+Right move workspace to output right
 #
 # Workspaces:
 #
