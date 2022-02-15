@@ -11,7 +11,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -219,6 +219,9 @@ bindsym XF86MonBrightnessDown exec light -U 10
 bindsym $mod+XF86MonBrightnessUp exec light -S 100
 bindsym $mod+XF86MonBrightnessDown exec light -S 1
 
+bindsym XF86Display exec autorandr --change
+bindsym $mod+XF86Display exec arandr
+
 bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 
 bindsym $mod+x exec betterlockscreen --lock --off 5 # ~/.local/dotbin/exit_menu.sh Lock
@@ -362,6 +365,7 @@ for_window [class="gnuplot_qt" title="^Gnuplot window"] floating enable; resize 
 exec --no-startup-id ~/.local/dotbin/sound.sh setup
 exec --no-startup-id remind -a ~/.config/remind/reminders.rem
 exec --no-startup-id ~/.autostart-i3
+exec --no-startup-id autorandr --change
 
 #
 # Include default config
