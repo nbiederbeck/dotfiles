@@ -266,14 +266,14 @@ bindsym $mod+shift+z resize set 1600 1000
 #     position bottom
 #     font $font 10
 
-#     status_command i3blocks
+#     status_command while date +'%Y-%m-%d %k:%M'; do sleep 10; done
 
 #     strip_workspace_numbers true
 
 #     tray_padding 1
 
-#     # mode hide
-#     # modifier $mod+Ctrl
+#     mode hide
+#     modifier $mod+Ctrl
 
 #     colors {
 #         statusline #ffffff
@@ -286,7 +286,7 @@ bindsym $mod+shift+z resize set 1600 1000
 #     }
 # }
 
-exec ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh
 
 ##
 ## Colors
@@ -339,7 +339,6 @@ for_window [class="Mars"] floating enable
 for_window [class="ROOT"] floating enable
 for_window [class="feh"] fullscreen disable
 for_window [class="Thunderbird" instance="Msgcompose" window_role="Msgcompose"] floating enable
-
 for_window [class="Gedit" instance="gedit"] floating enable; resize set 800 600
 
 # Zoom
@@ -363,7 +362,6 @@ for_window [class="gnuplot_qt" title="^Gnuplot window"] floating enable; resize 
 # Autostart
 #
 exec --no-startup-id ~/.local/dotbin/sound.sh setup
-exec --no-startup-id remind -a ~/.config/remind/reminders.rem
 exec --no-startup-id ~/.autostart-i3
 exec --no-startup-id autorandr --change
 
