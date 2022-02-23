@@ -13,25 +13,20 @@ battery_print() {
     battery_max_0=0
     battery_max_1=0
 
-    if [ -f "$PATH_AC/online" ]; then
-        ac=$(cat "$PATH_AC/online")
-    fi
+    f="$PATH_AC/online"
+    [ -f "${f}" ] && ac=$(cat "${f}")
 
-    if [ -f "$PATH_BATTERY_0/energy_now" ]; then
-        battery_level_0=$(cat "$PATH_BATTERY_0/energy_now")
-    fi
+    f="$PATH_BATTERY_0/energy_now"
+    [ -f "${f}" ] && battery_level_0=$(cat "${f}")
 
-    if [ -f "$PATH_BATTERY_0/energy_full" ]; then
-        battery_max_0=$(cat "$PATH_BATTERY_0/energy_full")
-    fi
+    f="$PATH_BATTERY_0/energy_full"
+    [ -f "${f}" ] && battery_max_0=$(cat "${f}")
 
-    if [ -f "$PATH_BATTERY_1/energy_now" ]; then
-        battery_level_1=$(cat "$PATH_BATTERY_1/energy_now")
-    fi
+    f="$PATH_BATTERY_1/energy_now"
+    [ -f "${f}" ] && battery_level_1=$(cat "${f}")
 
-    if [ -f "$PATH_BATTERY_1/energy_full" ]; then
-        battery_max_1=$(cat "$PATH_BATTERY_1/energy_full")
-    fi
+    f="$PATH_BATTERY_1/energy_full"
+    [ -f "${f}" ] && battery_max_1=$(cat "${f}")
 
     battery_level=$(("$battery_level_0 + $battery_level_1"))
     battery_max=$(("$battery_max_0 + $battery_max_1"))
@@ -43,52 +38,35 @@ battery_print() {
     battery_percent=$(("$battery_level * 100"))
     battery_percent=$(("$battery_percent / $battery_max"))
 
+    label="${battery_percent}"
     if [ "$ac" -eq 1 ]; then
-        icon="⚡"
-
-        if [ "$battery_percent" -gt 97 ]; then
-            echo "$icon"
-        else
-            echo "$icon $battery_percent"
-        fi
-    else
-        if [ "$battery_percent" -gt 85 ]; then
-            icon="█"
-        elif [ "$battery_percent" -gt 60 ]; then
-            icon="▆"
-        elif [ "$battery_percent" -gt 35 ]; then
-            icon="▅"
-        elif [ "$battery_percent" -gt 10 ]; then
-            icon="▃"
-        else
-            icon="▁"
-        fi
-
-        echo "$icon"
+        label="⚡ ${label}"
     fi
+
+    echo "${label}"
 }
 
 path_pid="/tmp/polybar-battery-combined-udev.pid"
 
 case "$1" in
-    --update)
-        pid=$(cat $path_pid)
+--update)
+    pid=$(cat $path_pid)
 
-        if [ "$pid" != "" ]; then
-            kill -10 "$pid"
-        fi
-        ;;
-    *)
-        echo $$ > $path_pid
+    if [ "$pid" != "" ]; then
+        kill -10 "$pid"
+    fi
+    ;;
+*)
+    echo $$ >$path_pid
 
-        trap exit INT
-        trap "echo" USR1
+    trap exit INT
+    trap "echo" USR1
 
-        while true; do
-            battery_print
+    while true; do
+        battery_print
 
-            sleep 30 &
-            wait
-        done
-        ;;
+        sleep 30 &
+        wait
+    done
+    ;;
 esac
