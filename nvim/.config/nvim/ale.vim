@@ -14,7 +14,7 @@ let g:ale_lint_on_text_changed = 'normal' " 'normal'/'never'
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 
 let g:ale_warn_about_trailing_blank_lines = 1
 let g:ale_warn_about_trailing_whitespace = 1
@@ -31,6 +31,8 @@ let g:ale_fixers.sh = ['shfmt']
 let g:ale_fixers.json = ['prettier']
 let g:ale_fixers.html = ['tidy', 'prettier']
 let g:ale_fixers.css = ['prettier']
+let g:ale_fixers.js = ['prettier']
+let g:ale_fixers.php = ['php_cs_fixer']
 
 let g:ale_linters = {}
 let g:ale_linters.python = ['flake8']
