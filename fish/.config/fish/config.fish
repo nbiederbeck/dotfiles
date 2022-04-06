@@ -14,8 +14,11 @@ if status is-interactive
     # ---
 
     # Conda
-    eval ~/.local/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-    conda activate
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    eval ~/.local/conda/bin/conda "shell.fish" "hook" $argv | source
+    # <<< conda initialize <<<
+
     # ---
 
     # ssh-agent
