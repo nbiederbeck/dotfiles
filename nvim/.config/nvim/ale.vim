@@ -1,4 +1,4 @@
-let g:nvim_conda_path = expand('~/.local/miniconda3/envs/nvim/bin/')
+let g:nvim_conda_path = expand('~/.local/conda/bin/')
 let g:python3_host_prog = expand(g:nvim_conda_path..'python')
 
 let g:ale_python_black_executable = expand(g:nvim_conda_path..'black')
@@ -47,7 +47,6 @@ let g:ale_python_flake8_options = '--extend-ignore=E402,E203 --max-line-length=8
 " E203 whitespace before ':'
 " E402 module level import not at top of file
 
-let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc
 let g:ale_completion_autoimport = 1
 
@@ -57,13 +56,20 @@ xmap ]a <ESC>:ALENextWrap<CR>
 nmap [a <ESC>:ALEPreviousWrap<CR>
 xmap [a <ESC>:ALEPreviousWrap<CR>
 
-function! ToggleFixOnSave()
+function! FixOnSaveToggle()
     if g:ale_fix_on_save == 0
-        let g:ale_fix_on_save = 1
-        echo 'Fix on save'
+        call FixOnSave()
     else
-        let g:ale_fix_on_save = 0
-        echo 'Do not fix on save'
+        call DontFixOnSave()
     endif
 endfunction
-command ToggleFixOnSave call ToggleFixOnSave()
+function! FixOnSave()
+    let g:ale_fix_on_save = 1
+    echo 'Fix on save'
+endfunction
+function! DontFixOnSave()
+    let g:ale_fix_on_save = 0
+    echo 'Do not fix on save'
+endfunction
+command FixOnSaveToggle call FixOnSaveToggle()
+command FixOnSave call FixOnSave()

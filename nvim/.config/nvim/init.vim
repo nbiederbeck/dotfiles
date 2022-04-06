@@ -1,10 +1,10 @@
 " plugins
 " -------
+lua require('plugins')
+
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'dag/vim-fish'
-Plug 'neovim/nvim-lspconfig'
-    " source $HOME/.config/nvim/lsp.vim
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
     let g:fzf_layout = { 'down': '40%' }
@@ -30,11 +30,11 @@ Plug 'sirver/ultisnips'
     let g:UltiSnipsEditSplit = "vertical"
 Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
     let g:airline_powerline_fonts = 1
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#ale#enabled = 1
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     let g:deoplete#enable_at_startup = 1
 Plug 'arcticicestudio/nord-vim'
@@ -54,8 +54,11 @@ Plug 'junegunn/vim-easy-align'
     nmap ga <Plug>(EasyAlign)
     xmap ga <Plug>(EasyAlign)
 " Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
+let g:ale_completion_enabled = 0
 Plug 'dense-analysis/ale'
     source $HOME/.config/nvim/ale.vim
+Plug 'lervag/wiki.vim', {'for': 'wiki'}
+Plug 'lervag/wiki-ft.vim', {'for': 'wiki'}
 Plug 'lervag/vimtex', {'for': 'tex'}
     let g:vimtex_compiler_progname = 'nvr'
     let g:vimtex_view_mode='zathura'
@@ -90,7 +93,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'cespare/vim-toml'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " general options
@@ -104,6 +107,8 @@ set signcolumn=yes
 
 set splitright
 set splitbelow
+
+set noshowmode
 
 filetype plugin on
 filetype plugin indent on
@@ -167,7 +172,7 @@ set directory^=~/.cache/vim/swap/
 set swapfile
 
 syntax enable
-set background=dark
+set background=light
 colorscheme nord
 let g:airline_theme='nord'
 syntax on
@@ -184,6 +189,7 @@ match Debug /breakpoint()/
 map <SPACE> <Leader>
 inoremap jk <ESC>
 tnoremap <ESC> <C-\><C-N>
+nnoremap <ESC> :nohl<CR>
 
 map gf :vs <cfile><CR>
 map gF :tabe <cfile><CR>
@@ -206,14 +212,13 @@ nnoremap <Leader>m :Make<CR>
 " nnoremap <Leader>M :split +wincmd\ p term://make<CR>
 
 lua <<EOF
-require'lspconfig'.texlab.setup{}
+-- require'lspconfig'.texlab.setup{}
 EOF
-" lua <<EOF
-" require'nvim-treesitter.configs'.setup {
-"   indent = { enable = true },
-"   -- highlight = { enable = true },
-" }
-" require'lspconfig'.texlab.setup{}
-" EOF
-" set foldmethod=expr
-" set foldexpr=nvim_treesitter#foldexpr()
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  indent = { enable = true },
+  highlight = { enable = true },
+}
+EOF
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
