@@ -1,4 +1,4 @@
-# i3wm config 
+# i3wm config
 # # Oriented to sway configuration (for easier switching) # # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 ### Variables
@@ -225,7 +225,7 @@ bindsym $mod+XF86Display exec arandr
 bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 
 bindsym $mod+x exec betterlockscreen --lock --off 5 # ~/.local/dotbin/exit_menu.sh Lock
-bindsym $mod+Shift+p exec ~/.local/dotbin/bwmenu
+bindsym $mod+Shift+p exec ~/.local/dotbin/passmenu
 bindsym $mod+Shift+t exec remind -k'notify-send "Remind" "%s"' -r ~/.config/remind/
 
 #
@@ -285,8 +285,6 @@ bindsym $mod+shift+z resize set 1600 1000
 #         urgent_workspace   #900000 #900000    #ffffff
 #     }
 # }
-
-exec --no-startup-id ~/.config/polybar/launch.sh
 
 ##
 ## Colors
@@ -364,6 +362,8 @@ for_window [class="gnuplot_qt" title="^Gnuplot window"] floating enable; resize 
 exec --no-startup-id ~/.local/dotbin/sound.sh setup
 exec --no-startup-id ~/.autostart-i3
 exec --no-startup-id autorandr --change
+exec --no-startup-id ~/.screenlayout.sh
+exec --no-startup-id ~/.config/polybar/launch.sh
 
 #
 # Include default config
