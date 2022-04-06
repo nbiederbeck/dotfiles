@@ -37,6 +37,7 @@ zstyle ":zplug:tag" depth 1
 zplug "nbiederbeck/bin", as:command, use:"*"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
 zplug "dracula/zsh", as:theme
 zplug "plugins/ssh-agent", from:oh-my-zsh
 if ! zplug check --verbose; then
@@ -58,6 +59,9 @@ else
     fi
 fi
 unset __conda_setup
+if [ -f "${HOME}/.local/miniconda3/etc/profile.d/mamba.sh" ]; then
+    . "${HOME}/.local/miniconda3/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
 bindkey "^[[3~" delete-char
@@ -67,17 +71,26 @@ alias gits="git status --short"
 alias g="git"
 alias ls="exa"
 alias ll="ls -l"
-alias o="xdg-open"
 alias julianb="julia -q -i -e 'using IJulia; notebook()'"
 alias pluto="julia -q -i -e 'using Pluto; Pluto.run()'"
 alias cal="cal -mv3 | grep --color -E 'S[au].*|$'"
 alias runzip="fd -e zip -x unzip -nq {} -d {//}"
 alias tree="exa -T"
+alias vim="nvim"
 function openpdf () {
     fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i | xargs -r xdg-open
 }
 alias nbconvert="jupyter nbconvert --to script --no-prompt"
 [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"  # Local Aliases
+function o () {
+    gio open "$@"
+}
+function t () {
+    tmux attach || sleep 1 && tmux
+}
+function cpr() {
+    rsync -avzuhrP --info=stats1,progress2 --modify-window=1 "$@"
+}
 #--------------------------------------------------------
 
 # FZF ---------------------------------------------------
@@ -104,12 +117,12 @@ export PATH="${HOME}/.cargo/bin/:${PATH}"
 export PATH="${HOME}/.local/texlive/2021/bin/x86_64-linux:${PATH}"
 # ----------------------------------------------------------------
 
-dircolorsfile="${HOME}/.dir_colors"
+dircolorsfile="${HOME}/.dircolors"
 if ! [ -f "${dircolorsfile}" ]; then
     zshrcmsg "Setup LS_COLORS"
     curl -fsSL https://raw.githubusercontent.com/arcticicestudio/nord-dircolors/develop/src/dir_colors -o "${dircolorsfile}"
 fi
-eval "$(dircolors ${HOME}/.dir_colors)"
+eval "$(dircolors "${dircolorsfile}")"
 
 # Variables -----------------------
 exportif () {
