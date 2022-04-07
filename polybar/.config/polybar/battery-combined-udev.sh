@@ -38,9 +38,13 @@ battery_print() {
     battery_percent=$(("$battery_level * 100"))
     battery_percent=$(("$battery_percent / $battery_max"))
 
-    label="${battery_percent}"
+    if [ "${battery_percent}" -ge 98 ]; then
+        label=""
+    else
+        label="${battery_percent}"
+    fi
     if [ "$ac" -eq 1 ]; then
-        label="⚡ ${label}"
+        label="⚡${label}"
     fi
 
     echo "${label}"

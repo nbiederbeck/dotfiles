@@ -3,6 +3,7 @@
 lua require('plugins')
 
 call plug#begin(stdpath('data') . '/plugged')
+Plug 'ziglang/zig.vim'
 Plug 'dag/vim-fish'
 " Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -55,6 +56,7 @@ Plug 'junegunn/vim-easy-align'
     xmap ga <Plug>(EasyAlign)
 " Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
 let g:ale_completion_enabled = 0
+let g:ale_completion_enabled = 1
 Plug 'dense-analysis/ale'
     source $HOME/.config/nvim/ale.vim
 Plug 'lervag/wiki.vim', {'for': 'wiki'}

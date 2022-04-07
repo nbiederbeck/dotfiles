@@ -1,7 +1,7 @@
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 else
-  exec fish
+    exec fish
 fi
 
 zshrcmsg () {
@@ -76,7 +76,7 @@ alias pluto="julia -q -i -e 'using Pluto; Pluto.run()'"
 alias cal="cal -mv3 | grep --color -E 'S[au].*|$'"
 alias runzip="fd -e zip -x unzip -nq {} -d {//}"
 alias tree="exa -T"
-alias vim="nvim"
+alias vim='nvim'
 function openpdf () {
     fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i | xargs -r xdg-open
 }

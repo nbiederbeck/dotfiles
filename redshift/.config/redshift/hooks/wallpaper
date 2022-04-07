@@ -1,8 +1,0 @@
-#!/bin/bash
-event=$1
-old_period=$2
-new_period=$3
-case "${event}" in
-    period-changed)
-        feh --bg-fill /home/noah/Pictures/Backgrounds/"${new_period}"
-esac
