@@ -1,9 +1,0 @@
-name: nvim
-channels:
-  - default
-dependencies:
-  - python
-  - conda-forge::pynvim
-  - black
-  - pyflakes
-  - isort
