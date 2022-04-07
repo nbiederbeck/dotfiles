@@ -3,9 +3,6 @@
 lua require('plugins')
 
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'ziglang/zig.vim'
-Plug 'dag/vim-fish'
-" Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
     let g:fzf_layout = { 'down': '40%' }
@@ -79,23 +76,12 @@ Plug '907th/vim-auto-save'
     let g:auto_save_events = ['InsertLeave', 'TextChanged']
     let g:auto_save = 1
     let g:auto_save_silent = 1
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-    nmap <leader>gs :G<CR>
-    nmap <leader>gl :diffget //3<CR>
-    nmap <leader>gh :diffget //2<CR>
 Plug 'tpope/vim-dispatch'
     autocmd FileType rust set makeprg=cargo\ build
     autocmd FileType python set makeprg=python\ %
 Plug 'preservim/nerdtree'
     map <leader>t :NERDTreeToggle<CR>
 Plug 'Raimondi/delimitMate'
-Plug 'cespare/vim-toml'
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'neovim/nvim-lspconfig'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " general options
