@@ -17,7 +17,6 @@
 
 [delta]
     line-numbers = true
-    side-by-side = true
     syntax-theme = Nord
 
 [pull]
