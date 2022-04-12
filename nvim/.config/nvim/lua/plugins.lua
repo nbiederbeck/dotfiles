@@ -6,7 +6,7 @@ return require('packer').startup(function()
 
     -- lsp / completion
     use { 'ms-jpq/coq.thirdparty' , requires = { 'ms-jpq/coq_nvim' } }
-    use { 'nvim-treesitter/nvim-treesitter' }
+    use { 'nvim-treesitter/nvim-treesitter' , run = ':TSUpdate' }
     use { 'neovim/nvim-lspconfig' }
 
     -- ux
