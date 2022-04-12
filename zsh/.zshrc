@@ -1,7 +1,7 @@
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 else
-    exec fish
+    # exec fish
 fi
 
 zshrcmsg () {
@@ -27,23 +27,19 @@ compinit
 # End of lines added by compinstall
 
 # PLUGINS ----------------------------------------------------
-if ! [ -d "${HOME}/.zplug" ]; then
-    zshrcmsg "Installing zplug"
-    git clone --depth 1 \
-        "https://github.com/zplug/zplug" "${HOME}/.zplug"
+ANTIGEN="${HOME}/.antigen.zsh"
+if ! [ -f "${ANTIGEN}" ]; then
+    zshrcmsg "Installing antigen"
+    curl -fsSL git.io/antigen > "${ANTIGEN}"
 fi
-. "${HOME}/.zplug/init.zsh"
-zstyle ":zplug:tag" depth 1
-zplug "nbiederbeck/bin", as:command, use:"*"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "dracula/zsh", as:theme
-zplug "plugins/ssh-agent", from:oh-my-zsh
-if ! zplug check --verbose; then
-    zplug install
-fi
-zplug load
+. "${ANTIGEN}"
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen use oh-my-zsh
+antigen bundle ssh-agent
+antigen theme dracula/zsh
+antigen apply
 # ------------------------------------------------------------
 
 # >>> conda initialize >>>
