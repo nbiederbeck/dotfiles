@@ -1,6 +1,7 @@
 " plugins
 " -------
 lua require('plugins')
+lua require('settings')
 
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -44,15 +45,14 @@ Plug 'arcticicestudio/nord-vim'
     let g:nord_bold = 1
     let g:nord_underline = 1
     let g:nord_italic_comments = 1
-Plug 'davidhalter/jedi-vim', {'for': 'python', 'do': 'git submodule update --init --recursive'}
-    let g:jedi#popup_on_dot = 1
+" Plug 'davidhalter/jedi-vim', {'for': 'python', 'do': 'git submodule update --init --recursive'}
+"     let g:jedi#popup_on_dot = 1
     " let g:jedi#use_splits_not_buffers = 'right'
     " let g:jedi#completions_command = '<C-N>'
 Plug 'junegunn/vim-easy-align'
     nmap ga <Plug>(EasyAlign)
     xmap ga <Plug>(EasyAlign)
 " Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
-let g:ale_completion_enabled = 0
 let g:ale_completion_enabled = 1
 Plug 'dense-analysis/ale'
     source $HOME/.config/nvim/ale.vim
@@ -77,11 +77,19 @@ Plug '907th/vim-auto-save'
     let g:auto_save = 1
     let g:auto_save_silent = 1
 Plug 'tpope/vim-dispatch'
+    autocmd FileType tex set makeprg=latexmk\ %
     autocmd FileType rust set makeprg=cargo\ build
     autocmd FileType python set makeprg=python\ %
 Plug 'preservim/nerdtree'
     map <leader>t :NERDTreeToggle<CR>
 Plug 'Raimondi/delimitMate'
+<<<<<<< Updated upstream
+||||||| constructed merge base
+Plug 'cespare/vim-toml'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'cespare/vim-toml'
+Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
 " general options
@@ -160,7 +168,7 @@ set directory^=~/.cache/vim/swap/
 set swapfile
 
 syntax enable
-set background=light
+set background=dark
 colorscheme nord
 let g:airline_theme='nord'
 syntax on
@@ -199,9 +207,6 @@ nnoremap <Leader>m :Make<CR>
 " nnoremap <Leader>m :split +resize\|startinsert term://make<CR>
 " nnoremap <Leader>M :split +wincmd\ p term://make<CR>
 
-lua <<EOF
--- require'lspconfig'.texlab.setup{}
-EOF
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   indent = { enable = true },
