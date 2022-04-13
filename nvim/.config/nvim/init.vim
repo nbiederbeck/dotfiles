@@ -83,13 +83,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'preservim/nerdtree'
     map <leader>t :NERDTreeToggle<CR>
 Plug 'Raimondi/delimitMate'
-<<<<<<< Updated upstream
-||||||| constructed merge base
-Plug 'cespare/vim-toml'
-Plug 'JuliaEditorSupport/julia-vim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'cespare/vim-toml'
-Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
 " general options
