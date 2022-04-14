@@ -1,9 +1,14 @@
-let g:nvim_conda_path = expand('~/.local/conda/bin/')
-let g:python3_host_prog = expand(g:nvim_conda_path..'python')
+let venv = expand('~/.venvs/nvim')
+let venv_bin = venv.'/bin/'
+if empty(glob(venv))
+    silent execute '!python3 -m venv '.venv
+    silent execute '!source '.venv_bin.'activate && pip install pynvim black flake8 isort'
+endif
+let g:python3_host_prog = expand(venv_bin.'python')
 
-let g:ale_python_black_executable = expand(g:nvim_conda_path..'black')
-let g:ale_python_isort_executable = expand(g:nvim_conda_path..'isort')
-let g:ale_python_flake8_executable = expand(g:nvim_conda_path..'flake8')
+let g:ale_python_black_executable = expand(venv_bin.'black')
+let g:ale_python_isort_executable = expand(venv_bin.'isort')
+let g:ale_python_flake8_executable = expand(venv_bin.'flake8')
 
 let g:ale_sign_error = '??'
 let g:ale_sign_warning = '!?'
