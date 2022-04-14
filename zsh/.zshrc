@@ -140,3 +140,5 @@ exportif () {
 }
 exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'"
 # ---------------------------------
+
+has module && module add git ripgrep texlive python neovim
