@@ -69,6 +69,8 @@ unset __conda_setup
 
 bindkey "^[[3~" delete-char
 
+has module && module add git ripgrep texlive python neovim
+
 # Aliases -----------------------------------------------
 alias gits="git status --short"
 alias g="git"
@@ -140,5 +142,3 @@ exportif () {
 }
 exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'"
 # ---------------------------------
-
-has module && module add git ripgrep texlive python neovim
