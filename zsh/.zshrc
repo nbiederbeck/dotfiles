@@ -4,12 +4,17 @@ else
     # exec fish
 fi
 
+# functions -------------------------------
 zshrcmsg () {
     echo -e "\033[1;33m[zshrc] ${1}\033[0m"
 }
 zshrcwarn () {
     echo -e "\033[0;33m[zshrc] ${1}\033[0m"
 }
+has () {
+    command -v $1 > /dev/null
+}
+# -----------------------------------------
 
 # Lines configured by zsh-newuser-install
 HISTFILE="${HOME}/.histfile"
@@ -38,26 +43,28 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen use oh-my-zsh
 antigen bundle ssh-agent
-antigen theme dracula/zsh
+if (( $ZSH_VERSION[1,3] <= 5.1 )); then
+    antigen theme robbyrussell
+else
+    antigen theme dracula/zsh
+fi
 antigen apply
 # ------------------------------------------------------------
 
 # >>> conda initialize >>>
+CONDA_PATH="${HOME}/.local/conda"
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$("${HOME}/.local/miniconda3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$("${CONDA_PATH}/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "${HOME}/.local/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "${HOME}/.local/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "${CONDA_PATH}/etc/profile.d/conda.sh" ]; then
+        . "${CONDA_PATH}/etc/profile.d/conda.sh"
     else
-        export PATH="${HOME}/.local/miniconda3/bin:$PATH"
+        export PATH="${CONDA_PATH}/bin:$PATH"
     fi
 fi
 unset __conda_setup
-if [ -f "${HOME}/.local/miniconda3/etc/profile.d/mamba.sh" ]; then
-    . "${HOME}/.local/miniconda3/etc/profile.d/mamba.sh"
-fi
 # <<< conda initialize <<<
 
 bindkey "^[[3~" delete-char
@@ -65,14 +72,14 @@ bindkey "^[[3~" delete-char
 # Aliases -----------------------------------------------
 alias gits="git status --short"
 alias g="git"
-alias ls="exa"
+has exa && alias ls="exa"
+has exa && alias tree="exa -T"
 alias ll="ls -l"
 alias julianb="julia -q -i -e 'using IJulia; notebook()'"
 alias pluto="julia -q -i -e 'using Pluto; Pluto.run()'"
 alias cal="cal -mv3 | grep --color -E 'S[au].*|$'"
 alias runzip="fd -e zip -x unzip -nq {} -d {//}"
-alias tree="exa -T"
-alias vim='nvim'
+has nvim && alias vim='nvim'
 function openpdf () {
     fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i | xargs -r xdg-open
 }
@@ -86,6 +93,11 @@ function t () {
 }
 function cpr() {
     rsync -avzuhrP --info=stats1,progress2 --modify-window=1 "$@"
+}
+function mountremote () {
+    mntpoint="${HOME}/mounts/$1"
+    mkdir -p "${mntpoint}"
+    sshfs -o auto_cache,no_readahead,reconnect,ServerAliveInterval=30,ServerAliveCountMax=2 $1:$2 "${mntpoint}"
 }
 #--------------------------------------------------------
 
