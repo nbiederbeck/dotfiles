@@ -2,6 +2,8 @@
 " -------
 lua require('plugins')
 lua require('settings')
+lua require('treesitter-config')
+lua require('lsp-config')
 
 let data_dir = has('nvim') ? stdpath('data') . '/plugged' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -207,12 +209,6 @@ nnoremap <Leader>m :Make<CR>
 " nnoremap <Leader>m :split +resize\|startinsert term://make<CR>
 " nnoremap <Leader>M :split +wincmd\ p term://make<CR>
 
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  indent = { enable = true },
-  highlight = { enable = true },
-}
-EOF
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
