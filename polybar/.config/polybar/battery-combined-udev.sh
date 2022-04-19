@@ -7,6 +7,10 @@ battery_print() {
     PATH_BATTERY_0="/sys/class/power_supply/BAT0"
     PATH_BATTERY_1="/sys/class/power_supply/BAT1"
 
+    if ! [ -d "${PATH_AC}" ]; then
+        return
+    fi
+
     ac=0
     battery_level_0=0
     battery_level_1=0
