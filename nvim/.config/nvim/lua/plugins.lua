@@ -19,11 +19,14 @@ return require('packer').startup(function()
     use { 'tpope/vim-surround' }
     use { 'tpope/vim-commentary' }
     use { 'tpope/vim-fugitive' }
+    use { 'mhinz/vim-startify' }
 
     -- ui
     use { 'vim-airline/vim-airline',
         requires = { 'vim-airline/vim-airline-themes' },
     }
+    use { 'arcticicestudio/nord-vim' }
+
     -- language support
     use { 'ziglang/zig.vim' }
     use { 'dag/vim-fish' }
