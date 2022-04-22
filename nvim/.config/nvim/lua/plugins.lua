@@ -9,6 +9,9 @@ return require('packer').startup(function()
     use { 'wbthomason/packer.nvim' }
 
     -- lsp / completion
+    use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
+    use { 'deoplete-plugins/deoplete-jedi' }
+    use { 'davidhalter/jedi' }
 
     -- ux
     use { 'airblade/vim-gitgutter' }

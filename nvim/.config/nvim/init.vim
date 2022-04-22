@@ -41,7 +41,6 @@ Plug 'christoomey/vim-tmux-navigator'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#ale#enabled = 1
 " Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
     let g:deoplete#enable_at_startup = 1
 Plug 'arcticicestudio/nord-vim'
     let g:nord_uniform_status_lines = 1
@@ -87,6 +86,8 @@ Plug 'preservim/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'neovim/nvim-lspconfig'
 call plug#end()
+
+call deoplete#custom#option('sources', {'_': ['ale']})
 
 " general options
 " ---------------
