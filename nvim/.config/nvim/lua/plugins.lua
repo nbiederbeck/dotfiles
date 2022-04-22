@@ -9,9 +9,6 @@ return require('packer').startup(function()
     use { 'wbthomason/packer.nvim' }
 
     -- lsp / completion
-    use { 'ms-jpq/coq.thirdparty' , requires = { 'ms-jpq/coq_nvim' } }
-    use { 'nvim-treesitter/nvim-treesitter' , run = ':TSUpdate' }
-    use { 'neovim/nvim-lspconfig' }
 
     -- ux
     use { 'airblade/vim-gitgutter' }

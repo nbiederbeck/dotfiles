@@ -1,8 +1,8 @@
 let venv = expand('~/.venvs/nvim')
 let venv_bin = venv.'/bin/'
 if empty(glob(venv))
-    silent execute '!python3 -m venv '.venv
-    silent execute '!source '.venv_bin.'activate && pip install pynvim black flake8 isort'
+    execute '!python3 -m venv '.venv
+    execute '!source '.venv_bin.'activate && pip install -U pip && pip install -U pynvim black flake8 isort'
 endif
 let g:python3_host_prog = expand(venv_bin.'python')
 
