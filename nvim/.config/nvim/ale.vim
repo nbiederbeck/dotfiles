@@ -1,8 +1,8 @@
-let venv = expand('~/.venvs/nvim')
+let venv = expand('~/.local/conda/envs/nvim')
 let venv_bin = venv.'/bin/'
 if empty(glob(venv))
-    execute '!python3 -m venv '.venv
-    execute '!source '.venv_bin.'activate && pip install -U pip && pip install -U pynvim black flake8 isort'
+    execute '!mamba create -n nvim python=3.9 --yes'
+    execute '!mamba install -n nvim pynvim black flake8 isort jedi --yes'
 endif
 let g:python3_host_prog = expand(venv_bin.'python')
 
