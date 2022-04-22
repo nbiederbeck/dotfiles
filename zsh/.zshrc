@@ -125,6 +125,7 @@ export PATH="${HOME}/.local/bin/:${PATH}"
 export PATH="${HOME}/.local/dotbin/:${PATH}"
 export PATH="${HOME}/.cargo/bin/:${PATH}"
 export PATH="${HOME}/.local/texlive/2021/bin/x86_64-linux:${PATH}"
+export PATH="./target/release/:./target/debug/:${PATH}"  # cargo
 # ----------------------------------------------------------------
 
 dircolorsfile="${HOME}/.dircolors"
@@ -141,4 +142,6 @@ exportif () {
     fi
 }
 exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'"
+exportif bat PAGER "bat --plain"
+exportif bat GITPAGER "bat --plain"
 # ---------------------------------
