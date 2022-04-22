@@ -22,10 +22,10 @@ return require('packer').startup(function()
     use { 'mhinz/vim-startify' }
 
     -- ui
-    use { 'vim-airline/vim-airline',
-        requires = { 'vim-airline/vim-airline-themes' },
-    }
+    use { 'vim-airline/vim-airline' }
+    use { 'vim-airline/vim-airline-themes' }
     use { 'arcticicestudio/nord-vim' }
+    use { 'nvim-treesitter/nvim-treesitter' }
 
     -- language support
     use { 'ziglang/zig.vim' }
