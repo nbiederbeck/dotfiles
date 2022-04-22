@@ -2,22 +2,13 @@
 
 [core]
     editor = nvim
+	pager = bat --plain
 
 [user]
     name = Noah Biederbeck
     email = noah.biederbeck@tu-dortmund.de
     useConfigOnly = true
 	signingkey = 5B2B794005C09CF8
-
-[pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
-
-[delta]
-    line-numbers = true
-    syntax-theme = Nord
 
 [pull]
     rebase = true
@@ -28,7 +19,7 @@
     trustExitCode = false
 
 [mergetool "nvim"]
-      cmd = nvim -f -c "Gvdiffsplit!" "$MERGED"
+      cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 
 [mergetool]
     keepBackup = false
@@ -57,3 +48,5 @@
 
 [github]
     user = nbiederbeck
+[help]
+	autocorrect = 10
