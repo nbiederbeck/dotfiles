@@ -208,3 +208,11 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
 nnoremap <LEADER>uu :PackerSync<CR>
+
+function! Update()
+    PlugUpgrade
+    PlugInstall
+    PlugUpdate
+    PackerSync
+endfunction
+command Update call Update()
