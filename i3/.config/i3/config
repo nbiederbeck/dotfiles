@@ -370,7 +370,6 @@ exec --no-startup-id ~/.autostart-i3
 exec --no-startup-id autorandr --change
 exec --no-startup-id ~/.screenlayout.sh
 exec --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id redshift-gtk
 
 #
 # Include default config
