@@ -34,6 +34,8 @@
     a = add
     d = diff
     ds = diff --staged
+    head = log --oneline -15
+    stat = diff --stat
 
 [init]
 	defaultBranch = main
