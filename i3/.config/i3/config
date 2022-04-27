@@ -24,9 +24,9 @@ set $font pango:Source Code Pro
 font $font 10
 
 title_align center
-focus_follows_mouse true # true|false
-workspace_layout tabbed  # default|stacking|tabbed
-hide_edge_borders smart # none|vertical|horizontal|both|smart
+focus_follows_mouse yes
+workspace_layout tabbed
+hide_edge_borders smart
 set $border 1
 default_border pixel $border
 default_floating_border pixel $border
