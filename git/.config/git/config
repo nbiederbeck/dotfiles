@@ -52,3 +52,5 @@
     user = nbiederbeck
 [help]
 	autocorrect = 10
+[fetch]
+	prune = true

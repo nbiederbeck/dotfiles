@@ -1,7 +1,6 @@
 " plugins
 " -------
 lua require('plugins')
-lua require('treesitter-config')
 
 let data_dir = has('nvim') ? stdpath('data') . '/plugged' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))

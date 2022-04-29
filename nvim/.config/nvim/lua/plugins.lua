@@ -12,6 +12,7 @@ return require('packer').startup(function()
     use { 'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins' }
     use { 'deoplete-plugins/deoplete-jedi' }
     use { 'davidhalter/jedi' }
+    use { 'davidhalter/jedi-vim' }
 
     -- ux
     use { 'airblade/vim-gitgutter' }
@@ -25,7 +26,6 @@ return require('packer').startup(function()
     use { 'vim-airline/vim-airline' }
     use { 'vim-airline/vim-airline-themes' }
     use { 'arcticicestudio/nord-vim' }
-    use { 'nvim-treesitter/nvim-treesitter' }
 
     -- language support
     use { 'ziglang/zig.vim' }

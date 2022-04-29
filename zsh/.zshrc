@@ -141,3 +141,5 @@ exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'"
 exportif bat PAGER "bat --plain"
 exportif bat GITPAGER "bat --plain"
 # ---------------------------------
+
+alias vim=hx
