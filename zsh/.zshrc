@@ -120,7 +120,7 @@ export FZF_ALT_C_OPTS='--preview "exa --color=always {}"'
 export PATH="${HOME}/.local/bin/:${PATH}"
 export PATH="${HOME}/.local/dotbin/:${PATH}"
 export PATH="${HOME}/.cargo/bin/:${PATH}"
-export PATH="${HOME}/.local/texlive/2021/bin/x86_64-linux:${PATH}"
+export PATH="${HOME}/.local/texlive/2022/bin/x86_64-linux:${PATH}"
 export PATH="./target/release/:./target/debug/:${PATH}"  # cargo
 # ----------------------------------------------------------------
 
