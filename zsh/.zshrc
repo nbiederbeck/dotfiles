@@ -78,6 +78,7 @@ alias pluto="julia -q -i -e 'using Pluto; Pluto.run()'"
 alias cal="cal -mv3 | grep --color -E 'S[au].*|$'"
 alias runzip="fd -e zip -x unzip -nq {} -d {//}"
 has nvim && alias vim='nvim'
+has hx && alias vim='hx'
 function openpdf () {
     fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i | xargs -r xdg-open
 }
@@ -96,6 +97,9 @@ function mountremote () {
     mntpoint="${HOME}/mounts/$1"
     mkdir -p "${mntpoint}"
     sshfs -o auto_cache,no_readahead,reconnect,ServerAliveInterval=30,ServerAliveCountMax=2 $1:$2 "${mntpoint}"
+}
+function cdtmp () {
+    cd "$(mktemp -d)"
 }
 #--------------------------------------------------------
 
@@ -122,6 +126,7 @@ export PATH="${HOME}/.local/dotbin/:${PATH}"
 export PATH="${HOME}/.cargo/bin/:${PATH}"
 export PATH="${HOME}/.local/texlive/2022/bin/x86_64-linux:${PATH}"
 export PATH="./target/release/:./target/debug/:${PATH}"  # cargo
+export PATH="${HOME}/.npm-packages:${PATH}"
 # ----------------------------------------------------------------
 
 dircolorsfile="${HOME}/.dircolors"
@@ -141,5 +146,3 @@ exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'"
 exportif bat PAGER "bat --plain"
 exportif bat GITPAGER "bat --plain"
 # ---------------------------------
-
-alias vim=hx
