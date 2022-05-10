@@ -1,5 +1,3 @@
-# vim: ft=gitconfig commentstring=#%s
-
 [core]
     editor = nvim
 	pager = bat --plain
@@ -36,6 +34,8 @@
     ds = diff --staged
     head = log --oneline -15
     stat = diff --stat
+    black = !black $(git diff --name-only)
+    b = black
 
 [init]
 	defaultBranch = main
