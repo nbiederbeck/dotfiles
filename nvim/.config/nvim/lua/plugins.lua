@@ -1,9 +1,12 @@
 require "bootstrap"
 
+---@diagnostic disable: undefined-global
+
 return require('packer').startup(function()
 	-- packer can manage itself
 	use { 'wbthomason/packer.nvim' }
 	use { 'morhetz/gruvbox' }
+	use { 'psf/black' }
 	use {
 		"williamboman/nvim-lsp-installer",
 		{
@@ -11,7 +14,7 @@ return require('packer').startup(function()
 			config = function()
 				require("nvim-lsp-installer").setup {
 					ensure_installed = { "sumneko_lua", "jedi_language_server" };
-					automatic_installation = true,
+					automatic_installation = false,
 				}
 				local lspconfig = require("lspconfig")
 				lspconfig.sumneko_lua.setup {}
