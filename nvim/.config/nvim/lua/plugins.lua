@@ -7,6 +7,7 @@ return require('packer').startup(function()
 	use { 'wbthomason/packer.nvim' }
 	use { 'morhetz/gruvbox' }
 	use { 'psf/black' }
+	use { 'tpope/vim-commentary' }
 	use {
 		"williamboman/nvim-lsp-installer",
 		{
