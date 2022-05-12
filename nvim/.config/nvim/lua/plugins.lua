@@ -8,21 +8,25 @@ return require('packer').startup(function()
 	use { 'morhetz/gruvbox' }
 	use { 'psf/black' }
 	use { 'tpope/vim-commentary' }
-	use {
-		"williamboman/nvim-lsp-installer",
-		{
-			"neovim/nvim-lspconfig",
-			config = function()
-				require("nvim-lsp-installer").setup {
-					ensure_installed = { "sumneko_lua", "jedi_language_server" };
-					automatic_installation = false,
-				}
-				local lspconfig = require("lspconfig")
-				lspconfig.sumneko_lua.setup {}
-				lspconfig.jedi_language_server.setup {}
-			end
-		}
-	}
+
+	use { 'dense-analysis/ale' }
+	use { 'lervag/vimtex' }
+
+	-- use {
+	-- 	"williamboman/nvim-lsp-installer",
+	-- 	{
+	-- 		"neovim/nvim-lspconfig",
+	-- 		config = function()
+	-- 			require("nvim-lsp-installer").setup {
+	-- 				ensure_installed = { "sumneko_lua", "jedi_language_server" };
+	-- 				automatic_installation = false,
+	-- 			}
+	-- 			local lspconfig = require("lspconfig")
+	-- 			lspconfig.sumneko_lua.setup {}
+	-- 			lspconfig.jedi_language_server.setup {}
+	-- 		end
+	-- 	}
+	-- }
 
 	if PACKER_BOOTSTRAP then
 		require('packer').sync()
