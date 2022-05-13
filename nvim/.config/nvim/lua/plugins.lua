@@ -39,4 +39,5 @@ return require("packer").startup({
 			enable = true,
 		},
 	},
+	autoremove = true,
 })
