@@ -1,4 +1,5 @@
 lua require "plugins"
+lua require "options"
 
 colorscheme gruvbox
 
