@@ -9,7 +9,13 @@ set relativenumber
 set splitbelow
 set splitright
 
-set ignorecase
+set expandtab
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+set smartcase
 
 inoremap jk <ESC>
 map <SPACE> <LEADER>
