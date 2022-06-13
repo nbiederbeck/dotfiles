@@ -47,8 +47,8 @@ fi
 antigen apply
 # ------------------------------------------------------------
 
-# >>> conda initialize >>>
 CONDA_PATH="${HOME}/.local/conda"
+# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$("${CONDA_PATH}/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -61,6 +61,10 @@ else
     fi
 fi
 unset __conda_setup
+
+if [ -f "${CONDA_PATH}/etc/profile.d/mamba.sh" ]; then
+    . "${CONDA_PATH}/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
 bindkey "^[[3~" delete-char
