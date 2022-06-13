@@ -1,7 +1,7 @@
 lua require "plugins"
 lua require "options"
 
-colorscheme gruvbox
+colorscheme nord
 
 set number
 set relativenumber
