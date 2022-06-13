@@ -4,9 +4,8 @@ require("bootstrap")
 
 return require("packer").startup({
 	function()
-		-- packer can manage itself
-		use({ "wbthomason/packer.nvim" })
-		use({ "morhetz/gruvbox" })
+		use({ "wbthomason/packer.nvim" }) -- packer can manage itself
+		use({ "arcticicestudio/nord-vim" })
 		use({ "tpope/vim-commentary" })
 
 		use({ "dense-analysis/ale", opt = true })
