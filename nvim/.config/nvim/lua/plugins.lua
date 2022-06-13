@@ -6,7 +6,10 @@ return require("packer").startup({
 	function()
 		use({ "wbthomason/packer.nvim" }) -- packer can manage itself
 		use({ "arcticicestudio/nord-vim" })
+
 		use({ "tpope/vim-commentary" })
+		use({ "tpope/vim-surround" })
+		use({ "tpope/vim-repeat" })
 
 		use({ "dense-analysis/ale", opt = true })
 		use({ "lervag/vimtex", ft = "tex" })
