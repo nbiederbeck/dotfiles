@@ -11,7 +11,7 @@ return require("packer").startup({
 		use({ "tpope/vim-surround" })
 		use({ "tpope/vim-repeat" })
 
-		use({ "dense-analysis/ale", opt = true })
+		use({ "dense-analysis/ale" })
 		use({ "lervag/vimtex", ft = "tex" })
 
 		use({ "nvim-lualine/lualine.nvim" })
