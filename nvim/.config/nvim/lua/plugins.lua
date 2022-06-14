@@ -5,11 +5,14 @@ require("bootstrap")
 return require("packer").startup({
 	function()
 		use({ "wbthomason/packer.nvim" }) -- packer can manage itself
+
 		use({ "arcticicestudio/nord-vim" })
+		use({ "airblade/vim-gitgutter" })
 
 		use({ "tpope/vim-commentary" })
 		use({ "tpope/vim-surround" })
 		use({ "tpope/vim-repeat" })
+		use({ "tpope/vim-fugitive" })
 
 		use({ "dense-analysis/ale" })
 		use({ ft = "tex", "lervag/vimtex" })
