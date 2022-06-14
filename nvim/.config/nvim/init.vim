@@ -3,6 +3,8 @@ lua require "options"
 
 colorscheme nord
 
+set mouse=a
+
 set number
 set relativenumber
 
@@ -24,3 +26,10 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-H> <C-W>h
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
+
+" augroup autosave
+"     au TextChanged * :silent write | ALEFix
+"     au InsertLeave * :silent write | ALEFix
+" augroup END
+
+ " autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)

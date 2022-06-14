@@ -12,25 +12,27 @@ return require("packer").startup({
 		use({ "tpope/vim-repeat" })
 
 		use({ "dense-analysis/ale" })
-		use({ "lervag/vimtex", ft = "tex" })
+		use({ ft = "tex", "lervag/vimtex" })
+		use({ ft = "zig", "ziglang/zig.vim" })
 
 		use({ "nvim-lualine/lualine.nvim" })
 
-		-- use {
-		-- 	"williamboman/nvim-lsp-installer",
-		-- 	{
-		-- 		"neovim/nvim-lspconfig",
-		-- 		config = function()
-		-- 			require("nvim-lsp-installer").setup {
-		-- 				ensure_installed = { "sumneko_lua", "jedi_language_server" };
-		-- 				automatic_installation = false,
-		-- 			}
-		-- 			local lspconfig = require("lspconfig")
-		-- 			lspconfig.sumneko_lua.setup {}
-		-- 			lspconfig.jedi_language_server.setup {}
-		-- 		end
-		-- 	}
-		-- }
+		use({ "ms-jpq/coq_nvim", branch = "coq" })
+		use({ "ms-jpq/coq.artifacts", branch = "artifacts" })
+		-- use({
+		--     "williamboman/nvim-lsp-installer",
+		--     {
+		--         "neovim/nvim-lspconfig",
+		--         config = function()
+		--             require("nvim-lsp-installer").setup()
+		--             local lspconfig = require("lspconfig")
+		--             local coq = require("coq")
+		--             lspconfig.sumneko_lua.setup(coq.lsp_ensure_capabilities({}))
+		--             lspconfig.jedi_language_server.setup(coq.lsp_ensure_capabilities({}))
+		--             lspconfig.psalm.setup(coq.lsp_ensure_capabilities({}))
+		--         end,
+		--     },
+		-- })
 
 		if PACKER_BOOTSTRAP then
 			require("packer").sync()
