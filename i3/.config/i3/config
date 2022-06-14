@@ -62,7 +62,7 @@ bindsym $mod+shift+s sticky toggle
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+Return exec $term -e bash
+    bindsym $mod+Shift+Return exec $term -e sh
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -225,7 +225,8 @@ bindsym $mod+XF86Display exec arandr
 # bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png -i
 
-bindsym $mod+x exec betterlockscreen --lock --off 5 # ~/.local/dotbin/exit_menu.sh Lock
+bindsym $mod+x exec ~/.local/dotbin/exit_menu.sh Lock
+bindsym $mod+Shift+x exec ~/.local/dotbin/exit_menu.sh Sleep
 bindsym $mod+Shift+p exec ~/.local/dotbin/passmenu
 bindsym $mod+Shift+t exec remind -k'notify-send "Remind" "%s"' -r ~/.config/remind/
 
@@ -365,10 +366,8 @@ for_window [class="gnuplot_qt" title="^Gnuplot window"] floating enable; resize 
 #
 # Autostart
 #
-exec --no-startup-id ~/.local/dotbin/sound.sh setup
-exec --no-startup-id ~/.autostart-i3
-exec --no-startup-id autorandr --change
-exec --no-startup-id ~/.screenlayout.sh
+# exec --no-startup-id ~/.local/dotbin/sound.sh setup
+exec autorandr --change
 exec --no-startup-id ~/.config/polybar/launch.sh
 
 #

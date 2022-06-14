@@ -74,6 +74,8 @@ has module && module add git ripgrep texlive python neovim
 # Aliases -----------------------------------------------
 alias gits="git status --short"
 alias g="git"
+alias pgrep='pgrep -a'
+alias pkill='pkill -e'
 has exa && alias ls="exa"
 has exa && alias tree="exa -T"
 alias ll="ls -l"
@@ -130,6 +132,8 @@ export PATH="${HOME}/.cargo/bin/:${PATH}"
 export PATH="${HOME}/.local/texlive/2022/bin/x86_64-linux:${PATH}"
 export PATH="./target/release/:./target/debug/:${PATH}"  # cargo
 export PATH="${HOME}/.npm-packages:${PATH}"
+export PATH="./zig-out/bin:${PATH}"
+export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
 # ----------------------------------------------------------------
 
 dircolorsfile="${HOME}/.dircolors"
@@ -148,4 +152,5 @@ exportif () {
 exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'"
 exportif bat PAGER "bat --plain"
 exportif bat GITPAGER "bat --plain"
+export GOPATH="${HOME}/.go"
 # ---------------------------------
