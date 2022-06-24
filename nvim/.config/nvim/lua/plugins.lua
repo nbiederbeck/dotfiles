@@ -13,6 +13,7 @@ return require("packer").startup({
 		use({ "tpope/vim-surround" })
 		use({ "tpope/vim-repeat" })
 		use({ "tpope/vim-fugitive" })
+		use({ "tpope/vim-dispatch" })
 
 		use({ "dense-analysis/ale" })
 		use({ ft = "tex", "lervag/vimtex" })
@@ -22,6 +23,7 @@ return require("packer").startup({
 
 		use({ "ms-jpq/coq_nvim", branch = "coq" })
 		use({ "ms-jpq/coq.artifacts", branch = "artifacts" })
+
 		-- use({
 		--     "williamboman/nvim-lsp-installer",
 		--     {
