@@ -18,6 +18,7 @@ set shiftwidth=4
 set softtabstop=4
 
 set smartcase
+set ignorecase
 
 inoremap jk <ESC>
 map <SPACE> <LEADER>
@@ -27,9 +28,4 @@ nnoremap <C-H> <C-W>h
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 
-" augroup autosave
-"     au TextChanged * :silent write | ALEFix
-"     au InsertLeave * :silent write | ALEFix
-" augroup END
-
- " autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 1000)
+hi Search ctermbg=black ctermfg=none cterm=none

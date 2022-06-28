@@ -6,10 +6,13 @@ return require("packer").startup({
 	function()
 		use({ "wbthomason/packer.nvim" }) -- packer can manage itself
 
-		use({ "arcticicestudio/nord-vim" })
-		use({ "airblade/vim-gitgutter" })
+		use({ "arcticicestudio/nord-vim" }) -- greatest colorscheme of all time
+		use({ "airblade/vim-gitgutter" }) -- show git marks
+		use({ "kshenoy/vim-signature" }) -- show vim marks
+		use({ "lukas-reineke/indent-blankline.nvim" }) -- show indentlines
+		use({ "christoomey/vim-tmux-navigator" }) -- seamlessly work with tmux and vim splits
 
-		use({ "tpope/vim-commentary" })
+		use({ "tpope/vim-commentary" }) -- gcc for commenting
 		use({ "tpope/vim-surround" })
 		use({ "tpope/vim-repeat" })
 		use({ "tpope/vim-fugitive" })
