@@ -370,6 +370,7 @@ for_window [class="gnuplot_qt" title="^Gnuplot window"] floating enable; resize 
 exec autorandr --change
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id dunst
+exec --no-startup-id nm-applet
 
 #
 # Include default config
