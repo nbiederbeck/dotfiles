@@ -29,3 +29,6 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 
 hi Search ctermbg=black ctermfg=none cterm=none
+
+" let g:did_load_filetypes = 0
+" let g:do_filetype_lua = 1
