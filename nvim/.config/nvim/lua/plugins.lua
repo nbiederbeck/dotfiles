@@ -24,8 +24,8 @@ return require("packer").startup({
 
 		use({ "nvim-lualine/lualine.nvim" })
 
-		use({ "ms-jpq/coq_nvim", branch = "coq" })
-		use({ "ms-jpq/coq.artifacts", branch = "artifacts" })
+		-- use({ "ms-jpq/coq_nvim", branch = "coq" })
+		-- use({ "ms-jpq/coq.artifacts", branch = "artifacts" })
 
 		-- use({
 		--     "williamboman/nvim-lsp-installer",
