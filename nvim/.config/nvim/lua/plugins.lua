@@ -22,7 +22,7 @@ return require("packer").startup({
 		use({ ft = "tex", "lervag/vimtex" })
 		use({ ft = "zig", "ziglang/zig.vim" })
 
-		use({ "nvim-lualine/lualine.nvim" })
+		use({ "vim-airline/vim-airline" })
 
 		-- use({ "ms-jpq/coq_nvim", branch = "coq" })
 		-- use({ "ms-jpq/coq.artifacts", branch = "artifacts" })

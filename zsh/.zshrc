@@ -47,29 +47,9 @@ fi
 antigen apply
 # ------------------------------------------------------------
 
-CONDA_PATH="${HOME}/.local/conda"
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$("${CONDA_PATH}/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "${CONDA_PATH}/etc/profile.d/conda.sh" ]; then
-        . "${CONDA_PATH}/etc/profile.d/conda.sh"
-    else
-        export PATH="${CONDA_PATH}/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "${CONDA_PATH}/etc/profile.d/mamba.sh" ]; then
-    . "${CONDA_PATH}/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
-
 bindkey "^[[3~" delete-char
 
-has module && module add git ripgrep texlive python neovim
+has module && module add git ripgrep texlive neovim
 
 # Aliases -----------------------------------------------
 alias gits="git status --short"
@@ -166,10 +146,12 @@ eval "$(dircolors "${dircolorsfile}")"
 exportif () {
     if command -v "${1}" > /dev/null; then
         export "${2}"="${3}"
+    elif [ -n "${4}" ]; then
+        export "${2}"="${4}"
     fi
 }
-exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'"
-exportif bat PAGER "bat --plain"
+exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'" "less -F"
+exportif bat PAGER "bat --plain" "less -F"
 exportif bat GITPAGER "bat --plain"
 export GOPATH="${HOME}/.go"
 # ---------------------------------
