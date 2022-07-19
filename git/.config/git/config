@@ -1,12 +1,12 @@
 [core]
     editor = nvim
-	pager = bat --plain
+    pager = bat --plain
 
 [user]
     name = Noah Biederbeck
     email = noah.biederbeck@tu-dortmund.de
     useConfigOnly = true
-	signingkey = 5B2B794005C09CF8
+    signingkey = 5B2B794005C09CF8
 
 [pull]
     rebase = true
@@ -17,7 +17,7 @@
     trustExitCode = false
 
 [mergetool "nvim"]
-      cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+    cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 
 [mergetool]
     keepBackup = false
@@ -28,6 +28,7 @@
 [alias]
     l = log --oneline --graph
     c = commit --verbose
+    cm = commit --verbose -m
     s = status
     a = add
     d = diff
@@ -36,21 +37,22 @@
     stat = diff --stat
     black = !black $(git diff --name-only)
     b = black
+    cont = rebase --continue
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [bash]
-	showInformativeStatus = true
-	showUntrackedFiles = true
-	showDirtyState = true
+    showInformativeStatus = true
+    showUntrackedFiles = true
+    showDirtyState = true
 
 [commit]
-	# gpgsign = true
+    # gpgsign = true
 
 [github]
     user = nbiederbeck
 [help]
-	autocorrect = 10
+    autocorrect = 10
 [fetch]
-	prune = true
+    prune = true
