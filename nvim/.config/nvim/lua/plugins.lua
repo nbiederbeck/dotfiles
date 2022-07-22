@@ -24,6 +24,8 @@ return require("packer").startup({
 
 		use({ "vim-airline/vim-airline" })
 
+		use({ "mhartington/formatter.nvim" })
+
 		-- use({ "ms-jpq/coq_nvim", branch = "coq" })
 		-- use({ "ms-jpq/coq.artifacts", branch = "artifacts" })
 

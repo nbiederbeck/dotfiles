@@ -30,7 +30,7 @@ nnoremap <C-H> <C-W>h
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = "normal"
@@ -73,3 +73,8 @@ let g:ale_linters.tex = ['checktex', 'lacheck']
 let g:ale_sh_shfmt_options = '-i 4'
 let g:ale_python_isort_options = '--profile=black'
 let g:ale_python_flake8_options = '--extend-ignore=E402,E203 --max-line-length=88'
+
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
