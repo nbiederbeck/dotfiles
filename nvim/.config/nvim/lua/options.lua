@@ -14,3 +14,10 @@ require("formatter").setup({
 		},
 	},
 })
+
+require("nvim-treesitter.configs").setup({})
+
+require("user/lspconfig")
+
+require("mason").setup()
+require("mason-lspconfig").setup()

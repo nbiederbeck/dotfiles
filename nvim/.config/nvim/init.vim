@@ -11,6 +11,8 @@ set mouse=a
 
 set number
 set relativenumber
+set cursorline
+set scrolloff=2
 
 set splitbelow
 set splitright

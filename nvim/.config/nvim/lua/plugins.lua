@@ -44,6 +44,14 @@ return require("packer").startup({
 		--     },
 		-- })
 
+		use({ "nvim-treesitter/nvim-treesitter" })
+
+		use({
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
+		})
+
 		if PACKER_BOOTSTRAP then
 			require("packer").sync()
 		end
