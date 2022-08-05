@@ -1,6 +1,6 @@
 [core]
     editor = nvim
-    pager = bat --plain
+    pager = less -RF
 
 [user]
     name = Noah Biederbeck
