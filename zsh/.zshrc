@@ -89,6 +89,9 @@ function cdtmp () {
 function build-nvim () {
     make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/" $@
 }
+function help() {
+    "$@" --help 2>&1 | bat --plain --language=help
+}
 #--------------------------------------------------------
 
 # FZF ---------------------------------------------------
@@ -160,3 +163,10 @@ export GOPATH="${HOME}/.go"
 # ---------------------------------
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
+# bun completions
+[ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
+
+# bun
+export BUN_INSTALL="${HOME}/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

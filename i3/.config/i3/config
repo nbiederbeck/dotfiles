@@ -3,6 +3,7 @@
 
 ### Variables
 #
+set $bin ~/.config/i3/bin
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -225,9 +226,9 @@ bindsym $mod+XF86Display exec arandr
 # bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
 bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png -i
 
-bindsym $mod+x exec ~/.local/dotbin/exit_menu.sh Lock
+bindsym $mod+x exec $bin lock
 bindsym $mod+Shift+x exec ~/.local/dotbin/exit_menu.sh Sleep
-bindsym $mod+Shift+p exec ~/.local/dotbin/passmenu
+bindsym $mod+Shift+p exec $bin password-manager
 bindsym $mod+Shift+t exec remind -k'notify-send "Remind" "%s"' -r ~/.config/remind/
 
 #
@@ -371,6 +372,11 @@ exec autorandr --change
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
+
+exec --no-startup-id telegram-desktop
+exec --no-startup-id mattermost-desktop
+exec --no-startup-id slack
+exec --no-startup-id thunderbird
 
 #
 # Include default config
