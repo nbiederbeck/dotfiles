@@ -1,3 +1,5 @@
+filetype plugin indent on
+
 lua require "plugins"
 lua require "options"
 

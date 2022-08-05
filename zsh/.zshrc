@@ -86,6 +86,9 @@ function mountremote () {
 function cdtmp () {
     cd "$(mktemp -d)"
 }
+function build-nvim () {
+    make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/" $@
+}
 #--------------------------------------------------------
 
 # FZF ---------------------------------------------------
