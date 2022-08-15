@@ -3,3 +3,8 @@ repos:
   rev: v0.13.1
   hooks:
     - id: stylua
+- repo: https://github.com/jumanjihouse/pre-commit-hooks
+  rev: 3.0.0
+  hooks:
+    - id: shellcheck
+    - id: shfmt
