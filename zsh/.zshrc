@@ -122,6 +122,7 @@ export PATH="./zig-out/bin:${PATH}"
 export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
 # ----------------------------------------------------------------
 
+DEFAULT_CONDA_ENV="$(grep 'default_env' ${HOME}/.condarc | cut -d: -f2 | tr -d ' ')"
 CONDA_PATH="${HOME}/.local/conda"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -138,6 +139,7 @@ fi
 unset __conda_setup
 if [ -f "${CONDA_PATH}/etc/profile.d/mamba.sh" ]; then
     . "${CONDA_PATH}/etc/profile.d/mamba.sh"
+    mamba activate "${DEFAULT_CONDA_ENV-base}"
 fi
 # <<< conda initialize <<<
 
