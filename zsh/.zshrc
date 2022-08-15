@@ -162,11 +162,11 @@ exportif bat GITPAGER "bat --plain"
 export GOPATH="${HOME}/.go"
 # ---------------------------------
 
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
-
-# bun completions
-[ -s "${HOME}/.bun/_bun" ] && source "${HOME}/.bun/_bun"
-
-# bun
 export BUN_INSTALL="${HOME}/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+zfile="${HOME}/.z.sh"
+if ! [ -f "${zfile}" ]; then
+    curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh -o "${zfile}"
+fi
+source "${zfile}"
