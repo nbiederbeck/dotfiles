@@ -72,7 +72,7 @@ let g:ale_linters.php = ['phpcbf']
 let g:ale_linters.python = ['flake8', 'pyright']
 let g:ale_linters.rust = ['clippy']
 let g:ale_linters.sh = ['shellcheck']
-let g:ale_linters.tex = ['checktex', 'lacheck']
+let g:ale_linters.tex = ['chktex', 'lacheck']
 
 let g:ale_sh_shfmt_options = '-i 4'
 let g:ale_python_isort_options = '--profile=black'
