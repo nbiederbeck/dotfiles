@@ -21,3 +21,7 @@ require("user/lspconfig")
 
 require("mason").setup()
 require("mason-lspconfig").setup()
+
+local g = vim.g
+
+g.UltiSnipsJumpForwardTrigger = "<tab>"

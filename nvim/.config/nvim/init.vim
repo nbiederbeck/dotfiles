@@ -82,3 +82,6 @@ augroup FormatAutogroup
   autocmd!
   autocmd BufWritePost * FormatWrite
 augroup END
+
+autocmd User UltiSnipsEnterFirstSnippet ASToggle
+autocmd User UltiSnipsExitLastSnippet ASToggle

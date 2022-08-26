@@ -22,6 +22,10 @@ return require("packer").startup({
 		use({ ft = "tex", "lervag/vimtex" })
 		use({ ft = "zig", "ziglang/zig.vim" })
 
+		use({ "sirver/UltiSnips" })
+		use({ "honza/vim-snippets" })
+		use({ "ervandew/supertab" })
+
 		use({ "vim-airline/vim-airline" })
 
 		use({ "mhartington/formatter.nvim" })
