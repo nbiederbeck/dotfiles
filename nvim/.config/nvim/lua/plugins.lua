@@ -30,8 +30,6 @@ return require("packer").startup({
 
 		use({ "mhartington/formatter.nvim" })
 
-		-- use({ "ms-jpq/coq_nvim", branch = "coq" })
-		-- use({ "ms-jpq/coq.artifacts", branch = "artifacts" })
 		use({ "Pocco81/auto-save.nvim" })
 
 		-- use({

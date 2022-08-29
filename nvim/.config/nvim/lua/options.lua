@@ -18,10 +18,7 @@ require("formatter").setup({
 require("nvim-treesitter.configs").setup({})
 
 require("user/lspconfig")
+require("user/snip")
 
 require("mason").setup()
 require("mason-lspconfig").setup()
-
-local g = vim.g
-
-g.UltiSnipsJumpForwardTrigger = "<tab>"
