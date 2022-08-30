@@ -37,9 +37,8 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 local lsp = require("lspconfig")
-local coq = require("coq")
 
-lsp["jedi_language_server"].setup(coq.lsp_ensure_capabilities({
+lsp["jedi_language_server"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
-}))
+})
