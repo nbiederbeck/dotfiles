@@ -1,7 +1,8 @@
 filetype plugin indent on
 
-lua require "plugins"
-lua require "options"
+lua require("bootstrap")
+lua require("plugins")
+lua require("options")
 
 let g:airline#extensions#tabline#enabled = 1
 

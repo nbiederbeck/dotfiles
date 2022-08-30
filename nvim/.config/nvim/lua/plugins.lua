@@ -1,5 +1,3 @@
-require("bootstrap")
-
 ---@diagnostic disable: undefined-global
 
 return require("packer").startup({
