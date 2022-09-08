@@ -84,8 +84,11 @@ augroup FormatAutogroup
   autocmd BufWritePost * FormatWrite
 augroup END
 
-autocmd User UltiSnipsEnterFirstSnippet ASToggle
-autocmd User UltiSnipsExitLastSnippet ASToggle
+augroup UltiToggle
+    autocmd!
+    autocmd User UltiSnipsEnterFirstSnippet ASToggle
+    autocmd User UltiSnipsExitLastSnippet ASToggle
+augroup END
 
 let g:python3_host_prog=expand('~/.local/share/nvim/venv/bin/python')
 if empty(glob(g:python3_host_prog))
