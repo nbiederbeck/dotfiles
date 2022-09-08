@@ -16,7 +16,7 @@ return require("packer").startup({
 		use({ "tpope/vim-fugitive" })
 		use({ "tpope/vim-dispatch" })
 
-		use({ "dense-analysis/ale" })
+		-- use({ "dense-analysis/ale" })
 		use({ ft = "tex", "lervag/vimtex" })
 		use({ ft = "zig", "ziglang/zig.vim" })
 
@@ -27,6 +27,7 @@ return require("packer").startup({
 		use({ "vim-airline/vim-airline" })
 
 		use({ "mhartington/formatter.nvim" })
+		use({ "mfussenegger/nvim-lint" })
 
 		use({ "Pocco81/auto-save.nvim" })
 
