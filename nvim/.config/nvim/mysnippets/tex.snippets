@@ -1,0 +1,36 @@
+# vim: ft=snippets
+extends tex
+
+global !p
+def math():
+	return int(vim.eval("vimtex#syntax#in_mathzone()"))
+endglobal
+
+snippet () "Inline Math" A
+\($1\)$0
+endsnippet
+
+snippet doc "Document Environment" b
+\begin{document}
+$0
+\end{document}
+endsnippet
+
+context "math()"
+snippet () "Left/Right Growing Parentheses" iA
+\left($1\right)$0
+endsnippet
+
+context "math()"
+snippet & "Aligned Equal Sign" A
+&=
+endsnippet
+
+snippet ... "ldots" A
+\ldots
+endsnippet
+
+context "math()"
+snippet _ "_{ }" iA
+_{$1}$0
+endsnippet

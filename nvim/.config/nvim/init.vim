@@ -89,10 +89,15 @@ augroup UltiToggle
     autocmd User UltiSnipsEnterFirstSnippet ASToggle
     autocmd User UltiSnipsExitLastSnippet ASToggle
 augroup END
+let g:UltiSnipsSnippetDirectories=[expand('~/.config/nvim/mysnippets')]
+let g:UltiSnipsEditSplit="vertical"
+map <LEADER>s :UltiSnipsEdit<CR>
 
 let g:python3_host_prog=expand('~/.local/share/nvim/venv/bin/python')
 if empty(glob(g:python3_host_prog))
     echo 'create environment'
     execute '!python3 -m venv ~/.local/share/nvim/venv --prompt nvim'
-    execute '!~/.local/share/nvim/venv/bin/python -m pip install pynvim'
+    execute '!~/.local/share/nvim/venv/bin/python -m pip install --upgrade pip pynvim black flake8 isort'
 endif
+
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
