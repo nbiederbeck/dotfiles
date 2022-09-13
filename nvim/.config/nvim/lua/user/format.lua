@@ -1,0 +1,24 @@
+require("formatter").setup({
+	logging = false,
+	filetype = {
+		lua = {
+			require("formatter.filetypes.lua").stylua,
+		},
+		python = {
+			function()
+				return {
+					exe = "isort",
+					args = { "--profile=black", "-q", "-" },
+					stdin = true,
+				}
+			end,
+			require("formatter.filetypes.python").black,
+		},
+		sh = {
+			require("formatter.filetypes.sh").shfmt,
+		},
+		["*"] = {
+			require("formatter.filetypes.any").remove_trailing_whitespace,
+		},
+	},
+})
