@@ -14,6 +14,7 @@ set number
 set relativenumber
 set cursorline
 set scrolloff=2
+set signcolumn=yes
 
 set splitbelow
 set splitright
