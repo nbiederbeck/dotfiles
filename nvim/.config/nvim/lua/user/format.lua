@@ -1,24 +1,41 @@
-require("formatter").setup({
+-- Formatting
+-- https://github.com/mhartington/formatter.nvim
+local formatter = require("formatter")
+local ft = require("formatter.filetypes")
+
+-- Set custom options
+function isort()
+	return {
+		exe = "isort",
+		args = { "--profile=black", "-q", "-" },
+		stdin = true,
+	}
+end
+
+-- Set up all formatters
+formatter.setup({
 	logging = false,
 	filetype = {
 		lua = {
-			require("formatter.filetypes.lua").stylua,
+			ft.lua.stylua,
 		},
 		python = {
-			function()
-				return {
-					exe = "isort",
-					args = { "--profile=black", "-q", "-" },
-					stdin = true,
-				}
-			end,
-			require("formatter.filetypes.python").black,
+			isort,
+			ft.python.black,
 		},
 		sh = {
-			require("formatter.filetypes.sh").shfmt,
+			ft.sh.shfmt,
 		},
 		["*"] = {
-			require("formatter.filetypes.any").remove_trailing_whitespace,
+			ft.any.remove_trailing_whitespace,
 		},
 	},
 })
+
+-- Format on save
+vim.cmd([[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
+]])
