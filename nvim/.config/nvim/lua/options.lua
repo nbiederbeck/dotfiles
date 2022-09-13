@@ -1,6 +1,7 @@
 require("ale")
 
 require("formatter").setup({
+	logging = false,
 	filetype = {
 		lua = {
 			require("formatter.filetypes.lua").stylua,
