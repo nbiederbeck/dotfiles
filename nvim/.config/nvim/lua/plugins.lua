@@ -5,7 +5,12 @@ return require("packer").startup({
 		use({ "wbthomason/packer.nvim" }) -- packer can manage itself
 
 		use({ "arcticicestudio/nord-vim" }) -- greatest colorscheme of all time
-		use({ "airblade/vim-gitgutter" }) -- show git marks
+		use({
+			"lewis6991/gitsigns.nvim", -- show git marks
+			config = function()
+				require("gitsigns").setup()
+			end,
+		})
 		use({ "kshenoy/vim-signature" }) -- show vim marks
 		use({ "lukas-reineke/indent-blankline.nvim" }) -- show indentlines
 		use({ "christoomey/vim-tmux-navigator" }) -- seamlessly work with tmux and vim splits
