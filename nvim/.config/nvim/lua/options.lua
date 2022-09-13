@@ -6,7 +6,13 @@ require("formatter").setup({
 			require("formatter.filetypes.lua").stylua,
 		},
 		python = {
-			require("formatter.filetypes.python").isort,
+			function()
+				return {
+					exe = "isort",
+					args = { "--profile=black", "-q", "-" },
+					stdin = true,
+				}
+			end,
 			require("formatter.filetypes.python").black,
 		},
 		sh = {
