@@ -65,7 +65,7 @@ alias cal="cal -mv3 | grep --color -E 'S[au].*|$'"
 alias runzip="fd -e zip -x unzip -nq {} -d {//}"
 has nvim && alias vim='nvim'
 function openpdf () {
-    fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i | xargs -r xdg-open
+    fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i -l 99 | xargs -r xdg-open
 }
 alias nbconvert="jupyter nbconvert --to script --no-prompt"
 [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases"  # Local Aliases
