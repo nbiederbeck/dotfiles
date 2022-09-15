@@ -26,6 +26,9 @@ formatter.setup({
 		sh = {
 			ft.sh.shfmt,
 		},
+		rust = {
+			ft.rust.rustfmt,
+		},
 		["*"] = {
 			ft.any.remove_trailing_whitespace,
 		},
