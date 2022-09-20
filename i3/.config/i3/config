@@ -331,7 +331,7 @@ assign [class="Slack"] $ws9
 assign [class="Mattermost"] $ws9
 assign [class="Evolution"] $ws9
 assign [class="Alacritty" title="Alpine"] $ws9
-assign [class="Thunderbird"] $ws9
+assign [class="[tT]hunderbird"] $ws9
 assign [class="Mailspring"] $ws9
 assign [class="zoom"] $ws10
 
