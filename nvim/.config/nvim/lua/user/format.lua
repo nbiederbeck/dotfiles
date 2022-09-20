@@ -26,6 +26,9 @@ formatter.setup({
 		sh = {
 			ft.sh.shfmt,
 		},
+		zsh = {
+			ft.sh.shfmt,
+		},
 		rust = {
 			ft.rust.rustfmt,
 		},
