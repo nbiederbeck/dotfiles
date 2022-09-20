@@ -45,6 +45,7 @@
     pcra = !pre-commit run --all-files
     # Pre-Commit Run (on) Modified (files)
     pcrm = !pre-commit run --files $(git ls-files --modified $(git rev-parse --show-toplevel))
+    staged = diff --staged
 
 [init]
     defaultBranch = main
