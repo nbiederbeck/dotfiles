@@ -378,6 +378,8 @@ exec --no-startup-id mattermost-desktop
 exec --no-startup-id slack
 exec --no-startup-id thunderbird
 
+exec --no-startup-id easyeffects --gapplication-service
+
 #
 # Include default config
 #
