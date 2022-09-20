@@ -37,6 +37,7 @@ fi
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle hlissner/zsh-autopair
 antigen use oh-my-zsh
 antigen bundle ssh-agent
 if (( $ZSH_VERSION[1,3] <= 5.1 )); then
@@ -169,6 +170,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 zfile="${HOME}/.z.sh"
 if ! [ -f "${zfile}" ]; then
+    zshrcmsg "Installing z"
     curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh -o "${zfile}"
 fi
 source "${zfile}"
