@@ -1,3 +1,4 @@
+# shellcheck disable=SC1090
 [ "$(tty)" = "/dev/tty1" ] && exec startx
 
 # functions -------------------------------
@@ -8,7 +9,7 @@ zshrcwarn () {
     echo -e "\033[0;33m[zshrc] ${1}\033[0m"
 }
 has () {
-    command -v $1 > /dev/null
+    command -v "$1" > /dev/null
 }
 # -----------------------------------------
 
@@ -40,7 +41,7 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle hlissner/zsh-autopair
 antigen use oh-my-zsh
 antigen bundle ssh-agent
-if (( $ZSH_VERSION[1,3] <= 5.1 )); then
+if [[ $(echo "${ZSH_VERSION} <= 5.1" | bc) ]]; then
     antigen theme robbyrussell
 else
     antigen theme dracula/zsh
@@ -85,10 +86,10 @@ function mountremote () {
     sshfs -o auto_cache,no_readahead,reconnect,ServerAliveInterval=30,ServerAliveCountMax=2 $1:$2 "${mntpoint}"
 }
 function cdtmp () {
-    cd "$(mktemp -d)"
+    cd "$(mktemp -d)" || return
 }
 function build-nvim () {
-    make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/" $@
+    make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/" "$@"
 }
 function help() {
     "$@" --help 2>&1 | bat --plain --language=help
