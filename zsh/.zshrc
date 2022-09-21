@@ -41,7 +41,7 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle hlissner/zsh-autopair
 antigen use oh-my-zsh
 antigen bundle ssh-agent
-if [[ $(echo "${ZSH_VERSION} <= 5.1" | bc) ]]; then
+if [[ $(echo "${ZSH_VERSION} <= 5.1" | bc) -eq 1 ]]; then
     antigen theme robbyrussell
 else
     antigen theme dracula/zsh
