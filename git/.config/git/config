@@ -64,3 +64,5 @@
     autocorrect = 10
 [fetch]
     prune = true
+[safe]
+	directory = /home/noah/mounts/cp01

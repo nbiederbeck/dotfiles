@@ -35,3 +35,5 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-H> <C-W>h
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
+
+nmap <LEADER>m :Make<CR>
