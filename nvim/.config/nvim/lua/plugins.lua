@@ -24,6 +24,7 @@ return require("packer").startup({
 		-- use({ "dense-analysis/ale" })
 		use({ ft = "tex", "lervag/vimtex" })
 		use({ ft = "zig", "ziglang/zig.vim" })
+		use({ "snakemake/snakemake", rtp = "misc/vim" })
 
 		use({ "sirver/UltiSnips" })
 		use({ "honza/vim-snippets" })
@@ -50,8 +51,6 @@ return require("packer").startup({
 		--         end,
 		--     },
 		-- })
-
-		use({ "nvim-treesitter/nvim-treesitter" })
 
 		use({
 			"williamboman/mason.nvim",
