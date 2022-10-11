@@ -103,6 +103,7 @@ fi
 . "${HOME}/.fzf.zsh"
 export FZF_TMUX=0
 export FZF_TMUX_HEIGHT=10
+export FZF_DEFAULT_COMMAND='fd --hidden'
 export FZF_DEFAULT_OPTS='--no-bold --reverse'
 export FZF_CTRL_T_COMMAND=fd
 export FZF_ALT_C_COMMAND='fd --type d'
