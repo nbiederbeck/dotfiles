@@ -37,4 +37,4 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 
 nmap <LEADER>m :Make<CR>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>b <cmd>Buffers<cr>

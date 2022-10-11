@@ -14,5 +14,3 @@ require("mason-lspconfig").setup()
 
 require("user/linter")
 require("user/format")
-
-require("user/telescope")

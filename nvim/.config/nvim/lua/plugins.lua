@@ -58,8 +58,8 @@ return require("packer").startup({
 			"neovim/nvim-lspconfig",
 		})
 
-		use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
-		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+		use({ "junegunn/fzf", run = ":call fzf#install()" })
+		use({ "junegunn/fzf.vim" })
 
 		if PACKER_BOOTSTRAP then
 			require("packer").sync()
