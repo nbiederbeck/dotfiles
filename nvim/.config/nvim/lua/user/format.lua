@@ -12,6 +12,12 @@ function isort()
 	}
 end
 
+function snakefmt()
+	return {
+		exe = "snakefmt",
+	}
+end
+
 -- Set up all formatters
 formatter.setup({
 	logging = false,
@@ -31,6 +37,9 @@ formatter.setup({
 		},
 		rust = {
 			ft.rust.rustfmt,
+		},
+		snakemake = {
+			snakefmt,
 		},
 		["*"] = {
 			ft.any.remove_trailing_whitespace,
