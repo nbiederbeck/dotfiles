@@ -66,3 +66,4 @@
     prune = true
 [safe]
 	directory = /home/noah/mounts/cp01
+	directory = /home/nbiederbeck/mounts/cp01
