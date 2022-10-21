@@ -18,6 +18,13 @@ function snakefmt()
 	}
 end
 
+function shfmt()
+	return {
+		exe = "shfmt",
+		args = { "-i 4", "-w" },
+	}
+end
+
 -- Set up all formatters
 formatter.setup({
 	logging = false,
@@ -30,10 +37,10 @@ formatter.setup({
 			ft.python.black,
 		},
 		sh = {
-			ft.sh.shfmt,
+			shfmt,
 		},
 		zsh = {
-			ft.sh.shfmt,
+			shfmt,
 		},
 		rust = {
 			ft.rust.rustfmt,

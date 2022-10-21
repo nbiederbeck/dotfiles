@@ -1,15 +1,15 @@
-# shellcheck disable=SC1090
-[ "$(tty)" = "/dev/tty1" ] && exec startx
+# shellcheck disable=SC1090,SC2181 shell=bash
+[ "$(tty)" = "/dev/tty1" ] && exec labwc
 
 # functions -------------------------------
 zshrcmsg() {
-	echo -e "\033[1;33m[zshrc] ${1}\033[0m"
+    echo -e "\033[1;33m[zshrc] ${1}\033[0m"
 }
 zshrcwarn() {
-	echo -e "\033[0;33m[zshrc] ${1}\033[0m"
+    echo -e "\033[0;33m[zshrc] ${1}\033[0m"
 }
 has() {
-	command -v "$1" >/dev/null
+    command -v "$1" >/dev/null
 }
 # -----------------------------------------
 
@@ -31,8 +31,8 @@ compinit -d "${HOME}/.zcompdump"
 # PLUGINS ----------------------------------------------------
 ANTIGEN="${HOME}/.antigen.zsh"
 if ! [ -f "${ANTIGEN}" ]; then
-	zshrcmsg "Installing antigen"
-	curl -fsSL git.io/antigen >"${ANTIGEN}"
+    zshrcmsg "Installing antigen"
+    curl -fsSL git.io/antigen >"${ANTIGEN}"
 fi
 . "${ANTIGEN}"
 antigen bundle zsh-users/zsh-autosuggestions
@@ -63,42 +63,42 @@ alias cal="cal -mv3 | grep --color -E 'S[au].*|$'"
 alias runzip="fd -e zip -x unzip -nq {} -d {//}"
 has nvim && alias vim='nvim'
 function openpdf() {
-	fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i -l 99 | xargs -r xdg-open
+    fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i -l 99 | xargs -r xdg-open
 }
 alias nbconvert="jupyter nbconvert --to script --no-prompt"
 [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases" # Local Aliases
 function o() {
-	gio open "$@"
+    gio open "$@"
 }
 function t() {
-	tmux attach || sleep 1 && tmux
+    tmux attach || sleep 1 && tmux
 }
 function cpr() {
-	rsync -avzuhrP --info=stats1,progress2 --modify-window=1 "$@"
+    rsync -avzuhrP --info=stats1,progress2 --modify-window=1 "$@"
 }
 function mountremote() {
-	mntpoint="${HOME}/mounts/$1"
-	mkdir -p "${mntpoint}"
-	sshfs -o auto_cache,no_readahead,reconnect,ServerAliveInterval=30,ServerAliveCountMax=2 "$1:$2" "${mntpoint}"
+    mntpoint="${HOME}/mounts/$1"
+    mkdir -p "${mntpoint}"
+    sshfs -o auto_cache,no_readahead,reconnect,ServerAliveInterval=30,ServerAliveCountMax=2 "$1:$2" "${mntpoint}"
 }
 function cdtmp() {
-	cd "$(mktemp -d)" || return
+    cd "$(mktemp -d)" || return
 }
 function build-nvim() {
-	make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/" "$@"
+    make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/" "$@"
 }
 function help() {
-	"$@" --help 2>&1 | bat --plain --language=help
+    "$@" --help 2>&1 | bat --plain --language=help
 }
 #--------------------------------------------------------
 
 # FZF ---------------------------------------------------
 if ! [ -d "${HOME}/.fzf" ]; then
-	zshrcmsg "Installing FZF"
-	git clone --depth 1 \
-		"https://github.com/junegunn/fzf.git" \
-		"${HOME}/.fzf"
-	"${HOME}/.fzf/install" --all --no-{ba,fi}sh --no-update-rc
+    zshrcmsg "Installing FZF"
+    git clone --depth 1 \
+        "https://github.com/junegunn/fzf.git" \
+        "${HOME}/.fzf"
+    "${HOME}/.fzf/install" --all --no-{ba,fi}sh --no-update-rc
 fi
 . "${HOME}/.fzf.zsh"
 export FZF_TMUX=0
@@ -124,7 +124,7 @@ export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
 CONDA_PATH="${HOME}/.local/conda"
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$("${CONDA_PATH}/bin/conda" "shell.zsh" "hook" 2> /dev/null)"
+__conda_setup="$("${CONDA_PATH}/bin/conda" "shell.zsh" "hook" 2>/dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -144,18 +144,18 @@ alias conda='mamba'
 
 dircolorsfile="${HOME}/.dircolors"
 if ! [ -f "${dircolorsfile}" ]; then
-	zshrcmsg "Setup LS_COLORS"
-	curl -fsSL https://raw.githubusercontent.com/arcticicestudio/nord-dircolors/develop/src/dir_colors -o "${dircolorsfile}"
+    zshrcmsg "Setup LS_COLORS"
+    curl -fsSL https://raw.githubusercontent.com/arcticicestudio/nord-dircolors/develop/src/dir_colors -o "${dircolorsfile}"
 fi
 eval "$(dircolors "${dircolorsfile}")"
 
 # Variables -----------------------
 exportif() {
-	if command -v "${1}" >/dev/null; then
-		export "${2}"="${3}"
-	elif [ -n "${4}" ]; then
-		export "${2}"="${4}"
-	fi
+    if command -v "${1}" >/dev/null; then
+        export "${2}"="${3}"
+    elif [ -n "${4}" ]; then
+        export "${2}"="${4}"
+    fi
 }
 exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'" "less -F"
 exportif bat PAGER "bat --plain" "less -F"
@@ -168,8 +168,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 zfile="${HOME}/.z.sh"
 if ! [ -f "${zfile}" ]; then
-	zshrcmsg "Installing z"
-	curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh -o "${zfile}"
+    zshrcmsg "Installing z"
+    curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh -o "${zfile}"
 fi
 . "${zfile}"
 
