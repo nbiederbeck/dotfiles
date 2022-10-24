@@ -90,6 +90,9 @@ function build-nvim() {
 function help() {
     "$@" --help 2>&1 | bat --plain --language=help
 }
+function tmuxa() {
+    tmux a -t "$(FZF_DEFAULT_COMMAND='tmux ls' fzf | cut -d: -f1)"
+}
 #--------------------------------------------------------
 
 # FZF ---------------------------------------------------
