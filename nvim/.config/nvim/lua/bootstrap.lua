@@ -21,5 +21,4 @@ if empty(glob(g:python3_host_prog))
     execute '!python3 -m venv ~/.local/share/nvim/venv --prompt nvim'
     execute '!~/.local/share/nvim/venv/bin/python -m pip install --upgrade pip pynvim black flake8 isort'
 endif
-
 ]])
