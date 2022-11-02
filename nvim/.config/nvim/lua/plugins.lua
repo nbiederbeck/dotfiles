@@ -4,6 +4,8 @@ return require("packer").startup({
 	function()
 		use({ "wbthomason/packer.nvim" }) -- packer can manage itself
 
+		use({ "lewis6991/impatient.nvim" })
+
 		use({ "arcticicestudio/nord-vim" }) -- greatest colorscheme of all time
 		use({
 			"lewis6991/gitsigns.nvim", -- show git marks

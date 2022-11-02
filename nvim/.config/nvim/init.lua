@@ -1,44 +1,41 @@
+require("impatient")
 require("bootstrap")
 require("plugins")
 require("options")
 
-local g = vim.g
+local cmd = vim.cmd
 
-vim.cmd("colorscheme nord")
-g.mapleader = " "
+cmd("filetype plugin indent on")
+cmd("colorscheme nord")
 
-vim.cmd([[
-filetype plugin indent on
+vim.g.mapleader = " "
+vim.b.dispatch = "./%"
 
-let g:airline#extensions#tabline#enabled = 1
+local opt = vim.opt
+opt.mouse = "a"
 
-set mouse=a
+opt.number = true
+opt.relativenumber = false
+opt.cursorline = true
+opt.scrolloff = 2
+opt.signcolumn = "yes"
 
-set number
-set relativenumber
-set cursorline
-set scrolloff=2
-set signcolumn=yes
+opt.expandtab = true
+opt.autoindent = true
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
 
-set splitbelow
-set splitright
+opt.splitbelow = true
+opt.splitright = true
 
-set expandtab
-set autoindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+opt.smartcase = true
+opt.ignorecase = true
 
-set smartcase
-set ignorecase
-
-inoremap jk <ESC> nnoremap <C-J> <C-W>j
-nnoremap <C-H> <C-W>h
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
-
-nmap <LEADER>m :Make<CR>
-nnoremap <leader>b <cmd>Buffers<cr>
-
-let b:dispatch = './%'
-]])
+local map = vim.api.nvim_set_keymap
+map("i", "jk", "<ESC>", {})
+map("n", "<C-J>", "<C-W>j", {})
+map("n", "<C-H>", "<C-W>h", {})
+map("n", "<C-K>", "<C-W>k", {})
+map("n", "<C-L>", "<C-W>l", {})
+map("n", "<LEADER>b", "<CMD>Buffers<CR>", {})
