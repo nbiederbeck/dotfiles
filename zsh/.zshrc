@@ -169,6 +169,8 @@ export GOPATH="${HOME}/.go"
 export BUN_INSTALL="${HOME}/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+export MPLBACKEND="TkAgg"
+
 zfile="${HOME}/.z.sh"
 if ! [ -f "${zfile}" ]; then
     zshrcmsg "Installing z"
