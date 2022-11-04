@@ -7,9 +7,12 @@ local flake8 = lint.linters.flake8
 table.insert(flake8.args, 1, "--max-line-length=88")
 table.insert(flake8.args, 1, "--extend-ignore=E402")
 
+local pydocstyle = lint.linters.pydocstyle
+pydocstyle.args = { "--convention=numpy", "--add-select=D417" }
+
 -- Set up all linters
 lint.linters_by_ft = {
-	python = { "flake8" },
+	python = { "flake8", "pydocstyle" },
 	tex = { "chktex" },
 	sh = { "shellcheck" },
 	zsh = { "shellcheck" },
