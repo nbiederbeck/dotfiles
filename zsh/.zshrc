@@ -47,7 +47,7 @@ antigen apply
 
 bindkey "^[[3~" delete-char
 
-has module && module add git ripgrep texlive neovim
+has module && module add git ripgrep texlive neovim make
 
 # Aliases -----------------------------------------------
 alias gits="git status --short"
