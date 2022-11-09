@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/nord.yml
+  - ~/.config/alacritty/iceberg-light.yml
   - ~/.config/alacritty/font.yml
 
 env:

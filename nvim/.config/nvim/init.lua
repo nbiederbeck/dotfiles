@@ -4,14 +4,15 @@ require("plugins")
 require("options")
 
 local cmd = vim.cmd
+local opt = vim.opt
+opt.background = "light"
 
 cmd("filetype plugin indent on")
-cmd("colorscheme nord")
+cmd("colorscheme iceberg")
 
 vim.g.mapleader = " "
 vim.b.dispatch = "./%"
 
-local opt = vim.opt
 opt.mouse = "a"
 
 opt.number = true

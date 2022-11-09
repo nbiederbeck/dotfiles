@@ -7,6 +7,7 @@ return require("packer").startup({
 		use({ "lewis6991/impatient.nvim" })
 
 		use({ "arcticicestudio/nord-vim" }) -- greatest colorscheme of all time
+		use({ "cocopon/iceberg.vim" })
 		use({
 			"lewis6991/gitsigns.nvim", -- show git marks
 			config = function()
