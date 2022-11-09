@@ -59,7 +59,6 @@ has exa && alias tree="exa -T"
 alias ll="ls -l"
 alias julianb="julia -q -i -e 'using IJulia; notebook()'"
 alias pluto="julia -q -i -e 'using Pluto; Pluto.run()'"
-alias cal="cal -mv3 | grep --color -E 'S[au].*|$'"
 alias runzip="fd -e zip -x unzip -nq {} -d {//}"
 has nvim && alias vim='nvim'
 function openpdf() {
@@ -69,9 +68,6 @@ alias nbconvert="jupyter nbconvert --to script --no-prompt"
 [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases" # Local Aliases
 function o() {
     gio open "$@"
-}
-function t() {
-    tmux attach || sleep 1 && tmux
 }
 function cpr() {
     rsync -avzuhrP --info=stats1,progress2 --modify-window=1 "$@"
@@ -89,9 +85,6 @@ function build-nvim() {
 }
 function help() {
     "$@" --help 2>&1 | bat --plain --language=help
-}
-function tmuxa() {
-    tmux a -t "$(FZF_DEFAULT_COMMAND='tmux ls' fzf | cut -d: -f1)"
 }
 #--------------------------------------------------------
 
