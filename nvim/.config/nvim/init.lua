@@ -3,12 +3,12 @@ require("bootstrap")
 require("plugins")
 require("options")
 
-local cmd = vim.cmd
 local opt = vim.opt
-opt.background = "light"
+opt.background = "dark"
 
+local cmd = vim.cmd
 cmd("filetype plugin indent on")
-cmd("colorscheme iceberg")
+cmd("colorscheme nord")
 
 vim.g.mapleader = " "
 vim.b.dispatch = "./%"
