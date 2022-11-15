@@ -7,7 +7,7 @@ return require("packer").startup({
 		use({ "lewis6991/impatient.nvim" })
 
 		use({ "arcticicestudio/nord-vim" }) -- greatest colorscheme of all time
-		use({ "cocopon/iceberg.vim" })
+		use({ "projekt0n/github-nvim-theme" })
 		use({
 			"lewis6991/gitsigns.nvim", -- show git marks
 			config = function()
@@ -33,7 +33,7 @@ return require("packer").startup({
 		use({ "honza/vim-snippets" })
 		use({ "ervandew/supertab" })
 
-		use({ "vim-airline/vim-airline" })
+		use({ "nvim-lualine/lualine.nvim" })
 
 		use({ "mhartington/formatter.nvim" })
 		use({ "mfussenegger/nvim-lint" })

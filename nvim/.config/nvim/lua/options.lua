@@ -14,3 +14,5 @@ require("mason-lspconfig").setup()
 
 require("user/linter")
 require("user/format")
+
+require("lualine").setup()
