@@ -7,7 +7,7 @@ env:
 
 font:
   normal:
-    family: JetBrains Mono
+    family: Source Code Pro
 
 draw_bold_text_with_bright_colors: false
 live_config_reload: true
