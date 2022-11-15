@@ -16,3 +16,5 @@ require("user/linter")
 require("user/format")
 
 require("lualine").setup()
+
+require("diffview").setup({ use_icons = false })

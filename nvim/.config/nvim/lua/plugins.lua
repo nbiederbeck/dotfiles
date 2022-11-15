@@ -3,6 +3,7 @@
 return require("packer").startup({
 	function()
 		use({ "wbthomason/packer.nvim" }) -- packer can manage itself
+		use({ "nvim-lua/plenary.nvim" })
 
 		use({ "lewis6991/impatient.nvim" })
 
@@ -23,6 +24,8 @@ return require("packer").startup({
 		use({ "tpope/vim-repeat" })
 		use({ "tpope/vim-fugitive" })
 		use({ "tpope/vim-dispatch" })
+
+		use({ "sindrets/diffview.nvim" })
 
 		-- use({ "dense-analysis/ale" })
 		use({ ft = "tex", "lervag/vimtex" })
