@@ -1,5 +1,5 @@
 # shellcheck disable=SC1090,SC2181 shell=bash
-[ "$(tty)" = "/dev/tty1" ] && exec labwc
+[ "$(tty)" = "/dev/tty1" ] && echo "Hello $(whoami)."
 
 # functions -------------------------------
 zshrcmsg() {
