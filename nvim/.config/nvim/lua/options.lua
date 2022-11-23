@@ -18,3 +18,9 @@ require("user/format")
 require("lualine").setup()
 
 require("diffview").setup({ use_icons = false })
+
+require("auto-save").setup({ execution_message = {
+	message = function()
+		return ""
+	end,
+} })
