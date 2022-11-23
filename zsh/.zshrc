@@ -147,6 +147,7 @@ exportif() {
 exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'" "less -F"
 exportif bat PAGER "bat --plain" "less -F"
 exportif bat GITPAGER "bat --plain"
+exportif bat BAT_THEME "Nord"
 export GOPATH="${HOME}/.go"
 # ---------------------------------
 
