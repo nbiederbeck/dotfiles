@@ -355,6 +355,9 @@ for_window [class="^zoom$" title="^Breakout Rooms"] floating enable
 for_window [title="^Figure"] floating enable; resize set 800 600; resize shrink 1; resize grow 1
 for_window [class="gnuplot_qt" title="^Gnuplot window"] floating enable; resize set 800 600; resize shrink 1; resize grow 1
 
+bindsym $mod+Shift+v exec sh -c 'export f=$(mktemp) && echo -e "\n\n-- written in nvim" > $f && alacritty --title vim-anywhere -e nvim -c "set laststatus=0" -c startinsert $f && xsel -b <$f'
+for_window [title="vim-anywhere"] floating enable border none move position center resize set 600 400
+
 
 # for_window [class=".*"] border pixel $bordersize
 # for_window [workspace=$ws7 class="MuPDF"] floating enable, border normal $bordersize
