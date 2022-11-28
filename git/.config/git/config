@@ -46,6 +46,7 @@
     # Pre-Commit Run (on) Modified (files)
     pcrm = !pre-commit run --files $(git ls-files --modified $(git rev-parse --show-toplevel))
     staged = diff --staged
+    pushup = !git push -u origin "$(git branch)"
 
 [init]
     defaultBranch = main
