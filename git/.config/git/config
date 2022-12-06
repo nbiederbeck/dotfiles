@@ -67,3 +67,5 @@
 [safe]
 	directory = /home/noah/mounts/cp01
 	directory = /home/nbiederbeck/mounts/cp01
+[push]
+	autoSetupRemote = True
