@@ -164,3 +164,5 @@ fi
 . "${zfile}"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
