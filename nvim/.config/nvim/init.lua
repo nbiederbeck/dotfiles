@@ -1,10 +1,4 @@
-local opt = vim.opt
-opt.background = "light"
-
-local cmd = vim.cmd
-cmd("filetype plugin indent on")
-
-cmd("colorscheme gruvbox")
+vim.cmd("filetype plugin indent on")
 
 require("impatient")
 require("bootstrap")
@@ -14,6 +8,7 @@ require("options")
 vim.g.mapleader = " "
 vim.b.dispatch = "./%"
 
+local opt = vim.opt
 opt.mouse = "a"
 
 opt.number = true

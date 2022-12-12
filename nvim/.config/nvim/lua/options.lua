@@ -15,6 +15,8 @@ require("mason-lspconfig").setup()
 require("user/linter")
 require("user/format")
 
+require("github-theme").setup({ theme_style = "light" })
+
 require("lualine").setup()
 
 require("diffview").setup({ use_icons = false })

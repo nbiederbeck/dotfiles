@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/gruvbox-light.yml
+  - ~/.config/alacritty/github_light.yml
   - ~/.config/alacritty/font.yml
 
 env:
