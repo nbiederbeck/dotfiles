@@ -166,3 +166,4 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
+source ~/.local/share/nvim/site/pack/packer/start/gruvbox/gruvbox_256palette.sh

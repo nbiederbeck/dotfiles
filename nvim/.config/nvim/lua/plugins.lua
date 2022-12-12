@@ -9,6 +9,7 @@ return require("packer").startup({
 
 		use({ "arcticicestudio/nord-vim" }) -- greatest colorscheme of all time
 		use({ "projekt0n/github-nvim-theme" })
+		use({ "morhetz/gruvbox" })
 		use({
 			"lewis6991/gitsigns.nvim", -- show git marks
 			config = function()
