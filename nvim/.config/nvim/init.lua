@@ -1,6 +1,5 @@
 local opt = vim.opt
 opt.background = "light"
--- opt.termguicolors = true
 
 local cmd = vim.cmd
 cmd("filetype plugin indent on")
