@@ -147,7 +147,7 @@ exportif() {
 exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'" "less -F"
 exportif bat PAGER "bat --plain" "less -F"
 exportif bat GITPAGER "bat --plain"
-exportif bat BAT_THEME "gruvbox-light"
+exportif bat BAT_THEME "Nord"
 export GOPATH="${HOME}/.go"
 # ---------------------------------
 
@@ -167,3 +167,5 @@ fi
 
 # export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
 source ~/.local/share/nvim/site/pack/packer/start/gruvbox/gruvbox_256palette.sh
+
+[ -f "/home/noah/.ghcup/env" ] && source "/home/noah/.ghcup/env" # ghcup-env

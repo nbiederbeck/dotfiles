@@ -4,7 +4,7 @@ opt.background = "light"
 local cmd = vim.cmd
 cmd("filetype plugin indent on")
 
-cmd("colorscheme gruvbox")
+cmd("colorscheme nord")
 
 require("impatient")
 require("bootstrap")
