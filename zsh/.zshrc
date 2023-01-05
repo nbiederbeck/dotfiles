@@ -29,20 +29,22 @@ compinit -d "${HOME}/.zcompdump"
 # End of lines added by compinstall
 
 # PLUGINS ----------------------------------------------------
-ANTIGEN="${HOME}/.antigen.zsh"
-if ! [ -f "${ANTIGEN}" ]; then
-    zshrcmsg "Installing antigen"
-    curl -fsSL git.io/antigen >"${ANTIGEN}"
+export ZPLUG_HOME="${HOME}/.zplug"
+if ! [ -d "${ZPLUG_HOME}" ]; then
+    zshrcmsg "Installing zplug"
+    git clone https://github.com/zplug/zplug "${ZPLUG_HOME}"
 fi
-. "${ANTIGEN}"
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle hlissner/zsh-autopair
-antigen use oh-my-zsh
-antigen bundle ssh-agent
-antigen theme robbyrussell
-antigen apply
+source "${ZPLUG_HOME}/init.zsh"
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "hlissner/zsh-autopair"
+zplug "dracula/zsh", as:theme
+if ! zplug check; then
+    zplug install
+fi
+zplug load
 # ------------------------------------------------------------
 
 bindkey "^[[3~" delete-char
