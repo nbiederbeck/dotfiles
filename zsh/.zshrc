@@ -1,4 +1,10 @@
 # shellcheck disable=SC1090,SC2181 shell=bash
+bindkey -e
+bindkey "\e[3~" delete-char
+
+autoload promptinit
+promptinit
+prompt suse
 
 # functions -------------------------------
 zshrcmsg() {
@@ -117,25 +123,30 @@ export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
 
 [ -f "/home/noah/.ghcup/env" ] && source "/home/noah/.ghcup/env" # ghcup-env
 
+# SSH AGENT ----------------------------
+ENV="${HOME}/.ssh/ssh-agent-environment"
+if ! [ -f "${ENV}" ]; then
+    ssh-agent >"${ENV}"
+fi
+. "${ENV}" >/dev/null
+# --------------------------------------
+
 # Plugins
 export ZSH_HOME="${HOME}/.zsh"
 [[ -d "${ZSH_HOME}" ]] || mkdir "${ZSH_HOME}"
+gclone() {
+    git clone --quiet --depth=1 "https://github.com/$1" "$2"
+}
 
 if ! [ -d "${ZSH_HOME}/zsh-autosuggestions" ]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_HOME}/zsh-autosuggestions"
+    zshrcmsg "Installing autosuggestions."
+    gclone zsh-users/zsh-autosuggestions "${ZSH_HOME}/zsh-autosuggestions"
 fi
 
 if ! [ -d "${ZSH_HOME}/zsh-syntax-highlighting" ]; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting "${ZSH_HOME}/zsh-syntax-highlighting"
+    zshrcmsg "Installing syntax highlighting."
+    gclone zsh-users/zsh-syntax-highlighting "${ZSH_HOME}/zsh-syntax-highlighting"
 fi
 
-if ! [ -d "${ZSH_HOME}/pure" ]; then
-    git clone https://github.com/sindresorhus/pure.git "${ZSH_HOME}/pure"
-fi
-
-fpath+=("${ZSH_HOME}/pure")
-autoload -U promptinit
-promptinit
-prompt pure
 source "${ZSH_HOME}/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZSH_HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # this is the last line
