@@ -2,19 +2,8 @@
 bindkey -e
 bindkey "\e[3~" delete-char
 
-autoload promptinit compinit
-promptinit
-prompt suse
+autoload compinit
 compinit
-
-if [ -f /usr/share/git/git-prompt.sh ]; then
-    export GIT_PS1_SHOWDIRTYSTATE=1
-    export GIT_PS1_SHOWSTASHSTATE=1
-    export GIT_PS1_SHOWUPSTREAM="auto"
-    . /usr/share/git/git-prompt.sh
-    setopt PROMPT_SUBST
-    PS1='[%n@%m %~$(__git_ps1 " (%s)")]\$ '
-fi
 
 # functions -------------------------------
 zshrcmsg() {
@@ -154,6 +143,17 @@ export ZSH_HOME="${HOME}/.zsh"
 gclone() {
     git clone --quiet --depth=1 "https://github.com/$1" "$2"
 }
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUPSTREAM="auto"
+if ! [ -f "${ZSH_HOME}/git-prompt.sh" ]; then
+    zshrcmsg "Installing git prompt."
+    curl -fsSL https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o "${ZSH_HOME}/git-prompt.sh"
+fi
+. "${ZSH_HOME}/git-prompt.sh"
+setopt PROMPT_SUBST
+PS1='[%n@%m %~$(__git_ps1 " (%s)")]\$ '
 
 if ! [ -d "${ZSH_HOME}/zsh-autosuggestions" ]; then
     zshrcmsg "Installing autosuggestions."
