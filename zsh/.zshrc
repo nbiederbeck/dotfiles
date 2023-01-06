@@ -1,5 +1,4 @@
 # shellcheck disable=SC1090,SC2181 shell=bash
-[ "$(tty)" = "/dev/tty1" ] && echo "Hello $(whoami)."
 
 # functions -------------------------------
 zshrcmsg() {
@@ -12,44 +11,6 @@ has() {
     command -v "$1" >/dev/null
 }
 # -----------------------------------------
-
-# Lines configured by zsh-newuser-install
-HISTFILE="${HOME}/.histfile"
-export HISTSIZE=1000
-export SAVEHIST=1000
-setopt autocd extendedglob nomatch
-unsetopt beep
-bindkey -e
-# End of lines configured by zsh-newuser-install
-
-# The following lines were added by compinstall
-zstyle :compinstall filename "${HOME}/.zshrc"
-autoload -Uz compinit
-compinit -d "${HOME}/.zcompdump"
-# End of lines added by compinstall
-
-# PLUGINS ----------------------------------------------------
-export ZPLUG_HOME="${HOME}/.zplug"
-if ! [ -d "${ZPLUG_HOME}" ]; then
-    zshrcmsg "Installing zplug"
-    git clone https://github.com/zplug/zplug "${ZPLUG_HOME}"
-fi
-source "${ZPLUG_HOME}/init.zsh"
-zplug "zplug/zplug", hook-build:"zplug --self-manage"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "hlissner/zsh-autopair"
-zplug "dracula/zsh", as:theme
-if ! zplug check; then
-    zplug install
-fi
-zplug load
-# ------------------------------------------------------------
-
-bindkey "^[[3~" delete-char
-
-has module && module add git ripgrep texlive neovim make
 
 # Aliases -----------------------------------------------
 alias gits="git status --short"
@@ -90,6 +51,17 @@ function help() {
 }
 #--------------------------------------------------------
 
+# PATH -----------------------------------------------------------
+export PATH="${HOME}/.local/bin/:${PATH}"
+export PATH="${HOME}/.local/dotbin/:${PATH}"
+export PATH="${HOME}/.cargo/bin/:${PATH}"
+export PATH="${HOME}/.local/texlive/2022/bin/x86_64-linux:${PATH}"
+export PATH="./target/release/:./target/debug/:${PATH}" # cargo
+export PATH="${HOME}/.npm-packages:${PATH}"
+export PATH="./zig-out/bin:${PATH}"
+export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
+# ----------------------------------------------------------------
+
 # FZF ---------------------------------------------------
 if ! [ -d "${HOME}/.fzf" ]; then
     zshrcmsg "Installing FZF"
@@ -108,18 +80,7 @@ export FZF_ALT_C_COMMAND='fd --type d'
 export FZF_ALT_C_OPTS='--preview "exa --color=always {}"'
 # -------------------------------------------------------
 
-# PATH -----------------------------------------------------------
-export PATH="${HOME}/.local/bin/:${PATH}"
-export PATH="${HOME}/.local/dotbin/:${PATH}"
-export PATH="${HOME}/.cargo/bin/:${PATH}"
-export PATH="${HOME}/.local/texlive/2022/bin/x86_64-linux:${PATH}"
-export PATH="./target/release/:./target/debug/:${PATH}" # cargo
-export PATH="${HOME}/.npm-packages:${PATH}"
-export PATH="./zig-out/bin:${PATH}"
-export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
-# ----------------------------------------------------------------
-
-CONDA_PATH="${HOME}/.local/conda"
+# Conda ----------------------------------------------
 if [ -f "${CONDA_PATH}/etc/profile.d/conda.sh" ]; then
     . "${CONDA_PATH}/etc/profile.d/conda.sh"
 else
@@ -129,7 +90,7 @@ fi
 if [ -f "${CONDA_PATH}/etc/profile.d/mamba.sh" ]; then
     . "${CONDA_PATH}/etc/profile.d/mamba.sh"
 fi
-alias conda='mamba'
+# ----------------------------------------------------
 
 dircolorsfile="${HOME}/.dircolors"
 if ! [ -f "${dircolorsfile}" ]; then
@@ -151,23 +112,30 @@ exportif bat PAGER "bat --plain" "less -F"
 exportif bat GITPAGER "bat --plain"
 exportif bat BAT_THEME "Nord"
 export GOPATH="${HOME}/.go"
+export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
 # ---------------------------------
 
-export BUN_INSTALL="${HOME}/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-export MPLBACKEND="TkAgg"
-
-zfile="${HOME}/.z.sh"
-if ! [ -f "${zfile}" ]; then
-    zshrcmsg "Installing z"
-    curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh -o "${zfile}"
-fi
-. "${zfile}"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
-source ~/.local/share/nvim/site/pack/packer/start/gruvbox/gruvbox_256palette.sh
-
 [ -f "/home/noah/.ghcup/env" ] && source "/home/noah/.ghcup/env" # ghcup-env
+
+# Plugins
+export ZSH_HOME="${HOME}/.zsh"
+[[ -d "${ZSH_HOME}" ]] || mkdir "${ZSH_HOME}"
+
+if ! [ -d "${ZSH_HOME}/zsh-autosuggestions" ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions "${ZSH_HOME}/zsh-autosuggestions"
+fi
+
+if ! [ -d "${ZSH_HOME}/zsh-syntax-highlighting" ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting "${ZSH_HOME}/zsh-syntax-highlighting"
+fi
+
+if ! [ -d "${ZSH_HOME}/pure" ]; then
+    git clone https://github.com/sindresorhus/pure.git "${ZSH_HOME}/pure"
+fi
+
+fpath+=("${ZSH_HOME}/pure")
+autoload -U promptinit
+promptinit
+prompt pure
+source "${ZSH_HOME}/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${ZSH_HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # this is the last line
