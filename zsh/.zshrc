@@ -7,6 +7,15 @@ promptinit
 prompt suse
 compinit
 
+if [ -f /usr/share/git/git-prompt.sh ]; then
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    export GIT_PS1_SHOWSTASHSTATE=1
+    export GIT_PS1_SHOWUPSTREAM="auto"
+    . /usr/share/git/git-prompt.sh
+    setopt PROMPT_SUBST
+    PS1='[%n@%m %~$(__git_ps1 " (%s)")]\$ '
+fi
+
 # functions -------------------------------
 zshrcmsg() {
     echo -e "\033[1;33m[zshrc] ${1}\033[0m"
@@ -20,21 +29,22 @@ has() {
 # -----------------------------------------
 
 # Aliases -----------------------------------------------
-alias gits="git status --short"
-alias g="git"
-alias pgrep='pgrep -a'
-alias pkill='pkill -e'
-has exa && alias ls="exa"
-has exa && alias tree="exa -T"
-alias ll="ls -l"
-alias julianb="julia -q -i -e 'using IJulia; notebook()'"
-alias pluto="julia -q -i -e 'using Pluto; Pluto.run()'"
-alias runzip="fd -e zip -x unzip -nq {} -d {//}"
-has nvim && alias vim='nvim'
+alias '..'='cd ..'
+alias 'gits'="git status --short"
+alias 'g'="git"
+alias 'pgrep'='pgrep -a'
+alias 'pkill'='pkill -e'
+has exa && alias 'ls'="exa"
+has exa && alias 'tree'="exa -T"
+alias 'll'="ls -l"
+alias 'julianb'="julia -q -i -e 'using IJulia; notebook()'"
+alias 'pluto'="julia -q -i -e 'using Pluto; Pluto.run()'"
+alias 'runzip'="fd -e zip -x unzip -nq {} -d {//}"
+has nvim && alias 'vim'='nvim'
 function openpdf() {
     fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i -l 99 | xargs -r xdg-open
 }
-alias nbconvert="jupyter nbconvert --to script --no-prompt"
+alias 'nbconvert'="jupyter nbconvert --to script --no-prompt"
 [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases" # Local Aliases
 function o() {
     gio open "$@"
