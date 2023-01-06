@@ -3,6 +3,7 @@ bindkey -e
 bindkey "\e[3~" delete-char
 
 autoload compinit
+fpath+="${HOME}/.zfunc"
 compinit
 
 # functions -------------------------------
