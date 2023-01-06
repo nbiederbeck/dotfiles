@@ -7,7 +7,12 @@ return require("packer").startup({
 
 		use({ "lewis6991/impatient.nvim" })
 
-		use({ "arcticicestudio/nord-vim" }) -- greatest colorscheme of all time
+		use({
+			"arcticicestudio/nord-vim",
+			config = function()
+				vim.cmd("colorscheme nord")
+			end,
+		}) -- greatest colorscheme of all time
 		use({ "projekt0n/github-nvim-theme" })
 		use({ "morhetz/gruvbox" })
 		use({
@@ -26,7 +31,12 @@ return require("packer").startup({
 		use({ "tpope/vim-fugitive" })
 		use({ "tpope/vim-dispatch" })
 
-		use({ "sindrets/diffview.nvim" })
+		use({
+			"sindrets/diffview.nvim",
+			config = function()
+				require("diffview").setup({ use_icons = false })
+			end,
+		})
 
 		-- use({ "dense-analysis/ale" })
 		use({ ft = "tex", "lervag/vimtex" })
@@ -37,12 +47,38 @@ return require("packer").startup({
 		use({ "honza/vim-snippets" })
 		use({ "ervandew/supertab" })
 
-		use({ "nvim-lualine/lualine.nvim" })
+		use({
+			"nvim-lualine/lualine.nvim",
+			config = function()
+				require("lualine").setup()
+			end,
+		})
 
-		use({ "mhartington/formatter.nvim" })
-		use({ "mfussenegger/nvim-lint" })
+		use({
+			"mhartington/formatter.nvim",
+			config = function()
+				require("user/format")
+			end,
+		})
+		use({
+			"mfussenegger/nvim-lint",
+			config = function()
+				require("user/linter")
+			end,
+		})
 
-		use({ "Pocco81/auto-save.nvim" })
+		use({
+			"Pocco81/auto-save.nvim",
+			config = function()
+				require("auto-save").setup({
+					execution_message = {
+						message = function()
+							return ""
+						end,
+					},
+				})
+			end,
+		})
 
 		-- use({
 		--     "williamboman/nvim-lsp-installer",
@@ -63,6 +99,19 @@ return require("packer").startup({
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"neovim/nvim-lspconfig",
+			config = function()
+				require("user/lspconfig")
+				require("mason").setup({
+					ui = {
+						icons = {
+							package_installed = "✓",
+							package_pending = "→",
+							package_uninstalled = "✗",
+						},
+					},
+				})
+				require("mason-lspconfig").setup()
+			end,
 		})
 
 		use({ "junegunn/fzf", run = ":call fzf#install()" })
