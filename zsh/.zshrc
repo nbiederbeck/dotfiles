@@ -2,9 +2,10 @@
 bindkey -e
 bindkey "\e[3~" delete-char
 
-autoload promptinit
+autoload promptinit compinit
 promptinit
 prompt suse
+compinit
 
 # functions -------------------------------
 zshrcmsg() {
@@ -127,6 +128,12 @@ export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
 ENV="${HOME}/.ssh/ssh-agent-environment"
 if ! [ -f "${ENV}" ]; then
     ssh-agent >"${ENV}"
+else
+    . "${ENV}" >/dev/null
+    if ! [ -S "${SSH_AUTH_SOCK}" ]; then
+        rm "${ENV}"
+        ssh-agent >"${ENV}"
+    fi
 fi
 . "${ENV}" >/dev/null
 # --------------------------------------
