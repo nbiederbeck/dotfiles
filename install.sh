@@ -4,7 +4,6 @@ set -e
 
 dotfiles=(
     alacritty
-    color
     dunst
     git
     i3
