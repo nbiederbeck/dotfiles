@@ -4,10 +4,8 @@ set -e
 
 dotfiles=(
     alacritty
-    bat
     color
     dunst
-    fish
     git
     i3
     ipython
