@@ -6,9 +6,15 @@ local ft = require("formatter.filetypes")
 -- Set custom options
 function isort()
 	return {
-		exe = "isort",
+		exe = vim.fn.stdpath("data") .. "/venv/bin/isort",
 		args = { "--profile=black", "-q", "-" },
 		stdin = true,
+	}
+end
+
+function black()
+	return {
+		exe = vim.fn.stdpath("data") .. "/venv/bin/black",
 	}
 end
 
@@ -34,7 +40,7 @@ formatter.setup({
 		},
 		python = {
 			isort,
-			ft.python.black,
+			black,
 		},
 		sh = {
 			shfmt,
