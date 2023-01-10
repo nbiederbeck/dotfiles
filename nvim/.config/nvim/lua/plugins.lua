@@ -12,6 +12,10 @@ return require("packer").startup({
 			config = function()
 				vim.cmd("colorscheme nord")
 			end,
+			setup = function()
+				vim.g.nord_uniform_diff_background = 1
+				vim.g.nord_italic_comments = 1
+			end,
 		}) -- greatest colorscheme of all time
 		use({ "projekt0n/github-nvim-theme" })
 		use({ "morhetz/gruvbox" })
@@ -48,9 +52,9 @@ return require("packer").startup({
 		use({ "ervandew/supertab" })
 
 		use({
-			"nvim-lualine/lualine.nvim",
+			"vim-airline/vim-airline",
 			config = function()
-				require("lualine").setup()
+				vim.cmd("let g:airline#extensions#ale#enabled = 1")
 			end,
 		})
 
