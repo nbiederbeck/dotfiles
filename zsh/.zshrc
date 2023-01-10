@@ -2,6 +2,17 @@
 bindkey -e
 bindkey "\e[3~" delete-char
 
+# Allow Ctrl-z to toggle between suspend and resume
+function Resume {
+    fg
+    zle push-input
+    # shellcheck disable=SC2034
+    BUFFER=""
+    zle accept-line
+}
+zle -N Resume
+bindkey "^Z" Resume
+
 autoload compinit
 fpath+="${HOME}/.zfunc"
 compinit
