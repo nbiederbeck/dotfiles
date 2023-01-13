@@ -14,13 +14,13 @@
 [merge]
     conflictstyle = diff3
     tool = nvim
-    trustExitCode = false
-
-[mergetool "nvim"]
-    cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 
 [mergetool]
     keepBackup = false
+
+[mergetool "nvim"]
+    cmd = nvim +Gvdiffsplit! $MERGED
+    trustExitCode = false
 
 [log]
     date = iso
