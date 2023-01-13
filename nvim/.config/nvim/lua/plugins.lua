@@ -5,6 +5,16 @@ return require("packer").startup({
 		use({ "wbthomason/packer.nvim" }) -- packer can manage itself
 		use({ "nvim-lua/plenary.nvim" })
 
+		use({
+			"folke/which-key.nvim",
+			config = function()
+				vim.o.timeout = true
+				vim.o.timeoutlen = 300
+				require("which-key").setup()
+				require("user/which-key")
+			end,
+		})
+
 		use({ "lewis6991/impatient.nvim" })
 
 		use({

@@ -1,10 +1,12 @@
 vim.cmd("filetype plugin indent on")
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 require("bootstrap")
 require("plugins")
 require("options")
 
-vim.g.mapleader = " "
 vim.b.dispatch = "./%"
 
 local opt = vim.opt
@@ -35,7 +37,6 @@ map("n", "<C-J>", "<C-W>j", {})
 map("n", "<C-H>", "<C-W>h", {})
 map("n", "<C-K>", "<C-W>k", {})
 map("n", "<C-L>", "<C-W>l", {})
-map("n", "<LEADER>b", "<CMD>Buffers<CR>", {})
 map("t", "<ESC>", "<C-\\><C-n>", {})
 map("n", "dol", "<CMD>diffget 4<CR>", {})
 map("n", "doh", "<CMD>diffget 2<CR>", {})
