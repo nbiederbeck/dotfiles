@@ -94,42 +94,45 @@ return require("packer").startup({
 			end,
 		})
 
-		-- use({
-		--     "williamboman/nvim-lsp-installer",
-		--     {
-		--         "neovim/nvim-lspconfig",
-		--         config = function()
-		--             require("nvim-lsp-installer").setup()
-		--             local lspconfig = require("lspconfig")
-		--             local coq = require("coq")
-		--             lspconfig.sumneko_lua.setup(coq.lsp_ensure_capabilities({}))
-		--             lspconfig.jedi_language_server.setup(coq.lsp_ensure_capabilities({}))
-		--             lspconfig.psalm.setup(coq.lsp_ensure_capabilities({}))
-		--         end,
-		--     },
-		-- })
+		use({ "junegunn/fzf", run = ":call fzf#install()" })
+		use({ "junegunn/fzf.vim" })
 
-		use({
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
+		use({ -- LSP Configuration & Plugins
 			"neovim/nvim-lspconfig",
-			config = function()
-				require("user/lspconfig")
-				require("mason").setup({
-					ui = {
-						icons = {
-							package_installed = "✓",
-							package_pending = "→",
-							package_uninstalled = "✗",
-						},
-					},
-				})
-				require("mason-lspconfig").setup()
+			requires = {
+				-- Automatically install LSPs to stdpath for neovim
+				"williamboman/mason.nvim",
+				"williamboman/mason-lspconfig.nvim",
+
+				-- Useful status updates for LSP
+				"j-hui/fidget.nvim",
+
+				-- Additional lua configuration, makes nvim stuff amazing
+				"folke/neodev.nvim",
+			},
+		})
+
+		use({ -- Autocompletion
+			"hrsh7th/nvim-cmp",
+			requires = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" },
+		})
+
+		use({ -- Highlight, edit, and navigate code
+			"nvim-treesitter/nvim-treesitter",
+			run = function()
+				pcall(require("nvim-treesitter.install").update({ with_sync = true }))
 			end,
 		})
 
-		use({ "junegunn/fzf", run = ":call fzf#install()" })
-		use({ "junegunn/fzf.vim" })
+		use({ -- Additional text objects via treesitter
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			after = "nvim-treesitter",
+		})
+		-- Fuzzy Finder (files, lsp, etc)
+		use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { "nvim-lua/plenary.nvim" } })
+
+		-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable("make") == 1 })
 
 		if PACKER_BOOTSTRAP then
 			require("packer").sync()
