@@ -1,0 +1,7 @@
+#!/bin/bash
+
+autostart=(telegram-desktop mattermost-desktop slack thunderbird)
+
+for p in "${autostart[@]}"; do
+    i3-msg "exec --no-startup-id $p"
+done
