@@ -131,6 +131,7 @@ exportif bat GITPAGER "bat --plain"
 exportif bat BAT_THEME "Nord"
 export GOPATH="${HOME}/.go"
 export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
+export NFSHOME="/net/nfshome/home/${USER}"
 # ---------------------------------
 
 [ -f "/home/noah/.ghcup/env" ] && source "/home/noah/.ghcup/env" # ghcup-env
