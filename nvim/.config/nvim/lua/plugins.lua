@@ -11,7 +11,7 @@ return require("packer").startup({
 				vim.o.timeout = true
 				vim.o.timeoutlen = 300
 				require("which-key").setup()
-				require("user/which-key")
+				require("custom/which-key")
 			end,
 		})
 
@@ -71,13 +71,13 @@ return require("packer").startup({
 		-- use({
 		-- 	"mhartington/formatter.nvim",
 		-- 	config = function()
-		-- 		require("user/format")
+		-- 		require("custom/format")
 		-- 	end,
 		-- })
 		-- use({
 		-- 	"mfussenegger/nvim-lint",
 		-- 	config = function()
-		-- 		require("user/linter")
+		-- 		require("custom/linter")
 		-- 	end,
 		-- })
 
