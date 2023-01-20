@@ -1,2 +1,2 @@
-require("user/snip")
+-- require("user/snip")
 require("user/kickstart")

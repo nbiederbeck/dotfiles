@@ -68,18 +68,18 @@ return require("packer").startup({
 			end,
 		})
 
-		use({
-			"mhartington/formatter.nvim",
-			config = function()
-				require("user/format")
-			end,
-		})
-		use({
-			"mfussenegger/nvim-lint",
-			config = function()
-				require("user/linter")
-			end,
-		})
+		-- use({
+		-- 	"mhartington/formatter.nvim",
+		-- 	config = function()
+		-- 		require("user/format")
+		-- 	end,
+		-- })
+		-- use({
+		-- 	"mfussenegger/nvim-lint",
+		-- 	config = function()
+		-- 		require("user/linter")
+		-- 	end,
+		-- })
 
 		use({
 			"Pocco81/auto-save.nvim",

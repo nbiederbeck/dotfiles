@@ -238,3 +238,5 @@ cmp.setup({
 		{ name = "luasnip" },
 	},
 })
+
+require("luasnip.loaders.from_snipmate").load()
