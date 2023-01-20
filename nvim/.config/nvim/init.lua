@@ -3,9 +3,8 @@ vim.cmd("filetype plugin indent on")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-require("bootstrap")
 require("plugins")
-require("options")
+require("custom/kickstart")
 
 vim.b.dispatch = "./%"
 
