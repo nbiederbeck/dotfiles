@@ -78,9 +78,7 @@ return require("packer").startup({
 		use({ ft = "zig", "ziglang/zig.vim" })
 		use({ "snakemake/snakemake", rtp = "misc/vim" })
 
-		use({ "sirver/UltiSnips" })
 		use({ "honza/vim-snippets" })
-		use({ "ervandew/supertab" })
 
 		use({
 			"vim-airline/vim-airline",
@@ -163,6 +161,6 @@ return require("packer").startup({
 		profile = {
 			enable = true,
 		},
+		autoremove = true,
 	},
-	autoremove = true,
 })
