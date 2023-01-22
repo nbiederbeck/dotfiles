@@ -43,6 +43,7 @@ alias 'julianb'="julia -q -i -e 'using IJulia; notebook()'"
 alias 'pluto'="julia -q -i -e 'using Pluto; Pluto.run()'"
 alias 'runzip'="fd -e zip -x unzip -nq {} -d {//}"
 has nvim && alias 'vim'='nvim'
+alias vi=vim
 function openpdf() {
     fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i -l 99 | xargs -r xdg-open
 }
