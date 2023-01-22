@@ -74,7 +74,13 @@ return require("packer").startup({
 		})
 
 		-- use({ "dense-analysis/ale" })
-		use({ ft = "tex", "lervag/vimtex" })
+		use({
+			"lervag/vimtex",
+			ft = "tex",
+			config = function()
+				vim.g.vimtex_compiler_latexmk = { continuous = 0 }
+			end,
+		})
 		use({ ft = "zig", "ziglang/zig.vim" })
 		use({ "snakemake/snakemake", rtp = "misc/vim" })
 
@@ -115,6 +121,7 @@ return require("packer").startup({
 
 		use({ "junegunn/fzf", run = ":call fzf#install()" })
 		use({ "junegunn/fzf.vim" })
+		use({ "junegunn/vim-easy-align" })
 
 		use({ -- LSP Configuration & Plugins
 			"neovim/nvim-lspconfig",
