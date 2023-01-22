@@ -37,6 +37,7 @@ alias 'pgrep'='pgrep -a'
 alias 'pkill'='pkill -e'
 has exa && alias 'ls'="exa"
 has exa && alias 'tree'="exa -T"
+(has exa && alias 'l'='exa -l --git') || alias 'l'='ls -l'
 alias 'll'="ls -l"
 alias 'julianb'="julia -q -i -e 'using IJulia; notebook()'"
 alias 'pluto'="julia -q -i -e 'using Pluto; Pluto.run()'"
@@ -177,6 +178,13 @@ if ! [ -d "${ZSH_HOME}/zsh-syntax-highlighting" ]; then
     zshrcmsg "Installing syntax highlighting."
     gclone zsh-users/zsh-syntax-highlighting "${ZSH_HOME}/zsh-syntax-highlighting"
 fi
+
+zfile="${ZSH_HOME}/.z.sh"
+if ! [ -f "${zfile}" ]; then
+    zshrcmsg "Installing z"
+    curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh -o "${zfile}"
+fi
+. "${zfile}"
 
 source "${ZSH_HOME}/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZSH_HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # this is the last line
