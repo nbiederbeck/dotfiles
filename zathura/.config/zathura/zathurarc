@@ -18,3 +18,6 @@ set recolor-lightcolor    '#2e3440'
 set recolor-darkcolor     '#d8dee9'
 
 map c set recolor
+
+map D set "first-page-column 1:1"
+map <C-d> set "first-page-column 1:2"
