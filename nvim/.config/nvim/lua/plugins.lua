@@ -84,7 +84,14 @@ return require("packer").startup({
 		use({ ft = "zig", "ziglang/zig.vim" })
 		use({ "snakemake/snakemake", rtp = "misc/vim" })
 
+		use({
+			"sirver/UltiSnips",
+			config = function()
+				require("custom/snip")
+			end,
+		})
 		use({ "honza/vim-snippets" })
+		use({ "ervandew/supertab" })
 
 		use({
 			"vim-airline/vim-airline",
@@ -140,7 +147,11 @@ return require("packer").startup({
 
 		use({ -- Autocompletion
 			"hrsh7th/nvim-cmp",
-			requires = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" },
+			requires = {
+				"hrsh7th/cmp-nvim-lsp",
+				-- "L3MON4D3/LuaSnip",
+				-- "saadparwaiz1/cmp_luasnip",
+			},
 		})
 
 		use({ -- Highlight, edit, and navigate code
