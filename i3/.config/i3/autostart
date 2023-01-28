@@ -1,7 +1,7 @@
 #!/bin/bash
 
 isworkhours() {
-    if [ "$(date +'%U')" -gt 5 ]; then return 1; fi  # Weekend
+    if [ "$(date +'%u')" -gt 5 ]; then return 1; fi  # Weekend
     if [ "$(date +'%H')" -lt 8 ]; then return 1; fi  # Morning
     if [ "$(date +'%H')" -ge 18 ]; then return 1; fi # Evening
     return 0
