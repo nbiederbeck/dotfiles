@@ -80,6 +80,7 @@ export PATH="./target/release/:./target/debug/:${PATH}" # cargo
 export PATH="${HOME}/.npm-packages:${PATH}"
 export PATH="./zig-out/bin:${PATH}"
 export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
+export PATH="${HOME}/.go/bin:${PATH}"
 # ----------------------------------------------------------------
 
 # FZF ---------------------------------------------------
@@ -127,10 +128,10 @@ exportif() {
         export "${2}"="${4}"
     fi
 }
-exportif bat MANPAGER "sh -c 'col -bx | bat -l man -p'" "less -F"
+exportif bat MANPAGER "bat -l man -p" "less -F"
 exportif bat PAGER "bat --plain" "less -F"
-exportif bat GITPAGER "bat --plain"
 exportif bat BAT_THEME "Nord"
+exportif delta GIT_PAGER "delta --color-only --diff-highlight --side-by-side"
 export GOPATH="${HOME}/.go"
 export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
 export NFSHOME="/net/nfshome/home/${USER}"
