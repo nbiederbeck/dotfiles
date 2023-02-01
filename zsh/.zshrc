@@ -169,7 +169,8 @@ if ! [ -f "${ZSH_HOME}/git-prompt.sh" ]; then
 fi
 . "${ZSH_HOME}/git-prompt.sh"
 setopt PROMPT_SUBST
-PS1='%n@%m %~$(__git_ps1 " (%s)") \$ '
+# PS1='%Bbold%b %Uunderline%u %Sstandout%s'
+PS1='%n@%m %~$(__git_ps1 " (%s)") %S%(?.%s.%?%s )\$ '
 
 if ! [ -d "${ZSH_HOME}/zsh-autosuggestions" ]; then
     zshrcmsg "Installing autosuggestions."
