@@ -128,7 +128,7 @@ exportif() {
         export "${2}"="${4}"
     fi
 }
-exportif bat MANPAGER "bat -l man -p" "less -F"
+exportif bat MANPAGER "bat --plain" "less -F"
 exportif bat PAGER "bat --plain" "less -F"
 exportif bat BAT_THEME "Nord"
 exportif delta GIT_PAGER "delta --color-only --diff-highlight --side-by-side"
