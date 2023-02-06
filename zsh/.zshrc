@@ -81,6 +81,7 @@ export PATH="${HOME}/.npm-packages:${PATH}"
 export PATH="./zig-out/bin:${PATH}"
 export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
 export PATH="${HOME}/.go/bin:${PATH}"
+export PATH="${HOME}/.config/i3/bin:${PATH}"
 # ----------------------------------------------------------------
 
 # FZF ---------------------------------------------------
