@@ -17,7 +17,7 @@ let g:python3_host_prog=expand('~/.local/share/nvim/venv/bin/python')
 if empty(glob(g:python3_host_prog))
     echo 'create environment'
     execute '!python3 -m venv ~/.local/share/nvim/venv --prompt nvim'
-    execute '!~/.local/share/nvim/venv/bin/python -m pip install --upgrade pip pynvim black flake8 isort'
+    execute '!~/.local/share/nvim/venv/bin/python -m pip install --upgrade pip pynvim'
 endif
 ]])
 
