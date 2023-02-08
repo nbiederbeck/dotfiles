@@ -73,12 +73,7 @@ return require("packer").startup({
 			end,
 		})
 
-		use({
-			"dense-analysis/ale",
-			config = function()
-				require("custom/ale")
-			end,
-		})
+		-- use({ "dense-analysis/ale" })
 		use({
 			"lervag/vimtex",
 			ft = "tex",
@@ -102,6 +97,19 @@ return require("packer").startup({
 			"vim-airline/vim-airline",
 			config = function()
 				vim.cmd("let g:airline#extensions#ale#enabled = 1")
+			end,
+		})
+
+		use({
+			"mhartington/formatter.nvim",
+			config = function()
+				require("custom/format")
+			end,
+		})
+		use({
+			"mfussenegger/nvim-lint",
+			config = function()
+				require("custom/linter")
 			end,
 		})
 
