@@ -1,0 +1,18 @@
+#!/bin/bash
+
+isworkhours() {
+    if [ "$(date +'%u')" -gt 5 ]; then return 1; fi  # Weekend
+    if [ "$(date +'%H')" -lt 8 ]; then return 1; fi  # Morning
+    if [ "$(date +'%H')" -ge 18 ]; then return 1; fi # Evening
+    return 0
+}
+
+if ! isworkhours; then
+    exit 1
+fi
+
+autostart=(telegram-desktop mattermost-desktop slack thunderbird)
+
+for p in "${autostart[@]}"; do
+    i3-msg "exec --no-startup-id $p"
+done
