@@ -183,12 +183,15 @@ if ! [ -d "${ZSH_HOME}/zsh-syntax-highlighting" ]; then
     gclone zsh-users/zsh-syntax-highlighting "${ZSH_HOME}/zsh-syntax-highlighting"
 fi
 
-zfile="${ZSH_HOME}/.z.sh"
-if ! [ -f "${zfile}" ]; then
+if ! [ -d "${ZSH_HOME}/z" ]; then
     zshrcmsg "Installing z"
-    curl -fsSL https://raw.githubusercontent.com/rupa/z/master/z.sh -o "${zfile}"
+    gclone rupa/z "${ZSH_HOME}/z"
 fi
-. "${zfile}"
 
+function update-zshplugins {
+    fd . -td --full-path "${ZSH_HOME}" --max-depth=1 -x git -C {} pull
+}
+
+source "${ZSH_HOME}/z/z.sh"
 source "${ZSH_HOME}/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZSH_HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" # this is the last line
