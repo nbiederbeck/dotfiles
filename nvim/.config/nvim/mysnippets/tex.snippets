@@ -1,0 +1,31 @@
+extends tex
+
+snippet $$ "math mode" wA
+\(${1}\)${0}
+endsnippet
+
+snippet table "table" bA
+\\begin{table}
+	\\centering
+	\\caption{%
+		${1}
+	}%
+	\\label{tab:${2}}
+	\\begin{tabular}
+	${3}
+	\\end{tabular}
+\\end{table}
+${0}
+endsnippet
+
+snippet figure "figure" bA
+\\begin{figure}[ht]
+	\\centering
+	\\includegraphics{${1}}
+	\\caption{%
+		${2}
+	}%
+	\\label{fig:${3}}
+\\end{figure}
+${0}
+endsnippet
