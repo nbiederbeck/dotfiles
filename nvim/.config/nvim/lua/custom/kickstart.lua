@@ -157,8 +157,9 @@ local servers = {
 	-- rust_analyzer = {},
 	-- tsserver = {},
 	texlab = {},
+	ruff_lsp = {},
 
-	sumneko_lua = {
+	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },
 			telemetry = { enable = false },

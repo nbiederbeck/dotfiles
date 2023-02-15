@@ -13,6 +13,13 @@ function isort()
 	}
 end
 
+function ruff()
+	return {
+		exe = "ruff",
+		args = { "--select=I", "--fix" },
+	}
+end
+
 function black()
 	return {
 		-- exe = vim.fn.stdpath("data") .. "/venv/bin/black",
