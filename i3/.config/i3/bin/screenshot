@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+dirname="${HOME}/Pictures/Screenshots/"
+mkdir -p "${dirname}"
+filename="$(date --iso=s).png"
+saveto="${dirname}/${filename}"
+maim -s -u "${saveto}"
+notify-send "Screenshot" "Saved to ${filename}"
+xclip -selection clipboard -t image/png "${saveto}"

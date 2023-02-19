@@ -225,7 +225,7 @@ bindsym XF86Display exec autorandr --change
 bindsym $mod+XF86Display exec arandr
 
 # bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
-bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png -i
+bindsym Print exec $bin/screenshot
 
 bindsym $mod+x exec $bin/lock
 bindsym $mod+Shift+x exec systemctl suspend
