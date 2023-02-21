@@ -24,6 +24,9 @@ export HISTFILE=~/.zhistory
 export HISTSIZE=100
 export SAVEHIST=$HISTSIZE
 
+setopt interactive_comments
+setopt correct
+
 # functions -------------------------------
 zshrcmsg() {
     echo -e "\033[1;33m[zshrc] ${1}\033[0m"
