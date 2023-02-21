@@ -92,6 +92,8 @@ export PATH="./zig-out/bin:${PATH}"
 export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
 export PATH="${HOME}/.go/bin:${PATH}"
 export PATH="${HOME}/.config/i3/bin:${PATH}"
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="${GEM_HOME}/bin/:${PATH}"
 # ----------------------------------------------------------------
 
 # FZF ---------------------------------------------------
