@@ -17,6 +17,12 @@ autoload compinit
 fpath+="${HOME}/.zfunc"
 compinit
 
+setopt inc_append_history
+setopt share_history
+export HISTFILE=~/.zhistory
+export HISTSIZE=100
+export SAVEHIST=$HISTSIZE
+
 # functions -------------------------------
 zshrcmsg() {
     echo -e "\033[1;33m[zshrc] ${1}\033[0m"
