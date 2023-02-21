@@ -19,6 +19,7 @@ compinit
 
 setopt inc_append_history
 setopt share_history
+setopt hist_ignore_all_dups
 export HISTFILE=~/.zhistory
 export HISTSIZE=100
 export SAVEHIST=$HISTSIZE
