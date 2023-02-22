@@ -1,0 +1,36 @@
+#!/bin/bash
+set -e
+
+err() {
+    echo "$@" >/dev/stderr
+}
+
+die() {
+    err "$@"
+    exit 1
+}
+
+EQUATION="$1"
+if [ -z "${EQUATION}" ]; then
+    die 'latexit '\''F = m \cdot a'\'
+fi
+
+OUTDIR=$(mktemp -d)
+PDFFILE="${OUTDIR}/latexit.pdf"
+
+LATEX_DOCUMENT='\documentclass[border=1pt,preview]{standalone}
+% Packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\begin{document}
+\begin{align*}
+'${EQUATION}'
+\end{align*}
+\end{document}'
+
+echo "${LATEX_DOCUMENT}" | pdflatex --output-directory="${OUTDIR}" --jobname=latexit >/dev/null
+
+pdfcrop --margins 3 "${PDFFILE}" "${PDFFILE}" >/dev/null
+
+xdg-open "${PDFFILE}"

@@ -1,0 +1,30 @@
+#!/bin/bash
+RESTIC="${HOME}/.restic"
+DUNST_ID=73246
+
+source "${RESTIC}/config"
+
+if [[ ! -d ${RESTIC_REPOSITORY} ]]; then
+    dunstify \
+        --replace ${DUNST_ID} \
+        --urgency critical \
+        --timeout 0 \
+        -- \
+        "Restic" "Repository not found!"
+    exit 1
+fi
+
+dunstify \
+    --replace ${DUNST_ID} \
+    --timeout 0 \
+    -- \
+    "Restic" "Backing up ..."
+
+restic backup "${HOME}" \
+    --verbose \
+    --exclude-file="${RESTIC}/exclude"
+
+dunstify \
+    --replace ${DUNST_ID} \
+    -- \
+    "Restic" "Finished"

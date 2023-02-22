@@ -1,0 +1,9 @@
+repos:
+- repo: https://github.com/jumanjihouse/pre-commit-hooks
+  rev: '3.0.0'
+  hooks:
+    - id: script-must-have-extension
+    - id: script-must-not-have-extension
+    - id: shellcheck
+    - id: shfmt
+      args: ["-i 4"]

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+((exit_code = 0))
+
+git_dirs=$(
+    # fd '\.git$' --full-path "${1:-$HOME}" --max-depth=4 --hidden -x git -C {//} status --short
+    find "${1:-$HOME}" \
+        -maxdepth 4 \
+        -name ".git" \
+        -not -path "${HOME}/.cache/*" \
+        -not -path "${HOME}/.cargo/*" \
+        -not -path "${HOME}/.fzf/*" \
+        -not -path "${HOME}/.tmux/*" \
+        -not -path "${HOME}/.local/*conda*/*" \
+        -not -path "${HOME}/texlive/*" \
+        -not -path "${HOME}/.texmf/*" \
+        -not -path "${HOME}/.bash_it/*" \
+        -not -path "${HOME}/.oh-my-zsh/*" \
+        -not -path "${HOME}/.zplug/*" \
+        -not -path "${HOME}/vollmond/*" \
+        -not -path "${HOME}/.go/*" \
+        -not -path "${HOME}/.vim/*"
+)
+
+for gd in ${git_dirs}; do
+    wd=$(dirname "${gd}")
+    stat=$(GIT_DIR="${gd}" GIT_WORK_TREE="${wd}" git status --ahead-behind --untracked-files=all --porcelain=v2)
+
+    if [[ -n "${stat}" ]]; then
+        # notify-send -u critical "${wd}" "${stat}"
+        echo "${wd}"
+        ((exit_code = 1))
+    fi
+
+done
+
+exit "${exit_code}"

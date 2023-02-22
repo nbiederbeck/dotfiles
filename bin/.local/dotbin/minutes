@@ -1,0 +1,11 @@
+#!/bin/bash
+
+filename=/tmp/minutes-$(date -Is).md
+
+if ! [ -f "${filename}" ]; then
+    echo "<!-- Minutes from $(date -Is) -->" >"${filename}"
+fi
+
+"${EDITOR:-nvim}" "${filename}"
+
+markdown "${filename}" | xclip -selection clipboard

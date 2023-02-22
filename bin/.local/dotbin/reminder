@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+from sys import argv
+from subprocess import Popen
+from time import sleep
+
+
+def notify(msg):
+    Popen(['notify-send', msg, '-t', "1003"])
+    sleep(1)
+
+def warn(msg):
+    Popen(['notify-send', msg, "-u", "critical"])
+
+
+def main():
+    message = " ".join(argv[2:])
+    duration = float(argv[1][:-1])
+    unit = argv[1][-1]
+
+    unit_to_time = {"h": 60 * 60, "m": 60, "s": 1}
+
+    duration_sec = int(duration * unit_to_time[unit])
+
+    print("Waiting for {}{} = {} seconds".format(duration, unit, duration_sec))
+    for i in range(duration_sec)[::-1]:
+        notify(str(i))
+
+    warn(message)
+
+
+if __name__ == "__main__":
+    main()

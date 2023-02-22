@@ -4,6 +4,7 @@ set -e
 
 dotfiles=(
     alacritty
+    bin
     dunst
     git
     i3

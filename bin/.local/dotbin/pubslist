@@ -1,0 +1,10 @@
+#!/bin/bash
+# ./pubslist
+# list publications, select with dmenu, open in pdf reader
+set -eo pipefail
+
+pubs list |
+    sort |
+    dmenu -i -l 99 -p "Paper" |
+    sed -e 's/\[//' -e s'/\].*//' |
+    xargs --no-run-if-empty pubs doc open

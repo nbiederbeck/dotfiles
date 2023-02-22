@@ -1,0 +1,7 @@
+#!/bin/bash
+
+file=$(fd . ~ | sort -u | rofi -dmenu -p Open -l 15 -no-custom -width 60)
+
+if [[ -f ${file} ]]; then
+    gio open ${file} || notify-send "open-something"
+fi

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while true; do
+    (~/.local/dotbin/restic-backup && sleep 600) || sleep 15
+done

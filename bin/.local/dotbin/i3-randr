@@ -1,0 +1,24 @@
+#!/bin/bash
+# This script is intended to be run by XF86Screen.
+# Uses autorandr (install if neccessary).
+# If only one autorandr options exists, do nothing,
+# otherwise present the options and reload i3.
+
+set -eo pipefail
+
+options=($(autorandr --detect))
+
+if [ ${#options[*]} -eq 0 ]; then
+    arandr
+elif [ ${#options[*]} -eq 1 ]; then
+    autorandr --change "${options[0]}"
+else
+    echo "${options[*]}" |
+        sed 's/ /\n/g' |
+        dmenu -p 'Display' -i -b |
+        xargs --no-run-if-empty autorandr --change
+
+fi
+
+i3-msg restart
+~/.fehbg

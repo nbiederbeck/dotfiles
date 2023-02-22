@@ -1,0 +1,19 @@
+#!/bin/bash
+
+empty="/tmp/empty.pdf"
+mkdir -p build
+
+convert xc:none -page 842x595 ${empty}
+
+for pdffile in $@; do
+    nup="build/${pdffile%.*}_2x1.pdf"
+    new="build/${pdffile%.*}_print.pdf"
+    pdfnup ${pdffile} -o ${nup} -q
+    if [[ $(pdfinfo ${nup} | awk '/Pages/ {print $2 % 2}') == 1 ]]; then
+        pdfunite ${nup} ${empty} ${new}
+    else
+        cp ${nup} ${new}
+    fi
+done
+
+pdfunite build/*_print.pdf build/print.pdf

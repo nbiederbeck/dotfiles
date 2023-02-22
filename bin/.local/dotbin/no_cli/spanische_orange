@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+from subprocess import Popen
+from time import sleep
+
+
+def notify(msg):
+    Popen(['notify-send', msg, '-t', "1003"])
+    sleep(1)
+
+def warn(msg):
+    Popen(['notify-send', msg, "-u", "critical"])
+
+
+if __name__ == "__main__":
+    for i in range(1, 5 * 60)[::-1]:
+        notify(str(i))
+
+    warn('Tee ist fertig')

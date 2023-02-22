@@ -1,0 +1,8 @@
+#!/bin/bash
+
+dur=$(echo | dmenu -p "Duration")
+wht=$(echo | dmenu -p "Reminder")
+
+echo "Remind ${wht} in ${dur}."
+
+reminder ${dur} ${wht}

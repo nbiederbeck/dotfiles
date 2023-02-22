@@ -1,0 +1,39 @@
+#!/bin/bash
+
+installed() {
+    command -v "$1" >/dev/null
+}
+
+copy() {
+    if installed xsel; then
+        xsel -ib
+    elif installed xclip; then
+        xclip -i -selection clipboard
+    fi
+}
+
+set -eo pipefail
+
+properties=$(mktemp)
+
+function clean() {
+    rm "${properties}"
+}
+trap clean EXIT
+
+xprop >"${properties}"
+
+title=$(awk -F= '/_NET_WM_NAME/ {print $2}' "${properties}")
+instance_class=$(awk -F= '/WM_CLASS/ {print $2}' "${properties}")
+instance=$(echo "${instance_class}" | awk -F, '{print $1}')
+class=$(echo "${instance_class}" | awk -F, '{print $2}')
+window_role=$(awk -F= '/WM_WINDOW_ROLE/ {print $2}' "${properties}")
+current_size=$(awk -F: '/user specified size/ {print $2}' "${properties}" | sed 's/ by /x/')
+minimum_size=$(awk -F: '/program specified minimum size/ {print $2}' "${properties}" | sed 's/ by /x/')
+
+echo "[class=${class#* } instance=${instance#* } window_role=${window_role#* } title=${title#* }]" | copy
+
+echo "current size=${current_size}"
+echo "minimum size=${minimum_size}"
+
+echo "for_window [ class=${class#* } instance=${instance#* } window_role=${window_role#* } title=${title#* } ]" | tee | copy

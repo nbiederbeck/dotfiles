@@ -1,0 +1,11 @@
+#!/bin/bash
+
+makedirectory="${1-.}"
+file_sorted=$(mktemp)
+file_sorted_unique=$(mktemp)
+
+make -C "${makedirectory}" -Bnj | sed -e ':x /\\$/ { N; s/\\\n//g ; bx }; /mkdir -p build/d' | sort >"${file_sorted}"
+
+sort -u "${file_sorted}" >"${file_sorted_unique}"
+
+diff --color "${file_sorted_unique}" "${file_sorted}"

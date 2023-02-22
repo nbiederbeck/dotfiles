@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+function reset {
+    redshift -x
+}
+trap reset EXIT
+
+# set a nice warm-ish color
+redshift -PO "${1-2700}"
+
+# wait until terminated
+sleep 1d
