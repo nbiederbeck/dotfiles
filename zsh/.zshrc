@@ -92,9 +92,11 @@ export PATH="./zig-out/bin:${PATH}"
 export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
 export PATH="${HOME}/.go/bin:${PATH}"
 export PATH="${HOME}/.config/i3/bin:${PATH}"
-GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export GEM_HOME
-export PATH="${GEM_HOME}/bin/:${PATH}"
+has ruby && {
+    GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export GEM_HOME
+    export PATH="${GEM_HOME}/bin/:${PATH}"
+}
 # ----------------------------------------------------------------
 
 # FZF ---------------------------------------------------
@@ -184,7 +186,8 @@ fi
 . "${ZSH_HOME}/git-prompt.sh"
 setopt PROMPT_SUBST
 # PS1='%Bbold%b %Uunderline%u %Sstandout%s'
-PS1='%n@%m %~$(__git_ps1 " (%s)") %S%(?.%s.%?%s )\$ '
+PS1='%n@%m %~$(__git_ps1 " (%s)") %S%(?.%s.%?%s )
+\$ '
 
 if ! [ -d "${ZSH_HOME}/zsh-autosuggestions" ]; then
     zshrcmsg "Installing autosuggestions."
