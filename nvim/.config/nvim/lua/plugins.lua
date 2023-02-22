@@ -36,10 +36,8 @@ return require("packer").startup({
 			end,
 		})
 
-		use({ "lewis6991/impatient.nvim" })
-
 		use({
-			"arcticicestudio/nord-vim",
+			"arcticicestudio/nord-vim", -- greatest colorscheme of all time
 			config = function()
 				vim.cmd("colorscheme nord")
 			end,
@@ -47,9 +45,8 @@ return require("packer").startup({
 				vim.g.nord_uniform_diff_background = 1
 				vim.g.nord_italic_comments = 1
 			end,
-		}) -- greatest colorscheme of all time
-		use({ "projekt0n/github-nvim-theme" })
-		use({ "morhetz/gruvbox" })
+		})
+
 		use({
 			"lewis6991/gitsigns.nvim", -- show git marks
 			config = function()
@@ -73,7 +70,6 @@ return require("packer").startup({
 			end,
 		})
 
-		-- use({ "dense-analysis/ale" })
 		use({
 			"lervag/vimtex",
 			ft = "tex",
@@ -81,17 +77,28 @@ return require("packer").startup({
 				vim.g.vimtex_compiler_latexmk = { continuous = 0 }
 			end,
 		})
-		use({ ft = "zig", "ziglang/zig.vim" })
-		use({ "snakemake/snakemake", rtp = "misc/vim" })
+
+		use({
+			"ziglang/zig.vim",
+			ft = "zig",
+		})
+
+		use({
+			"snakemake/snakemake",
+			ft = "snakemake",
+			rtp = "misc/vim",
+		})
 
 		use({
 			"sirver/UltiSnips",
 			config = function()
 				require("custom/snip")
 			end,
+			requires = {
+				"honza/vim-snippets",
+				"ervandew/supertab",
+			},
 		})
-		use({ "honza/vim-snippets" })
-		use({ "ervandew/supertab" })
 
 		use({
 			"vim-airline/vim-airline",
@@ -126,8 +133,7 @@ return require("packer").startup({
 			end,
 		})
 
-		use({ "junegunn/fzf", run = ":call fzf#install()" })
-		use({ "junegunn/fzf.vim" })
+		use({ "junegunn/fzf", run = ":call fzf#install()", requires = "junegunn/fzf.vim" })
 		use({ "junegunn/vim-easy-align" })
 		use({
 			"junegunn/goyo.vim",
@@ -172,7 +178,11 @@ return require("packer").startup({
 			after = "nvim-treesitter",
 		})
 		-- Fuzzy Finder (files, lsp, etc)
-		use({ "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { "nvim-lua/plenary.nvim" } })
+		use({
+			"nvim-telescope/telescope.nvim",
+			tag = "*",
+			lock = true,
+		})
 
 		-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
 		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable("make") == 1 })
