@@ -129,6 +129,12 @@ return require("packer").startup({
 		use({ "junegunn/fzf", run = ":call fzf#install()" })
 		use({ "junegunn/fzf.vim" })
 		use({ "junegunn/vim-easy-align" })
+		use({
+			"junegunn/goyo.vim",
+			config = function()
+				require("custom/goyo")
+			end,
+		})
 
 		use({ -- LSP Configuration & Plugins
 			"neovim/nvim-lspconfig",
