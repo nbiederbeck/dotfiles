@@ -3,37 +3,20 @@
 local formatter = require("formatter")
 local ft = require("formatter.filetypes")
 
--- Set custom options
-function isort()
-	return {
-		-- exe = vim.fn.stdpath("data") .. "/venv/bin/isort",
-		exe = "isort",
-		args = { "--profile=black", "-q", "-" },
-		stdin = true,
-	}
-end
-
-function ruff()
+local function ruff()
 	return {
 		exe = "ruff",
 		args = { "--select=I", "--fix" },
 	}
 end
 
-function black()
-	return {
-		-- exe = vim.fn.stdpath("data") .. "/venv/bin/black",
-		exe = "black",
-	}
-end
-
-function snakefmt()
+local function snakefmt()
 	return {
 		exe = "snakefmt",
 	}
 end
 
-function shfmt()
+local function shfmt()
 	return {
 		exe = "shfmt",
 		args = { "-i 4", "-w" },
@@ -48,8 +31,8 @@ formatter.setup({
 			ft.lua.stylua,
 		},
 		python = {
-			isort,
-			black,
+			ruff,
+			ft.python.black,
 		},
 		sh = {
 			shfmt,
