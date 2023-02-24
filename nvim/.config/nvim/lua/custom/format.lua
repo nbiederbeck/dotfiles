@@ -53,9 +53,4 @@ formatter.setup({
 })
 
 -- Format on save
-vim.cmd([[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost * FormatWrite
-augroup END
-]])
+vim.api.nvim_create_autocmd("BufWritePost", { command = "FormatWrite" })
