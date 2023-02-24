@@ -12,8 +12,9 @@ end
 
 PACKER_BOOTSTRAP = ensure_packer()
 
+vim.g.python3_host_prog = vim.fn.expand("~/.local/share/nvim/venv/bin/python")
+
 vim.cmd([[
-let g:python3_host_prog=expand('~/.local/share/nvim/venv/bin/python')
 if empty(glob(g:python3_host_prog))
     echo 'create environment'
     execute '!python3 -m venv ~/.local/share/nvim/venv --prompt nvim'
