@@ -8,6 +8,7 @@ function! s:goyo_enter()
         silent !tmux set status off
     endif
     silent :LspStop<CR>
+    silent :Gitsigns toggle_signs false
 endfunction
 
 function! s:goyo_leave()
@@ -15,6 +16,7 @@ function! s:goyo_leave()
         silent !tmux set status on
     endif
     silent :LspStart<CR>
+    silent :Gitsigns toggle_signs true
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
