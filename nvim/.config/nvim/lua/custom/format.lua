@@ -43,8 +43,14 @@ formatter.setup({
 		rust = {
 			ft.rust.rustfmt,
 		},
+		yaml = {
+			ft.yaml.prettier,
+		},
 		snakemake = {
 			snakefmt,
+		},
+		json = {
+			ft.json.prettier,
 		},
 		["*"] = {
 			ft.any.remove_trailing_whitespace,
