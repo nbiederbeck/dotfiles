@@ -6,7 +6,7 @@ local ft = require("formatter.filetypes")
 local function ruff()
 	return {
 		exe = "ruff",
-		args = { "--select=I", "--fix" },
+		args = { "--select=F,E,W,I,N,PL", "--fix" },
 	}
 end
 
