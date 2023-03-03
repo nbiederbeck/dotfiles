@@ -97,6 +97,8 @@ has ruby && {
     export GEM_HOME
     export PATH="${GEM_HOME}/bin/:${PATH}"
 }
+# this way dmenu has also the local path
+test -f "${HOME}/.cache/dmenu_run" || dmenu_path >/dev/null 2>&1
 # ----------------------------------------------------------------
 
 # FZF ---------------------------------------------------
