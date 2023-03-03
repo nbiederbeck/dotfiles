@@ -1,4 +1,7 @@
 # shellcheck disable=SC1090,SC2181 shell=bash
+export ZSH_HOME="${HOME}/.zsh"
+[[ -d "${ZSH_HOME}" ]] || mkdir "${ZSH_HOME}"
+
 bindkey -e
 bindkey "\e[3~" delete-char
 
@@ -101,24 +104,6 @@ has ruby && {
 test -f "${HOME}/.cache/dmenu_run" || dmenu_path >/dev/null 2>&1
 # ----------------------------------------------------------------
 
-# FZF ---------------------------------------------------
-if ! [ -d "${HOME}/.fzf" ]; then
-    zshrcmsg "Installing FZF"
-    git clone --depth 1 \
-        "https://github.com/junegunn/fzf.git" \
-        "${HOME}/.fzf"
-    "${HOME}/.fzf/install" --all --no-{ba,fi}sh --no-update-rc
-fi
-. "${HOME}/.fzf.zsh"
-export FZF_TMUX=0
-export FZF_TMUX_HEIGHT=10
-export FZF_DEFAULT_COMMAND='fd --hidden'
-export FZF_DEFAULT_OPTS='--no-bold --reverse'
-export FZF_CTRL_T_COMMAND=fd
-export FZF_ALT_C_COMMAND='fd --type d'
-export FZF_ALT_C_OPTS='--preview "exa --color=always {}"'
-# -------------------------------------------------------
-
 # Conda ----------------------------------------------
 if [ -f "${CONDA_PATH}/etc/profile.d/conda.sh" ]; then
     . "${CONDA_PATH}/etc/profile.d/conda.sh"
@@ -172,8 +157,6 @@ fi
 # --------------------------------------
 
 # Plugins
-export ZSH_HOME="${HOME}/.zsh"
-[[ -d "${ZSH_HOME}" ]] || mkdir "${ZSH_HOME}"
 gclone() {
     git clone --quiet --depth=1 "https://github.com/$1" "$2"
 }
@@ -190,6 +173,25 @@ setopt PROMPT_SUBST
 # PS1='%Bbold%b %Uunderline%u %Sstandout%s'
 PS1='%n@%m %~$(__git_ps1 " (%s)") %S%(?.%s.%?%s )
 \$ '
+
+FZF_HOME="${ZSH_HOME}/fzf"
+if ! [ -d "${FZF_HOME}" ]; then
+    zshrcmsg "Installing FZF"
+    gclone junegunn/fzf "${FZF_HOME}"
+    "${FZF_HOME}/install" --bin
+fi
+FZF_FILE="${HOME}/.fzf.zsh"
+if ! [ -f "${FZF_FILE}" ]; then
+    "${FZF_HOME}/install" --all --no-fish --no-bash --no-update-rc
+fi
+source "${FZF_FILE}"
+export FZF_TMUX=0
+export FZF_TMUX_HEIGHT=10
+export FZF_DEFAULT_COMMAND='fd --hidden'
+export FZF_DEFAULT_OPTS='--no-bold --reverse'
+export FZF_CTRL_T_COMMAND=fd
+export FZF_ALT_C_COMMAND='fd --type d'
+export FZF_ALT_C_OPTS='--preview "exa --color=always {}"'
 
 if ! [ -d "${ZSH_HOME}/zsh-autosuggestions" ]; then
     zshrcmsg "Installing autosuggestions."
