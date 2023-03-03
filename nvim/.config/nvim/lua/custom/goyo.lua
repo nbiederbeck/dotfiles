@@ -1,6 +1,6 @@
 local g = vim.g
 g.goyo_height = "85%"
-g.goyo_width = "120"
+g.goyo_width = "85"
 
 vim.cmd([[
 function! s:goyo_enter()
@@ -9,6 +9,8 @@ function! s:goyo_enter()
     endif
     silent :LspStop<CR>
     silent :Gitsigns toggle_signs false
+    silent :set nocursorline
+    :set tw=80 fo+=a
 endfunction
 
 function! s:goyo_leave()
@@ -17,6 +19,8 @@ function! s:goyo_leave()
     endif
     silent :LspStart<CR>
     silent :Gitsigns toggle_signs true
+    silent :set cursorline
+    :set fo-=a
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
