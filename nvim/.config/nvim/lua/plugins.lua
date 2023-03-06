@@ -147,7 +147,7 @@ return require("packer").startup({
 			"neovim/nvim-lspconfig",
 			requires = {
 				-- Automatically install LSPs to stdpath for neovim
-				{ "nbiederbeck/mason.nvim", branch = "snakefmt" },
+				"williamboman/mason.nvim",
 				"williamboman/mason-lspconfig.nvim",
 
 				-- Useful status updates for LSP
