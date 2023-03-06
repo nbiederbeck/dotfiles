@@ -100,6 +100,7 @@ has ruby && {
     export GEM_HOME
     export PATH="${GEM_HOME}/bin/:${PATH}"
 }
+export PATH="${PATH}:${HOME}/.local/share/nvim/mason/bin"
 # this way dmenu has also the local path
 test -f "${HOME}/.cache/dmenu_run" || dmenu_path >/dev/null 2>&1
 # ----------------------------------------------------------------
