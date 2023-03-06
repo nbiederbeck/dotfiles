@@ -22,7 +22,6 @@ set $menu i3-dmenu-desktop
 set $laptop eDP-1
 # Font
 set $font Source Code Pro
-set $menu dmenu_run
 font pango:$font 10
 
 title_align center
