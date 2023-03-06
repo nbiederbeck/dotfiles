@@ -16,7 +16,8 @@ pydocstyle.args = { "--convention=numpy", "--add-select=D417" }
 
 -- Set up all linters
 lint.linters_by_ft = {
-	-- python = { "ruff" },
+	rst = { "rstcheck" },
+	python = { "mypy" },
 	tex = { "chktex" },
 	sh = { "shellcheck" },
 	zsh = { "shellcheck" },
