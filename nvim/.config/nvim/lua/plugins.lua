@@ -60,7 +60,12 @@ return {
 	{
 		"snakemake/snakemake",
 		ft = "snakemake",
-		rtp = "misc/vim",
+		config = function(plugin)
+			vim.opt.rtp:append(plugin.dir .. "/misc/vim/")
+		end,
+		init = function()
+			vim.opt.foldenable = false
+		end,
 	},
 
 	{
