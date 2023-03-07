@@ -40,3 +40,8 @@ map("t", "<ESC>", "<C-\\><C-n>", {})
 map("n", "dol", "<CMD>diffget 4<CR>", {})
 map("n", "doh", "<CMD>diffget 2<CR>", {})
 map("n", "ga", "<Plug>(EasyAlign)", {})
+
+-- silence optional providers in healthcheck
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
