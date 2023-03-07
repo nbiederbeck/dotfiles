@@ -14,12 +14,10 @@ return {
 
 	{
 		"arcticicestudio/nord-vim", -- greatest colorscheme of all time
-		config = function()
-			vim.cmd("colorscheme nord")
-		end,
 		init = function()
 			vim.g.nord_uniform_diff_background = 1
 			vim.g.nord_italic_comments = 1
+			vim.cmd("colorscheme nord")
 		end,
 	},
 
@@ -161,5 +159,9 @@ return {
 	},
 
 	-- Fuzzy Finder Algorithm which dependencies local dependencies to be built. Only load if `make` is available
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
+	{
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "make",
+		cond = vim.fn.executable("make") == 1,
+	},
 }
