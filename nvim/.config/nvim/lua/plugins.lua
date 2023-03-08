@@ -21,12 +21,8 @@ return {
 		end,
 	},
 
-	{
-		"lewis6991/gitsigns.nvim", -- show git marks
-		config = function()
-			require("gitsigns").setup()
-		end,
-	},
+	{ "airblade/vim-gitgutter" },
+
 	{ "kshenoy/vim-signature" }, -- show vim marks
 	{ "lukas-reineke/indent-blankline.nvim" }, -- show indentlines
 	{ "christoomey/vim-tmux-navigator" }, -- seamlessly work with tmux and vim splits
