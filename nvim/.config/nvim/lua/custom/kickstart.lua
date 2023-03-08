@@ -145,6 +145,12 @@ local on_attach = function(_, bufnr)
 	end, { desc = "Format current buffer with LSP" })
 end
 
+local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+local words = {}
+
+for word in io.open(path, "r"):lines() do
+	table.insert(words, word)
+end
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
@@ -157,7 +163,6 @@ local servers = {
 	-- rust_analyzer = {},
 	-- tsserver = {},
 	texlab = {},
-	ruff_lsp = {},
 
 	lua_ls = {
 		Lua = {
@@ -170,9 +175,7 @@ local servers = {
 			language = "en-US",
 			diagnosticSeverity = "warning",
 			dictionary = {
-				["en-US"] = {
-					":.dictionary",
-				},
+				["en-US"] = words,
 			},
 		},
 	},
