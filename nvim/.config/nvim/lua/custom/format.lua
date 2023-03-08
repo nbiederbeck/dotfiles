@@ -3,10 +3,10 @@
 local formatter = require("formatter")
 local ft = require("formatter.filetypes")
 
-local function ruff()
+local function isort()
 	return {
-		exe = "ruff",
-		args = { "--select=F,E,W,I,N,PL", "--fix" },
+		exe = "isort",
+		args = { "--profile=black" },
 	}
 end
 
@@ -31,7 +31,7 @@ formatter.setup({
 			ft.lua.stylua,
 		},
 		python = {
-			ruff,
+			isort,
 			ft.python.black,
 		},
 		sh = {
