@@ -7,20 +7,18 @@ function! s:goyo_enter()
     if executable('tmux') && strlen($TMUX)
         silent !tmux set status off
     endif
-    silent :LspStop<CR>
-    silent :Gitsigns toggle_signs false
+    silent :LspStop
+    silent :GitGutterDisable
     silent :set nocursorline
-    :set tw=80 fo+=a
 endfunction
 
 function! s:goyo_leave()
     if executable('tmux') && strlen($TMUX)
         silent !tmux set status on
     endif
-    silent :LspStart<CR>
-    silent :Gitsigns toggle_signs true
+    silent :LspStart
+    silent :GitGutterEnable
     silent :set cursorline
-    :set fo-=a
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
