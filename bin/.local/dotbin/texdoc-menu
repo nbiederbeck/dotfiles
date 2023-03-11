@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -t 0 ]; then
+    fd . ~/.local/texlive/ -e pdf -X echo {/.} | tr ' ' '\n' | dmenu -p texdoc | xargs --no-run-if-empty texdoc
+else
+    texdoc "$1"
+fi
