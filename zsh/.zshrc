@@ -29,6 +29,7 @@ export SAVEHIST=$HISTSIZE
 
 setopt interactive_comments
 setopt correct
+setopt auto_cd
 
 # functions -------------------------------
 zshrcmsg() {
