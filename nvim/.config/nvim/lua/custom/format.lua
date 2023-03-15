@@ -3,19 +3,6 @@
 local formatter = require("formatter")
 local ft = require("formatter.filetypes")
 
-local function isort()
-	return {
-		exe = "isort",
-		args = { "--profile=black" },
-	}
-end
-
-local function snakefmt()
-	return {
-		exe = "snakefmt",
-	}
-end
-
 local function shfmt()
 	return {
 		exe = "shfmt",
@@ -31,7 +18,12 @@ formatter.setup({
 			ft.lua.stylua,
 		},
 		python = {
-			isort,
+			function()
+				return {
+					exe = "isort",
+					args = { "--profile=black" },
+				}
+			end,
 			ft.python.black,
 		},
 		sh = {
@@ -47,7 +39,11 @@ formatter.setup({
 			ft.yaml.prettier,
 		},
 		snakemake = {
-			snakefmt,
+			function()
+				return {
+					exe = "snakefmt",
+				}
+			end,
 		},
 		json = {
 			ft.json.prettier,
@@ -59,4 +55,4 @@ formatter.setup({
 })
 
 -- Format on save
-vim.api.nvim_create_autocmd("BufWritePost", { command = "FormatWrite" })
+vim.api.nvim_create_autocmd("BufWritePost", { command = "Format" })

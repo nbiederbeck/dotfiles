@@ -21,7 +21,12 @@ return {
 		end,
 	},
 
-	{ "airblade/vim-gitgutter" },
+	{
+		"airblade/vim-gitgutter",
+		config = function()
+			vim.g.gitgutter_highlight_linenrs = 1
+		end,
+	},
 
 	{ "kshenoy/vim-signature" }, -- show vim marks
 	{ "lukas-reineke/indent-blankline.nvim" }, -- show indentlines
@@ -32,13 +37,6 @@ return {
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-fugitive" },
 	{ "tpope/vim-dispatch" },
-
-	{
-		"sindrets/diffview.nvim",
-		config = function()
-			require("diffview").setup({ _icons = false })
-		end,
-	},
 
 	{
 		"lervag/vimtex",
@@ -117,7 +115,8 @@ return {
 		end,
 	},
 
-	{ -- LSP Configuration & Plugins
+	{
+		-- LSP Configuration & Plugins
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
@@ -132,7 +131,8 @@ return {
 		},
 	},
 
-	{ -- Autocompletion
+	{
+		-- Autocompletion
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
@@ -141,14 +141,16 @@ return {
 		},
 	},
 
-	{ -- Highlight, edit, and navigate code
+	{
+		-- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		build = function()
 			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
 		end,
 	},
 
-	{ -- Additional text objects via treesitter
+	{
+		-- Additional text objects via treesitter
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		after = "nvim-treesitter",
 		init = function() end,

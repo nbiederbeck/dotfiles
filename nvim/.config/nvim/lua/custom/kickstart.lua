@@ -159,11 +159,10 @@ end
 local servers = {
 	-- clangd = {},
 	-- gopls = {},
-	pyright = {},
+	-- pyright = {},
 	-- rust_analyzer = {},
 	-- tsserver = {},
 	texlab = {},
-
 	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },
