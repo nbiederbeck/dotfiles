@@ -36,7 +36,6 @@ vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { de
 require("nvim-treesitter.configs").setup({
 	-- Add languages to be installed here that you want installed for treesitter
 	ensure_installed = { "lua", "python", "help", "vim", "latex" },
-
 	highlight = { enable = false, disable = { "latex" } },
 	indent = { enable = true, disable = { "python" } },
 	incremental_selection = {
@@ -162,22 +161,22 @@ local servers = {
 	-- pyright = {},
 	-- rust_analyzer = {},
 	-- tsserver = {},
-	texlab = {},
+	texlab = { texlab = { formatterLineLength = -1 } },
 	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },
 			telemetry = { enable = false },
 		},
 	},
-	ltex = {
-		ltex = {
-			language = "en-US",
-			diagnosticSeverity = "warning",
-			dictionary = {
-				["en-US"] = words,
-			},
-		},
-	},
+	-- ltex = {
+	--     ltex = {
+	--         language = "en-US",
+	--         diagnosticSeverity = "warning",
+	--         dictionary = {
+	--                 ["en-US"] = words,
+	--         },
+	--     },
+	-- },
 }
 
 -- Setup neovim lua configuration
@@ -251,5 +250,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 	},
 })
+
+-- require("luasnip.loaders.from_snipmate").lazy_load()
 
 -- require("luasnip.loaders.from_snipmate").lazy_load()
