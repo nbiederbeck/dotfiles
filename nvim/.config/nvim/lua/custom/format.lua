@@ -14,17 +14,19 @@ end
 formatter.setup({
 	logging = false,
 	filetype = {
+		markdown = {
+			ft.markdown.prettier,
+		},
 		lua = {
 			ft.lua.stylua,
 		},
 		python = {
 			function()
 				return {
-					exe = "isort",
-					args = { "--profile=black" },
+					exe = "ruff",
+					args = { "--fix", "--select", "Q,COM,I" },
 				}
 			end,
-			ft.python.black,
 		},
 		sh = {
 			shfmt,

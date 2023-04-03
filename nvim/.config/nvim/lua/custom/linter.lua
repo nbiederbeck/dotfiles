@@ -16,7 +16,7 @@ table.insert(mypy.args, "--ignore-missing-imports")
 -- Set up all linters
 lint.linters_by_ft = {
 	rst = { "rstcheck" },
-	python = { "flake8", "mypy" },
+	python = { "flake8" },
 	tex = { "chktex" },
 	sh = { "shellcheck" },
 	zsh = { "shellcheck" },
