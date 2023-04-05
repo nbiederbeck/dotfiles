@@ -27,6 +27,7 @@ formatter.setup({
 					args = { "--fix", "--select", "Q,COM,I" },
 				}
 			end,
+			ft.python.black,
 		},
 		sh = {
 			shfmt,
