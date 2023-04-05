@@ -1,5 +1,4 @@
 return {
-	{ "wbthomason/packer.nvim" }, -- packer can manage itself
 	{ "nvim-lua/plenary.nvim" },
 
 	{
@@ -153,7 +152,6 @@ return {
 		-- Additional text objects via treesitter
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		after = "nvim-treesitter",
-		init = function() end,
 	},
 
 	-- Fuzzy Finder (files, lsp, etc)
