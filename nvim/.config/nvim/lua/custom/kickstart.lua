@@ -147,8 +147,11 @@ end
 local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 local words = {}
 
-for word in io.open(path, "r"):lines() do
-	table.insert(words, word)
+local f = io.open(path, "r")
+if f ~= nil then
+	for word in f:lines() do
+		table.insert(words, word)
+	end
 end
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
