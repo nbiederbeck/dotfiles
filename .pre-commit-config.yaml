@@ -1,11 +1,11 @@
 repos:
-- repo: https://github.com/JohnnyMorganz/StyLua
-  rev: v0.17.1
-  hooks:
-    - id: stylua
-- repo: https://github.com/jumanjihouse/pre-commit-hooks
-  rev: 3.0.0
-  hooks:
-    - id: shellcheck
-    - id: shfmt
-      args: ["-i 4"]
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v0.17.1
+    hooks:
+      - id: stylua-github
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 3.0.0
+    hooks:
+      - id: shellcheck
+      - id: shfmt
+        args: ["-i 4"]
