@@ -162,6 +162,12 @@ local servers = {
 	-- clangd = {},
 	-- gopls = {},
 	-- pyright = {},
+	pylsp = {
+		plugins = {
+			autopep = { enabled = false },
+			flake8 = { maxLineLength = 88 },
+		},
+	},
 	-- rust_analyzer = {},
 	-- tsserver = {},
 	texlab = { texlab = { formatterLineLength = -1 } },
