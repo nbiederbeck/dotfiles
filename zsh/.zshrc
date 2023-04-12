@@ -83,6 +83,9 @@ function build-nvim() {
 function help() {
     "$@" --help 2>&1 | bat --plain --language=help
 }
+function svg2pdf() {
+    inkscape "$1" --export-filename="${1/.svg/.pdf}"
+}
 #--------------------------------------------------------
 
 # PATH -----------------------------------------------------------
