@@ -1,6 +1,6 @@
 local g = vim.g
 g.goyo_height = "85%"
-g.goyo_width = "85"
+g.goyo_width = "120"
 
 vim.cmd([[
 function! s:goyo_enter()
