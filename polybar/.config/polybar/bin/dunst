@@ -1,0 +1,24 @@
+#!/bin/sh
+
+case "$1" in
+click)
+    dunstctl set-paused toggle
+    exit
+    ;;
+*) ;;
+esac
+
+case "$(dunstctl is-paused)" in
+true)
+    waiting="$(dunstctl count waiting)"
+    sym="🔕 ${waiting}"
+    ;;
+false)
+    sym="🔔"
+    ;;
+*)
+    sym="Error"
+    ;;
+esac
+
+printf "%s" "${sym}"
