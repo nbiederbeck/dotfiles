@@ -170,7 +170,7 @@ local servers = {
 	},
 	-- rust_analyzer = {},
 	-- tsserver = {},
-	texlab = { texlab = { formatterLineLength = -1 } },
+	-- texlab = { texlab = { formatterLineLength = -1 } },
 	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },
