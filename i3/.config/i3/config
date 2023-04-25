@@ -28,7 +28,7 @@ title_align center
 focus_follows_mouse yes
 workspace_layout tabbed
 hide_edge_borders smart
-set $border 1
+set $border 5
 default_border pixel $border
 default_floating_border pixel $border
 
