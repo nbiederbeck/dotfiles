@@ -19,3 +19,5 @@ fish/.config/fish/fish_variables
 fish/.config/fish/functions/fish_user_key_bindings.fish
 fish/.config/fish/functions/fzf_key_bindings.fish
 *.sqlite
+
+ipython/**/db
