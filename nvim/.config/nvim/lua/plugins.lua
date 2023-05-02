@@ -16,6 +16,7 @@ return {
 		init = function()
 			vim.g.nord_uniform_diff_background = 1
 			vim.g.nord_italic_comments = 1
+			vim.opt.background = "dark"
 			vim.cmd("colorscheme nord")
 		end,
 	},
