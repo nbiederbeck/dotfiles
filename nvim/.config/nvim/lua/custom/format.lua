@@ -24,7 +24,7 @@ formatter.setup({
 			function()
 				return {
 					exe = "ruff",
-					args = { "--fix", "--select", "Q,COM,I" },
+					args = { "--fix", "--select", "Q,I" },
 				}
 			end,
 			ft.python.black,
