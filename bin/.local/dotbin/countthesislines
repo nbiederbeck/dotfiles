@@ -3,12 +3,9 @@
 echo "date,lines"
 
 for githash in $(git log --reverse --pretty=format:"%h"); do
-    git checkout ${githash} -qq
-    printf $(git show --no-patch --no-notes --pretty='%ad' --date=short)
-    printf ","
-    tokei -t TeX --output json | jq '[.inner.Tex.code][0]'
-    # texcount -nosub -sum -merge -q -1 main.tex
-    # git checkout master -qq
+    git checkout "${githash}" -qq
+    printf \
+        "%s,%s\n" \
+        "$(git show --no-patch --no-notes --pretty="%ad" --date=format:"%Y-%m-%dT%H:%M:%S")" \
+        "$(tokei -t TeX -o json | jq '.TeX.code')"
 done
-
-git checkout master -qq
