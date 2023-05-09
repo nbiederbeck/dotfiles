@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# Set Typematic Delay and Typematic Rate
+#
+# Set Keyboard Layout and Options
+
+setxkbmap -layout us -option "shift:both_capslock" -option "compose:caps"
+
+delay=300
+rate=80
+
+for_gnome() {
+    gsettings set org.gnome.desktop.peripherals.keyboard delay $delay
+    gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval $rate
+}
+
+for_i3wm() {
+    xset r rate $delay $rate
+}
+
+for_linux_console() {
+    command sudo -k kbdrate -d $delay -r $rate
+}
+
+log() {
+    echo "Setting Typematic Delay and Typematic Rate for $1" >/dev/stderr
+}
+
+if [ -n "${GNOME_SETUP_DISPLAY}" ]; then
+    log GNOME
+    for_gnome
+elif [ -n "${I3SOCK}" ]; then
+    log i3wm
+    for_i3wm
+else
+    echo "No suitable case found." >/dev/stderr
+    exit 1
+fi
