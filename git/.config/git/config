@@ -25,6 +25,9 @@
 [log]
     date = iso
 
+[diff]
+    renamelimit = 10000
+
 [alias]
     alias = !git config --list | awk -F. '/^alias/ {print $2}'
     l = log --oneline --graph
