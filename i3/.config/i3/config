@@ -380,5 +380,5 @@ exec --no-startup-id ~/.config/i3/bin/autostart
 
 # exec --no-startup-id easyeffects --gapplication-service
 
-exec --no-startup-id xss-lock slock
+exec --no-startup-id xss-lock $bin/lock
 exec --no-startup-id unclutter --fork
