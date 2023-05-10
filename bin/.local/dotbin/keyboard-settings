@@ -23,7 +23,7 @@ for_linux_console() {
 }
 
 log() {
-    echo "Setting Typematic Delay and Typematic Rate for $1" >/dev/stderr
+    echo "Setting Typematic Delay and Typematic Rate for $1"
 }
 
 if [ -n "${GNOME_SETUP_DISPLAY}" ]; then
@@ -32,7 +32,12 @@ if [ -n "${GNOME_SETUP_DISPLAY}" ]; then
 elif [ -n "${I3SOCK}" ]; then
     log i3wm
     for_i3wm
+elif [ -n "${WAYLAND_DISPLAY}" ]; then
+    log "Wayland not yet possible."
+elif [ "${TERM}" = "linux" ]; then
+    log Linux Console
+    for_linux_console
 else
-    echo "No suitable case found." >/dev/stderr
+    echo "No suitable case found."
     exit 1
 fi
