@@ -4,3 +4,7 @@
 
 # Untitled Jupyter Notebooks
 Untitled*.ipynb
+
+# Muscle memory types `make`;
+# alias make='make -f myMakefile.mk'
+myMakefile.mk
