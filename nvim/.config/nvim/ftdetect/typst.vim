@@ -1,2 +1,2 @@
-au BufNewFile,BufRead Snakefile,*.typ set filetype=typst
-au BufNewFile,BufRead Snakefile,*.typ let b:dispatch = 'typst w --open zathura % /tmp/%.pdf'
+au BufNewFile,BufRead *.typ set filetype=typst
+au BufNewFile,BufRead *.typ let b:dispatch = 'typst w --open zathura % /tmp/%.pdf'
