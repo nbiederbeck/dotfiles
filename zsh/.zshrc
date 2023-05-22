@@ -202,6 +202,8 @@ export FZF_CTRL_T_COMMAND=fd
 export FZF_ALT_C_COMMAND='fd --type d'
 export FZF_ALT_C_OPTS='--preview "exa --color=always {}"'
 
+has atuin && eval "$(atuin init zsh --disable-up-arrow)"
+
 if ! [ -d "${ZSH_HOME}/zsh-autosuggestions" ]; then
     zshrcmsg "Installing autosuggestions."
     gclone zsh-users/zsh-autosuggestions "${ZSH_HOME}/zsh-autosuggestions"
