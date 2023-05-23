@@ -21,7 +21,7 @@
   "searchby": "name-desc",
   "gitflags": "",
   "removemake": "no",
-  "sudobin": "doas",
+  "sudobin": "sudo",
   "sudoflags": "",
   "sudoloop": false,
   "requestsplitn": 150,
