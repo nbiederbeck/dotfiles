@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Checking for unused packages...
+When = PostTransaction
+Exec = /usr/bin/bash -c "/usr/bin/pacman -Qtdq && echo '==> pacman -Qtdq | doas pacman -Rns -' || /usr/bin/echo '==> none found'"

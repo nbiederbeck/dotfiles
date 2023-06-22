@@ -1,9 +1,0 @@
-[Trigger]
-Operation = Upgrade
-Type = Package
-Target = *
-
-[Action]
-Description = Updating Rustup
-When = PostTransaction
-Exec = /usr/bin/sh -c "rustup update"
