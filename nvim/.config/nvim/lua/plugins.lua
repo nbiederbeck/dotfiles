@@ -11,13 +11,23 @@ return {
 		end,
 	},
 
+	-- {
+	-- 	"arcticicestudio/nord-vim", -- greatest colorscheme of all time
+	-- 	init = function()
+	-- 		vim.g.nord_uniform_diff_background = 1
+	-- 		vim.g.nord_italic_comments = 1
+	-- 		vim.opt.background = "dark"
+	-- 		vim.cmd("colorscheme nord")
+	-- 	end,
+	-- },
+
 	{
-		"arcticicestudio/nord-vim", -- greatest colorscheme of all time
+		"rose-pine/neovim",
+		name = "rose-pine",
 		init = function()
-			vim.g.nord_uniform_diff_background = 1
-			vim.g.nord_italic_comments = 1
-			vim.opt.background = "dark"
-			vim.cmd("colorscheme nord")
+			vim.opt.background = "light"
+			require("rose-pine").setup({ disable_background = true })
+			vim.cmd("colorscheme rose-pine")
 		end,
 	},
 
@@ -78,6 +88,15 @@ return {
 		config = function()
 			vim.cmd("let g:airline#extensions#ale#enabled = 1")
 		end,
+	},
+
+	{
+		"vim-airline/vim-airline-themes",
+		after = "vim-airline",
+		config = function()
+			vim.cmd(":AirlineTheme solarized")
+		end,
+		dependencies = { "vim-airline/vim-airline" },
 	},
 
 	{

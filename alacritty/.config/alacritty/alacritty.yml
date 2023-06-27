@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/nord.yml
+  - ~/.config/alacritty/rose-pine-dawn.yml
   - ~/.config/alacritty/font.yml
 
 env:

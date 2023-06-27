@@ -142,7 +142,7 @@ exportif() {
 }
 exportif bat MANPAGER "bat --plain" "less -F"
 exportif bat PAGER "bat --plain" "less -F"
-exportif bat BAT_THEME "Nord"
+exportif bat BAT_THEME "base16"
 exportif delta GIT_PAGER "delta --color-only --diff-highlight --side-by-side"
 export GOPATH="${HOME}/.go"
 export PYTEST_ADDOPTS="--pdbcls=IPython.terminal.debugger:TerminalPdb"
