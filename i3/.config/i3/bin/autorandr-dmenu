@@ -1,0 +1,4 @@
+#!/bin/sh
+autorandr --detected |
+    dmenu -p 'xrandr' |
+    xargs --no-run-if-empty autorandr --load

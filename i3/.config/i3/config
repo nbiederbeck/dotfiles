@@ -28,7 +28,7 @@ title_align center
 focus_follows_mouse yes
 workspace_layout tabbed
 hide_edge_borders smart
-set $border 5
+set $border 1
 default_border pixel $border
 default_floating_border pixel $border
 
@@ -220,7 +220,7 @@ bindsym XF86MonBrightnessDown exec light -U 10
 bindsym $mod+XF86MonBrightnessUp exec light -S 100
 bindsym $mod+XF86MonBrightnessDown exec light -S 1
 
-bindsym XF86Display exec autorandr --change
+bindsym XF86Display exec $bin/autorandr-dmenu
 bindsym $mod+XF86Display exec arandr
 
 # bindsym Print exec notify-send --urgency critical 'Print' 'get to know grim'
