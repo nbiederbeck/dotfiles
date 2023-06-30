@@ -93,9 +93,7 @@ return {
 	{
 		"vim-airline/vim-airline-themes",
 		after = "vim-airline",
-		config = function()
-			vim.cmd(":AirlineTheme solarized")
-		end,
+		config = function() end,
 		dependencies = { "vim-airline/vim-airline" },
 	},
 
