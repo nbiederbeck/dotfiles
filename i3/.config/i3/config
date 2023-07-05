@@ -265,29 +265,29 @@ bindsym $mod+shift+z resize set 1600 1000
 #
 # Status Bar:
 #
-# bar {
-#     position bottom
-#     font $font 10
+bar {
+    position bottom
+    font pango:$font 10
 
-#     status_command while date +'%Y-%m-%d %k:%M'; do sleep 10; done
+    strip_workspace_numbers true
 
-#     strip_workspace_numbers true
+    status_command i3status
 
-#     tray_padding 1
+    tray_padding 1
 
-#     mode hide
-#     modifier $mod+Ctrl
+    # mode hide
+    modifier $mod+Ctrl
 
-#     colors {
-#         statusline #ffffff
-#         background #222222
-#         # colorclass       border  background text
-#         focused_workspace  #285577 #285577    #ffffff
-#         active_workspace   #5f676a #5f676a    #ffffff
-#         inactive_workspace #222222 #222222    #888888
-#         urgent_workspace   #900000 #900000    #ffffff
-#     }
-# }
+    colors {
+        statusline #ffffff
+        background #222222
+        # colorclass       border  background text
+        focused_workspace  #285577 #285577    #ffffff
+        active_workspace   #5f676a #5f676a    #ffffff
+        inactive_workspace #222222 #222222    #888888
+        urgent_workspace   #900000 #900000    #ffffff
+    }
+}
 
 ##
 ## Colors
@@ -370,7 +370,7 @@ for_window [title="vim-anywhere"] floating enable border none move position cent
 #
 # Autostart
 #
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 exec --no-startup-id autorandr --change
 exec --no-startup-id dunst
