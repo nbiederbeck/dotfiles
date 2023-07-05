@@ -11,23 +11,13 @@ return {
 		end,
 	},
 
-	-- {
-	-- 	"arcticicestudio/nord-vim", -- greatest colorscheme of all time
-	-- 	init = function()
-	-- 		vim.g.nord_uniform_diff_background = 1
-	-- 		vim.g.nord_italic_comments = 1
-	-- 		vim.opt.background = "dark"
-	-- 		vim.cmd("colorscheme nord")
-	-- 	end,
-	-- },
-
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
+		"arcticicestudio/nord-vim", -- greatest colorscheme of all time
 		init = function()
-			vim.opt.background = "light"
-			require("rose-pine").setup({ disable_background = true })
-			vim.cmd("colorscheme rose-pine")
+			vim.g.nord_uniform_diff_background = 1
+			vim.g.nord_italic_comments = 1
+			vim.opt.background = "dark"
+			vim.cmd("colorscheme nord")
 		end,
 	},
 
@@ -37,6 +27,16 @@ return {
 			vim.g.gitgutter_highlight_linenrs = 1
 		end,
 	},
+
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	name = "rose-pine",
+	-- 	init = function()
+	-- 		vim.opt.background = "light"
+	-- 		require("rose-pine").setup({ disable_background = true })
+	-- 		vim.cmd("colorscheme rose-pine")
+	-- 	end,
+	-- },
 
 	{ "kshenoy/vim-signature" }, -- show vim marks
 	{ "lukas-reineke/indent-blankline.nvim" }, -- show indentlines
