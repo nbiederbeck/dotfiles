@@ -1,0 +1,39 @@
+theme = "rose_pine_dawn"
+
+[editor]
+line-number = "relative"
+color-modes = true
+true-color = true
+auto-save = true
+middle-click-paste = false
+rulers = [100]
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+
+[keys.insert]
+j = { k = "normal_mode" }
+
+[keys.normal]
+C-h = "jump_view_left"
+C-l = "jump_view_right"
+C-k = "jump_view_up"
+C-j = "jump_view_down"
+C-r = ":config-reload"
+
+[editor.whitespace.render]
+tab = "all"
+
+[editor.lsp]
+enable = true
+display-messages = true
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control",  "file-name"]
+center = ["diagnostics"]
+right = ["file-type", "selections", "position"]

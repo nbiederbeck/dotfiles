@@ -7,6 +7,7 @@ dotfiles=(
     bin
     dunst
     git
+    helix
     i3
     ipython
     nvim
