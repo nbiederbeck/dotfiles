@@ -66,6 +66,7 @@ function openpdf() {
     fd "" -e pdf --full-path "${1-$HOME}" | dmenu -i -l 99 | xargs -r xdg-open
 }
 alias 'nbconvert'="jupyter nbconvert --to script --no-prompt"
+alias 'lg'='lazygit'
 [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases" # Local Aliases
 function o() {
     gio open "$@"
