@@ -1,9 +1,9 @@
-theme = "rose_pine_dawn"
+theme = "nord"
 
 [editor]
 line-number = "relative"
 color-modes = true
-true-color = true
+# true-color = true
 auto-save = true
 middle-click-paste = false
 rulers = [100]
@@ -34,6 +34,12 @@ display-messages = true
 display-inlay-hints = true
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control",  "file-name"]
+left = [
+  "mode",
+  "spinner",
+  "version-control",
+  "file-name",
+  "file-modification-indicator",
+]
 center = ["diagnostics"]
 right = ["file-type", "selections", "position"]
