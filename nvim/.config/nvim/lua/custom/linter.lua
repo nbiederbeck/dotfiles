@@ -11,6 +11,17 @@ table.insert(flake8.args, 1, "--extend-ignore=E402")
 
 local mypy = lint.linters.mypy
 table.insert(mypy.args, "--ignore-missing-imports")
+
+local chktex = lint.linters.chktex
+for _, arg in pairs({
+	"-wall", -- enable all warning
+	"-n22", -- disable "comment displayed"
+	"-n30", -- disable "multiple spaces detected in output"
+	"-e15", -- error "no match found"
+	"-e16", -- error "mathmode still on at EOF"
+}) do
+	table.insert(chktex.args, arg)
+end
 -- pydocstyle.env = path
 
 -- Set up all linters
