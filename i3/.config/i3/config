@@ -253,6 +253,7 @@ mode "resize" {
     # Nice floating sizes for special programs
     # zathura, 1610 pdf for screenshares
     bindsym z resize set 1600 1003; mode "default"
+    bindsym s resize set 400 400; mode "default"
 
     # Return to default mode
     bindsym Return mode "default"
