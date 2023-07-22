@@ -1,0 +1,11 @@
+extends python
+
+snippet argifmain "argparse/ifmain"
+from argparse import ArgumentParser
+parser = ArgumentParser()
+args = parser.parse_args()
+def main():
+    pass
+if __name__ == "__main__":
+    main(**vars(args))
+endsnippet
