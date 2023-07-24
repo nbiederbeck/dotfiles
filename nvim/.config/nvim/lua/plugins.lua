@@ -28,15 +28,10 @@ return {
 		end,
 	},
 
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	name = "rose-pine",
-	-- 	init = function()
-	-- 		vim.opt.background = "light"
-	-- 		require("rose-pine").setup({ disable_background = true })
-	-- 		vim.cmd("colorscheme rose-pine")
-	-- 	end,
-	-- },
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+	},
 
 	{ "kshenoy/vim-signature" }, -- show vim marks
 	{ "lukas-reineke/indent-blankline.nvim" }, -- show indentlines
