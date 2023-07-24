@@ -7,5 +7,5 @@ Target = *
 [Action]
 Description = Removing unused packages...
 When = PostTransaction
-# Exec = /usr/bin/bash -c "/usr/bin/pacman -Qtdq && echo ':: pacman -Qtdq | xargs -r doas pacman -Rns -' || /usr/bin/echo ':: none found'"
-Exec = /usr/bin/bash -c "pacman -Qtdq | xargs -r sudo pacman -Rns -"
+Exec = /usr/bin/bash -c "/usr/bin/pacman -Qtdq && echo '==> pacman -Qtdq | doas pacman -Rns -' || /usr/bin/echo '==> none found'"
+# Exec = /usr/bin/bash -c "pacman -Qtdq | xargs -r sudo pacman -Rns -"
