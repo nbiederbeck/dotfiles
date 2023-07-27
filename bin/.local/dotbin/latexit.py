@@ -15,6 +15,7 @@ packages = {
     "amsmath",
     "amssymb",
     "dsfont",
+    "siunitx",
 }
 filename = Path("/tmp/latexit.pdf")
 
