@@ -171,15 +171,15 @@ local servers = {
 			telemetry = { enable = false },
 		},
 	},
-	-- ltex = {
-	--     ltex = {
-	--         language = "en-US",
-	--         diagnosticSeverity = "warning",
-	--         dictionary = {
-	--                 ["en-US"] = words,
-	--         },
-	--     },
-	-- },
+	ltex = {
+		ltex = {
+			language = "en-US",
+			diagnosticSeverity = "warning",
+			dictionary = {
+				["en-US"] = words,
+			},
+		},
+	},
 }
 
 -- Setup neovim lua configuration
