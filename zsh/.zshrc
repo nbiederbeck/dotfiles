@@ -67,6 +67,7 @@ function openpdf() {
 }
 alias 'nbconvert'="jupyter nbconvert --to script --no-prompt"
 alias 'lg'='lazygit'
+alias line='tput rev; for i in 1 {2..$(tput cols)}; do printf " "; done'
 [ -f "${HOME}/.aliases" ] && . "${HOME}/.aliases" # Local Aliases
 function o() {
     gio open "$@"
