@@ -280,7 +280,7 @@ bar {
     modifier $mod+Ctrl
 
     colors {
-        statusline #ffffff
+        statusline #eeeeee
         background #222222
         # colorclass       border  background text
         focused_workspace  #285577 #285577    #ffffff
