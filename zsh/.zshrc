@@ -4,6 +4,9 @@ export ZSH_HOME="${HOME}/.zsh"
 
 bindkey -e
 bindkey "\e[3~" delete-char
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey "^H" backward-delete-word
 
 # Allow Ctrl-z to toggle between suspend and resume
 function Resume {
